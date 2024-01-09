@@ -1,6 +1,6 @@
 ﻿---
 order: 98
-icon: rocket
+#icon: rocket
 ---
 
 # Frequently Asked Questions

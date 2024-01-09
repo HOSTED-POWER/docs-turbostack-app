@@ -1,6 +1,6 @@
 ---
 order: 99
-icon: rocket
+#icon: rocket
 ---
 
 # Getting started
