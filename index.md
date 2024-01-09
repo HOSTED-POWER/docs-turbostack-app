@@ -1,6 +1,5 @@
 ---
 order: 100
-#icon: rocket
 ---
 
 # Welcome
