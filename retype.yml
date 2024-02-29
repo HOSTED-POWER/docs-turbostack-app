@@ -6,3 +6,12 @@ branding:
   logoDark: /img/logo-white.png    # Path to a logo file to use in dark mode
   logoAlign: left            # Align the logo to the right or the left
   label: Docs                 # Optional label
+  colors:
+    label:
+      text: "#0066b2"         # Custom color for the label text
+      background: "#ff0000"
+url: docs.turbostack.app
+links:
+  - text: TurboStack app
+    icon: :rocket:
+    link: https://my.turbostack.app
