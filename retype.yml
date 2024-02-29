@@ -1,11 +1,11 @@
 # full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
 
 branding:
-  title: TurboStack App             # Your custom website title; keep it short
+  title: TurboStack Docs             # Your custom website title; keep it short
   logo: /img/logo-blue.png             # Path to a logo file
   logoDark: /img/logo-white.png    # Path to a logo file to use in dark mode
   logoAlign: left            # Align the logo to the right or the left
-  label: Docs                 # Optional label
+  #label: Docs                 # Optional label
   colors:
     label:
       text: "#0066b2"         # Custom color for the label text
