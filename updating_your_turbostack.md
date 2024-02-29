@@ -1,5 +1,5 @@
 ---
-order: 60
+order: 40
 icon: ":new:"
 ---
 
