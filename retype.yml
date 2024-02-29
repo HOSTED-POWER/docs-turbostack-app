@@ -13,5 +13,5 @@ branding:
 url: docs.turbostack.app
 links:
   - text: TurboStack app
-    icon: :rocket:
+    icon: ":rocket:"
     link: https://my.turbostack.app

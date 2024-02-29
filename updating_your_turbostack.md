@@ -1,6 +1,6 @@
 ---
 order: 60
-icon: :new:
+icon: ":new:"
 ---
 
 # Updating your TurboStack
