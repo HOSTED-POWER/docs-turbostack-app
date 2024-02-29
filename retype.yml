@@ -1,17 +1,28 @@
 # full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
 
 branding:
-  title: TurboStack Docs             # Your custom website title; keep it short
-  logo: /img/logo-blue.png             # Path to a logo file
-  logoDark: /img/logo-white.png    # Path to a logo file to use in dark mode
-  logoAlign: left            # Align the logo to the right or the left
-  #label: Docs                 # Optional label
+  title: TurboStack Docs
+  logo: /img/logo-blue.png
+  logoDark: /img/logo-white.png
+  logoAlign: left
   colors:
     label:
       text: "#0066b2"         # Custom color for the label text
       background: "#ff0000"
+
 url: docs.turbostack.app
+
 links:
   - text: TurboStack app
     icon: ":rocket:"
     link: https://my.turbostack.app
+    target: blank
+  - text: Support
+    icon: ":information_desk_person:"
+    link: https://portal.hosted-power.com/clientarea/&languagechange=English?_gl=1*58t1i0*_ga_WFGSVF9BHR*MTcwOTIwMDQzNy4xLjEuMTcwOTIwMDQ2NC4zMy4wLjA.&_ga=2.3318320.1241137223.1709200437-546832127.1709200437
+    target: blank
+
+edit:
+  repo: "https://github.com/HOSTED-POWER/docs-turbostack-app"
+  branch: "master"
+  label: "Edit this page"
