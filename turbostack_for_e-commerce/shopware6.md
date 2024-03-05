@@ -2,4 +2,4 @@
 order: 30
 ---
 
-# OShopware 6
+# Shopware 6
