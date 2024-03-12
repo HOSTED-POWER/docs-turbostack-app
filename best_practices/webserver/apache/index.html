@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763569808213">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763573018713">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Apache</title>
     <meta name="title" content="Apache">
+    <meta name="description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/best_practices/webserver/apache/">
@@ -19,19 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/best_practices/webserver/apache/">
     <meta property="og:title" content="Apache">
+    <meta property="og:description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/best_practices/webserver/apache/">
     <meta property="twitter:title" content="Apache">
+    <meta property="twitter:description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.763569808213" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.763573018713" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.763569808213" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.763573018713" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.763569808213" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.763573018713" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,15 +191,35 @@
         <span>Apache</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="overview">
+<doc-anchor-target id="-panel-1">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
-        <span>Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-panel-1">#</doc-anchor-trigger>
+        <span>=== Panel 1</span>
     </h2>
 </doc-anchor-target>
-<doc-panel id="panel-1">
-    <template #title>Panel 1</template>
-</doc-panel>
+<p>In this article, we&#x27;ll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on it&#x27;s IP-adress.</p>
+<p>So what is the result we want to achieve? We want to implement an .htpasswd so visitors need to have a valid login, except when the request came from a whitelisted IP adress.
+In that case, no login is asked and you&#x27;ll be redirected to the site. Like a VIP that would skip a waiting queue for a club.</p>
+<doc-anchor-target id="method-2-server-with-varnish-enabled">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#method-2-server-with-varnish-enabled">#</doc-anchor-trigger>
+        <span>Method 2: Server with varnish enabled</span>
+    </h4>
+</doc-anchor-target>
+<p>For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
+Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won&#x27;t happen, we&#x27;ll add a variable for the header that contains the whitelisted IP-adress.
+The code below will do the trick:</p>
+<p>AuthType Basic AuthName &quot;Restricted Content&quot; AuthUserFile /var/www/user/apache2/.htpasswd # For best practice will we add the IP&#x27;s to the required list require ip # Only a person with valid credentials will be redirected require valid-user # We create the variables for the header like so (Ip should be written between quotes): SetEnvIF X-Forwarded-For AllowIP # Include the env variable Require env AllowIP</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">location / {
+   fastcgi_param HTTPS on; 
+   try_files $uri $uri/ /index.php$is_args$args; 
+   auth_basic &quot;Administrator ^`^ys Area&quot;; 
+   auth_basic_user_file $MAGE_ROOT/.htpasswd; # Whitelist Ip-adress allow ; 
+   satisfy any; 
+}</code></pre>
+</doc-codeblock></div>
+<p>===</p>
 
                                 
                                 <!-- Required only on API pages -->
