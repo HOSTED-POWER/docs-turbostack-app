@@ -4,7 +4,8 @@ order: 100
 
 # Apache
 
-=== Grant or deny access to server for specific IP's while using basic auth
+=== 
+## Grant or deny access to server for specific IP's while using basic auth
 In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on it's IP-adress.
 
 So what is the result we want to achieve? We want to implement an .htpasswd so visitors need to have a valid login, except when the request came from a whitelisted IP adress.
