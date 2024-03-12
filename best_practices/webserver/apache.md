@@ -6,7 +6,5 @@ order: 100
 
 ## Overview
 
-Name
----
-Item 1 
-Item 2 
+=== Panel 1
+===
