@@ -4,7 +4,7 @@ order: 100
 
 # Apache
 
-==- **Grant or deny access to server for specific IP's while using basic auth**
+<span style="color:blue">==- **Grant or deny access to server for specific IP's while using basic auth**</span>
 
 In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on it's IP-adress.
  
