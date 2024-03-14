@@ -34,3 +34,15 @@ SetEnvIF X-Forwarded-For  AllowIP
 Require env AllowIP
 ```
 ===
+
+
+==- <span style="color:#5283ff; font-size:24px;">**Hier komt dan een tweede voorbeeld**</span>
+
+Dit is een tweede eenvoudig voorbeeld voor preview purposes
+
+##### Een extra titel kan er ook wel bij
+
+```
+<h1>Hello world</h1>
+```
+===
