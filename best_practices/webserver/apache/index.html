@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763728850499">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763729193519">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.763728850499" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.763729193519" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.763728850499" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.763729193519" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.763728850499" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.763729193519" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -191,8 +191,8 @@
         <span>Apache</span>
     </h1>
 </doc-anchor-target>
-<doc-panel id="span-style-color-c71a42-font-size-20px-grant-or-deny-access-to-server-for-specific-ip-s-while-using-basic-auth-span" collapsed>
-    <template #title><strong><span style="color:#c71a42; font-size:20px;">Grant or deny access to server for specific IP&#x27;s while using basic auth</span></strong></template>
+<doc-panel id="span-style-color-5283ff-font-size-20px-grant-or-deny-access-to-server-for-specific-ip-s-while-using-basic-auth-span" collapsed>
+    <template #title><strong><span style="color:#5283ff; font-size:20px;">Grant or deny access to server for specific IP&#x27;s while using basic auth</span></strong></template>
 <p>In this article, we&#x27;ll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on it&#x27;s IP-adress.</p>
 <p>So what is the result we want to achieve? We want to implement an .htpasswd so visitors need to have a valid login, except when the request came from a whitelisted IP adress.
 In that case, no login is asked and you&#x27;ll be redirected to the site. Like a VIP that would skip a waiting queue for a club.</p>
@@ -205,15 +205,25 @@ In that case, no login is asked and you&#x27;ll be redirected to the site. Like 
 <p>For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
 Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won&#x27;t happen, we&#x27;ll add a variable for the header that contains the whitelisted IP-adress.
 The code below will do the trick:</p>
-<p>AuthType Basic AuthName &quot;Restricted Content&quot; AuthUserFile /var/www/user/apache2/.htpasswd # For best practice will we add the IP&#x27;s to the required list require ip # Only a person with valid credentials will be redirected require valid-user # We create the variables for the header like so (Ip should be written between quotes): SetEnvIF X-Forwarded-For AllowIP # Include the env variable Require env AllowIP</p>
+<doc-anchor-target id="for-best-practice-will-we-add-the-ips-to-the-required-list-require-ip">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#for-best-practice-will-we-add-the-ips-to-the-required-list-require-ip">#</doc-anchor-trigger>
+        <span>For best practice will we add the IP&#x27;s to the required list require ip</span>
+    </h1>
+</doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">location / {
-   fastcgi_param HTTPS on; 
-   try_files $uri $uri/ /index.php$is_args$args; 
-   auth_basic &quot;Administrator ^`^ys Area&quot;; 
-   auth_basic_user_file $MAGE_ROOT/.htpasswd; # Whitelist Ip-adress allow ; 
-   satisfy any; 
-}</code></pre>
+<pre class="language-none"><code v-pre class="language-none">AuthType Basic
+AuthName &quot;Restricted Content&quot;
+AuthUserFile /var/www/user/apache2/.htpasswd
+
+# For best practice will we add the IP's to the required list
+require ip 
+# Only a person with valid credentials will be redirected
+require valid-user
+# We create the variables for the header like so (Ip should be written between quotes):
+SetEnvIF X-Forwarded-For  AllowIP
+# Include the env variable
+Require env AllowIP</code></pre>
 </doc-codeblock></div>
 </doc-panel>
 
