@@ -27,9 +27,14 @@ For each server there are main functions available
 4. Save any changes made to the configuration
 5. Save and Publish: saves and deploys the changes made to the server
 
-```
+
 under point 5, there the option to save and full publish.
 this will ensure everything gets deployed
-```
+
 
 ## The 'server' tab
+
+the **server** tab defines some basic middleware configuration.
+Like the type of webserver and some different type of databases that are supported
+
+![TurboStackAppServerTab](../img/turbostackapp/basicinstall/tsa_server_tab1.png)
