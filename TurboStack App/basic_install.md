@@ -1,8 +1,9 @@
 ---
 order: 200
+icon: info
 ---
 
-# Basic deploy on TurboStack App
+# Getting started
 
 ## Login and locate your managed servers
 
@@ -38,3 +39,6 @@ the **server** tab defines some basic middleware configuration.
 Like the type of webserver and some different type of databases that are supported
 
 ![TurboStackAppServerTab](../img/turbostackapp/basicinstall/tsa_server_tab1.png)
+
+
+## The 'accounts' tab
