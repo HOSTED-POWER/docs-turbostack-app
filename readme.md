@@ -33,7 +33,7 @@ Your customer center enables you to:
 ### Add Relevant Contacts
 Once you’ve created an account, proceed to add all relevant contacts to your account. This step is crucial for effective communication and collaboration between Hosted Power & your team. Adding relevant contacts to your account ensures that the right people receive the right information and communication.
 
-###Partner Integration (optional)
+### Partner Integration (optional)
 *If you are a direct customer, not working with Hosted Power through a partner, please continue to step 4.*
 
 If you're a customer working through a partner, from now on referred to as "Hosted Partner" -*pun intended*-, TurboStack provides a seamless integration process. Request to link your account to the Hosted Partner using our innovative "teams" feature. The Hosted Partner can then furnish you with a unique code, enabling you to seamlessly join their account. This integration enhances coordination and ensures a unified workflow, communicating the right information to the right people.
