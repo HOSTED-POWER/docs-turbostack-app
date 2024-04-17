@@ -1,6 +1,6 @@
 ---
 order: 200
-icon: icon-people
+icon: people
 ---
 
 # Groups
