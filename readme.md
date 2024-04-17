@@ -46,7 +46,7 @@ TurboStack empowers you with granular control over account permissions. Navigate
 
 ## Your TurboStack® application
 Once you have your customer profile set up, it's time for the real work.
-Let's configure your TurboStack environment in the [!ref](/TurboStack App/basic_install.md)
+Let's configure your TurboStack environment in the [!ref](turbostack-app/basic_install/)
 
 * TurboStack Command Line Interface: [ts-cli](https://portal.hosted-power.com/knowledgebase/article/150/turbostack-command-line-interface/)
 
