@@ -14,13 +14,14 @@ If this is the first time you're trying to log in to your PoC-environment of Pro
 
 ## Account Setup
 
-Fist things first. You need to set up a new account, which will give you access to our environments. You can [sign-up here](https://portal.hosted-power.com/signup/)
+### Create a Customer Profile
+First things first. You need to set up a new account in our Customer Center, which will give you access to your profile & environments. You can [sign-up here](https://portal.hosted-power.com/signup/)
+Please fill in the required information and submit.
 
-## Your control panel
-
-You can reach your control panel via this link: [portal.hosted-power.com](https://portal.hosted-power.com/)
+## Login into the Hosted Power Customer Center
+You can reach the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/)
  
-Your control panel enables you to:
+Your customer center enables you to:
 * Manage contact information
 * Add billing information
 * Follow-up on your support tickets
@@ -29,7 +30,21 @@ Your control panel enables you to:
 * Add SSH users, configure SSL certificates
 * etc...
 
-## Your TurboStack ® application
+###Add Relevant Contacts
+Once you’ve created an account, proceed to add all relevant contacts to your account. This step is crucial for effective communication and collaboration between Hosted Power & your team. Adding relevant contacts to your account ensures that the right people receive the right information and communication.
+
+###Partner Integration (optional)
+*If you are a direct customer, not working with Hosted Power through a partner, please continue to step 4.*
+
+If you're a customer working through a partner, from now on referred to as "Hosted Partner" -*pun intended*-, TurboStack provides a seamless integration process. Request to link your account to the Hosted Partner using our innovative "teams" feature. The Hosted Partner can then furnish you with a unique code, enabling you to seamlessly join their account. This integration enhances coordination and ensures a unified workflow, communicating the right information to the right people.
+
+###Set Permissions
+
+TurboStack empowers you with granular control over account permissions. Navigate to the settings and check the appropriate permissions for each contact. Specify who can manage servers, access billing information, handle tickets, and more. This level of customization enables you to allocate resources efficiently by determining which employees can work on specific projects.
+
+**Congratulations!** You have now successfully set up your account, laying the foundation for efficient account management and collaboration within the Hosted Power ecosystem.
+
+## Your TurboStack® application
 
 * TurboStack app: [my.turbostack.app](https://my.turbostack.app/login)
 * TurboStack Command Line Interface: [ts-cli](https://portal.hosted-power.com/knowledgebase/article/150/turbostack-command-line-interface/)
@@ -37,6 +52,7 @@ Your control panel enables you to:
 ## Getting started with your TurboStack
 
 ### 1. Deployment
+Most applications can be easily deployed, as we already have fully optimized TurboStack technology for most commonly used open source solutions. Once deployed, you will receive the necessary info to be able to manage your TurboStack environment.
 
 ### 2. Login via SSH
 
