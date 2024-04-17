@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766674531925">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766674664328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Redis</title>
     <meta name="title" content="Redis">
+    <meta name="description" content="By default there are always at least 2 redis server instances available:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/best_practices/caching/redis/">
@@ -19,19 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/best_practices/caching/redis/">
     <meta property="og:title" content="Redis">
+    <meta property="og:description" content="By default there are always at least 2 redis server instances available:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/best_practices/caching/redis/">
     <meta property="twitter:title" content="Redis">
+    <meta property="twitter:description" content="By default there are always at least 2 redis server instances available:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.766674531925" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.766674664328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766674531925" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766674664328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766674531925" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766674664328" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,6 +191,30 @@
         <span>Redis</span>
     </h1>
 </doc-anchor-target>
+<p>By default there are always at least 2 redis server instances available:</p>
+<ul>
+<li>redis
+<ul>
+<li>port 6379 (default)
+socket file: /var/run/redis/redis.sock
+Suitable for cache
+Volatile data/information
+Can be cleared at all times, shouldn&#x27;t influence application when cleared
+Data = non persistent (volatile)
+redis-persistent
+port 6378 (non default)
+socket file: /var/run/redis-persistent/redis.sock
+Suitable for sessions
+Persistent data/information
+Should/will never be cleared, clearing would influence application
+Data = persistent (non-volatile)
+Notes:</li>
+</ul>
+</li>
+</ul>
+<p>Using the socket file is recommended when using local redis instances (less overhead = better performance!)
+Try to use seperate databases when having multiple websites/applications on the same server (e.g. db 1 , db 2, ...)
+By default there are 16 databases available (0-15), this could be increased on request</p>
 
                                 
                                 <!-- Required only on API pages -->
