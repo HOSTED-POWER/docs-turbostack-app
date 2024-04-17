@@ -38,7 +38,7 @@ Require env AllowIP
 
 ==- <span style="color:#5283ff; font-size:24px;">**Block infamous bytespider bot**</span>
 
-Sometimes a server can go high in load due to the infamous bytespider bot. This one can be excluded by implementing this piece of code: 
+Sometimes a server can go high in load due to the infamous bytespider bot. This one can be excluded by implementing this piece of code inside the .htaccess: 
 
 ```
 <IfModule mod_rewrite.c>
