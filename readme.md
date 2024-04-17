@@ -30,7 +30,7 @@ Your customer center enables you to:
 * Add SSH users, configure SSL certificates
 * etc...
 
-###Add Relevant Contacts
+### Add Relevant Contacts
 Once you’ve created an account, proceed to add all relevant contacts to your account. This step is crucial for effective communication and collaboration between Hosted Power & your team. Adding relevant contacts to your account ensures that the right people receive the right information and communication.
 
 ###Partner Integration (optional)
@@ -38,7 +38,7 @@ Once you’ve created an account, proceed to add all relevant contacts to your a
 
 If you're a customer working through a partner, from now on referred to as "Hosted Partner" -*pun intended*-, TurboStack provides a seamless integration process. Request to link your account to the Hosted Partner using our innovative "teams" feature. The Hosted Partner can then furnish you with a unique code, enabling you to seamlessly join their account. This integration enhances coordination and ensures a unified workflow, communicating the right information to the right people.
 
-###Set Permissions
+### Set Permissions
 
 TurboStack empowers you with granular control over account permissions. Navigate to the settings and check the appropriate permissions for each contact. Specify who can manage servers, access billing information, handle tickets, and more. This level of customization enables you to allocate resources efficiently by determining which employees can work on specific projects.
 
