@@ -3,7 +3,7 @@ order: 100
 icon: ":zap:"
 ---
 
-# Getting Started
+# Getting Started :zap:
 
 ## Welcome
 
@@ -46,9 +46,7 @@ TurboStack empowers you with granular control over account permissions. Navigate
 
 ## Your TurboStack® application
 Once you have your customer profile set up, it's time for the real work.
-Let's configure your TurboStack environment in the [!ref](turbostack-app/basic_install/)
-
-* TurboStack Command Line Interface: [ts-cli](https://portal.hosted-power.com/knowledgebase/article/150/turbostack-command-line-interface/)
+Let's check out your TurboStack environment in the [TurboStack App](turbostack-app/basic_install/)
 
 ## Getting started with your TurboStack
 
@@ -57,14 +55,19 @@ Most applications can be easily deployed, as we already have fully optimized Tur
 
 ### 2. Login via SSH
 
+Get started by [creating SSH keys and logging in to your TurboStack via SSH](turbostack_configuration/SSH).
+
 ### 3. Configure your TurboStack
 
 #### 3.1 YAML configuration
 
+#### 3.2 TS CLI
+[More info](turbostack_configuration/ts_cli.md) on our TurboStack Command Line Interface
+
 ### 4. Clone settings from an existing TurboStack
 
-### Installing a new application on your TurboStack
+### 5. Installing a new application on your TurboStack
 
 ## In need of Support?
 
-Got burning questions or bursting with feedback? Don't hold back – we thrive on it! Shoot us a message at [support@hosted-power.com](support@hosted-power.com) or call us at +32 53 599 000, and our squad of Turbo-trouble solvers will swoop in. Hosted Power's sales and support gurus are at your service on weekdays during office hours. Of course you can count on your SLA should critical incidents happen.
+Got burning questions or bursting with feedback? Don't hold back – we thrive on it! Shoot us a message at [support@hosted-power.com](mailto:support@hosted-power.com) or call us at +32 53 599 000, and our squad of Turbo-trouble solvers will swoop in. Hosted Power's sales and support gurus are at your service on weekdays during office hours. Of course you can count on your SLA should critical incidents happen.
