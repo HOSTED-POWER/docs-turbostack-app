@@ -3,7 +3,7 @@ order: 200
 icon: info
 ---
 
-# Getting started
+# Getting Started
 
 ## Login and locate your managed servers
 
