@@ -21,7 +21,7 @@ Please fill in the required information and submit.
 ## Login into the Hosted Power Customer Center
 You can reach the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/)
  
-Your customer center enables you to:
+Our customer center enables you to:
 * Manage contact information
 * Add billing information
 * Follow-up on your support tickets
@@ -45,8 +45,9 @@ TurboStack empowers you with granular control over account permissions. Navigate
 **Congratulations!** You have now successfully set up your account, laying the foundation for efficient account management and collaboration within the Hosted Power ecosystem.
 
 ## Your TurboStack® application
+Once you have your customer profile set up, it's time for the real work.
+Let's configure your TurboStack environment in the [TurboStack App](../TurboStack App/basic_install.md)
 
-* TurboStack app: [my.turbostack.app](https://my.turbostack.app/login)
 * TurboStack Command Line Interface: [ts-cli](https://portal.hosted-power.com/knowledgebase/article/150/turbostack-command-line-interface/)
 
 ## Getting started with your TurboStack
