@@ -5,7 +5,7 @@ icon: ":zap:"
 
 # Getting Started
 
-## Overview
+## Welcome
 
 Welcome! You have reached these pages because you're interested in the TurboStack ® experience.
 
