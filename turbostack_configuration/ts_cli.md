@@ -4,11 +4,11 @@ order: 20
 
 # TS CLI
 
-The TurboStack Command Line Interface (later referred to as TSCLI) is available on all TurboStack servers to provide you with an easy to use tool to manage the services on your server, even ones you would normally need root access for. Below is a short description of the various features.
+The TurboStack Command Line Interface (later referred to as TSCLI) is available on all TurboStack nodes to provide you with an easy to use tool to manage the services on your environment, even ones you would normally need root access for. Below is a short description of the various features.
 
  
 ## TSCLI Commands
-The TSCLI tool uses levels of arguments to categorize functions. Every command starts with 'tscli' followed by the service you're managing, followed by the parameters for the function you're using as documented below.
+The TSCLI tool uses levels of arguments to categorize functions. Every command starts with **'tscli'** followed by the service you're managing, followed by the parameters for the function you're using as documented below.
 
 ### NGINX Webserver
 [!badge icon="rocket" text="tscli nginx reload"] - Verifies the NGINX configuration and reloads it if it is valid. If it isn't valid you'll get an error with the issue reported.
