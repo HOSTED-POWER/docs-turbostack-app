@@ -36,14 +36,15 @@ Require env AllowIP
 ===
 
 
-==- <span style="color:#5283ff; font-size:24px;">**Hier komt dan een tweede voorbeeld**</span>
+==- <span style="color:#5283ff; font-size:24px;">**Block infamous bytespider bot**</span>
 
-Dit is een tweede eenvoudig voorbeeld voor preview purposes
-
-##### Een extra titel kan er ook wel bij
-
+Sometimes a server can go high in load due to the infamous bytespider bot. This one can be excluded by implementing this piece of code: 
 
 ```
-<h1>Hello world</h1>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_USER_AGENT} Bytespider [NC]
+    RewriteRule .* - [F]
+</IfModule>
 ```
 ===
