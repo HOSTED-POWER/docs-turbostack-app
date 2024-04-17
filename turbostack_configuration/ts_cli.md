@@ -21,8 +21,9 @@ This command will reload the NGINX service configuration
 [!badge icon="rocket" text="tscli nginx reload"] - Verifies the NGINX configuration and reloads it if it is valid. If it isn't valid you'll get an error with the issue reported.
 
 ### BlackFire php Profiler
-[!badge icon="rocket" text="tscli blackfire enable"] - Installs the Blackfire Profiler and restarts the PHP-FPM service(s).
-[!badge icon="rocket" text="tscli blackfire enable"] - Uninstalls the Blackfire Profiler and restarts the PHP-FPM service(s).
+[!badge text="test"]
+[!badge icon=:icon-rocket: text="tscli blackfire enable"] - Installs the Blackfire Profiler and restarts the PHP-FPM service(s).
+[!badge icon=":icon-rocket:" text="tscli blackfire enable"] - Uninstalls the Blackfire Profiler and restarts the PHP-FPM service(s).
 [!badge icon="rocket" text="tscli blackfire reload"] - Restarts the Blackfire Profiler service, to apply changes to the configuration.
 
 ### Firewall
