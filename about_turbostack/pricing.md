@@ -12,4 +12,4 @@ Each environment is configured to ensure the fastest loading times and stability
 Your project can be delivered at lightning speed. Within half an hour we deploy any desired technology or software.Your project can be delivered at lightning speed. Within half an hour we deploy any desired technology or software.
 
 ## Pricing
-We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. [Check out our packages here.](https://www.hosted-power.com/en/turbostack#our-packages){:target="_blank"}
+We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. [Check out our packages here.](https://www.hosted-power.com/en/turbostack#our-packages)
