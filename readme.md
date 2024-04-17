@@ -55,7 +55,7 @@ Most applications can be easily deployed, as we already have fully optimized Tur
 
 ### 2. Login via SSH
 
-Get started by [creating SSH keys and logging in to your TurboStack via SSH](turbostack_configuration/SSH).
+Get started by [creating SSH keys and logging in to your TurboStack via SSH](turbostack_configuration/SSH.md).
 
 ### 3. Configure your TurboStack
 
