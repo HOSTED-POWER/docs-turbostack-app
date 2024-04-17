@@ -61,7 +61,7 @@ Get started by [creating SSH keys and logging in to your TurboStack via SSH](tur
 
 #### 3.1 YAML configuration
 
-####3.2 TS CLI
+#### 3.2 TS CLI
 [More info](turbostack_configuration/TSCLI) on our TurboStack Command Line Interface
 
 ### 4. Clone settings from an existing TurboStack
