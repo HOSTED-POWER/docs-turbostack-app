@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766762678669">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766762854011">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,22 +21,22 @@
     <meta property="og:url" content="https://docs.turbostack.app/control_panels/cpanel/">
     <meta property="og:title" content="cPanel">
     <meta property="og:description" content="Login via ssh as the account user (or login via cPanel -> Cronjobs)">
-    <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/groups/managecontacts.png">
+    <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/control_panels/cpanel/">
     <meta property="twitter:title" content="cPanel">
     <meta property="twitter:description" content="Login via ssh as the account user (or login via cPanel -> Cronjobs)">
-    <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/groups/managecontacts.png">
+    <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766762678669" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766762854011" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766762678669" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766762854011" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766762678669" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766762854011" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -193,10 +193,10 @@
         <span>cPanel</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="how-to-correctly-configure-magento-2-cronjob-under-cpanel">
+<doc-anchor-target id="how-to-correctly-configure-a-magento-2-cronjob-under-cpanel">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-correctly-configure-magento-2-cronjob-under-cpanel">#</doc-anchor-trigger>
-        <span>How to correctly configure Magento 2 cronjob under cPanel</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-correctly-configure-a-magento-2-cronjob-under-cpanel">#</doc-anchor-trigger>
+        <span>How to correctly configure a Magento 2 cronjob under cPanel</span>
     </h2>
 </doc-anchor-target>
 <p>Login via ssh as the account user (or login via cPanel -&gt; Cronjobs)</p>
@@ -218,10 +218,21 @@ MAILTO=&quot;&quot;
 <p>This now requires each subdomain be verified individually. If this fails, they will automatically stop including them in the attempt and send an alert to your configured mail addresses. This can get very spammy, so you might want to solve the root cause. More context at the official cPanel docs.</p>
 <p>To resolve this, we recommend you check the configured domains. As you can see in the screenshot below, this often includes auto-generated cPanel subdomains</p>
 <p><figure class="content-center">
-    <img src="../../img/turbostackapp/groups/managecontacts.png" alt="CreateTeams">
-    <figcaption class="caption">CreateTeams</figcaption>
+    <img src="../../img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png" alt="AutoSSL issue">
+    <figcaption class="caption">AutoSSL issue</figcaption>
 </figure>
 </p>
+<p>As you can see, there&#x27;s a lot of unprotected subdomains, however, none of these are actually in use. As such, you can safely exclude these from your certificate.
+To do this, you need to be logged in as the user of the domain for which the certificate is being generated.</p>
+<p>Once logged in, you need to find the following option in your main menu: SSL/TLS Status</p>
+<p>That page will look like this:
+<figure class="content-center">
+    <img src="../../img/turbostackapp/control_panels/kb-cpanel-autossl-issue2.png" alt="AutoSSL issue2">
+    <figcaption class="caption">AutoSSL issue2</figcaption>
+</figure>
+</p>
+<p>Here you can see what your subdomains might look like. &quot;AutoSSL Domain Validated&quot; means it works, so you can ignore those. Then, all subdomains in red need to be checked. If you don&#x27;t use the subdomain, you should click &quot;Exclude from AutoSSL&quot; as seen in the second item in the screenshot.
+Once you&#x27;ve dealt with all subdomains in error, you can click the &quot;Run AutoSSL&quot; button at the top of the page to re-run the validation. This will mean no more errors when running AutoSSL, and no more alert spam!</p>
 
                                 
                                 <!-- Required only on API pages -->
