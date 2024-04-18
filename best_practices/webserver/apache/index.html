@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766761689178">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766762146676">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Apache</title>
     <meta name="title" content="Apache">
-    <meta name="description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on...">
+    <meta name="description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auth enabled, based on...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/best_practices/webserver/apache/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/best_practices/webserver/apache/">
     <meta property="og:title" content="Apache">
-    <meta property="og:description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on...">
+    <meta property="og:description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auth enabled, based on...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/best_practices/webserver/apache/">
     <meta property="twitter:title" content="Apache">
-    <meta property="twitter:description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on...">
+    <meta property="twitter:description" content="In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auth enabled, based on...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.766761689178" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.766762146676" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766761689178" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766762146676" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766761689178" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766762146676" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -191,16 +191,31 @@
         <span>Apache</span>
     </h1>
 </doc-anchor-target>
-<doc-panel id="span-style-color-5283ff-font-size-24px-grant-or-deny-access-to-server-for-specific-ip-s-while-using-basic-auth-span" collapsed>
-    <template #title><span style="color:#5283ff; font-size:24px;"><strong>Grant or deny access to server for specific IP&#x27;s while using basic auth</strong></span></template>
-<p>In this article, we&#x27;ll tackle the problem how we can decide if a visitor should or should not login on a server with basic auht enabled, based on it&#x27;s IP-adress.</p>
+<doc-anchor-target id="grant-or-deny-access-to-server-for-specific-ips-while-using-basic-auth">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#grant-or-deny-access-to-server-for-specific-ips-while-using-basic-auth">#</doc-anchor-trigger>
+        <span>Grant or deny access to server for specific IP&#x27;s while using basic auth</span>
+    </h2>
+</doc-anchor-target>
+<p>In this article, we&#x27;ll tackle the problem how we can decide if a visitor should or should not login on a server with basic auth enabled, based on it&#x27;s IP-address.</p>
 <p>So what is the result we want to achieve? We want to implement an .htpasswd so visitors need to have a valid login, except when the request came from a whitelisted IP adress.
 In that case, no login is asked and you&#x27;ll be redirected to the site. Like a VIP that would skip a waiting queue for a club.</p>
+<p>This method is used for Apache2</p>
+<doc-anchor-target id="method-1-server-without-varnish-enabled">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#method-1-server-without-varnish-enabled">#</doc-anchor-trigger>
+        <span>Method 1: Server without varnish enabled</span>
+    </h4>
+</doc-anchor-target>
+<p>There is a difference when a server has or doesn&#x27;t have Varnish enabled.
+For now we&#x27;ll make it simple assuming there is no interruption with any service like Varnish. In that case we&#x27;ll use the next setup:</p>
+<p><em>For best practice, we put this code at the top of our .htaccess file</em></p>
+<p><code v-pre>AuthType Basic AuthName &quot;Restricted Content&quot; AuthUserFile /var/www/user/apache2/.htpasswd # Required IP's will be granted access without login require ip # Only a person with valid credentials will be redirected require valid-user</code></p>
 <doc-anchor-target id="method-2-server-with-varnish-enabled">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#method-2-server-with-varnish-enabled">#</doc-anchor-trigger>
         <span>Method 2: Server with varnish enabled</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
 <p>For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
 Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won&#x27;t happen, we&#x27;ll add a variable for the header that contains the whitelisted IP-adress.
@@ -220,9 +235,12 @@ SetEnvIF X-Forwarded-For  AllowIP
 # Include the env variable
 Require env AllowIP</code></pre>
 </doc-codeblock></div>
-</doc-panel>
-<doc-panel id="span-style-color-5283ff-font-size-24px-block-infamous-bytespider-bot-span" collapsed>
-    <template #title><span style="color:#5283ff; font-size:24px;"><strong>Block infamous bytespider bot</strong></span></template>
+<doc-anchor-target id="block-infamous-bytespider-bot">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#block-infamous-bytespider-bot">#</doc-anchor-trigger>
+        <span>Block infamous bytespider bot**</span></span>
+    </h2>
+</doc-anchor-target>
 <p>Sometimes a server can go high in load due to the infamous bytespider bot. This one can be excluded by implementing this piece of code inside the .htaccess:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">&lt;IfModule mod_rewrite.c&gt;
@@ -231,7 +249,6 @@ Require env AllowIP</code></pre>
     RewriteRule .* - [F]
 &lt;/IfModule&gt;</code></pre>
 </doc-codeblock></div>
-</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
