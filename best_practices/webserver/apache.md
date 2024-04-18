@@ -19,11 +19,20 @@ For now we'll make it simple assuming there is no interruption with any service 
 
 _For best practice, we put this code at the top of our .htaccess file_ 
 
-```AuthType Basic AuthName "Restricted Content" AuthUserFile /var/www/user/apache2/.htpasswd # Required IP's will be granted access without login require ip # Only a person with valid credentials will be redirected require valid-user```
+```
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /var/www/user/apache2/.htpasswd
+
+# Required IP's will be granted access without login require ip
+# Only a person with valid credentials will be redirected require valid-user
+```
 
 #### Method 2: Server with varnish enabled
 For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
 Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won't happen, we'll add a variable for the header that contains the whitelisted IP-adress.
+
+
 The code below will do the trick:
 
 _For best practice will we add the IP's to the required list require ip_
