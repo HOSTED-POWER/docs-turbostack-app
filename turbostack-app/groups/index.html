@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766741120042">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766742552344">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766741120042" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766742552344" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766741120042" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766742552344" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766741120042" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766742552344" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -200,9 +200,9 @@
         <span>Where to set up Groups</span>
     </h2>
 </doc-anchor-target>
-<p>In the Customer Center, navigate to Manage contacts. Here you can add your relevant contacts.
-Click through to the teams tab. Here you can create your own teams, e.g. Dev, Billing, Agency, etc.</p>
-<p>If you have a new partner requiring access to your environment, you also have the possibility to invite an existing team.</p>
+<p>In the <a href="https://portal.hosted-power.com/">Customer Center</a>, navigate to Manage contacts. Here you can add your relevant contacts.
+Click through to the <a href="https://portal.hosted-power.com/profiles/teams/">Teams</a> tab. Here you can create your own teams, e.g. Dev, Billing, Agency, etc.</p>
+<p>If you have a new partner requiring access to your environment, you have the possibility to invite an existing team. you can also easliy remove teams from your environment.</p>
 <p><figure class="content-center">
     <img src="../../img/turbostackapp/groups/managecontacts.png" alt="CreateTeams">
     <figcaption class="caption">CreateTeams</figcaption>
@@ -214,6 +214,16 @@ Click through to the teams tab. Here you can create your own teams, e.g. Dev, Bi
     <figcaption class="caption">SSHTab</figcaption>
 </figure>
 </p>
+<p>Centralized user rights can streamline access control and simplify administration.</p>
+<ul>
+<li>Identify the different levels of access required within your system.</li>
+<li>Create user groups based on these access levels. For example, you might have groups like &quot;admin&quot;, &quot;developers&quot;, &quot;sysadmins&quot;, etc.</li>
+<li>Add users to appropriate groups based on their roles and responsibilities.</li>
+<li>Each user who needs access to the system should generate an SSH key pair if they haven&#x27;t already.</li>
+<li>Have users from different groups attempt to log in using SSH keys to ensure that access is restricted according to the group-based configuration.</li>
+<li>Regularly review user access and group memberships to ensure that they align with your current organizational requirements.</li>
+</ul>
+<p>Hosted Power monitors system logs for any unauthorized access attempts and take appropriate action if necessary.</p>
 <doc-anchor-target id="scenario-2-use-groups-for-centralised-turbostack-node-management">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-2-use-groups-for-centralised-turbostack-node-management">#</doc-anchor-trigger>
@@ -225,6 +235,12 @@ Click through to the teams tab. Here you can create your own teams, e.g. Dev, Bi
     <figcaption class="caption">HostsTab</figcaption>
 </figure>
 </p>
+<p>Managing TurboStack nodes using groups can help streamline operations and ensure consistency across your infrastructure.</p>
+<ul>
+<li>Determine the different roles that your TurboStack nodes will fulfill, such as web node, database node, application node, etc.</li>
+<li>Create groups based on the identified server roles.</li>
+<li>Assign each TurboStack node to the appropriate group based on its role.</li>
+</ul>
 <doc-anchor-target id="the-security-tab">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-security-tab">#</doc-anchor-trigger>
