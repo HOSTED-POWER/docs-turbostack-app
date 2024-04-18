@@ -1,5 +1,6 @@
 ---
 order: 20
+icon: code-square
 ---
 
 # TurboStack CLI
