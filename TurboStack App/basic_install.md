@@ -8,9 +8,9 @@ icon: info
 ## Login and locate your managed servers
 
 When going to the [TurboStack App](https://my.turbostack.app/), 
-login with credentials for [portal.hosted-power.com](https://portal.hosted-power.com/).<br>
+login with credentials for our Customer Center: [portal.hosted-power.com](https://portal.hosted-power.com/).<br>
 
-If you don't have a Login to the Customer Center yet, you can find more info [here](https://docs.turbostack.app/#create-a-customer-profile).
+If you don't have a login to the Customer Center yet, you can find more info [here](https://docs.turbostack.app/#create-a-customer-profile).
 
 ![TurboStackAppLogin](../img/turbostackapp/basicinstall/tsa_login1.png)
 
