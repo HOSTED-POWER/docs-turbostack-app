@@ -39,7 +39,7 @@ system_users:
         python_version: 3.11.8
         cert_type: letsencrypt
     ftp: []
-  - username: haarshop
-  - username: weba.be
-  - username: craftcms
+  - username: Webshop1
+  - username: Webshop2
+  - username: Webshopx
 ```
