@@ -3,7 +3,7 @@ order: 200
 icon: info
 ---
 
-# TurboStack App Basics
+# The Basics
 
 ## Login and locate your managed servers
 
