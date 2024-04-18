@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766762224100">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766762264645">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.766762224100" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.766762264645" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766762224100" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766762264645" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766762224100" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766762264645" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -202,10 +202,10 @@
 In that case, no login is asked and you&#x27;ll be redirected to the site. Like a VIP that would skip a waiting queue for a club.</p>
 <p>This method is used for Apache2</p>
 <doc-anchor-target id="method-1-server-without-varnish-enabled">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#method-1-server-without-varnish-enabled">#</doc-anchor-trigger>
         <span>Method 1: Server without varnish enabled</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>There is a difference when a server has or doesn&#x27;t have Varnish enabled.
 For now we&#x27;ll make it simple assuming there is no interruption with any service like Varnish. In that case we&#x27;ll use the next setup:</p>
@@ -219,10 +219,10 @@ AuthUserFile /var/www/user/apache2/.htpasswd
 # Only a person with valid credentials will be redirected require valid-user</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="method-2-server-with-varnish-enabled">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#method-2-server-with-varnish-enabled">#</doc-anchor-trigger>
         <span>Method 2: Server with varnish enabled</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
 Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won&#x27;t happen, we&#x27;ll add a variable for the header that contains the whitelisted IP-adress.</p>
@@ -245,7 +245,7 @@ Require env AllowIP</code></pre>
 <doc-anchor-target id="block-infamous-bytespider-bot">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#block-infamous-bytespider-bot">#</doc-anchor-trigger>
-        <span>Block infamous bytespider bot**</span></span>
+        <span>Block infamous bytespider bot</span>
     </h2>
 </doc-anchor-target>
 <p>Sometimes a server can go high in load due to the infamous bytespider bot. This one can be excluded by implementing this piece of code inside the .htaccess:</p>
