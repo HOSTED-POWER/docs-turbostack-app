@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766767326793">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766768849264">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Firewall</title>
     <meta name="title" content="Firewall">
-    <meta name="description" content="Hosted Power prefers you to use our TS CLI commands.">
+    <meta name="description" content="Hosted Power prefers you to use our TS CLI commands if you want to make changes to the Firewall settings.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/turbostack_configuration/firewall/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/turbostack_configuration/firewall/">
     <meta property="og:title" content="Firewall">
-    <meta property="og:description" content="Hosted Power prefers you to use our TS CLI commands.">
+    <meta property="og:description" content="Hosted Power prefers you to use our TS CLI commands if you want to make changes to the Firewall settings.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/turbostack_configuration/firewall/">
     <meta property="twitter:title" content="Firewall">
-    <meta property="twitter:description" content="Hosted Power prefers you to use our TS CLI commands.">
+    <meta property="twitter:description" content="Hosted Power prefers you to use our TS CLI commands if you want to make changes to the Firewall settings.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766767326793" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766768849264" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766767326793" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766768849264" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766767326793" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766768849264" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -191,7 +191,7 @@
         <span>Firewall</span>
     </h1>
 </doc-anchor-target>
-<p>Hosted Power prefers you to use our <a href="https://docs.turbostack.app/turbostack-app/turbostackcli/">TS CLI</a> commands.</p>
+<p>Hosted Power prefers you to use our <a href="https://docs.turbostack.app/turbostack-app/turbostackcli/">TS CLI</a> commands if you want to make changes to the Firewall settings.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">Usage: tscli firewall [OPTIONS] COMMAND [ARGS]...
  
@@ -208,6 +208,156 @@ Commands:
   unlist     Remove the provided IP from both allow and ignore lists
   whitelist  Add the provided IP to both allow and ignore lists</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="configserver-security--firewall-cheat-sheet">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configserver-security--firewall-cheat-sheet">#</doc-anchor-trigger>
+        <span>ConfigServer Security &amp; Firewall cheat sheet</span>
+    </h2>
+</doc-anchor-target>
+<p>Useful CSF SSH Command Line Commands in a “cheat sheet” format.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>csf -s</td>
+<td>Start the firewall rules</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -s</td>
+</tr>
+<tr>
+<td>csf -f</td>
+<td>Flush/Stop firewall rule (note: lfd may restart csf)</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -f</td>
+</tr>
+<tr>
+<td>csf -r</td>
+<td>Restart the firewall rules</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -r</td>
+</tr>
+<tr>
+<td>csf -a</td>
+<td>[IP.add.re.ss] [comment]	Allow an IP(allow access to all ports) and add to /etc/csf/csf.allow</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -a 187.33.3.3 Home IP Address</td>
+</tr>
+<tr>
+<td>csf -tr</td>
+<td>[IP.add.re.ss]	Remove an IP from the temporary IP ban or allow list</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -tr 66.192.23.1</td>
+</tr>
+<tr>
+<td>csf -tf</td>
+<td>Flush all IPs from the temporary IP entries</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -tf</td>
+</tr>
+<tr>
+<td>csf -d</td>
+<td>[IP.add.re.ss] [comment]	Deny an IP and add to /etc/csf/csf.deny</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -d 66.192.23.1 Blocked This Guy</td>
+</tr>
+<tr>
+<td>csf -dr</td>
+<td>[IP.add.re.ss]	Unblock an IP and remove from /etc/csf/csf.deny</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -dr 66.192.23.1</td>
+</tr>
+<tr>
+<td>csf -df</td>
+<td>Remove and unblock all entries in /etc/csf/csf.deny</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -df</td>
+</tr>
+<tr>
+<td>csf -g</td>
+<td>[IP.add.re.ss]	Search the iptables and ip6tables rules for a match (e.g. IP, CIDR, Port Number)</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -g 66.192.23.1</td>
+</tr>
+<tr>
+<td>csf -t</td>
+<td>Displays the current list of temporary allow and deny IP entries with their TTL and comment</td>
+<td><a href="mailto:root@server">root@server</a>[~]#csf -t</td>
+</tr>
+<tr>
+<td>csf -e</td>
+<td>Enable CSF Firewall</td>
+<td></td>
+</tr>
+<tr>
+<td>csf -x</td>
+<td>Diable CSF Firewall</td>
+<td></td>
+</tr>
+<tr>
+<td>csf -ra</td>
+<td>Restart CSF/LFD Firewall (iptables rules and LFD service)</td>
+<td></td>
+</tr>
+<tr>
+<td>service lfd restart</td>
+<td>Restart LFD only</td>
+<td></td>
+</tr>
+<tr>
+<td>csf -td IP 86400</td>
+<td>Block IP (temporarily for 24 hours, define in seconds)</td>
+<td></td>
+</tr>
+<tr>
+<td>csf -a IP</td>
+<td>Whitelist IP (allow access to all ports)</td>
+<td></td>
+</tr>
+<tr>
+<td>csf -a 192.168.0.0/24</td>
+<td>Whitelist (temporarily) IP range /24 (allow access to all ports)</td>
+<td></td>
+</tr>
+<tr>
+<td>csf -ta 192.168.0.0/24 86400</td>
+<td>Whitelist (temporarily) IP range /24 for 24 hours (allow access to all ports, define in seconds)</td>
+<td></td>
+</tr>
+<tr>
+<td>csf -tf</td>
+<td>Remove all temporary IP blocks</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Configuration location is in the folder /etc/csf/
+Main configuration file: /etc/csf/csf.conf</p>
+<doc-anchor-target id="csf-login-failure-daemon-lfd-blocks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#csf-login-failure-daemon-lfd-blocks">#</doc-anchor-trigger>
+        <span>CSF Login Failure Daemon (LFD) blocks</span>
+    </h2>
+</doc-anchor-target>
+<p>It&#x27;s possible you or your customers get blocked by the security mechanisms of the ConfigServer Firewall. The LFD component could block too many failed login attempts to SSH, FTP, POP3, IMAP, HTTP, etc.</p>
+<p>Unlike other applications, LFD is a daemon process that monitors logs continuously and so can react within seconds of detecting such attempts. It also monitors across protocols, so if attempts are made on different protocols in a short space of time, all those attempts will be counted against the threshold.</p>
+<doc-anchor-target id="unblock-an-ip-address-in-csf--reason-for-blocking">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#unblock-an-ip-address-in-csf--reason-for-blocking">#</doc-anchor-trigger>
+        <span>Unblock an IP Address in CSF &amp; Reason for blocking</span>
+    </h3>
+</doc-anchor-target>
+<p>Unblocking an IP Address in CSF &amp; Reason of blocking
+Home » Plugins » ConfigServer Security &amp; Firewall</p>
+<p>To determine whether an IP address is blocked, you can use the Search for IP button on the ConfigServer Security&amp;Firewall page. Simply enter the IP address into the search field and click the button.</p>
+<p>If the IP address is blocked, the reason for the block will be listed and an unlocked padlock icon will appear to the right of the blocked IP address. Clicking the padlock icon will unblock the IP in the firewall.</p>
+<doc-anchor-target id="whitelist-an-ip-address-in-csf">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#whitelist-an-ip-address-in-csf">#</doc-anchor-trigger>
+        <span>Whitelist an IP address in CSF</span>
+    </h3>
+</doc-anchor-target>
+<p>It&#x27;s possible to ignore some IP-Addresses for your office, home office or third party that are working for something like testing the website/application or if you running a vulnerability scan. Sometimes it can be happy that you will be blocked by the CSF for many failed logins how we explained here above the article. Ignoring an IP-address will be a good solutions to avoid blocking.</p>
+<p>Ignoring (Whitelisting) an IP Address
+Home »Plugins »ConfigServer Security &amp; Firewall</p>
+<p>To ignore an IP address in the firewall (csf.ignore), you can enter the IP address into the Quick Ignore section,  allow such as “Office network”, and click the Quick Ignore button.</p>
 
                                 
                                 <!-- Required only on API pages -->
