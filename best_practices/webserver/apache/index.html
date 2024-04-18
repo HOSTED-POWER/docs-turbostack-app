@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766762146676">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766762224100">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.766762146676" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.766762224100" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766762146676" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766762224100" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766762146676" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766762224100" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -210,7 +210,14 @@ In that case, no login is asked and you&#x27;ll be redirected to the site. Like 
 <p>There is a difference when a server has or doesn&#x27;t have Varnish enabled.
 For now we&#x27;ll make it simple assuming there is no interruption with any service like Varnish. In that case we&#x27;ll use the next setup:</p>
 <p><em>For best practice, we put this code at the top of our .htaccess file</em></p>
-<p><code v-pre>AuthType Basic AuthName &quot;Restricted Content&quot; AuthUserFile /var/www/user/apache2/.htpasswd # Required IP's will be granted access without login require ip # Only a person with valid credentials will be redirected require valid-user</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">AuthType Basic
+AuthName &quot;Restricted Content&quot;
+AuthUserFile /var/www/user/apache2/.htpasswd
+
+# Required IP's will be granted access without login require ip
+# Only a person with valid credentials will be redirected require valid-user</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="method-2-server-with-varnish-enabled">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#method-2-server-with-varnish-enabled">#</doc-anchor-trigger>
@@ -218,8 +225,8 @@ For now we&#x27;ll make it simple assuming there is no interruption with any ser
     </h4>
 </doc-anchor-target>
 <p>For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
-Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won&#x27;t happen, we&#x27;ll add a variable for the header that contains the whitelisted IP-adress.
-The code below will do the trick:</p>
+Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won&#x27;t happen, we&#x27;ll add a variable for the header that contains the whitelisted IP-adress.</p>
+<p>The code below will do the trick:</p>
 <p><em>For best practice will we add the IP&#x27;s to the required list require ip</em></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">AuthType Basic
