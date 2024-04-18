@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766758760170">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766760047649">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Mail</title>
     <meta name="title" content="Mail">
+    <meta name="description" content="SPF record">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/best_practices/mail/">
@@ -19,19 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/best_practices/mail/">
     <meta property="og:title" content="Mail">
+    <meta property="og:description" content="SPF record">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/best_practices/mail/">
     <meta property="twitter:title" content="Mail">
+    <meta property="twitter:description" content="SPF record">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766758760170" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766760047649" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766758760170" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766760047649" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766758760170" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766760047649" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,6 +191,249 @@
         <span>Mail</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="mail-delivery-best-practices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mail-delivery-best-practices">#</doc-anchor-trigger>
+        <span>Mail delivery best practices</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>SPF record
+<ul>
+<li>Most important, make sure to add both the ipv4 and ipv6 of your server!!</li>
+<li>Use -all at the end of your record!</li>
+</ul>
+</li>
+<li>DKIM will enhance delivery, however SPF will give you the most gain in delivery success.</li>
+<li>DMARC is an extra record which can improve even more, but it&#x27;s gain in delivery success is less than SPF and DKIM.
+<ul>
+<li>However it&#x27;s quite important from a security point of view (avoid abuse by external parties).</li>
+<li>The most basic DMARC txt record to create, which will enforce SPF: v=DMARC1; p=reject; aspf=s;</li>
+</ul>
+</li>
+<li>In doubt: Always use <a href="https://www.mail-tester.com/">Mail tester</a>
+<ul>
+<li>Make sure that you use the exact same method as the one your experience problems with when sending the mail to mail-tester.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="spf-record-syntax">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#spf-record-syntax">#</doc-anchor-trigger>
+        <span>SPF Record Syntax</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="mechanisms">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mechanisms">#</doc-anchor-trigger>
+        <span>Mechanisms</span>
+    </h3>
+</doc-anchor-target>
+<p>Mechanisms can be prefixed with one of four qualifiers:</p>
+<ul>
+<li>&quot;+&quot;	Pass</li>
+<li>&quot;-&quot;	Fail</li>
+<li>&quot;~&quot;	SoftFail</li>
+<li>&quot;?&quot;	Neutral</li>
+</ul>
+<p>If a mechanism results in a hit, its qualifier value is used. The default qualifier is &quot;+&quot;, i.e. &quot;Pass&quot;. For example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 -all&quot;
+&quot;v=spf1 a -all&quot;
+&quot;v=spf1 a mx -all&quot;
+&quot;v=spf1 +a +mx -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Mechanisms are evaluated in order. If no mechanism or modifier matches, the default result is &quot;Neutral&quot;.</p>
+<p>If a domain has no SPF record at all, the result is &quot;None&quot;. If a domain has a temporary error during DNS processing, you get the result &quot;TempError&quot; (called &quot;error&quot; in earlier drafts). If some kind of syntax or evaluation error occurs (eg. the domain specifies an unrecognized mechanism) the result is &quot;PermError&quot; (formerly &quot;unknown&quot;).</p>
+<p>Evaluation of an SPF record can return any of these results:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Result	  Explanation	                                                                              Intended action
+Pass	    The SPF record designates the host to be allowed to send	                                        accept
+Fail	    The SPF record has designated the host as NOT being allowed to send	                                reject
+SoftFail  The SPF record has designated the host as NOT being allowed to send but is in transition	accept but mark
+Neutral	  The SPF record specifies explicitly that nothing can be said about validity	                        accept
+None	    The domain does not have an SPF record or the SPF record does not evaluate to a result   	        accept
+PermError	A permanent error has occured (eg. badly formatted SPF record)	                                 unspecified
+TempError A transient error has occured	                                                                      accept or reject</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="the-all-mechanism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-all-mechanism">#</doc-anchor-trigger>
+        <span>The &quot;all&quot; mechanism</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">all</code></pre>
+</doc-codeblock></div>
+<p>This mechanism always matches. It usually goes at the end of the SPF record.</p>
+<p>Examples:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 mx -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Allow domain&#x27;s MXes to send mail for the domain, prohibit all others.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>The domain sends no mail at all.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 +all&quot;</code></pre>
+</doc-codeblock></div>
+<p>The domain owner thinks that SPF is useless and/or doesn&#x27;t care.</p>
+<doc-anchor-target id="the-ip4-mechanism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-ip4-mechanism">#</doc-anchor-trigger>
+        <span>The &quot;ip4&quot; mechanism</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">ip4:
+ip4:/</code></pre>
+</doc-codeblock></div>
+<p>The argument to the &quot;ip4:&quot; mechanism is an IPv4 network range. If no prefix-length is given, /32 is assumed (singling out an individual host address).</p>
+<p>Examples:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 ip4:192.168.0.1/16 -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Allow any IP address between 192.168.0.1 and 192.168.255.255.</p>
+<doc-anchor-target id="the-ip6-mechanism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-ip6-mechanism">#</doc-anchor-trigger>
+        <span>The &quot;ip6&quot; mechanism</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">ip6:
+ip6:/</code></pre>
+</doc-codeblock></div>
+<p>The argument to the &quot;ip6:&quot; mechanism is an IPv6 network range. If no prefix-length is given, /128 is assumed (singling out an individual host address).</p>
+<p>Examples:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 ip6:1080::8:800:200C:417A/96 -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Allow any IPv6 address between 1080::8:800:0000:0000 and 1080::8:800:FFFF:FFFF.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 ip6:1080::8:800:68.0.3.1/96 -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Allow any IPv6 address between 1080::8:800:0000:0000 and 1080::8:800:FFFF:FFFF.</p>
+<doc-anchor-target id="the-a-mechanism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-a-mechanism">#</doc-anchor-trigger>
+        <span>The &quot;a&quot; mechanism</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">a
+a/
+a:
+a:/</code></pre>
+</doc-codeblock></div>
+<p>All the A records for domain are tested. If the client IP is found among them, this mechanism matches. If the connection is made over IPv6, then an AAAA lookup is performed instead.</p>
+<p>If domain is not specified, the current-domain is used.</p>
+<p>The A records have to match the client IP exactly, unless a prefix-length is provided, in which case each IP address returned by the A lookup will be expanded to its corresponding CIDR prefix, and the client IP will be sought within that subnet.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 a -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>The current-domain is used.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 a:example.com -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Equivalent if the current-domain is example.com.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 a:mailers.example.com -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Perhaps example.com has chosen to explicitly list all the outbound mailers in a special A record under mailers.example.com.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 a/24 a:offsite.example.com/24 -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>If example.com resolves to 192.0.2.1, the entire class C of 192.0.2.0/24 would be searched for the client IP. Similarly for offsite.example.com. If more than one A record were returned, each one would be expanded to a CIDR subnet.</p>
+<doc-anchor-target id="the-mx-mechanism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-mx-mechanism">#</doc-anchor-trigger>
+        <span>The &quot;mx&quot; mechanism</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">mx
+mx/
+mx:
+mx:/</code></pre>
+</doc-codeblock></div>
+<p>All the A records for all the MX records for domain are tested in order of MX priority. If the client IP is found among them, this mechanism matches.</p>
+<p>If domain is not specified, the current-domain is used.</p>
+<p>The A records have to match the client IP exactly, unless a prefix-length is provided, in which case each IP address returned by the A lookup will be expanded to its corresponding CIDR prefix, and the client IP will be sought within that subnet.</p>
+<p>Examples:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 mx mx:deferrals.domain.com -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Perhaps a domain sends mail through its MX servers plus another set of servers whose job is to retry mail for deferring domains.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 mx/24 mx:offsite.domain.com/24 -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>Perhaps a domain&#x27;s MX servers receive mail on one IP address, but send mail on a different but nearby IP address.</p>
+<doc-anchor-target id="the-include-mechanism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-include-mechanism">#</doc-anchor-trigger>
+        <span>The &quot;include&quot; mechanism</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">include:</code></pre>
+</doc-codeblock></div>
+<p>The specified domain is searched for a match. If the lookup does not return a match or an error, processing proceeds to the next directive. Warning: If the domain does not have a valid SPF record, the result is a permanent error. Some mail receivers will reject based on a PermError.</p>
+<p>Examples:</p>
+<p>In the following example, the client IP is 1.2.3.4 and the current-domain is example.com.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 include:example.com -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>If example.com has no SPF record, the result is PermError.
+Suppose example.com&#x27;s SPF record were &quot;v=spf1 a -all&quot;.
+Look up the A record for example.com. If it matches 1.2.3.4, return Pass.
+If there is no match, other than the included domain&#x27;s &quot;-all&quot;, the include as a whole fails to match; the eventual result is still Fail from the outer directive set in this example.
+Trust relationships — The &quot;include:&quot; mechanism is meant to cross administrative boundaries. Great care is needed to ensure that &quot;include:&quot; mechanisms do not place domains at risk for giving SPF Pass results to messages that result from cross user forgery. Unless technical mechanisms are in place at the specified otherdomain to prevent cross user forgery, &quot;include:&quot; mechanisms should give a Neutral rather than Pass result. This is done by adding &quot;?&quot; in front of &quot;include:&quot;. The example above would be:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;v=spf1 ?include:example.com -all&quot;</code></pre>
+</doc-codeblock></div>
+<p>In hindsight, the name &quot;include&quot; was poorly chosen. Only the evaluated result of the referenced SPF record is used, rather than acting as if the referenced SPF record was literally included in the first. For example, evaluating a &quot;-all&quot; directive in the referenced record does not terminate the overall processing and does not necessarily result in an overall Fail. (Better names for this mechanism would have been &quot;if-pass&quot;, &quot;on-pass&quot;, etc.)</p>
+<doc-anchor-target id="common-smtp-and-e-mail-ports">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-smtp-and-e-mail-ports">#</doc-anchor-trigger>
+        <span>Common SMTP and E-mail ports</span>
+    </h2>
+</doc-anchor-target>
+<p>Common SMTP ports:</p>
+<ul>
+<li>SMTP – port 25 or 587</li>
+<li>Secure SMTP (SSL / TLS) – port 465 or 587</li>
+</ul>
+<p>Common Email retrieval ports:</p>
+<ul>
+<li>POP3 – port 110</li>
+<li>POP3 SSL (POP3S) – port 995</li>
+<li>IMAP – port 143</li>
+<li>IMAP SSL (IMAPS) – port 993</li>
+</ul>
+<doc-anchor-target id="spf--dkim-record-for-mailchimp">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#spf--dkim-record-for-mailchimp">#</doc-anchor-trigger>
+        <span>SPF &amp; DKIM Record For MailChimp</span>
+    </h2>
+</doc-anchor-target>
+<p>To authenticate your domain, you&#x27;ll need to complete tasks in Mailchimp and in the zone editor(portal) or control panel. This process requires you to copy and paste information from Mailchimp to your domain provider&#x27;s site. We recommend that you work with two browser windows or tabs to easily move between your sites.</p>
+<p>Here&#x27;s a brief overview of the process:</p>
+<p>In Mailchimp</p>
+<ul>
+<li>Verify your domain.</li>
+<li>Copy two important pieces of information, your CNAME record for DKIM, and your TXT record for SPF</li>
+</ul>
+<p>In Your Domain&#x27;s Control Panel or Zone Editor</p>
+<ul>
+<li>DKIM: Create a CNAME record for k1._domainkey.yourdomain.com with this value: dkim.mcsv.net.</li>
+<li>SPF: Create a TXT record for yourdomain.com with this value: v=spf1 include:servers.mcsv.net -all or add &quot;include:servers.mcsv.net&quot;  to your SPF record</li>
+</ul>
+<p>Note</p>
+<ul>
+<li>The URLs above are examples only. Replace &quot;yourdomain.com&quot; with the domain you want to authenticate.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
