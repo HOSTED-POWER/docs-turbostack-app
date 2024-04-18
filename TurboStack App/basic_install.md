@@ -10,6 +10,8 @@ icon: info
 When going to the [TurboStack App](https://my.turbostack.app/), 
 login with credentials for [portal.hosted-power.com](https://portal.hosted-power.com/).<br>
 
+If you don't have a Login to the Customer Center yet, you can find more info [here](https://docs.turbostack.app/#create-a-customer-profile).
+
 ![TurboStackAppLogin](../img/turbostackapp/basicinstall/tsa_login1.png)
 
 Once logged in all servers managed by this account will become visible in the **"Hosts"** tab.<br>
