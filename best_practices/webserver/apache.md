@@ -13,7 +13,7 @@ In that case, no login is asked and you'll be redirected to the site. Like a VIP
 
 This method is used for Apache2
 
-#### Method 1: Server without varnish enabled
+### Method 1: Server without varnish enabled
 There is a difference when a server has or doesn't have Varnish enabled.
 For now we'll make it simple assuming there is no interruption with any service like Varnish. In that case we'll use the next setup:
 
@@ -28,7 +28,7 @@ AuthUserFile /var/www/user/apache2/.htpasswd
 # Only a person with valid credentials will be redirected require valid-user
 ```
 
-#### Method 2: Server with varnish enabled
+### Method 2: Server with varnish enabled
 For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
 Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won't happen, we'll add a variable for the header that contains the whitelisted IP-adress.
 
@@ -52,7 +52,7 @@ SetEnvIF X-Forwarded-For  AllowIP
 Require env AllowIP
 ```
 
-## Block infamous bytespider bot**</span>
+## Block infamous bytespider bot
 
 Sometimes a server can go high in load due to the infamous bytespider bot. This one can be excluded by implementing this piece of code inside the .htaccess: 
 
