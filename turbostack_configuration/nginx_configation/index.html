@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766761553572">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766761689178">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Nginx configuration</title>
     <meta name="title" content="Nginx configuration">
+    <meta name="description" content="It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/turbostack_configuration/nginx_configation/">
@@ -19,19 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/turbostack_configuration/nginx_configation/">
     <meta property="og:title" content="Nginx configuration">
+    <meta property="og:description" content="It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/turbostack_configuration/nginx_configation/">
     <meta property="twitter:title" content="Nginx configuration">
+    <meta property="twitter:description" content="It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766761553572" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766761689178" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766761553572" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766761689178" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766761553572" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766761689178" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,6 +191,45 @@
         <span>Nginx configuration</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="enable-basic-authentication-on-your-website-for-nginx">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enable-basic-authentication-on-your-website-for-nginx">#</doc-anchor-trigger>
+        <span>Enable Basic Authentication on your website for NGINX</span>
+    </h2>
+</doc-anchor-target>
+<p>It&#x27;s relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack. This way you can block access to your development version of the website for non-authenticated users. This guide assumes you know what Basic Authentication is.</p>
+<doc-anchor-target id="how-to">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to">#</doc-anchor-trigger>
+        <span>How-to</span>
+    </h2>
+</doc-anchor-target>
+<p>First locate your nginx main configuration file from the home directory of your user:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">vim nginx/50main.conf</code></pre>
+</doc-codeblock></div>
+<p>Then, uncomment the following lines to activate Basic Authentication:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">location / {
+#auth_basic &quot;Administrator’s Area&quot;;
+#auth_basic_user_file /var/www/staging/.secrets/htpasswd;
+#satisfy any;</code></pre>
+</doc-codeblock></div>
+<p>OPTIONAL: You can add whitelisting based on IP-addresses for connections that will not need to identify using the Basic Auth service, simply add &quot;allow &quot;:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">location / {
+auth_basic &quot;Administrator’s Area&quot;;
+auth_basic_user_file /var/www/staging/.secrets/htpasswd;
+allow 35.187.75.91;
+allow 34.76.59.175;
+allow 34.76.201.228;
+allow 87.233.217.242/28;
+satisfy any;</code></pre>
+</doc-codeblock></div>
+<p>Lastly, to enact your changes, reload the NGINX service:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">tscli nginx reload</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
