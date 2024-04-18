@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766764282285">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766764435416">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>DirectAdmin</title>
     <meta name="title" content="DirectAdmin">
+    <meta name="description" content="Unfortunately DirectAdmin defaults to composer v2, despite efforts to override, this often get's updated to the newer version again.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/control_panels/directadmin/">
@@ -19,19 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/control_panels/directadmin/">
     <meta property="og:title" content="DirectAdmin">
+    <meta property="og:description" content="Unfortunately DirectAdmin defaults to composer v2, despite efforts to override, this often get's updated to the newer version again.">
+    <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/control_panels/directadmin/">
     <meta property="twitter:title" content="DirectAdmin">
+    <meta property="twitter:description" content="Unfortunately DirectAdmin defaults to composer v2, despite efforts to override, this often get's updated to the newer version again.">
+    <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766764282285" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766764435416" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766764282285" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766764435416" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766764282285" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766764435416" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,6 +193,62 @@
         <span>DirectAdmin</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="use-composer-version-1-on-directadmin">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-composer-version-1-on-directadmin">#</doc-anchor-trigger>
+        <span>Use composer version 1 on DirectAdmin</span>
+    </h2>
+</doc-anchor-target>
+<p>Unfortunately DirectAdmin defaults to composer v2, despite efforts to override, this often get&#x27;s updated to the newer version again.</p>
+<p>The solution? Use &quot;composer1 ...&quot; command explicitly instead of &quot;composer ...&quot; to use the v1 version!</p>
+<doc-anchor-target id="apache-reverse-proxy-to-docker-nodejs-or-any-other-service">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apache-reverse-proxy-to-docker-nodejs-or-any-other-service">#</doc-anchor-trigger>
+        <span>Apache reverse proxy to docker, nodejs or any other service</span>
+    </h2>
+</doc-anchor-target>
+<p>It&#x27;s possible to use reverse proxy on DirectAdmin quite easily, however it&#x27;s important to not block for example Let&#x27;s Encrypt.</p>
+<p>We will use port <strong>8086</strong> as an example here, navigate as admin user to:
+Server Manager &gt;&gt; Custom HTTPD Configurations &gt;&gt; &quot;Select applicable domain&quot; <strong>httpd.conf</strong> &gt;&gt; Customize &gt;&gt; Put the following code under <strong>CUSTOM2</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">RewriteEngine On
+RewriteCond %{REQUEST_URI} !^\.well-known/(.*)
+RewriteCond %{HTTPS} !=on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RequestHeader set &quot;X-Forwarded-Proto&quot; expr=%{REQUEST_SCHEME}
+ProxyPreserveHost On
+
+ProxyPass /.well-known !
+ProxyPass &quot;/&quot; &quot;http://localhost:8086/&quot;
+ProxyPassReverse &quot;/&quot; &quot;http://localhost:8086/&quot;</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="../../img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png" alt="Apache Reverse Proxy DirectAdmin">
+    <figcaption class="caption">Apache Reverse Proxy DirectAdmin</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="override-e-mail-in-directadmin">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#override-e-mail-in-directadmin">#</doc-anchor-trigger>
+        <span>Override e-mail in DirectAdmin</span>
+    </h2>
+</doc-anchor-target>
+<p>DirectAdmin sometimes has an unwanted default email from when using a web form. There are 2 possible solutions:</p>
+<ul>
+<li>Use an SMTP connector/plugin and configure it to use localhost</li>
+<li>Override the EMAIL tag in the php fpm setting
+<ol>
+<li>Go to Custom HTTPD Configurations</li>
+<li>Open the &quot;php-fpm.conf&quot; from the affected website/account</li>
+<li>Inside php-fpm Global |CUSTOM1|</li>
+<li>Add the override, for example |<a href="mailto:?EMAIL=john.doe@example.com">?EMAIL=john.doe@example.com</a>|</li>
+<li>Make sure to apply on all php versions</li>
+<li>Hit the save button</li>
+</ol>
+</li>
+</ul>
+<p><img src="../../img/turbostackapp/control_panels/fix-email-from.png" alt="Override mail DirectAdmin" /></p>
 
                                 
                                 <!-- Required only on API pages -->
