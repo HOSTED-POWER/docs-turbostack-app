@@ -15,7 +15,7 @@ If you have a new partner requiring access to your environment, you have the pos
 
 ![CreateTeams](../img/turbostackapp/groups/ManageContacts.png)
 
-###Scenario 1: Use Groups for centralised user rights management with SSH keys
+### Scenario 1: Use Groups for centralised user rights management with SSH keys
 
 ![SSHTab](../img/turbostackapp/groups/SSHTab.png)
 
