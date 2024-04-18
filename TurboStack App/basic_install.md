@@ -37,10 +37,39 @@ this will ensure everything gets deployed
 
 ## The 'server' tab
 
-the **server** tab defines some basic middleware configuration.
+The **server** tab defines some basic middleware configuration.
 Like the type of webserver and some different type of databases that are supported
 
 ![TurboStackAppServerTab](../img/turbostackapp/basicinstall/tsa_server_tab1.png)
 
 
 ## The 'accounts' tab
+
+The **account** tab defines the server users and the applications. A user can have one or more
+applications.<br>
+In the examples below we have 2 users, `prod` and `stag`.<br>
+The prod user has an applications running on the weburl `example.com` and `www.example.com`
+
+![TurboStackAppAccountTab](../img/turbostackapp/basicinstall/tsa_account_tab1.png)
+
+1. Shows user `prod` and containing applications
+2. Shows user `stag`, the layout is here collapsed
+3. Will create an additional user.
+4. Copy a user configuration data (+database) to a new or existing user
+
+
+## The 'groups' tab
+
+The **groups** tab can link a server to existing group.<br>
+groups can define additional configuration that can then be applied to all servers in that group.
+
+![TurboStackAppGroupTab](../img/turbostackapp/basicinstall/tsa_group_tab1.png)
+
+
+## The 'SSH' tab
+
+The **SSH** tab defines 1 or more public ssh keys that allow shell access to a server
+without using a password.<br>
+ssh keys can be added, deleted and edited
+
+![TurboStackAppSshTab](../img/turbostackapp/basicinstall/tsa_ssh_tab1.png)
