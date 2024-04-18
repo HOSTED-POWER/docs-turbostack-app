@@ -21,7 +21,7 @@ MAILTO=""
 
 This is a known problem in cPanel AutoSSL.
  
-This now requires each subdomain be verified individually. If this fails, they will automatically stop including them in the attempt and send an alert to your configured mail addresses. This can get very spammy, so you might want to solve the root cause. More context at the official cPanel docs. 
+This now requires each subdomain be verified individually. If this fails, they will automatically stop including them in the attempt and send an alert to your configured mail addresses. This can get very spammy, so you might want to solve the root cause. You can find more context in [the official cPanel docs](https://support.cpanel.net/hc/en-us/articles/4416419981335-Potential-reduced-AutoSSL-coverage-notification). 
 
 To resolve this, we recommend you check the configured domains. As you can see in the screenshot below, this often includes auto-generated cPanel subdomains
 
