@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766765388116">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766765631479">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>YAML</title>
     <meta name="title" content="YAML">
+    <meta name="description" content="#YAML">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/turbostack-app/yaml/">
@@ -19,19 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/turbostack-app/yaml/">
     <meta property="og:title" content="YAML">
+    <meta property="og:description" content="#YAML">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/turbostack-app/yaml/">
     <meta property="twitter:title" content="YAML">
+    <meta property="twitter:description" content="#YAML">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766765388116" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766765631479" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766765388116" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766765631479" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766765388116" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766765631479" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,6 +191,50 @@
         <span>YAML</span>
     </h1>
 </doc-anchor-target>
+<p>#YAML</p>
+<p><em>This page is under construction</em></p>
+<doc-anchor-target id="how-to-add-an-account">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-add-an-account">#</doc-anchor-trigger>
+        <span>How to add an account</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="how-to-add-a-vhost-to-an-account">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-add-a-vhost-to-an-account">#</doc-anchor-trigger>
+        <span>How to add a vHost to an account</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">---
+webserver: nginx
+redis_enabled: false
+system_users:
+  - username: custom
+  - username: magento
+    vhosts:
+      - server_name: magentotest.com
+        app_type: magento2
+        php_version: &quot;8.1&quot;
+        varnish_enabled: true
+        rabbitmq_enabled: true
+        cert_type: letsencrypt
+  - username: shopware
+  - username: akeneo
+  - username: woocommerce
+  - username: dotnet
+  - username: django
+  - username: odoo
+    vhosts:
+      - server_name: odootest.com
+        app_type: odoo
+        python_version: 3.11.8
+        cert_type: letsencrypt
+    ftp: []
+  - username: haarshop
+  - username: weba.be
+  - username: craftcms</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
