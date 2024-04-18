@@ -5,8 +5,7 @@ icon:
 
 # Firewall
 
-Hosted Power prefers you to use our [TS CLI](../turbostack-app/turbostackcli/) commands.
-
+Hosted Power prefers you to use our [TS CLI](https://docs.turbostack.app/turbostack-app/turbostackcli/) commands.
 
 
 ```
