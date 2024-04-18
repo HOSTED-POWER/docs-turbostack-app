@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766768984677">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766774815871">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766768984677" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766774815871" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766768984677" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766774815871" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766768984677" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766774815871" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -240,7 +240,7 @@ this will ensure everything gets deployed</p>
         <span>The &#x27;server&#x27; tab</span>
     </h2>
 </doc-anchor-target>
-<p>the <strong>server</strong> tab defines some basic middleware configuration.
+<p>The <strong>server</strong> tab defines some basic middleware configuration.
 Like the type of webserver and some different type of databases that are supported</p>
 <p><figure class="content-center">
     <img src="../../img/turbostackapp/basicinstall/tsa_server_tab1.png" alt="TurboStackAppServerTab">
@@ -253,6 +253,48 @@ Like the type of webserver and some different type of databases that are support
         <span>The &#x27;accounts&#x27; tab</span>
     </h2>
 </doc-anchor-target>
+<p>The <strong>account</strong> tab defines the server users and the applications. A user can have one or more
+applications.<br>
+In the examples below we have 2 users, <code v-pre>prod</code> and <code v-pre>stag</code>.<br>
+The prod user has an applications running on the weburl <code v-pre>example.com</code> and <code v-pre>www.example.com</code></p>
+<p><figure class="content-center">
+    <img src="../../img/turbostackapp/basicinstall/tsa_account_tab1.png" alt="TurboStackAppAccountTab">
+    <figcaption class="caption">TurboStackAppAccountTab</figcaption>
+</figure>
+</p>
+<ol>
+<li>Shows user <code v-pre>prod</code> and containing applications</li>
+<li>Shows user <code v-pre>stag</code>, the layout is here collapsed</li>
+<li>Will create an additional user.</li>
+<li>Copy a user configuration data (+database) to a new or existing user</li>
+</ol>
+<doc-anchor-target id="the-groups-tab">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-groups-tab">#</doc-anchor-trigger>
+        <span>The &#x27;groups&#x27; tab</span>
+    </h2>
+</doc-anchor-target>
+<p>The <strong>groups</strong> tab can link a server to existing group.<br>
+groups can define additional configuration that can then be applied to all servers in that group.</p>
+<p><figure class="content-center">
+    <img src="../../img/turbostackapp/basicinstall/tsa_group_tab1.png" alt="TurboStackAppGroupTab">
+    <figcaption class="caption">TurboStackAppGroupTab</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="the-ssh-tab">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-ssh-tab">#</doc-anchor-trigger>
+        <span>The &#x27;SSH&#x27; tab</span>
+    </h2>
+</doc-anchor-target>
+<p>The <strong>SSH</strong> tab defines 1 or more public ssh keys that allow shell access to a server
+without using a password.<br>
+ssh keys can be added, deleted and edited</p>
+<p><figure class="content-center">
+    <img src="../../img/turbostackapp/basicinstall/tsa_ssh_tab1.png" alt="TurboStackAppSshTab">
+    <figcaption class="caption">TurboStackAppSshTab</figcaption>
+</figure>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
