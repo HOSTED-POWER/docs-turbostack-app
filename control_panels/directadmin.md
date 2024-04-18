@@ -44,6 +44,34 @@ DirectAdmin sometimes has an unwanted default email from when using a web form. 
   4. Add the override, for example |?EMAIL=john.doe@example.com|
   5. Make sure to apply on all php versions
   6. Hit the save button
- 
- ![Override mail DirectAdmin](../img/turbostackapp/control_panels/fix-email-from.png)
+
+![Override mail DirectAdmin](../img/turbostackapp/control_panels/fix-email-from.png)
+
+## Disable Local Delivery for a Domain
+
+When you add a domain on your DirectAdmin server, a mail service is started for it by default. This can cause problems if another mail domain on this server wants to send mail to your domain of which the mail is NOT hosted on this server. This mail will try to be delivered locally, causing a message like the following:
+
+_SMTP-error (550) Recipient could not be added (No such recipient here)._
+
+You can easily solve this by disabling the mail service of your domain. 
+
+To do this, log in as the user of your domain and navigate to the option 'DNS Management', found under 'Account Manager'. Here you have the option 'Modify MX records', if you click on it you will see that the option 'Use this server to handle my emails. If not, change the MX records and uncheck this option.' is checked. Uncheck this and your problem is solved.
+
+## Spamexperts (or other) mail / SPF failures
+
+When using spamassisin in front of DirectAdmin, you see messages like:
+
+```
+2022-04-20 05:41:24 H=out7.antispamcloud.com [94.75.244.176] X=TLS1.2:ECDHE-ECDSA-AES128-GCM-SHA256:128 CV=no F=<info@email.ibood.com> rejected RCPT <recipient@example.com>: SPF: 123.123.123.123 is not allowed to send mail from email.ibood.com: Please see http://www.open-spf.org/Why : Reason: mechanism
+2022-04-20 06:38:26 H=out7.antispamcloud.com [94.75.244.176] X=TLS1.2:ECDHE-ECDSA-AES128-GCM-SHA256:128 CV=no F=<fd_ochtendnieuws@messagent.fdmediagroep.nl> rejected RCPT <recipient@example.com>: SPF: 123.123.123.123 is not allowed to send mail from messagent.fdmediagroep.nl: Please see http://www.open-spf.org/Why : Reason: mechanism
+```
+This is because you need to add spamexperts to the safe senders (relayhost), this can be done as following:
+
+edit this file: /etc/virtual/esf_skip_hosts
+```
+delivery.antispamcloud.com
+*.antispamcloud.com
+```
+(Afterwards restart spamassassin)
+
 
