@@ -1,6 +1,6 @@
 ---
 order: 180
-icon: code-square
+icon: terminal
 ---
 
 # TurboStack CLI
