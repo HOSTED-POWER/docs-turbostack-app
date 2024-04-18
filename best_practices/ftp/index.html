@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766766056204">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766766250142">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>FTP</title>
     <meta name="title" content="FTP">
+    <meta name="description" content="Incorrect login details used Login details used by users for FTP access include their username and password.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/best_practices/ftp/">
@@ -19,19 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/best_practices/ftp/">
     <meta property="og:title" content="FTP">
+    <meta property="og:description" content="Incorrect login details used Login details used by users for FTP access include their username and password.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/best_practices/ftp/">
     <meta property="twitter:title" content="FTP">
+    <meta property="twitter:description" content="Incorrect login details used Login details used by users for FTP access include their username and password.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766766056204" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766766250142" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766766056204" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766766250142" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766766056204" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766766250142" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,6 +191,30 @@
         <span>FTP</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="what-causes-the-login-failed-error-">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-causes-the-login-failed-error-">#</doc-anchor-trigger>
+        <span>What causes the “Login failed” error ?</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><p>Incorrect login details used
+Login details used by users for FTP access include their username and password. If these credentials are given wrongly in the FTP client, it can give a 530 login error in FTP.
+But for additional FTP accounts, the FTP login name is of the format ‘<a href="mailto:username@domain.com">username@domain.com</a>’. If the FTP username entered is not in this specific format, login failures happen.
+“530 Login authentication failed” also happens due to wrong password. Even a single additional space in the password can cause a login failure. Many account owners tend to overlook that aspect and struggle with 530 errors.</p>
+</li>
+<li><p>Path doesn&#x27;t exist
+When the FTP users gets created by the support team, a path will be assagined on creation. If the path doesn&#x27;t exists on the server this will cause a Login failure.</p>
+</li>
+<li><p>Unsupported TLS
+Of course, we can use <strong>TLSRequired off</strong> in our ProFTPd configuration as this allows for TLS and non-TLS logins, but if you want to make your FTP setup as secure as possible, you should enforce the use of TLS and make exceptions only for the users or groups that use an FTP client that doesn&#x27;t support TLS (if using another FTP client is not an option for those users).</p>
+</li>
+</ol>
+<p>If we want to allow the FTP user testuser to use plain FTP instead of FTP, we can configure this as follows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">PATH: /etc/proftpd/conf.d/99_override.conf 
+TLSRequired off</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -203,20 +230,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../best_practices/testing/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../best_practices/caching/redis/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Testing</span>
+                                                <span class="block mt-1">Redis</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../updating_your_turbostack/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../best_practices/webserver/apache/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Updating your Turbo​Stack</span>
+                                                <span class="block mt-1">Apache</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
