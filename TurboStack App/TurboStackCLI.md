@@ -22,6 +22,8 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### Firewall
 [!badge icon="rocket" text="tscli firewall check"] - Returns info on wether the IP parameter is listed in the iptables. Please make sure to only use valid IP addresses.
 
+[!badge icon="rocket" text="tscli firewall flush"] - Flushes all automatic firewall IP blocks from the blocklist.
+
 [!badge icon="rocket" text="tscli firewall block"] - Adds a firewall rule to block a specific IP address as specified in the IP parameter.
 
 [!badge icon="rocket" text="tscli firewall unblock"] - Removes an IP address from the firewall's deny list.
