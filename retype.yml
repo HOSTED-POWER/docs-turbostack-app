@@ -7,7 +7,7 @@ branding:
   logoAlign: left
   colors:
     label:
-      text: "#0066b2"         # Custom color for the label text
+      text: "#437FEC"         # Custom color for the label text
       background: "#ff0000"
 
 url: docs.turbostack.app
