@@ -21,7 +21,7 @@ links:
     icon: ":information_desk_person:"
     link: https://portal.hosted-power.com/
     target: blank
-  - text: Submit a ticket
+  - text: Submit a Ticket
     icon: ":icon-question:"
     link: mailto:support@hosted-power.com
     target: blank
