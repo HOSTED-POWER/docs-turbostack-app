@@ -3,7 +3,7 @@ order: 170
 icon: cloud
 ---
 
-# TS Application mgmt
+# TS Application Mgmt
 
 ## How to create a new application
 
