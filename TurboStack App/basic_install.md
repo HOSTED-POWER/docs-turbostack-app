@@ -55,7 +55,6 @@ The prod user has an applications running on the weburl `example.com` and `www.e
 1. Shows user `prod` and containing applications
 2. Shows user `stag`, the layout is here collapsed
 3. Will create an additional user.
-4. Copy a user configuration data (+database) to a new or existing user
 
 
 ## The 'groups' tab
@@ -73,3 +72,22 @@ without using a password.<br>
 ssh keys can be added, deleted and edited
 
 ![TurboStackAppSshTab](../img/turbostackapp/basicinstall/tsa_ssh_tab1.png)
+
+
+## The 'Security' tab
+
+<div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>This is an advanced section, use with caution</b></p>
+</span>
+</div>
+
+The **Security## tab can update the server firewall. Allowing (whitelisting) specific IPs or IP ranges<br>
+Or even allow or block complete country regions.
+
+![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
+
+1. Allow (whitelist) one or more IPs or IP ranges
+2. Block (blacklist) one or more countries
+3. Only allow (whitelist) one or more countries
