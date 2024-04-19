@@ -5,9 +5,9 @@ icon: globe
 
 # Domains
 
-## Add a domain
+## How to order a domain
 
-## Remove a domain
+## How to remove a domain
 
 ## (Bulk) transfer domains
 
