@@ -1,5 +1,10 @@
 ---
 order: 60
+icon: browser
 ---
 
-# Apache configuration
+# Apache
+
+Specific settings for Apache in TS config
+
+
