@@ -36,5 +36,6 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 
 [!badge icon="rocket" text="tscli varnish reload"] - Reloads the Varnisch Cache configuration
 
-
+### Redis Cache
+[!badge icon="rocket" text="tscli redis clear"] - Clears everything from Redis Cache's memory. 
 
