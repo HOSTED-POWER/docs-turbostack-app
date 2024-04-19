@@ -3,7 +3,7 @@ order: 80
 icon: plug
 ---
 
-# Incident management
+# Incident Management
 
 **Hosted Power** analyzes within the SLA response time whether the reported incident can be qualified as critical unavailability based on all the information. The analysis is done remotely (via telephone, e-mail, and or monitoring tools) by our own system engineers.
 
