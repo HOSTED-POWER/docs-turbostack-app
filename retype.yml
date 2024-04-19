@@ -1,12 +1,12 @@
 # full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
 
 branding:
-  title: TurboStack
+  title: TurboStack Docs
   logo: /img/logo-blue.png
   logoDark: /img/logo-white.png
   logoAlign: left
   colors:
-    label: Docs
+    label: 
       text: "#437FEC"         # Custom color for the label text
       background: "#ff0000"
 
