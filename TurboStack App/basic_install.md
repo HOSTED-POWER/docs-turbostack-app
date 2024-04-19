@@ -81,9 +81,10 @@ ssh keys can be added, deleted and edited
 <p style='margin-top:1em; text-align:center'>
 <b>This is an advanced section, use with caution</b></p>
 </span>
-</div>
+</div><br>
 
-The **Security## tab can update the server firewall. Allowing (whitelisting) specific IPs or IP ranges<br>
+
+The **Security** tab can update the server firewall. Allowing (whitelisting) specific IPs or IP ranges<br>
 Or even allow or block complete country regions.
 
 ![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
