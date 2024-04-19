@@ -1,5 +1,6 @@
 ---
 order: 110
+icon: commit
 ---
 
 # Pricing
