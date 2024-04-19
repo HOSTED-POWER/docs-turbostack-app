@@ -23,7 +23,7 @@ https://portal.hosted-power.com/profiles/teams/
 
 https://portal.hosted-power.com/profiles/teams/invite
 
-## Rights management 
+# User/Teams Rights management 
 You have the choice to either give rights to single users or to whole teams. 
 
 ## Billing contacts
