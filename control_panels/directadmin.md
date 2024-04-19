@@ -1,5 +1,6 @@
 ---
 order: 90
+icon: apps
 ---
 
 # DirectAdmin
