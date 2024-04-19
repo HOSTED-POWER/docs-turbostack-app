@@ -1,22 +1,26 @@
 ---
 order: 150
+icon: cloud
 ---
 
-# Howto create a new application
+# TS Application mgmt
 
-Open the TurboStack app and open the host view and select to host to update
+## How to create a new application
 
-## prerequisite
+* Open the TurboStack app
+* Click the host view
+* Select to host to update
+
+### Prerequisite
 
 Creating a new user on the [TurboStack App](https://my.turbostack.app).
 An account must exist before an application can be configured.
 How to create a new [account](./howto_newuser.md)
 
-
-## Creating a new application
+### Creating a new application
 
 Creating a new (default) application under the newly created `prod` user.<br><br>
-Scenario: creating a magento2 application listening on `www.example.com` and using varnish as caching
+Scenario: creating a Magento2 application, listening on `www.example.com` and using varnish as caching
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app1.png)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app2.png)
