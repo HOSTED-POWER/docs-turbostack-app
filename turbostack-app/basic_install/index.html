@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766774815871">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766827889339">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766774815871" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766827889339" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766774815871" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766827889339" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766774815871" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766827889339" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -266,7 +266,6 @@ The prod user has an applications running on the weburl <code v-pre>example.com<
 <li>Shows user <code v-pre>prod</code> and containing applications</li>
 <li>Shows user <code v-pre>stag</code>, the layout is here collapsed</li>
 <li>Will create an additional user.</li>
-<li>Copy a user configuration data (+database) to a new or existing user</li>
 </ol>
 <doc-anchor-target id="the-groups-tab">
     <h2>
@@ -295,6 +294,30 @@ ssh keys can be added, deleted and edited</p>
     <figcaption class="caption">TurboStackAppSshTab</figcaption>
 </figure>
 </p>
+<doc-anchor-target id="the-security-tab">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-security-tab">#</doc-anchor-trigger>
+        <span>The &#x27;Security&#x27; tab</span>
+    </h2>
+</doc-anchor-target>
+<div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>This is an advanced section, use with caution</b></p>
+</span>
+</div>
+<p>The **Security## tab can update the server firewall. Allowing (whitelisting) specific IPs or IP ranges<br>
+Or even allow or block complete country regions.</p>
+<p><figure class="content-center">
+    <img src="../../img/turbostackapp/basicinstall/tsa_security_tab1.png" alt="TurboStackAppSecurityTab">
+    <figcaption class="caption">TurboStackAppSecurityTab</figcaption>
+</figure>
+</p>
+<ol>
+<li>Allow (whitelist) one or more IPs or IP ranges</li>
+<li>Block (blacklist) one or more countries</li>
+<li>Only allow (whitelist) one or more countries</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
