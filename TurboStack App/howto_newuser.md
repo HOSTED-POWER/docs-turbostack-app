@@ -13,7 +13,9 @@ Creating a new user on the [TurboStack App](https://my.turbostack.app).
 * Open the server view
 
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user1.png)
+
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user2.png)
+
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user3.png)
 
 1. Go to the accounts page
