@@ -2,9 +2,9 @@
 order: 160
 ---
 
-# Howto create a new user and application
+# Howto create a new account
 
-## Creating a new account
+## Creating a new account (user)
 
 Creating a new user on the [TurboStack App](https://my.turbostack.app).
 Open the TurboStack app and open the server view
