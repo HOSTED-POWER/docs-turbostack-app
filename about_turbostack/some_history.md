@@ -1,5 +1,6 @@
 ---
 order: 100
+icon: mortar-board
 ---
 
 # Some history
