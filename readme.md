@@ -3,9 +3,9 @@ order: 100
 icon: zap
 ---
 
-# :zap: Getting Started :zap:
+# Getting Started 
 
-## Welcome
+## Welcome :zap:
 
 You have reached our TurboStack® documentation pages because you're interested in the full blown TurboStack® experience.
 We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. [Check out our packages here.](https://www.hosted-power.com/en/turbostack#our-packages)
