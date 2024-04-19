@@ -1,8 +1,9 @@
 ---
 order: 70
+icon: browser
 ---
 
-# Nginx configuration
+# Nginx 
 
 ## Enable Basic Authentication on your website for NGINX
 
