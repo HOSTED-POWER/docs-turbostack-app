@@ -1,21 +1,16 @@
 ---
-order: 160
+order: 150
 ---
 
-# Howto create a new user and application
+# Howto create a new application
 
-## Creating a new user
+Open the TurboStack app and open the host view and select to host to update
+
+## prerequisite
 
 Creating a new user on the [TurboStack App](https://my.turbostack.app).
-Open the TurboStack app and open the server view
-
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user1.png)
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user2.png)
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user3.png)
-
-1. Go to the accounts page
-2. Add a new account (user)
-3. Give the account a name and save
+An account must exist before an application can be configured.
+How to create a new [account](./howto_newuser.md)
 
 
 ## Creating a new application
@@ -44,3 +39,6 @@ Scenario: creating a magento2 application listening on `www.example.com` and usi
 10. Click `Save` to save and exit the configuration wizard.
 
 Now, the new application is configured, click `Save & Publish` to deploy the configuration to the server.
+
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app9.png)
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app10.png)
