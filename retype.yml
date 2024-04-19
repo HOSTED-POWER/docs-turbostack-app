@@ -22,7 +22,7 @@ links:
     link: https://portal.hosted-power.com/
     target: blank
   - text: Submit a Ticket
-    icon: ":icon-question:"
+    icon: ":incoming_envelope:"
     link: mailto:support@hosted-power.com
     target: blank
 
