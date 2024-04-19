@@ -23,12 +23,19 @@ Creating a new (default) application under the newly created `prod` user.<br><br
 Scenario: creating a Magento2 application, listening on `www.example.com` and using varnish as caching
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app1.png)
+
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app2.png)
+
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app3.png)
+
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app4.png)
+
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app5.png)
+
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app6.png)
+
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app7.png)
+
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app8.png)
 
 1. Open the detail section for the user
