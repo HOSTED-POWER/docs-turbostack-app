@@ -1,13 +1,16 @@
 ---
-order: 160
+order: 180
+icon: person
 ---
 
-# Howto create a new account
+# TS Accounts Management
 
 ## Creating a new account (user)
 
 Creating a new user on the [TurboStack App](https://my.turbostack.app).
-Open the TurboStack app and open the server view
+
+* Open the TurboStack App
+* Open the server view
 
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user1.png)
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user2.png)
@@ -18,4 +21,5 @@ Open the TurboStack app and open the server view
 3. Give the account a name and save
 
 Now an account is created. Applications can be installed.
-example, [Deploy a magento2 application](./howto_newapp.md)
+
+Example, [Deploy a Magento2 application](./howto_newapp.md)
