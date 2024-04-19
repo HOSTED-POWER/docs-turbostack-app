@@ -1,9 +1,9 @@
 ---
 order: 100
-icon: ":zap:"
+icon: zap
 ---
 
-# Getting Started :zap:
+# :zap: Getting Started :zap:
 
 ## Welcome
 
