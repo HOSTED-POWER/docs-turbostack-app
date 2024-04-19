@@ -17,9 +17,13 @@ links:
     icon: ":rocket:"
     link: https://my.turbostack.app
     target: blank
-  - text: Support
+  - text: Customer Center
     icon: ":information_desk_person:"
-    link: https://portal.hosted-power.com/clientarea/&languagechange=English?_gl=1*58t1i0*_ga_WFGSVF9BHR*MTcwOTIwMDQzNy4xLjEuMTcwOTIwMDQ2NC4zMy4wLjA.&_ga=2.3318320.1241137223.1709200437-546832127.1709200437
+    link: https://portal.hosted-power.com/
+    target: blank
+  - text: Submit a ticket
+    icon: ":icon-question:"
+    link: mailto:support@hosted-power.com
     target: blank
 
 edit:
