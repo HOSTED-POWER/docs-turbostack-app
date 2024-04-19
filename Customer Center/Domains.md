@@ -1,6 +1,6 @@
 ---
 order: 200
-icon: info
+icon: globe
 ---
 
 # Domains
