@@ -8,6 +8,11 @@ icon: code-square
 _This page is under construction_
 
 The source code of the configuration of the server could be found as yaml. The yaml allows to create new and 100% identical servers in seconds.
+![Yaml Source Code](..img/turbostackapp/YAML/source-code.png)
+
+You could also choose to work with YAML by default via the profile settings.
+
+![Profile Settings](../img/turbostackapp/YAML/profile-settings.png)
 
 ## How to add an account
 
