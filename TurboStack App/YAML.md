@@ -7,6 +7,8 @@ icon: code-square
 
 _This page is under construction_
 
+The source code of the configuration of the server could be found as yaml. The yaml allows to create new and 100% identical servers in seconds.
+
 ## How to add an account
 
 ### How to add a vHost to an account
