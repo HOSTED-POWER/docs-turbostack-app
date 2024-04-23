@@ -8,19 +8,19 @@ icon: info
 ## Login and locate your managed servers
 
 When going to the <a href="https://my.turbostack.app/" target="_blank">TurboStack App</a>, 
-login with credentials for our Customer Center: <a href="https://portal.hosted-power.com/">portal.hosted-power.com</a>.<br>
+login with your credentials for the <a href="https://portal.hosted-power.com/">Customer Center</a>.<br>
 
-If you don't have a login to the Customer Center yet, you can find more info [here](https://docs.turbostack.app/#create-a-customer-profile).
+If you don't have a login to the Customer Center yet, you first have to create a Primary account. More info [here](https://docs.turbostack.app/#create-a-customer-profile).
 
 ![TurboStackAppLogin](../img/turbostackapp/basicinstall/tsa_login1.png)
 
-Once logged in all servers managed by this account will become visible in the **"Hosts"** tab.<br>
+Once logged in, all servers managed by this account will become visible in the **"Hosts"** tab.<br>
 
 ![TurboStackAppServers](../img/turbostackapp/basicinstall/tsa_home_servers1.png)
 
 ## Main TurboStack App functions
 
-For each server there are main functions available
+For each server there are main functions available.
 
 ![TurboStackAppHeader](../img/turbostackapp/basicinstall/tsa_server_header1.png)
 
@@ -30,49 +30,41 @@ For each server there are main functions available
 4. Save any changes made to the configuration
 5. Save and Publish: saves and deploys the changes made to the server
 
-
-under point 5, there the option to save and full publish.
-this will ensure everything gets deployed
-
+Under point 5, there the option to save and full publish.
+This will ensure everything gets deployed.
 
 ## The 'server' tab
 
-The **server** tab defines some basic middleware configuration.
-Like the type of webserver and some different type of databases that are supported
+The **server** tab defines some basic middleware configuration, like the type of webserver and some different type of databases that are supported.
 
 ![TurboStackAppServerTab](../img/turbostackapp/basicinstall/tsa_server_tab1.png)
 
-
 ## The 'accounts' tab
 
-The **account** tab defines the server users and the applications. A user can have one or more
+The **account** tab defines the server users and the applications. Typically, a user can have one or more
 applications.<br>
 In the examples below we have 2 users, `prod` and `stag`.<br>
-The prod user has an applications running on the weburl `example.com` and `www.example.com`
+The prod user has an application running on the weburl `example.com` and `www.example.com`
 
 ![TurboStackAppAccountTab](../img/turbostackapp/basicinstall/tsa_account_tab1.png)
 
-1. Shows user `prod` and containing applications
-2. Shows user `stag`, the layout is here collapsed
+1. Shows user `prod` and its ontaining applications
+2. Shows user `stag`, with a collapsed layout
 3. Will create an additional user.
-
 
 ## The 'groups' tab
 
-The **groups** tab can link a server to existing group.<br>
-groups can define additional configuration that can then be applied to all servers in that group.
+The **groups** tab can link a server to an existing group.<br>
+Groups can define additional configuration that can then be applied to all nodes in that group.
 
 ![TurboStackAppGroupTab](../img/turbostackapp/basicinstall/tsa_group_tab1.png)
 
-
 ## The 'SSH' tab
 
-The **SSH** tab defines 1 or more public ssh keys that allow shell access to a server
-without using a password.<br>
-ssh keys can be added, deleted and edited
+The **SSH** tab defines one or more public ssh keys that allow shell access to a TurboStack node without using a password.<br>
+SSH keys can be added, deleted and edited here.
 
 ![TurboStackAppSshTab](../img/turbostackapp/basicinstall/tsa_ssh_tab1.png)
-
 
 ## The 'Security' tab
 
@@ -83,8 +75,8 @@ ssh keys can be added, deleted and edited
 </span>
 </div><br>
 
-The **Security** tab can update the server firewall. Allowing (whitelisting) specific IPs or IP ranges<br>
-Or even allow or block complete country regions.
+The **Security** tab can update the server firewall. Allowing (whitelisting of) specific IPs or IP ranges.<br>
+You even have the ability to allow or block complete countries/regions.
 
 ![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
 
