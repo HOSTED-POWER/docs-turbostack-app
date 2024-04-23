@@ -1,6 +1,6 @@
 ---
 order: 180
-icon:
+icon: key
 ---
 
 # Security
