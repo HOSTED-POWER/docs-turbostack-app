@@ -37,7 +37,7 @@ For rate throttling, a load balancer can be a useful first line of defense again
 ### Blackhole-routing
 One of the simplest countermeasures to mitigate a DDoS attack is to divert the flow of connections in to a “black hole” b throwing all the data away. Optional extra DDoS-security The most effective way to mitigate DDoS attacks is simply to have more capacity to process incoming data than the cybercriminals can muster. It is unlikely that a single server or service can achieve this on its own, which is why a helping hand from a third party DDoS protection service, such as Cloudflare, can be extremely helpful.
 
-## WAF Security
+## Web Application Firewall (WAF)
 
 **Hosted Power** obviously takes security into account and can provide Web Application Firewall (WAF) based on [ModSecurity](https://owasp.org/www-project-modsecurity/). If desired, in addition to ModSecurity, Fortinet FortiWeb Application Firewall can also be set up. This is considered case by case. A WAF goes much further than a standard firewall by analyzing the application layer (OSI layer 7) instead of stopping at Layer 3. The WAF offers, amongst other things, extra protection against SQL injection, XSS attacks, etc. According to the [OWASP top 10](https://owasp.org/www-project-top-ten/).
 
