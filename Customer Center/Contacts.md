@@ -57,4 +57,4 @@ We have the possibility to use our shared "Turbo Hosting" option for more simple
 
 ## Domain management 
 
-Check the [Domains](/domains) page for more info.
+Check the [Domains](../customer-center/domains) page for more info.
