@@ -18,6 +18,8 @@ If this is the first time you're trying to log in to your PoC-environment or you
 First things first. You need to set up a new account in our **Customer Center**, which will give you access to your profile & environments. You can <a href="https://portal.hosted-power.com/signup/" target="_blank">sign-up here</a>.
 Please fill in the required information and submit.
 
+<img src="/img/marketing/Server handshake.png" align="center">
+
 ## Login into the Hosted Power Customer Center
 You can reach the Customer Center via this link: <a href="https://portal.hosted-power.com/" target="_blank">portal.hosted-power.com</a>.
  
