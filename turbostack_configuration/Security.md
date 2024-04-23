@@ -37,6 +37,20 @@ For rate throttling, a load balancer can be a useful first line of defense again
 ### Blackhole-routing
 One of the simplest countermeasures to mitigate a DDoS attack is to divert the flow of connections in to a “black hole” b throwing all the data away. Optional extra DDoS-security The most effective way to mitigate DDoS attacks is simply to have more capacity to process incoming data than the cybercriminals can muster. It is unlikely that a single server or service can achieve this on its own, which is why a helping hand from a third party DDoS protection service, such as Cloudflare, can be extremely helpful.
 
+## Imunify360
+
+Imunify360 continuously gathers vast amounts of information about new attacks from environments all over the world. The software analyzes the web traffic hitting your nodes, understands all security threats, and uses powerful AI technology to dynamically update its rules and prevent malicious attacks that can cause damage. Imunify360 utilizes machine learning technology and comprehensive algorithms to identify patterns of abnormal behavior almost in real-time and swiftly prevent new attacks.
+
+Where Imunify360 Makes the Difference:
+* Advanced detection and display of security threats, powered by the self-learning firewall with herd immunity
+* Protection against many threats, including distributed brute force attacks
+* Analysis of insights from the global network to ban attackers before they attack you
+* Protection of web applications against malware injections
+* Automatic security for your kernel and older PHP versions
+* Smart intrusion detection
+* Reputation Management and an advanced Captcha system
+* Is a responsive system with a high frequency of scanning that does not degrade the performance of your servers.
+
 ## Web Application Firewall (WAF)
 
 **Hosted Power** obviously takes security into account and can provide Web Application Firewall (WAF) based on [ModSecurity](https://owasp.org/www-project-modsecurity/). If desired, in addition to ModSecurity, Fortinet FortiWeb Application Firewall can also be set up. This is considered case by case. A WAF goes much further than a standard firewall by analyzing the application layer (OSI layer 7) instead of stopping at Layer 3. The WAF offers, amongst other things, extra protection against SQL injection, XSS attacks, etc. According to the [OWASP top 10](https://owasp.org/www-project-top-ten/).
