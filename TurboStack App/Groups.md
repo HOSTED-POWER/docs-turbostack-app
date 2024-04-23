@@ -5,6 +5,10 @@ icon: people
 
 # TS Groups
 
+Groups make it possible to alter settings across multiple nodes. e.g. time zones or SSH key access to one or multiple TurboStack nodes
+
+## Create a group
+
 Open the Groups tab to efficiently manage settings without the need to make changes individually for each user or project. Create partner groups, which enables you to provide SSH key access to multiple employees across different end user or partner environments.
 
 ### Scenario 1: Use Groups for centralised user rights management with SSH keys
