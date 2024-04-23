@@ -8,18 +8,18 @@ icon: zap
 ## Welcome :zap:
 
 You have reached our TurboStack® documentation pages because you're interested in the full blown TurboStack® experience.
-We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. [Check out our packages here](https://www.hosted-power.com/en/turbostack#our-packages).
+We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. <a href="https://www.hosted-power.com/en/turbostack#our-packages" target="_blank">Check out our packages here</a>.
 
 If this is the first time you're trying to log in to your PoC-environment or your Production TurboStack, you've come to the right place. This is where you start. So let's get goin'!
 
 ## Account Setup
 
 ### Create a Customer Profile
-First things first. You need to set up a new account in our **Customer Center**, which will give you access to your profile & environments. You can [sign-up here](https://portal.hosted-power.com/signup/).
+First things first. You need to set up a new account in our **Customer Center**, which will give you access to your profile & environments. You can <a href="https://portal.hosted-power.com/signup/" target="_blank">sign-up here</a>.
 Please fill in the required information and submit.
 
 ## Login into the Hosted Power Customer Center
-You can reach the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/)
+You can reach the Customer Center via this link: <a href="https://portal.hosted-power.com/" target="_blank">portal.hosted-power.com</a>.
  
 Our customer center enables you to:
 * Manage contact information
