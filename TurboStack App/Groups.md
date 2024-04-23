@@ -38,4 +38,18 @@ Managing TurboStack nodes using groups can help streamline operations and ensure
 
 ## The Security Tab
 
-![HostsTab](../img/turbostackapp/groups/SecurityTab.png)
+<div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>This is an advanced section, use with caution</b></p>
+</span>
+</div><br>
+
+The **Security** tab can update the firewall for all nodes in the Group. Allowing (whitelisting of) specific IPs or IP ranges.<br>
+You even have the ability to allow or block complete countries/regions.
+
+![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
+
+1. Allow (whitelist) one or more IPs or IP ranges
+2. Block (blacklist) one or more countries
+3. Only allow (whitelist) one or more countries
