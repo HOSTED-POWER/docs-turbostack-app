@@ -1,9 +1,9 @@
 ---
-order: 190
+order: 150
 icon: people
 ---
 
-# Groups
+# TS Groups
 
 Open the Groups tab to efficiently manage settings without the need to make changes individually for each user or project. Create partner groups, which enables you to provide SSH key access to multiple employees across different end user or partner environments.
 
