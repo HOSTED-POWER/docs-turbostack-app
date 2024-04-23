@@ -7,7 +7,7 @@ icon: person
 
 ## Creating a new account (user)
 
-Creating a new user on the [TurboStack App](https://my.turbostack.app).
+Creating a new user on the <a href="https://my.turbostack.app" target="_blank">TurboStack App</a>.
 
 * Open the TurboStack App
 * Open the server view
