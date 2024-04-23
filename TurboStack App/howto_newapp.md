@@ -13,7 +13,7 @@ icon: cloud
 
 ### Prerequisite
 
-Creating a new user on the [TurboStack App](https://my.turbostack.app).
+Creating a new user on the <a href="https://my.turbostack.app" target="_blank">TurboStack App</a>.
 An account must exist before an application can be configured.
 How to create a new [account](./howto_newuser.md)
 
