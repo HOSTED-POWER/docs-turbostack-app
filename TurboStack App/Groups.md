@@ -7,14 +7,6 @@ icon: people
 
 Open the Groups tab to efficiently manage settings without the need to make changes individually for each user or project. Create partner groups, which enables you to provide SSH key access to multiple employees across different end user or partner environments.
 
-## Where to set up Groups
-In the [Customer Center](https://portal.hosted-power.com/), navigate to Manage contacts. Here you can add your relevant contacts. 
-Click through to the [Teams](https://portal.hosted-power.com/profiles/teams/) tab. Here you can create your own teams, e.g. Dev, Billing, Agency, etc.
-
-If you have a new partner requiring access to your environment, you have the possibility to invite an existing team. you can also easliy remove teams from your environment.
-
-![CreateTeams](../img/turbostackapp/groups/ManageContacts.png)
-
 ### Scenario 1: Use Groups for centralised user rights management with SSH keys
 
 ![SSHTab](../img/turbostackapp/groups/SSHTab.png)
