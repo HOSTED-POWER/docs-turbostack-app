@@ -6,6 +6,11 @@ icon: person-add
 
 ## The Primary contact
 The primary contact will be the user who created the account in our [Customer Center](https://portal.hosted-power.com/) 
+
+!!! Important 
+The primary contact is always the first point of contact should a critical incident on your environment occur.
+!!!
+
 If you haven't done this yet, [you can sign-up here](https://portal.hosted-power.com/signup/). Please fill in the required information and submit.
 
 Now you can login into the **Hosted Power** Customer Center.
