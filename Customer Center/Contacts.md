@@ -2,35 +2,49 @@
 order: 210
 icon: person-add
 ---
-
 # Contacts
 
+## The Primary contact
+The primary contact will be the user who created the account in our [Customer Center](https://portal.hosted-power.com/) 
+If you haven't done this yet, [you can sign-up here](https://portal.hosted-power.com/signup/). Please fill in the required information and submit.
+
+Now you can login into the **Hosted Power** Customer Center.
+
+Our customer center enables you to:
+
+* Manage contact information
+* Add billing information
+* Follow-up on your support tickets
+* Purchase or transfer domain names
+* Assign rights to various contacts
+* Add SSH users, configure SSL certificates
+* etc...
+
 ## Add new contacts
+Now it's time to add your extra contacts. Technical colleagues, billing contacts etc...
 
-https://portal.hosted-power.com/profiles/add/
+In the [Customer Center](https://portal.hosted-power.com/), navigate to Manage contacts. Here you can [add your relevant contacts](https://portal.hosted-power.com/profiles/add/). 
 
-### Invite external guests
+_May we emphasize this step is really important for **Hosted Power** to be able to reach the correct people in every situation, so take your time to do this thoroughly if possible. You'll thank us later._
 
-https://portal.hosted-power.com/profiles/invite/
+On the invite tab, you also have the option to invite existing contacts, e.g. an external consultant.
 
 # Teams
 
 ## Add new teams
+Click through to the [Teams](https://portal.hosted-power.com/profiles/teams/) tab. Here you can [create your own teams](https://portal.hosted-power.com/profiles/teams/), e.g. Dev, Billing, Agency, etc.
 
-https://portal.hosted-power.com/profiles/teams/
+## Invite external Teams
 
-### Invite external Teams
+If you have a new partner requiring access to your environment, you have the possibility to [invite an existing team](https://portal.hosted-power.com/profiles/teams/invite). You can also easliy remove teams from your environment.
 
-https://portal.hosted-power.com/profiles/teams/invite
+![CreateTeams](../img/turbostackapp/groups/ManageContacts.png)
 
 # User/Teams Rights management 
-You have the choice to either give rights to single users or to whole teams. 
+You have the choice to either manage the rights of single users or whole teams. **Hosted Power** advises to implement the "Teams" logic, even if you have only one person in this team. It makes management a lot easier in the future.
 
-## Billing contacts
+For your colleagues to be able to login to the [TurboStack App](https://my.turbostack.app), you need to give them access here.
 
-## Support contacts
-
-## Access to TurboStack App
 
 ## Shared Hosting
 
