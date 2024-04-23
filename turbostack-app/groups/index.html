@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767192915379">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767193132435">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767192915379" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767193132435" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767192915379" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767193132435" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767192915379" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767193132435" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -257,11 +257,24 @@
         <span>The Security Tab</span>
     </h2>
 </doc-anchor-target>
+<div class="warning" style='background-color:#E9D8FD; color: #69337A; border-left: solid #805AD5 4px; border-radius: 4px; padding:0.7em;'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>This is an advanced section, use with caution</b></p>
+</span>
+</div><br>
+<p>The <strong>Security</strong> tab can update the firewall for all nodes in the Group. Allowing (whitelisting of) specific IPs or IP ranges.<br>
+You even have the ability to allow or block complete countries/regions.</p>
 <p><figure class="content-center">
-    <img src="../../img/turbostackapp/groups/securitytab.png" alt="HostsTab">
-    <figcaption class="caption">HostsTab</figcaption>
+    <img src="../../img/turbostackapp/basicinstall/tsa_security_tab1.png" alt="TurboStackAppSecurityTab">
+    <figcaption class="caption">TurboStackAppSecurityTab</figcaption>
 </figure>
 </p>
+<ol>
+<li>Allow (whitelist) one or more IPs or IP ranges</li>
+<li>Block (blacklist) one or more countries</li>
+<li>Only allow (whitelist) one or more countries</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
