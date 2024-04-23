@@ -9,7 +9,7 @@ icon: upload
 
 1. Incorrect login details used
 Login details used by users for FTP access include their username and password. If these credentials are given wrongly in the FTP client, it can give a 530 login error in FTP.
-But for additional FTP accounts, the FTP login name is of the format ‘username@domain.com’. If the FTP username entered is not in this specific format, login failures happen.
+But for additional FTP accounts, the FTP login name is of the format ```‘username@domain.com’```. If the FTP username entered is not in this specific format, login failures happen.
 “530 Login authentication failed” also happens due to wrong password. Even a single additional space in the password can cause a login failure. Many account owners tend to overlook that aspect and struggle with 530 errors.
 
 2. Path doesn't exist
