@@ -7,8 +7,8 @@ icon: info
 
 ## Login and locate your managed servers
 
-When going to the [TurboStack App](https://my.turbostack.app/), 
-login with credentials for our Customer Center: [portal.hosted-power.com](https://portal.hosted-power.com/).<br>
+When going to the <a href="https://my.turbostack.app/" target="_blank">TurboStack App</a>, 
+login with credentials for our Customer Center: <a href="https://portal.hosted-power.com/">portal.hosted-power.com</a>.<br>
 
 If you don't have a login to the Customer Center yet, you can find more info [here](https://docs.turbostack.app/#create-a-customer-profile).
 
@@ -82,7 +82,6 @@ ssh keys can be added, deleted and edited
 <b>This is an advanced section, use with caution</b></p>
 </span>
 </div><br>
-
 
 The **Security** tab can update the server firewall. Allowing (whitelisting) specific IPs or IP ranges<br>
 Or even allow or block complete country regions.
