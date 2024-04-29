@@ -17,7 +17,7 @@ Creating a new user on the <a href="https://my.turbostack.app" target="_blank">T
 An account must exist before an application can be configured.
 How to create a new [account](./howto_newuser.md)
 
-### Creating a new application
+### Creating a new application in the GUI
 
 Creating a new (default) application under the newly created `prod` user.<br><br>
 Scenario: creating a Magento2 application, listening on `www.example.com` and using varnish as caching
@@ -53,3 +53,27 @@ Now, the new application is configured, click `Save & Publish` to deploy the con
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app9.png)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app10.png)
+
+
+### Creating a new application in the YAML [!badge icon="alert" text="Advanced"]
+
+for more advanced users there also the YAML configuration.
+adding a new application can be done with
+
+```yaml
+system_users:
+  - username: prod
+    vhosts:
+      - server_name: example.com www.example.com
+        app_type: magento2
+        php_version: "8.2"
+        varnish_enabled: true
+        cert_type: selfsigned
+```
+
+!!!info Info
+a system_user ie. `prod` is needed before an application can be deployed
+!!!
+
+
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app11.png)
