@@ -45,7 +45,7 @@ Scenario: creating a Magento2 application, listening on `www.example.com` and us
 5. Choose a website SSL certificate, there are 3 options: `letsencrypt`(default), `selfsigned` and `custom`(bring your own)
 6. Go to `Technologies` and set the app type that matches your application
 7. Enable PHP or another technology that your application requires
-8. Scroll down to enable `varnish` on our website
+8. Scroll down to enable `varnish` on our websitedat
 9. Optionally a `monitoring url` can be set that Hosted Power will monitoring 24/7.
 10. Click `Save` to save and exit the configuration wizard.
 
