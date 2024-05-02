@@ -19,8 +19,10 @@ There you can see the pricing for all TLDs and lookup if your preferred domain i
 
 1. Open the order menu
 2. Select `Domain Names` from the menu
-3. search the domain name you want to register/purchase
-4. now you can register a new domain of start the transfer from a domain hosted at another registrar
+3. searchbar for domain names 
+4. search the domain name you want to register/purchase
+5. now you can register a new domain 
+6. start the transfer from a domain hosted at another registrar
 
 ## How to remove a domain
 
