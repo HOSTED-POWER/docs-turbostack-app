@@ -4,6 +4,24 @@ start:
   pro: true
 poweredByRetype: false
 
+breadcrumb:
+  enabled: true               # Enabled by default on Pro projects
+  home: Home                  # Custom label for the first item
+  home: ":icon-home:"         # or, use an icon
+  separator: "|"              # Custom item separator
+
+outbound:
+  enabled: true               # Enabled by default on Pro projects
+  custom: 'rel="noopener noreferrer"' # custom attribute added to links
+  icon: link-external         # A custom icon name, :emoji:, <svg>, or
+                              # a path to a file
+  iconAlign: left             # Icon alignment, to the left or right
+  target: blank               # Custom target
+
+favicon: /img/favicon-hp.ico
+
+#
+
 branding:
   title: TurboStack Docs
   logo: /img/logo-blue.png
