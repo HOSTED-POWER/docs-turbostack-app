@@ -4,11 +4,11 @@ start:
   pro: true
 poweredByRetype: false
 
-breadcrumb:
-  enabled: true               # Enabled by default on Pro projects
-  home: Home                  # Custom label for the first item
-  home: ":icon-home:"         # or, use an icon
-  separator: "|"              # Custom item separator
+#breadcrumb:
+#  enabled: true               # Enabled by default on Pro projects
+#  home: Home                  # Custom label for the first item
+#  home: ":icon-home:"         # or, use an icon
+#  separator: "|"              # Custom item separator
 
 outbound:
   enabled: true               # Enabled by default on Pro projects
