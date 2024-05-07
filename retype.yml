@@ -1,7 +1,12 @@
 # full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
 
-#start:
-#  pro: true
+start:
+  pro: true
+
+serve:
+  watch:
+    mode: memory  
+
 poweredByRetype: false
 
 #breadcrumb:
