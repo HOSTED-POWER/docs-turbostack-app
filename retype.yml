@@ -23,7 +23,7 @@ outbound:
   iconAlign: left             # Icon alignment, to the left or right
   target: blank               # Custom target
 
-favicon: favicon.ico
+#favicon: favicon.ico
 
 #
 
