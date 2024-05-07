@@ -28,12 +28,12 @@ ns3.hosted-power.com
 ## DNS Management
 
 ![TurboStackNewDNS](../img/customercenter/domains/cc_domain1.png)
-![TurboStackNewDNS](../img/customercenter/domains/cc_dns2.png)
-![TurboStackNewDNS](../img/customercenter/domains/cc_dns3.png)
-![TurboStackNewDNS](../img/customercenter/domains/cc_dns4.png)
-![TurboStackNewDNS](../img/customercenter/domains/cc_dns5.png)
-![TurboStackNewDNS](../img/customercenter/domains/cc_dns6.png)
-![TurboStackNewDNS](../img/customercenter/domains/cc_dns7.png)
+![TurboStackNewDNS](../img/customercenter/dns/cc_dns2.png)
+![TurboStackNewDNS](../img/customercenter/dns/cc_dns3.png)
+![TurboStackNewDNS](../img/customercenter/dns/cc_dns4.png)
+![TurboStackNewDNS](../img/customercenter/dns/cc_dns5.png)
+![TurboStackNewDNS](../img/customercenter/dns/cc_dns6.png)
+![TurboStackNewDNS](../img/customercenter/dns/cc_dns7.png)
 
 1. Open the order menu
 2. Select `DNS Management` from the menu
