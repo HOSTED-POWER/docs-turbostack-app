@@ -2,6 +2,7 @@
 
 start:
   pro: true
+poweredByRetype: false
 
 branding:
   title: TurboStack Docs
