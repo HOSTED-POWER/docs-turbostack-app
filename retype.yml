@@ -1,5 +1,8 @@
 # full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
 
+start:
+  pro: true
+
 branding:
   title: TurboStack Docs
   logo: /img/logo-blue.png
