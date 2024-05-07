@@ -1,7 +1,7 @@
 # full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
 
-start:
-  pro: true
+#start:
+#  pro: true
 poweredByRetype: false
 
 #breadcrumb:
