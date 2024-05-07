@@ -5,7 +5,7 @@ icon: people
 
 # TS Groups
 
-Groups make it possible to alter settings across multiple nodes. e.g. time zones or SSH key access to one or multiple TurboStack nodes
+Groups make it possible to alter settings across multiple nodes. e.g. time zones or SSH key access to one or multiple TurboStack nodes.
 
 ## Create a group
 
