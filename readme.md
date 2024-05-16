@@ -81,9 +81,9 @@ Get started by [creating SSH keys and logging in to your TurboStack via SSH](tur
 
 ### 3. Configure your TurboStack
 
-#### 3.1 Infrastructure as code with YAML
+#### 3.1 Infrastructure As code with YAML
 
-It's also possible to configure TurboStack node simply by editing and/copy pasting the source code (YAML file) in the app. More info on the [YAML Source code](TurboStack App/YAML.md).
+It's also possible to configure TurboStack node simply by editing and/copy pasting the source code of the complete configuration (YAML file) in the app. More info on the [YAML Source code](TurboStack App/YAML.md).
 
 #### 3.2 TS CLI
 
@@ -93,7 +93,7 @@ It's also possible to configure TurboStack node simply by editing and/copy pasti
 
 You can clone existing server settings via the *Source code* (Yaml) view. It allows you to use a predefined template or to create an exact copy of the configuration of an already runnining environment
 
-![1715863608338](image/readme/1715863608338.png)
+![Clone from Template or other host](image/readme/1715863608338.png "Clone from Template or other host")
 
 ### 5. Installing a new application on your TurboStack
 
