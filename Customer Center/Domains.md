@@ -2,10 +2,9 @@
 order: 200
 icon: globe
 ---
-
 # Domains
 
-Hosted Power is a domain registrar. Meaning domains can be bought, registered and managed 
+Hosted Power is a domain registrar. Meaning domains can be bought, registered and managed
 within our [customer center](https://portal.hosted-power.com/checkdomain/domain-registration/)
 
 There you can see the pricing for all TLDs and lookup if your preferred domain is still available.
@@ -19,9 +18,9 @@ There you can see the pricing for all TLDs and lookup if your preferred domain i
 
 1. Open the order menu
 2. Select `Domain Names` from the menu
-3. searchbar for domain names 
+3. searchbar for domain names
 4. search the domain name you want to register/purchase
-5. now you can register a new domain 
+5. now you can register a new domain
 6. start the transfer from a domain hosted at another registrar
 
 ## How to remove a domain
@@ -41,7 +40,6 @@ All domains are registered and paid for 1 year at the time.
 disabling the auto renew will make sure the domain is not charged anymore to your account
 after the expiration date.
 !!!
-
 
 ## (Bulk) transfer domains
 
