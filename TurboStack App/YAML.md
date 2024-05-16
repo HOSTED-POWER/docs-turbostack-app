@@ -2,8 +2,7 @@
 order: 150
 icon: code-square
 ---
-
-# YAML
+# Infrastructure as Code (YAML source)
 
 _This page is under construction_
 
@@ -18,8 +17,6 @@ You could also choose to work with YAML by default via the profile settings.
 ## How to add an account
 
 ### How to add a vHost to an account
-
-
 
 ```
 ---
