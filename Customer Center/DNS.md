@@ -2,17 +2,15 @@
 order: 190
 icon: globe
 ---
-
 # DNS
 
 The Hosted Power [customer center](https://portal.hosted-power.com/) has an application to manage DNS domains.
 It can be used to manage existing domains or new after registering a new [domain](./Domains.md)
 
-!!!primary Control panels
-if you already use a control panel like `DirectAdmin` or `Cpanel`, 
-we recommend using those internal DNS management tools 
+!!!danger Control panels
+if you already use a control panel like `DirectAdmin` or `Cpanel`,
+we recommend using those internal DNS management tools
 !!!
-
 
 ## Nameservers
 
@@ -23,7 +21,6 @@ ns1.hosted-power.com
 ns2.hosted-power.com
 ns3.hosted-power.com
 ```
-
 
 ## DNS Management
 
