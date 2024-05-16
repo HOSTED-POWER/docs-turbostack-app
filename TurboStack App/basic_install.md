@@ -2,19 +2,17 @@
 order: 200
 icon: info
 ---
-
 # TS App Basics
 
 ## Login and locate your managed servers
 
-When going to the <a href="https://my.turbostack.app/" target="_blank">TurboStack App</a>, 
-login with your credentials for the <a href="https://portal.hosted-power.com/">Customer Center</a>.<br>
+When going to the [TurboStack App](https://my.turbostack.app/ "TurboStack App") , login with your credentials for the [Customer Center](https://portal.hosted-power.com/ "Customer Center").
 
 If you don't have a login to the Customer Center yet, you first have to create a Primary account. More info [here](https://docs.turbostack.app/#create-a-customer-profile).
 
 ![TurboStackAppLogin](../img/turbostackapp/basicinstall/tsa_login1.png)
 
-Once logged in, all servers managed by this account will become visible in the **"Hosts"** tab.<br>
+Once logged in, all servers managed by this account will become visible in the **"Hosts"** tab.
 
 ![TurboStackAppServers](../img/turbostackapp/basicinstall/tsa_home_servers1.png)
 
@@ -42,8 +40,8 @@ The **server** tab defines some basic middleware configuration, like the type of
 ## The 'accounts' tab
 
 The **account** tab defines the server users and the applications. Typically, a user can have one or more
-applications.<br>
-In the examples below we have 2 users, `prod` and `stag`.<br>
+applications.
+In the examples below we have 2 users, `prod` and `stag`.
 The prod user has an application running on the weburl `example.com` and `www.example.com`
 
 ![TurboStackAppAccountTab](../img/turbostackapp/basicinstall/tsa_account_tab1.png)
@@ -54,15 +52,21 @@ The prod user has an application running on the weburl `example.com` and `www.ex
 
 ## The 'groups' tab
 
-The **groups** tab can link a server to an existing group.<br>
-Groups can define additional configuration that can then be applied to all nodes in that group.
+The **groups** tab can link a server to an existing group.
+Groups can define additional configuration that can then be applied to all nodes in that group. 
+
+The groups can be used to configure SSH keys for all people in your company, these right could than also be quickly revoked on all servers in the group (for example if someone leaves the company).
+
+Another very powerfull groups feature is that it allows to set custom settings which will apply to all servers in the group. For example it could be used to change the default timezone for all servers in the group.
 
 ![TurboStackAppGroupTab](../img/turbostackapp/basicinstall/tsa_group_tab1.png)
 
 ## The 'SSH' tab
 
-The **SSH** tab defines one or more public ssh keys that allow shell access to a TurboStack node without using a password.<br>
+The **SSH** tab defines one or more public ssh keys that allow shell access to a TurboStack node without using a password.
 SSH keys can be added, deleted and edited here.
+
+You can also disable SSH password authentication completely here by activating the checkbox "Only allow SSH authentication by keys".
 
 ![TurboStackAppSshTab](../img/turbostackapp/basicinstall/tsa_ssh_tab1.png)
 
@@ -75,11 +79,13 @@ SSH keys can be added, deleted and edited here.
 </span>
 </div><br>
 
-The **Security** tab can update the server firewall. Allowing (whitelisting of) specific IPs or IP ranges.<br>
+The **Security** tab can update the server firewall. Allowing (whitelisting of) specific IPs or IP ranges.
 You even have the ability to allow or block complete countries/regions.
 
 ![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
 
 1. Allow (whitelist) one or more IPs or IP ranges
+   1. These ip's will not be blocked by any brute force protections
+   2. These ip's will also have FULL access to any otherwise closed ports.
 2. Block (blacklist) one or more countries
 3. Only allow (whitelist) one or more countries
