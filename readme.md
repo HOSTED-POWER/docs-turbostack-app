@@ -15,12 +15,12 @@ If this is the first time you're trying to log in to your PoC-environment or you
 
 ### Create a Customer Profile
 
-First things first. You need to set up a new account in our **Customer Center**, which will give you access to your profile & environments. You can `<a href="https://portal.hosted-power.com/signup/" target="_blank">`sign-up here `</a>`.
+First things first. You need to set up a new account in our **Customer Center**, which will give you access to your profile & environments. You can [sign-up here](https://portal.hosted-power.com/signup/).
 Please fill in the required information and submit.
 
 ## Login into the Hosted Power Customer Center
 
-You can reach the Customer Center via this link:  `<a href="https://portal.hosted-power.com/" target="_blank">``portal.hosted-power.com `</a>`.
+You can reach the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/ "Hosted Power Customer Center").
 
 Our customer center enables you to:
 
