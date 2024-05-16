@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769183750683">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769186780962">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,20 +21,22 @@
     <meta property="og:url" content="https://docs.turbostack.app/turbostack_configuration/ftp/">
     <meta property="og:title" content="FTP">
     <meta property="og:description" content="Incorrect login details used Login details used by users for FTP access include their username and password.">
+    <meta property="og:image" content="https://docs.turbostack.app/turbostack_configuration/image/ftp/1715871329616.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/turbostack_configuration/ftp/">
     <meta property="twitter:title" content="FTP">
     <meta property="twitter:description" content="Incorrect login details used Login details used by users for FTP access include their username and password.">
+    <meta property="twitter:image" content="https://docs.turbostack.app/turbostack_configuration/image/ftp/1715871329616.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769183750683" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769186780962" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769183750683" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769186780962" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769183750683" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769186780962" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -220,30 +222,21 @@
         <span>FTP</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="what-causes-the-login-failed-error-">
+<doc-anchor-target id="what-could-cause-alogin-failederror-">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-causes-the-login-failed-error-">#</doc-anchor-trigger>
-        <span>What causes the “Login failed” error ?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-could-cause-alogin-failederror-">#</doc-anchor-trigger>
+        <span>What could cause a“Login failed”error ?</span>
     </h2>
 </doc-anchor-target>
 <ol>
-<li><p>Incorrect login details used
+<li><strong>Incorrect login details used</strong>
 Login details used by users for FTP access include their username and password. If these credentials are given wrongly in the FTP client, it can give a 530 login error in FTP.
-But for additional FTP accounts, the FTP login name is of the format <code v-pre>‘username@domain.com’</code>. If the FTP username entered is not in this specific format, login failures happen.
-“530 Login authentication failed” also happens due to wrong password. Even a single additional space in the password can cause a login failure. Many account owners tend to overlook that aspect and struggle with 530 errors.</p>
-</li>
-<li><p>Path doesn&#x27;t exist
-When the FTP users gets created by the support team, a path will be assagined on creation. If the path doesn&#x27;t exists on the server this will cause a Login failure.</p>
-</li>
-<li><p>Unsupported TLS
-Of course, we can use <strong>TLSRequired off</strong> in our ProFTPd configuration as this allows for TLS and non-TLS logins, but if you want to make your FTP setup as secure as possible, you should enforce the use of TLS and make exceptions only for the users or groups that use an FTP client that doesn&#x27;t support TLS (if using another FTP client is not an option for those users).</p>
-</li>
+&quot;530 Login authentication failed&quot; also happens due to wrong password. Even a single additional space in the password can cause a login failure. Many account owners tend to overlook that aspect and struggle with 530 errors.</li>
+<li><strong>Path doesn&#x27;t exist</strong>
+When the FTP users gets created, a path will be assagined on creation. If the path doesn&#x27;t exists on the server this will cause a login failure.</li>
+<li><strong>No TLS used</strong>
+TLS is required and enforced for security reasons. It&#x27;s a very bad idea to disable it, since passwords would be sent in cleartext. Make sure to activate &quot;Explicit SSL/TLS&quot; in your FTP client.However, if you need to disable SSL anyway (For example incompatible ERP system that only supports plain text FTP)<img src="../image/ftp/1715871329616.png" alt="Disable SSL resquirement for a single user" title="Disable SSL resquirement for a single user" /></li>
 </ol>
-<p>If we want to allow the FTP user testuser to use plain FTP instead of FTP, we can configure this as follows:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">PATH: /etc/proftpd/conf.d/99_override.conf 
-TLSRequired off</code></pre>
-</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
