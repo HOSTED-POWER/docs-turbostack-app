@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769181251422">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769183168153">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>SSH</title>
-    <meta name="title" content="SSH">
+    <title>SSH Key Generation and Access</title>
+    <meta name="title" content="SSH Key Generation and Access">
     <meta name="description" content="Windows 10 and later versions include an optional feature called \"OpenSSH Client\" that you can install via the Settings app or PowerShell.">
 
     <!-- Canonical -->
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/turbostack_configuration/ssh/">
-    <meta property="og:title" content="SSH">
+    <meta property="og:title" content="SSH Key Generation and Access">
     <meta property="og:description" content="Windows 10 and later versions include an optional feature called \"OpenSSH Client\" that you can install via the Settings app or PowerShell.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/turbostack_configuration/ssh/">
-    <meta property="twitter:title" content="SSH">
+    <meta property="twitter:title" content="SSH Key Generation and Access">
     <meta property="twitter:description" content="Windows 10 and later versions include an optional feature called \"OpenSSH Client\" that you can install via the Settings app or PowerShell.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769181251422" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769183168153" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769181251422" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769183168153" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769181251422" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769181251422" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769183168153" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769183168153" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -208,17 +208,17 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../turbostack_configuration/ssh/" class="pr-4">
-                                                SSH
+                                                SSH Key Generation and Access
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="ssh" class="break-words">
+<doc-anchor-target id="ssh-key-generation-and-access" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ssh">#</doc-anchor-trigger>
-        <span>SSH</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ssh-key-generation-and-access">#</doc-anchor-trigger>
+        <span>SSH Key Generation and Access</span>
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="setting-up-ssh-client-on-windows">
@@ -227,10 +227,10 @@
         <span>Setting Up SSH Client on Windows</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="step-1-install-openssh-client-feature">
+<doc-anchor-target id="install-openssh-client-feature">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-install-openssh-client-feature">#</doc-anchor-trigger>
-        <span>Step 1: Install OpenSSH Client Feature</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-openssh-client-feature">#</doc-anchor-trigger>
+        <span>Install OpenSSH Client Feature</span>
     </h3>
 </doc-anchor-target>
 <p>Windows 10 and later versions include an optional feature called &quot;OpenSSH Client&quot; that you can install via the Settings app or PowerShell.</p>
@@ -252,53 +252,16 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="step-2-generate-ssh-key-pair">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-generate-ssh-key-pair">#</doc-anchor-trigger>
-        <span>Step 2: Generate SSH Key Pair</span>
-    </h3>
-</doc-anchor-target>
-<p>If you haven&#x27;t already generated an SSH key pair, you can do so using the <code v-pre>ssh-keygen</code> command in PowerShell. Run the following command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-powershell"><code v-pre class="language-powershell">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code></pre>
-</doc-codeblock></div>
-<p>This command will prompt you to choose a location to save the key pair and optionally set a passphrase.</p>
-<doc-anchor-target id="step-3-copy-public-key-to-remote-server">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-copy-public-key-to-remote-server">#</doc-anchor-trigger>
-        <span>Step 3: Copy Public Key to Remote Server</span>
-    </h3>
-</doc-anchor-target>
-<p>Once the key pair is generated, you need to copy the public key to the remote server. You can use tools like <code v-pre>ssh-copy-id</code> or manually copy the public key.</p>
-<doc-anchor-target id="step-4-test-ssh-connection">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-test-ssh-connection">#</doc-anchor-trigger>
-        <span>Step 4: Test SSH Connection</span>
-    </h3>
-</doc-anchor-target>
-<p>You can now test your SSH connection to the remote server using the <code v-pre>ssh</code> command in PowerShell:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-powershell"><code v-pre class="language-powershell">ssh username@remote_host</code></pre>
-</doc-codeblock></div>
-<p>If everything is set up correctly, you should be logged in to the remote server without being prompted for a password.</p>
-<doc-anchor-target id="step-5-optional-configuration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-5-optional-configuration">#</doc-anchor-trigger>
-        <span>Step 5: Optional Configuration</span>
-    </h3>
-</doc-anchor-target>
-<p>You can configure your SSH client by editing the <code v-pre>~/.ssh/config</code> file. This file allows you to set options such as default usernames, identities, and SSH server configurations.</p>
-<p>You&#x27;re all set! You can now securely connect to remote servers using SSH without having to enter a password each time.</p>
 <doc-anchor-target id="setting-up-ssh-client-on-linux">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setting-up-ssh-client-on-linux">#</doc-anchor-trigger>
         <span>Setting Up SSH Client on Linux</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="step-1-install-openssh">
+<doc-anchor-target id="install-the-openssh-client">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-install-openssh">#</doc-anchor-trigger>
-        <span>Step 1: Install OpenSSH</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-the-openssh-client">#</doc-anchor-trigger>
+        <span>Install the OpenSSH client</span>
     </h3>
 </doc-anchor-target>
 <p>Make sure OpenSSH client is installed on your Linux system. If not installed, you can install it using your package manager. For example, on Ubuntu or Debian-based systems, you can use:</p>
@@ -306,32 +269,40 @@
 <pre class="language-bash"><code v-pre class="language-bash">sudo apt-get update
 sudo apt-get install openssh-client</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="step-2-generate-ssh-key-pair-1">
+<doc-anchor-target id="generating-a-personal-key-and-using-ssh">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generating-a-personal-key-and-using-ssh">#</doc-anchor-trigger>
+        <span>Generating a personal key and using SSH</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="step-1-generate-ssh-key-pair">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-generate-ssh-key-pair-1">#</doc-anchor-trigger>
-        <span>Step 2: Generate SSH Key Pair</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-generate-ssh-key-pair">#</doc-anchor-trigger>
+        <span>Step 1: Generate SSH Key Pair</span>
     </h3>
 </doc-anchor-target>
-<p>If you haven&#x27;t already generated an SSH key pair, you can do so using the <code v-pre>ssh-keygen</code> command. Run the following command in your terminal:</p>
+<p>If you haven&#x27;t already generated an SSH key pair, you can do so using the <code v-pre>ssh-keygen</code> command in PowerShell. Run the following command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code></pre>
+<pre class="language-powershell"><code v-pre class="language-powershell">ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;</code></pre>
 </doc-codeblock></div>
 <p>This command will prompt you to choose a location to save the key pair and optionally set a passphrase.</p>
-<doc-anchor-target id="step-3-copy-public-key-to-remote-server-1">
+<doc-anchor-target id="step-2-copy-public-key-to-remote-server">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-copy-public-key-to-remote-server-1">#</doc-anchor-trigger>
-        <span>Step 3: Copy Public Key to Remote Server</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-copy-public-key-to-remote-server">#</doc-anchor-trigger>
+        <span>Step 2: Copy Public Key to Remote Server</span>
     </h3>
 </doc-anchor-target>
-<p>Once the key pair is generated, you need to copy the public key to the remote server. You can use the <code v-pre>ssh-copy-id</code> command for this. Replace <code v-pre>username</code> and <code v-pre>remote_host</code> with your username and the hostname or IP address of the remote server:</p>
+<p>Once the key pair is generated, you need to copy the public key to the remote server. You can use tools like <code v-pre>ssh-copy-id</code> or manually copy the public key.</p>
+<p>This command will prompt you to choose a location to save the key pair and optionally set a passphrase.</p>
+<p>Replace <code v-pre>username</code> and <code v-pre>remote_host</code> with your username and the hostname or IP address of the remote server:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">ssh-copy-id username@remote_host</code></pre>
 </doc-codeblock></div>
 <p>You&#x27;ll be prompted to enter your password on the remote server. Once authenticated, your public key will be added to the <code v-pre>~/.ssh/authorized_keys</code> file on the remote server.</p>
-<doc-anchor-target id="step-4-test-ssh-connection-1">
+<doc-anchor-target id="step-3-test-ssh-connection">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-test-ssh-connection-1">#</doc-anchor-trigger>
-        <span>Step 4: Test SSH Connection</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-test-ssh-connection">#</doc-anchor-trigger>
+        <span>Step 3: Test SSH Connection</span>
     </h3>
 </doc-anchor-target>
 <p>You can now test your SSH connection to the remote server using the following command:</p>
@@ -339,10 +310,10 @@ sudo apt-get install openssh-client</code></pre>
 <pre class="language-bash"><code v-pre class="language-bash">ssh username@remote_host</code></pre>
 </doc-codeblock></div>
 <p>If everything is set up correctly, you should be logged in to the remote server without being prompted for a password.</p>
-<doc-anchor-target id="step-5-optional-configuration-1">
+<doc-anchor-target id="step-4-optional-configuration">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-5-optional-configuration-1">#</doc-anchor-trigger>
-        <span>Step 5: Optional Configuration</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-optional-configuration">#</doc-anchor-trigger>
+        <span>Step 4: Optional Configuration</span>
     </h3>
 </doc-anchor-target>
 <p>You can configure your SSH client by editing the <code v-pre>~/.ssh/config</code> file. This file allows you to set options such as default usernames, identities, and SSH server configurations.</p>
@@ -419,6 +390,6 @@ sudo apt-get install openssh-client</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "SSH", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "SSH Key Generation and Access", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
