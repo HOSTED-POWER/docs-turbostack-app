@@ -36,7 +36,11 @@ Our customer center enables you to:
 
 Once you've created an account, proceed to add all relevant contacts to your account.
 
-This step is crucial for effective communication and collaboration between Hosted Power & your team. **Adding relevant contacts to your account ensures that the right people receive the right information and communication.**
+This step is crucial for effective communication and collaboration between Hosted Power & your team.
+
+!!! Important
+Adding relevant contacts to your account ensures that the right people receive the right information and communication. They could also be used to contact you in cases of emergency.
+!!!
 
 ### External Partner Integration (optional)
 
