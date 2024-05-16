@@ -7,7 +7,7 @@ icon: zap
 ## Welcome ⚡️
 
 You have reached our TurboStack® documentation pages because you're interested in the full blown TurboStack® experience.
-We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. `<a href="https://www.hosted-power.com/en/turbostack#our-packages" target="_blank">`Check out our packages here `</a>`.
+We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. [Check out our packages here](https://www.hosted-power.com/en/turbostack#our-packages).
 
 If this is the first time you're trying to log in to your PoC-environment or your Production TurboStack, you've come to the right place. This is where you start. So let's get goin'!
 
@@ -20,7 +20,7 @@ Please fill in the required information and submit.
 
 ## Login into the Hosted Power Customer Center
 
-You can reach the Customer Center via this link: `<a href="https://portal.hosted-power.com/" target="_blank">`portal.hosted-power.com `</a>`.
+You can reach the Customer Center via this link:  `<a href="https://portal.hosted-power.com/" target="_blank">``portal.hosted-power.com `</a>`.
 
 Our customer center enables you to:
 
@@ -52,7 +52,7 @@ Under Customer Center > Managed Contacts > Teams you will find the invite team b
 
 Likely the following checkboxes are of particular intrest
 
-![1715863199073](image/readme/1715863199073.png)
+![TurboStack Permissions](image/readme/1715863199073.png "TurboStack Permissions")
 
 This integration enhances coordination and ensures a unified workflow and allows communicating the right information to the right people.
 
@@ -67,7 +67,7 @@ TurboStack empowers you with granular control over account permissions. Navigate
 Once you have your customer profile set up, it's time for the real work.
 Let's check out your TurboStack environment in the [TurboStack App](turbostack-app/basic_install/)
 
-![1715863517795](image/readme/1715863517795.png)
+![TurboStack GUI](image/readme/1715863517795.png "TurboStack GUI")
 
 ## Getting started with your TurboStack
 
