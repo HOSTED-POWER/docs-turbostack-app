@@ -53,7 +53,7 @@ Now, the new application is configured, click `Save & Publish` to deploy the con
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app9.png)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app10.png)
 
-### Creating a new application in the YAML [!badge icon="alert" text="Advanced"]
+### Creating a new application in source code mode (YAML) [!badge icon="alert" text="Advanced"]
 
 for more advanced users there also the YAML configuration.
 adding a new application can be done with
