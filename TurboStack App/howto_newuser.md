@@ -2,7 +2,7 @@
 order: 180
 icon: person
 ---
-# TS Accounts Management
+# Accounts Management
 
 ## Creating a new account
 
