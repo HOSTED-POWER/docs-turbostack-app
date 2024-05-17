@@ -2,7 +2,7 @@
 order: 200
 icon: info
 ---
-# TS App Basics
+# Overview
 
 ## Login and locate your managed servers
 

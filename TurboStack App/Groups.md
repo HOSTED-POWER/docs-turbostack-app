@@ -2,8 +2,7 @@
 order: 150
 icon: people
 ---
-
-# TS Groups
+# Groups
 
 Groups make it possible to alter settings across multiple nodes. e.g. time zones or SSH key access to one or multiple TurboStack nodes.
 
@@ -26,7 +25,7 @@ Centralized user rights can streamline access control and simplify administratio
 
 Hosted Power monitors system logs for any unauthorized access attempts and take appropriate action if necessary.
 
-### Scenario 2: Use Groups for centralised TurboStack Node management 
+### Scenario 2: Use Groups for centralised TurboStack Node management
 
 ![HostsTab](../img/turbostackapp/groups/HostsTab.png)
 
@@ -45,7 +44,7 @@ Managing TurboStack nodes using groups can help streamline operations and ensure
 </span>
 </div><br>
 
-The **Security** tab can update the firewall for all nodes in the Group. Allowing (whitelisting of) specific IPs or IP ranges.<br>
+The **Security** tab can update the firewall for all nodes in the Group. Allowing (whitelisting of) specific IPs or IP ranges.`<br>`
 You even have the ability to allow or block complete countries/regions.
 
 ![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
