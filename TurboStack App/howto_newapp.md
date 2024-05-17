@@ -12,13 +12,13 @@ icon: cloud
 
 ### Prerequisite
 
-Creating a new user on the `<a href="https://my.turbostack.app" target="_blank">`TurboStack App`</a>`.
+Creating a new user on the [TurboStack App](https://my.turbostack.app "TurboStack App").
 An account must exist before an application can be configured.
 How to create a new [account](./howto_newuser.md)
 
 ### Creating a new application in the GUI
 
-Creating a new (default) application under the newly created `prod` user.`<br><br>`
+Creating a new (default) application under the newly created `prod` user.
 Scenario: creating a Magento2 application, listening on `www.example.com` and using varnish as caching
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app1.png)
