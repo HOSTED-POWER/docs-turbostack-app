@@ -8,12 +8,12 @@ icon: person
 
 ### Linux user
 
-The account is a linux user which can be used to just access the server,  however one or multiple applications can be deployed under this user. Note that we do not allow to run an application on the root user for security reasons.
+The account is a linux user which can be used to just access the server, however you probably want to deploy one or multiple applications under this user. Note that we do not allow to run an application on the root user for security reasons.
 
 Furthermore in general we also don't recommend to run different (types of) applications under the same user. Typically you would run several applications under one user when you have single git repo or source code folder with different applications or application endpoints.
 
 !!!
-For staging and production instances of an application, best practice would be to use an entirely different server instance since resources allocated for staging, will be (silently) "taken away" from production.
+For staging and production instances of an application, best practice is always to use an entirely different server, because it's by design unvoidable resources allocated for staging, will be (silently) "taken away" from production. Even when this staging application is rarely used, it would still be loaded for example in database memory and other parts.
 !!!
 
 ### How to deploy a new account in the GUI
