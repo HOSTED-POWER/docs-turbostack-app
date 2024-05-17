@@ -2,24 +2,23 @@
 order: 180
 icon: person
 ---
-
 # TS Accounts Mgmt
 
 ## Creating a new account (linux user)
 
 ### Linux user
 
-The account is a linux user. Later an application can be deployed under this user.
-We do not allow to run an application on the root user for security reasons.
+The account is a linux user which can be used to just access the server,  however one or multiple applications can be deployed under this user. Note that we do not allow to run an application on the root user for security reasons.
 
-Further more we also recommend not to run different types of applications under the same user.
-for example, the staging and production version of the application should be deployed on a separate
-user and maybe even on entirely different server
+Furthermore in general we also don't recommend to run different (types of) applications under the same user. Typically you would run several applications under one user when you have single git repo or source code folder with different applications or application endpoints.
 
+!!!
+For staging and production instances of an application, best practice would be to use an entirely different server instance since resources allocated for staging, will be (silently) "taken away" from production.
+!!!
 
 ### How to deploy a new account in the GUI
 
-Creating a new user on the <a href="https://my.turbostack.app" target="_blank">TurboStack App</a>.
+Creating a new user on the `<a href="https://my.turbostack.app" target="_blank">`TurboStack App `</a>`.
 
 * Open the TurboStack App
 * Open the server view
@@ -37,7 +36,6 @@ Creating a new user on the <a href="https://my.turbostack.app" target="_blank">T
 3. Give the account a name and save
 4. `Save and Publish` will deploy the change to the host
 
-
 ### How to deploy a new account in the YAML [!badge icon="alert" text="Advanced"]
 
 for more advanced users there also the YAML configuration.
@@ -49,8 +47,6 @@ system_users:
 ```
 
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user5.png)
-
-
 
 Now an account is created. Applications can be installed.
 
