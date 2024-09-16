@@ -18,7 +18,7 @@ For staging and production instances of an application, best practice is always 
 
 ### How to deploy a new account in the GUI
 
-Creating a new user on the `<a href="https://my.turbostack.app" target="_blank">`TurboStack App `</a>`.
+Creating a new user on the [TurboStack App](https://my.turbostack.app).
 
 * Open the TurboStack App
 * Open the server view
