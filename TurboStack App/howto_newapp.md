@@ -69,7 +69,8 @@ system_users:
         cert_type: selfsigned
 ```
 
-> **Warning:**
-> A system user, e.g., `prod`, is required before an application can be deployed.
+!!! 
+a system_user (eg. `prod`) is needed before an application can be deployed
+!!!
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app11.png)
