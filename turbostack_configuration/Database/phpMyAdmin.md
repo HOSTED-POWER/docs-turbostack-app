@@ -18,7 +18,7 @@ On Turbostack servers with MySQL enabled, phpMyAdmin comes pre-installed by defa
 
 ### Accessing phpMyAdmin
 
-You can access the phpMyAdmin module for your application by opening your web browser and navigating to the default URL with the 'phpmyadm' path. For example: https://www.yourdomain.ext/phpmyadm.
+You can access the phpMyAdmin module for your application by opening your web browser and navigating to the default URL with the 'phpadm' path. For example: https://www.yourdomain.ext/phpadm
 
 Once there, you will encounter a password prompt. Enter your SSH user credentials (account name and password) to proceed.
 
