@@ -25,18 +25,14 @@ Creating a new user on the [TurboStack App](https://my.turbostack.app "TurboStac
 * Open the TurboStack App
 * Open the server view
 
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user1.png)
-
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user2.png)
-
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user3.png)
-
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user4.png)
-
 1. Go to the `Accounts` page
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user1.png)
 2. Add a new account (user)
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user2.png)
 3. Give the account a name and save
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user3.png)
 4. `Save and Publish` will deploy the change to the host
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user4.png)
 
 ### How to deploy a new account in the source YAML [!badge icon="alert" text="Advanced"]
 
