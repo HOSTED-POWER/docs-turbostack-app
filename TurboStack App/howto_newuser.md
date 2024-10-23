@@ -4,9 +4,9 @@ icon: person
 ---
 # Accounts Management
 
-## Creating a new account
+In the [TurboStack App](https://my.turbostack.app "TurboStack App"), you can create accounts in two ways: either by creating a brand-new account or by cloning an existing one.
 
-### What is an account and where is it used for?
+## Creating a new account
 
 The account is a linux user which can be used to just access the server, however you probably want to deploy one or multiple **applications** under this user. Note that we do not allow to run an application on the root user for security reasons.
 
@@ -15,6 +15,8 @@ Furthermore in general we also don't recommend to run different (types of) appli
 !!!
 For staging and production instances of an application, best practice is always to use an entirely different server, because it's by design unvoidable resources allocated for staging, will be (silently) "taken away" from production. Even when this staging application is rarely used, it would still be loaded for example in database memory and other parts.
 !!!
+
+### What is an account and where is it used for?
 
 ### How to deploy a new account in the GUI
 
@@ -51,3 +53,7 @@ system_users:
 Now an account is created. Applications can be installed.
 
 Example, [Deploy a Magento2 application](./howto_newapp.md)
+
+## Cloning an account
+
+In case you want to set up a new account with the same setup as an existing one, you have the option to make a copy of the existing one using the 'Clone account' functionality.
