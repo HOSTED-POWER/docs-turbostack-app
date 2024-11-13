@@ -11,16 +11,18 @@ phpMyAdmin is a web-based tool designed to manage MySQL and MariaDB databases. I
 
 On Turbostack servers with MySQL enabled, phpMyAdmin comes pre-installed by default, making database management convenient and accessible right out of the box!
 
+## Accessing phpMyAdmin ([TurboStack App](https://my.turbostack.app "TurboStack App"))
+
 phpMyAdmin is easily accessible via the [TurboStack App](https://my.turbostack.app "TurboStack App"). To locate the link, go to `Hosts` > `Manage` > `Accounts` > `Gear icon (x2)` > `Database info`. From there, click the Go to phpMyAdmin link.
 
 If, for any reason, this link is inaccessible, you can still reach phpMyAdmin directly through your web browser, provided you have the necessary credentials. The rest of this page explains how to access your database's phpMyAdmin using this alternative method. 
+
+## Accessing phpMyAdmin (web browser)
 
 ### Prerequisites
 
 * The credentials of your SSH and database users, found in the 'credentials' tab in the [TurboStack App](https://my.turbostack.app "TurboStack App").
 * A functional web browser
-
-### Accessing phpMyAdmin
 
 You can access the phpMyAdmin module for your application by opening your web browser and navigating to the default URL with the 'phpadm' path. For example: https://www.yourdomain.ext/phpadm
 
