@@ -52,7 +52,7 @@ Example, [Deploy a Magento2 application](./howto_newapp.md)
 
 ## Cloning an account
 
-To make a clone of an existing application of an existing application, we provide the `Clone Account` feature. This function replicates the entire configuration and copies the files and database, enabling a quick and efficient setup with minimal effort.
+To set up a new account with the same configuration as an existing one, you can easily use the `Clone Account` feature. This function replicates the entire configuration, enabling a quick and efficient setup with minimal effort.
 
 Here’s how to do it:
 
@@ -62,14 +62,14 @@ Here’s how to do it:
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user7.png)
 3. In the next step, select the source host. This can be either the current server or another server you manage.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user8.png)
-4. Choose the account you want to clone, then click `Next`.
+4. Choose the account you want to copy, then click `Next`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user9.png)
-5. You'll be prompted to decide whether to copy the source account to an existing account or create a new account. Make your selection and click `Next`.
+5. You'll be prompted to decide whether to copy the configuration to an existing account or create a new account. Make your selection and click `Next`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user10.png)
 6. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Next` to finalize.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user11.png)
 
-And that’s it! Your application is now cloned to a new account. Be sure to save the configuration and publish it when you're ready.
+And that’s it! Your new account is now configured. Be sure to save the configuration and publish it when you're ready.
 
 
 
