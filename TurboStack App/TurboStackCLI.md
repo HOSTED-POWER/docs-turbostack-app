@@ -12,6 +12,9 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### NGINX Webserver
 [!badge icon="rocket" text="tscli nginx reload"] - Verifies the NGINX configuration and reloads it if it is valid. If it isn't valid you'll get an error with the issue reported.
 
+### Apache Webserver
+[!badge icon="rocket" text="tscli apache reload"] - Verifies the Apache configuration and reloads it if it is valid. If it isn't valid you'll get an error with the issue reported.
+
 ### BlackFire php Profiler
 [!badge icon="rocket" text="tscli blackfire enable"] - Installs the Blackfire Profiler and restarts the PHP-FPM service(s).
 
@@ -20,7 +23,7 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 [!badge icon="rocket" text="tscli blackfire reload"] - Restarts the Blackfire Profiler service, to apply changes to the configuration.
 
 ### Firewall
-[!badge icon="rocket" text="tscli firewall check"] - Returns info on wether the IP parameter is listed in the iptables. Please make sure to only use valid IP addresses.
+[!badge icon="rocket" text="tscli firewall check"] - Returns info on whether or not the IP parameter is listed in the iptables. Please make sure to only use valid IP addresses.
 
 [!badge icon="rocket" text="tscli firewall flush"] - Flushes all automatic firewall IP blocks from the blocklist.
 
@@ -28,14 +31,26 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 
 [!badge icon="rocket" text="tscli firewall unblock"] - Removes an IP address from the firewall's deny list.
 
-### PHP OpCache
+### PHP
+[!badge icon="rocket" text="tscli php kill"] - Kills all the server's php-FPM processes
+
+### OPcache
 [!badge icon="rocket" text="tscli opcache clear"] - Resets php's OpCache.
+
 
 ### Varnish Cache
 [!badge icon="rocket" text="tscli varnish clear"] - Clears everything from Varnish Cache's memory.
 
-[!badge icon="rocket" text="tscli varnish reload"] - Reloads the Varnisch Cache configuration
+[!badge icon="rocket" text="tscli varnish reload"] - Reloads the Varnish Cache configuration
 
 ### Redis Cache
-[!badge icon="rocket" text="tscli redis clear"] - Clears everything from Redis Cache's memory. 
+[!badge icon="rocket" text="tscli redis clear"] - Clears everything from Redis Cache's memory.
+
+### DKIM
+[!badge icon="rocket" text="tscli dkim records"] - Show the required TXT records for DKIM.
+
+[!badge icon="rocket" text="tscli dkim validate"] - Verify if the correct TXT records are active for DKIM to function correctly.
+
+### RabbitMQ
+[!badge icon="rocket" text="tscli rabbitmq queue list <OPTIONS> <VHOSTNAME>"] - List RabbitMQ queues.
 
