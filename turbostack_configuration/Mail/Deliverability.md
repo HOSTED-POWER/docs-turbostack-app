@@ -52,6 +52,7 @@ Define how to handle authentication failures using the `p` tag:
 Set up e-mail reporting using the `rua` tag: 
 - e.g. `rua=mailto:dmarc-reports@example.com`
 - The `ruf` tag can be used to send forensic reports.
+- This setting is entirely optional! You can omit the tag altogether.
 
 Enforce SPF compliance with the `aspf` tag:
 - Force strict compliance with `aspf=s` (RECOMMENDED)
