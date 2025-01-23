@@ -32,7 +32,9 @@ DKIM adds a digital signature to your emails, allowing the recipient’s server 
 
 - **How it works:** The sending server attaches an encrypted signature to the email’s header. The recipient’s server retrieves the public key from your DNS records to verify the signature’s authenticity.
 
+!!! Info
 Activating DKIM on Turbostack is easily done via the `<a href="https://my.turbostack.app" target="_blank">`TurboStack App `</a>`! Simply navigate to your host and go to the 'Advanced' tab. Follow the instructions under 'Mail Settings' to set up DKIM.
+!!!
 
 ### 3. DMARC (Domain-based Message Authentication, Reporting, and Conformance)
 DMARC ties SPF and DKIM together to provide a comprehensive email authentication framework. It tells recipient servers how to handle emails that fail SPF or DKIM checks and enables you to receive reports on failed authentication attempts.
