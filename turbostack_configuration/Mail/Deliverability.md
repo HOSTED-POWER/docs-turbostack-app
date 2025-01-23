@@ -40,15 +40,27 @@ DMARC ties SPF and DKIM together to provide a comprehensive email authentication
 - **How it works:** DMARC policies are defined in your DNS records, specifying whether to quarantine, reject, or do nothing with emails that fail authentication.
 
 #### How to Implement DMARC
-1. **Draft a DMARC Policy:** Define how to handle authentication failures using the `p` tag:
+1. **Draft a DMARC Policy:** 
+
+Define how to handle authentication failures using the `p` tag:
 - `p=none`: Monitor only (no enforcement).
 - `p=quarantine`: Mark failing emails as spam.
-- `p=reject`: Reject failing emails outright.
+- `p=reject`: Reject failing emails outright. (RECOMMENDED)
+
+Set up e-mail reporting using the `rua` tag: 
+- e.g. `rua=mailto:dmarc-reports@example.com`
+- The `ruf` tag can be used to send forensic reports.
+
+Enforce SPF compliance with the `aspf` tag:
+- Force strict compliance with `aspf=s` (RECOMMENDED)
+- Set up relaxed compliance with `aspf=r` (*)
+
+(*) In relaxed SPF Alignment, the MailFROM domain and the Header From domain must be an exact match or a parent/child match (i.e. example.com and child.example.com). The parent/child match type allows any subdomain and parent domain pair to generate a PASS result. Also worth noting, in the parent/child match scenario either the MailFROM domain or the Header From domain can be the parent or the child domain.
 
 2. **Create a DMARC Record:** Add a TXT record to your DNS. Example:
-_dmarc.example.com IN TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@example.com;"
-- `rua=` specifies where to send aggregate reports.
-- You can also use `ruf=` for forensic reports.
+_dmarc.example.com IN TXT "v=DMARC1; p=reject; aspf=s; rua=mailto:dmarc-reports@example.com;"
+
+This record will strictly reject mails that do NOT originate from an SMTP server included in the origin domain's SPF record, and send a report to dmarc-reports@example.com.
 
 3. **Monitor and Adjust:** Start with a monitoring-only policy (`p=none`) to collect data before applying stricter enforcement.
 
