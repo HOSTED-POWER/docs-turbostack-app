@@ -62,8 +62,6 @@ _dmarc.example.com IN TXT "v=DMARC1; p=reject; aspf=s; rua=mailto:dmarc-reports@
 
 This record will strictly reject mails that do NOT originate from an SMTP server included in the origin domain's SPF record, and send a report to dmarc-reports@example.com.
 
-3. **Monitor and Adjust:** Start with a monitoring-only policy (`p=none`) to collect data before applying stricter enforcement.
-
 ### 4. Further optimisation
 Properly configuring your DNS with SPF, DKIM, and DMARC is a significant step toward improving your email deliverability. However, if you’re still encountering issues, additional factors might be at play. Problems could stem from the content and formatting of your HTML email, SMTP server configurations, or even being blacklisted for other reasons.
 
