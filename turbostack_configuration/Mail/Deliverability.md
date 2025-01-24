@@ -19,13 +19,27 @@ SPF is an email authentication protocol designed to prevent spoofing by specifyi
 1. **Define Your Sending Sources:** Identify all the mail servers and third-party services you use to send emails, such as your website hosting, CRM, or marketing platforms.
 2. **Create an SPF Record:** Use your DNS manager to add a TXT record for your domain. An example SPF record might look like this:
 
-`v=spf1 include:mail.example.com ip4:64.186.18.168 -all`
+`v=spf1 a mx include:mail.example.com ip4:64.186.18.168 -all`
 
 - `v=spf1` indicates the version.
 - `include:` lists authorized servers.
 - `ip4:` lists authorized servers, but based on IPv4 address.
 - `-all` specifies that any non-listed server should fail the SPF check.
+- `a` includes the hostname's A record(s) in the SPF lookup.
+- `mx` includes the hostname's MX record(s) in the SPF lookup.
+
 3. **Test Your SPF Setup:** Tools like MXToolbox can validate your SPF record and ensure it’s correctly configured.
+
+!!! Important
+SPF records are limited to 10 DNS lookups per authentication check! Exceeding the 10-lookup limit results in a permanent error, causing SPF verification to fail.
+
+To stay within this limit, we advise the following:
+
+- Minimize include mechanisms by consolidating authorized senders.
+- Avoid unnecessary use of a and mx lookups.
+- Replace mechanisms with static IP ranges when feasible.
+- Use SPF record flattening tools to generate a single, simplified record.
+!!!
 
 ### 2. DKIM (DomainKeys Identified Mail)
 DKIM adds a digital signature to your emails, allowing the recipient’s server to verify that the message hasn’t been altered in transit and that it genuinely came from your domain.
