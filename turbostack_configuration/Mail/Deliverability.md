@@ -2,7 +2,7 @@
 order: 100
 icon: mail
 ---
-# Email Delivery Best Practices: Keep Your Messages Out of Spam
+# Email Deliverability
 Ensuring your emails land in the recipient’s inbox—and not their spam folder—requires careful attention to email delivery practices. Poor email delivery can harm your reputation, reduce engagement, and hinder communication with your audience.
 
 This article explores best practices to improve email deliverability and provides an in-depth explanation of key email authentication protocols like SPF, DKIM, and DMARC. Implementing these strategies will help you avoid the spam folder and maintain a strong sender reputation.
@@ -33,7 +33,7 @@ DKIM adds a digital signature to your emails, allowing the recipient’s server 
 - **How it works:** The sending server attaches an encrypted signature to the email’s header. The recipient’s server retrieves the public key from your DNS records to verify the signature’s authenticity.
 
 !!! Info
-Activating DKIM on Turbostack is easily done via the `<a href="https://my.turbostack.app" target="_blank">`TurboStack App `</a>`! Simply navigate to your host and go to the 'Advanced' tab. Follow the instructions under 'Mail Settings' to set up DKIM.
+Activating DKIM on Turbostack is easily done via the [TurboStack App](https://my.turbostack.app "TurboStack App")! Simply navigate to your host and go to the 'Advanced' tab. Follow the instructions under 'Mail Settings' to set up DKIM.
 !!!
 
 ### 3. DMARC (Domain-based Message Authentication, Reporting, and Conformance)
@@ -68,6 +68,6 @@ This record will strictly reject mails that do NOT originate from an SMTP server
 ### 4. Further optimisation
 Properly configuring your DNS with SPF, DKIM, and DMARC is a significant step toward improving your email deliverability. However, if you’re still encountering issues, additional factors might be at play. Problems could stem from the content and formatting of your HTML email, SMTP server configurations, or even being blacklisted for other reasons.
 
-To assess your current email deliverability, we recommend running a test on `<a href="https://mail-tester.com" target="_blank">`Mail Tester`</a>`. If your score isn’t perfect, the test report will highlight areas for improvement.
+To assess your current email deliverability, we recommend running a test on [Mail Tester](https://mail-tester.com "Mail Tester"). If your score isn’t perfect, the test report will highlight areas for improvement.
 
 Need help interpreting the results or taking the next steps? Feel free to reach out to us—we’re here to assist!
