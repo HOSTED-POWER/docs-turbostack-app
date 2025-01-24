@@ -24,9 +24,10 @@ SPF is an email authentication protocol designed to prevent spoofing by specifyi
 - `v=spf1` indicates the version.
 - `include:` lists authorized servers.
 - `ip4:` lists authorized servers, but based on IPv4 address.
-- `-all` specifies that any non-listed server should fail the SPF check.
+- `ip6:` lists authorized servers, but based on IPv6 address.
 - `a` includes the hostname's A record(s) in the SPF lookup.
 - `mx` includes the hostname's MX record(s) in the SPF lookup.
+- `-all` specifies that any non-listed server should fail the SPF check.
 
 !!! Important
 SPF records are limited to 10 DNS lookups per authentication check! Exceeding the 10-lookup limit results in a permanent error, causing SPF verification to fail.
