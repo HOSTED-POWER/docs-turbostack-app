@@ -22,11 +22,11 @@ SPF is an email authentication protocol designed to prevent spoofing by specifyi
 `v=spf1 a mx include:mail.example.com ip4:64.186.18.168 -all`
 
 - `v=spf1` indicates the version.
+- `a` includes the hostname's A record(s) in the SPF lookup.
+- `mx` includes the hostname's MX record(s) in the SPF lookup.
 - `include:` lists authorized servers.
 - `ip4:` lists authorized servers, but based on IPv4 address.
 - `ip6:` lists authorized servers, but based on IPv6 address.
-- `a:` includes the hostname's A record(s) in the SPF lookup.
-- `mx:` includes the hostname's MX record(s) in the SPF lookup.
 - `-all` specifies that any non-listed server should fail the SPF check.
 
 !!! Important
