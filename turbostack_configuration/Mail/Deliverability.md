@@ -28,8 +28,6 @@ SPF is an email authentication protocol designed to prevent spoofing by specifyi
 - `a` includes the hostname's A record(s) in the SPF lookup.
 - `mx` includes the hostname's MX record(s) in the SPF lookup.
 
-3. **Test Your SPF Setup:** Tools like MXToolbox can validate your SPF record and ensure it’s correctly configured.
-
 !!! Important
 SPF records are limited to 10 DNS lookups per authentication check! Exceeding the 10-lookup limit results in a permanent error, causing SPF verification to fail.
 
@@ -40,6 +38,8 @@ To stay within this limit, we advise the following:
 - Replace mechanisms with static IP ranges when feasible.
 - Use SPF record flattening tools to generate a single, simplified record.
 !!!
+
+3. **Test Your SPF Setup:** Tools like MXToolbox can validate your SPF record and ensure it’s correctly configured.
 
 ### 2. DKIM (DomainKeys Identified Mail)
 DKIM adds a digital signature to your emails, allowing the recipient’s server to verify that the message hasn’t been altered in transit and that it genuinely came from your domain.
