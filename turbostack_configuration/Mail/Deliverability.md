@@ -25,8 +25,8 @@ SPF is an email authentication protocol designed to prevent spoofing by specifyi
 - `include:` lists authorized servers.
 - `ip4:` lists authorized servers, but based on IPv4 address.
 - `ip6:` lists authorized servers, but based on IPv6 address.
-- `a` includes the hostname's A record(s) in the SPF lookup.
-- `mx` includes the hostname's MX record(s) in the SPF lookup.
+- `a:` includes the hostname's A record(s) in the SPF lookup.
+- `mx:` includes the hostname's MX record(s) in the SPF lookup.
 - `-all` specifies that any non-listed server should fail the SPF check.
 
 !!! Important
