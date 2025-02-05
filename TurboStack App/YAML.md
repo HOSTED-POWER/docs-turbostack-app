@@ -8,6 +8,10 @@ _This page is under construction_
 
 The source code of the configuration of the server could be found as yaml. The yaml allows to create new and 100% identical servers in seconds.
 
+[!embed allowFullScreen="false"](https://player.vimeo.com/video/1053693836?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
+
+Detailed screenshots can be found below
+
 ![Yaml Source Code](../img/turbostackapp/YAML/source-code.png)
 
 You could also choose to work with YAML by default via the profile settings.
