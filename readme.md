@@ -11,6 +11,8 @@ We have several scalable packages, tailored for the fastest performance. We offe
 
 If this is the first time you're trying to log in to your PoC-environment or your Production TurboStack, you've come to the right place. This is where you start. So let's get goin'!
 
+[!embed allowFullScreen="false"](https://player.vimeo.com/video/1054418669?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
+
 ## Account Setup
 
 ### Create a Customer Profile
