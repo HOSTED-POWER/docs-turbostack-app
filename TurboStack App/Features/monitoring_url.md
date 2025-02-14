@@ -9,7 +9,7 @@ and on the other hand proactive monitor the resources and let you know if the lo
 
 The general health of the server can be seen in the TurboStack APP overview
 
-![TurboStack GUI](img/features/mon/TS_GUI_mon_1.png "TurboStack GUI")
+![TurboStack GUI](img/feature/mon/TS_GUI_mon_1.png "TurboStack GUI")
 
 1. List IPv4 and IPv6 and show the general uptime of the server
 2. Shows memory and swap usage
