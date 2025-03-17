@@ -1,5 +1,9 @@
-What are systemd user services?
--------------------------------------
+---
+order: 100
+icon: apps
+---
+
+# What are systemd user services?
 
 You are probably familiar with the system-wide systemd services, managed by the systemctl command. However, systemd services can also be entirely controlled by regular unprivileged users.
 So it means to configure this, you don't have the need for root access, you can run the services under a regular user account.
