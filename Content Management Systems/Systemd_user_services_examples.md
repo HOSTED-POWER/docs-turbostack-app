@@ -5,8 +5,10 @@ icon: apps
 
 # What are systemd user services?
 
-You are probably familiar with the system-wide systemd services, managed by the systemctl command. However, systemd services can also be entirely controlled by regular unprivileged users.
-So it means to configure this, you don't have the need for root access, you can run the services under a regular user account.
+Systemd is a tool that manages programs running in the background on your server.It organizes these programs into units and ensures they start and stop correctly.
+Regular users can manage their own services without needing admin rights. This means you can run personal scripts or applications easily.
+
+Why? Systemd just makes managing services simpler and more efficient, both for the system as the individual users on the server.
 
 Here are some examples on how to configure and utilise the user-level systemd services for a variety of content Management systems
 
