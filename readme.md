@@ -32,7 +32,7 @@ Our customer center enables you to:
 * Purchase or transfer domain names
 * Assign rights to various contacts
 * Add SSH users, configure SSL certificates
-* etc...
+* etc ...
 
 ### Add Relevant Contacts
 
