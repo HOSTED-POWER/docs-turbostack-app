@@ -50,7 +50,7 @@ links:
     target: blank
   - text: Knowledge Base
     icon: ":book:"
-    link: https://docs.hosted-power.com/knowledge_base
+    link: https://docs.turbostack.app/knowledge_base
     target: blank
   - text: Submit a Ticket
     icon: ":incoming_envelope:"
@@ -59,6 +59,8 @@ links:
 
 nav:
   - scope: /  # Quickstart pages appear at the top level with no parent entry
+    exclude:
+      - /knowledge-base/
   - scope: /knowledge_base/  # Knowledge Base pages appear separately, with no parent entry
 
 edit:
