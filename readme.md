@@ -4,23 +4,19 @@ icon: zap
 ---
 # Getting Started
 
-## Welcome ⚡️
+Welcome to our TurboStack® knowledge base! Whether you’re gearing up for your first deployment or diving into more advanced configurations, we’ve got you covered. 
 
-You have reached our TurboStack® documentation pages because you're interested in the full blown TurboStack® experience.
-We have several scalable packages, tailored for the fastest performance. We offer staging & production packages, which can be clustered if needed. [Check out our packages here](https://www.hosted-power.com/en/turbostack#our-packages).
+TurboStack® offers a suite of scalable packages designed for lightning-fast performance, including staging and production environments that can be clustered to meet your needs. [Check out our packages here](https://www.hosted-power.com/en/turbostack#our-packages).
 
-If this is the first time you're trying to log in to your PoC-environment or your Production TurboStack, you've come to the right place. This is where you start. So let's get goin'!
+If you’re here to access your Proof-of-Concept (PoC) environment or production TurboStack for the first time, you’re in the right place. Let’s get started! ⚡️
 
 ## Account Setup
 
-### Create a Customer Profile
-
-First things first. You need to set up a new account in our **Customer Center**, which will give you access to your profile & environments. You can [sign-up here](https://portal.hosted-power.com/signup/).
-Please fill in the required information and submit.
+### Create Your Customer Profile
+Before you start, create a new account in our Customer Center. This grants you access to your profile and environments. Sign up [here](https://portal.hosted-power.com/signup/) and fill in the required details to get started.
 
 ## Login into the Hosted Power Customer Center
-
-You can reach the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/ "Hosted Power Customer Center").
+Access the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/ "Hosted Power Customer Center").
 
 Our customer center enables you to:
 
@@ -33,7 +29,6 @@ Our customer center enables you to:
 * etc...
 
 ### Add Relevant Contacts
-
 Once you've created an account, proceed to add all relevant contacts to your account.
 
 This step is crucial for effective communication and collaboration between Hosted Power & your team.
@@ -43,7 +38,6 @@ Adding relevant contacts to your account ensures that the right people receive t
 !!!
 
 ### External Partner Integration (optional)
-
 *Ihis section is only relevant if you're working with a partner that needs access to your account to configure the environments and/or has to be notified about support tickets etc.*
 
 If you're a customer working through a partner, from now on referred to as "Hosted Partner" -*pun intended*-, TurboStack provides a seamless integration process. Request to link your account to the Hosted Partner using our innovative "teams" feature. The Hosted Partner can then supply you a unique code, enabling you to seamlessly join your account.
