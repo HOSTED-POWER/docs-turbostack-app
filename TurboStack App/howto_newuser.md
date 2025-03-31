@@ -63,32 +63,24 @@ How to create a new [account](./howto_newuser.md)
 Creating a new (default) application under the newly created `prod` user.
 Scenario: creating a Magento2 application, listening on `www.example.com` and using varnish as caching
 
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app1.png)
-
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app2.png)
-
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app3.png)
-
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app4.png)
-
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app5.png)
-
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app6.png)
-
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app7.png)
-
-![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app8.png)
-
 1. Open the detail section for the user
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app1.png)
 2. Click to add a new application
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app2.png)
 3. The first application for each user should always be `default`
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app3.png)
 4. Go to `Hostnames` and 1 or more names the website should listen on
 5. Choose a website SSL certificate, there are 3 options: `letsencrypt`(default), `selfsigned` and `custom`(bring your own)
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app4.png)
 6. Go to `Technologies` and set the app type that matches your application
 7. Enable PHP or another technology that your application requires
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app5.png)
 8. Scroll down to enable `varnish` on our websitedat
-9. Optionally a `monitoring url` can be set that Hosted Power will monitoring 24/7.
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app6.png)
+9. When going live set a `monitoring url` so Hosted Power will monitor 24/7.
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app7.png)
 10. Click `Save` to save and exit the configuration wizard.
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app8.png)
 
 Now, the new application is configured, click `Save & Publish` to deploy the configuration to the server.
 
@@ -112,7 +104,7 @@ system_users:
 ```
 
 !!! 
-a system_user (eg. `prod`) is needed before an application can be deployed
+a system_user (e.g. `prod`) is needed before an application can be deployed
 !!!
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app11.png)

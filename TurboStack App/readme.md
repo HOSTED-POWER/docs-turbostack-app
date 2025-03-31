@@ -82,7 +82,7 @@ You even have the ability to allow or block complete countries/regions.
 ![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
 
 1. Allow (whitelist) one or more IPs or IP ranges
-   1. These ip's will not be blocked by any brute force protections
-   2. These ip's will also have FULL access to any otherwise closed ports.
+   1. These IPs will not be blocked by any brute force protections
+   2. These IPs will also have FULL access to any otherwise closed ports.
 2. Block (blacklist) one or more countries
 3. Only allow (whitelist) one or more countries
