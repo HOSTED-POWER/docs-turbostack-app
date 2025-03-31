@@ -26,14 +26,14 @@ Our customer center enables you to:
 * Add billing information
 * Follow-up on your support tickets
 * Purchase or transfer domain names
+* Manage DNS settings
 * Assign rights to various contacts
-* Add SSH users, configure SSL certificates
 * etc...
 
 ### Add Relevant Contacts
-Once you've created an account, proceed to add all relevant contacts to your account.
+Once you've created an account, proceed to add all relevant contacts to your account. This step is crucial for effective communication and collaboration between Hosted Power & your team!
 
-This step is crucial for effective communication and collaboration between Hosted Power & your team.
+A more detailed overview of Contacts and Teams management can be found [Here](https://docs.turbostack.app/customer-center/contacts/ "Here")
 
 !!! Important
 Adding relevant contacts to your account ensures that the right people receive the right information and communication. They could also be used to contact you in cases of emergency.
@@ -46,15 +46,15 @@ If you're a customer working through a partner, from now on referred to as "Host
 
 When the partner is linked to your account, the partner will automatically be linked to your account and they will for example be able to get support ticket notifications (if enabled). Furthermore they will be able to control your environments and servers via our TurboStack® GUI portal.
 
-Under Customer Center > Managed Contacts > Teams you will find the invite team button where you can invite the partner as soon as you recieved the "Invite Code"
+Under Customer Center > Managed Contacts > Teams you will find the invite team button where you can invite the partner as soon as you received the "Invite Code"
 
 ![1715862802209](image/readme/1715862802209.png)
 
-Likely the following checkboxes are of particular intrest
+Likely the following checkboxes are of particular interest:
 
 ![TurboStack Permissions](image/readme/1715863199073.png "TurboStack Permissions")
 
-This integration enhances coordination and ensures a unified workflow and allows communicating the right information to the right people.
+This integration enhances coordination, ensures a unified workflow and allows communicating the right information to the right people.
 
 ### Set Permissions
 
@@ -64,39 +64,8 @@ TurboStack empowers you with granular control over account permissions. Navigate
 
 ## TurboStack® Suite GUI
 
-Once you have your customer profile set up, it's time for the real work.
-Let's check out your TurboStack environment in the [TurboStack App](turbostack-app/basic_install/)
+Once you have your customer profile set up, it's time for the real work. Login to the [TurboStack App](https://my.turbostack.app "TurboStack App") with your new credentials and get your application online! 
 
-![TurboStack GUI](image/readme/1715863517795.png "TurboStack GUI")
 
-## Getting started with your TurboStack
 
-### 1. Deployment
 
-Most applications can be easily deployed, as we already have fully optimized TurboStack technology for most commonly used open source solutions. Once deployed, you will receive the necessary info to be able to manage your TurboStack environment.
-
-### 2. Login via SSH
-
-Get started by [creating SSH keys and logging in to your TurboStack via SSH](turbostack_configuration/SSH.md).
-
-### 3. Configure your TurboStack
-
-#### 3.1 Infrastructure As code with YAML
-
-It's also possible to configure TurboStack node simply by editing and/copy pasting the source code of the complete configuration (YAML file) in the app. More info on the [YAML Source code](TurboStack App/YAML.md).
-
-#### 3.2 TS CLI
-
-[More info](turbostack_configuration/ts_cli.md) on our TurboStack Command Line Interface
-
-### 4. Clone settings from an existing TurboStack
-
-You can clone existing server settings via the *Source code* (Yaml) view. It allows you to use a predefined template or to create an exact copy of the configuration of an already runnining environment
-
-![Clone from Template or other host](image/readme/1715863608338.png "Clone from Template or other host")
-
-### 5. Installing a new application on your TurboStack
-
-## In need of Support?
-
-Got burning questions or bursting with feedback? Don't hold back – we thrive on it! Shoot us a message at [support@hosted-power.com](mailto:support@hosted-power.com) or call us at +32 53 599 000, and our squad of Turbo-trouble solvers will swoop in. Hosted Power's sales and support gurus are at your service on weekdays during office hours. Of course you can count on your SLA should critical incidents happen.

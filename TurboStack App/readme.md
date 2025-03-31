@@ -1,7 +1,3 @@
----
-order: 200
-icon: info
----
 # Overview
 
 ## Login and locate your managed servers
@@ -28,12 +24,11 @@ For each server there are main functions available.
 4. Save any changes made to the configuration
 5. Save and Publish: saves and deploys the changes made to the server
 
-Under point 5, there the option to save and full publish.
-This will ensure everything gets deployed.
+Under point 5, there the option to save and full publish. This will ensure everything is deployed, as opposed to only the changes.
 
 ## The 'server' tab
 
-The **server** tab defines some basic middleware configuration, like the type of webserver and some different type of databases that are supported.
+The **server** tab defines some basic middleware configuration, like the type of webserver and some different types of databases that are supported.
 
 ![TurboStackAppServerTab](../img/turbostackapp/basicinstall/tsa_server_tab1.png)
 
@@ -46,27 +41,29 @@ The prod user has an application running on the weburl `example.com` and `www.ex
 
 ![TurboStackAppAccountTab](../img/turbostackapp/basicinstall/tsa_account_tab1.png)
 
-1. Shows user `prod` and its ontaining applications
+1. Shows user `prod` and its containing applications
 2. Shows user `stag`, with a collapsed layout
 3. Will create an additional user.
+
+More info on accounts and application management can be found [Here](https://docs.turbostack.app/turbostack-app/howto_newuser/ "Here").
 
 ## The 'groups' tab
 
 The **groups** tab can link a server to an existing group.
 Groups can define additional configuration that can then be applied to all nodes in that group. 
 
-The groups can be used to configure SSH keys for all people in your company, these right could than also be quickly revoked on all servers in the group (for example if someone leaves the company).
+The groups can be used to configure SSH keys for everyone in your company. These rights can be quickly revoked on all servers in the group whenever necessary.
 
-Another very powerfull groups feature is that it allows to set custom settings which will apply to all servers in the group. For example it could be used to change the default timezone for all servers in the group.
+Another very powerful feature of groups is the ability to set custom settings which apply to all servers in the group. For example, it could be used to change the default timezone for all servers in the group.
 
 ![TurboStackAppGroupTab](../img/turbostackapp/basicinstall/tsa_group_tab1.png)
 
 ## The 'SSH' tab
 
-The **SSH** tab defines one or more public ssh keys that allow shell access to a TurboStack node without using a password.
+The **SSH** tab defines one or more public ssh keys that allow shell access to a TurboStack node without using password authentication.
 SSH keys can be added, deleted and edited here.
 
-You can also disable SSH password authentication completely here by activating the checkbox "Only allow SSH authentication by keys".
+You can also disable SSH password authentication completely by activating the checkbox "Only allow SSH authentication by keys".
 
 ![TurboStackAppSshTab](../img/turbostackapp/basicinstall/tsa_ssh_tab1.png)
 
