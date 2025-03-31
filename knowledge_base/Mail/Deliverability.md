@@ -19,18 +19,35 @@ SPF is an email authentication protocol designed to prevent spoofing by specifyi
 1. **Define Your Sending Sources:** Identify all the mail servers and third-party services you use to send emails, such as your website hosting, CRM, or marketing platforms.
 2. **Create an SPF Record:** Use your DNS manager to add a TXT record for your domain. An example SPF record might look like this:
 
-v=spf1 include:mail.example.com ip4:64.186.18.168 -all
+`v=spf1 a mx include:mail.example.com ip4:64.186.18.168 -all`
 
 - `v=spf1` indicates the version.
+- `a` includes the hostname's A record(s) in the SPF lookup.
+- `mx` includes the hostname's MX record(s) in the SPF lookup.
 - `include:` lists authorized servers.
 - `ip4:` lists authorized servers, but based on IPv4 address.
+- `ip6:` lists authorized servers, but based on IPv6 address.
 - `-all` specifies that any non-listed server should fail the SPF check.
+
+!!! Important
+SPF records are limited to 10 DNS lookups per authentication check! Exceeding the 10-lookup limit results in a permanent error, causing SPF verification to fail.
+
+To stay within this limit, we advise the following:
+
+- Minimize include mechanisms by consolidating authorized senders.
+- Avoid unnecessary use of a and mx lookups.
+- Replace mechanisms with static IP ranges when feasible.
+- Use SPF record flattening tools to generate a single, simplified record.
+!!!
+
 3. **Test Your SPF Setup:** Tools like MXToolbox can validate your SPF record and ensure it’s correctly configured.
 
 ### 2. DKIM (DomainKeys Identified Mail)
 DKIM adds a digital signature to your emails, allowing the recipient’s server to verify that the message hasn’t been altered in transit and that it genuinely came from your domain.
 
-- **How it works:** The sending server attaches an encrypted signature to the email’s header. The recipient’s server retrieves the public key from your DNS records to verify the signature’s authenticity.
+- **How it works:** The sending server attaches an encrypted signature to the email’s header. The recipient’s server retrieves the public key from your DNS records to verify the signature’s authenticity. Example:
+
+`cloud._domainkey.example.com IN TXT "k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDmzRmJRQxLEuyYiyMg4suA2SyMwR5MGHpP9diNT1hRiwUd/mZp1ro7kIDTKS8ttkI6z6eTRW9e9dDOxzSxNuXmume60Cjbu08gOyhPG3GfWdg7QkdN6kR4V75MFlw624VY35DaXBvnlTJTgRg/EW72O1DiYVThkyCgpSYS8nmEQIDAQAB"`
 
 !!! Info
 Activating DKIM on Turbostack is easily done via the [TurboStack App](https://my.turbostack.app "TurboStack App")! Simply navigate to your host and go to the 'Advanced' tab. Follow the instructions under 'Mail Settings' to set up DKIM.
@@ -61,7 +78,7 @@ Enforce SPF compliance with the `aspf` tag:
 (*) In relaxed SPF Alignment, the MailFROM domain and the Header From domain must be an exact match or a parent/child match (i.e. example.com and child.example.com). The parent/child match type allows any subdomain and parent domain pair to generate a PASS result. Also worth noting, in the parent/child match scenario either the MailFROM domain or the Header From domain can be the parent or the child domain.
 
 2. **Create a DMARC Record:** Add a TXT record to your DNS. Example:
-_dmarc.example.com IN TXT "v=DMARC1; p=reject; aspf=s; rua=mailto:dmarc-reports@example.com;"
+`_dmarc.example.com IN TXT "v=DMARC1; p=reject; aspf=s; rua=mailto:dmarc-reports@example.com;`
 
 This record will strictly reject mails that do NOT originate from an SMTP server included in the origin domain's SPF record, and send a report to dmarc-reports@example.com.
 

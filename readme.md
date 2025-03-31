@@ -10,6 +10,8 @@ TurboStack® offers a suite of scalable packages designed for lightning-fast per
 
 If you’re here to access your Proof-of-Concept (PoC) environment or production TurboStack for the first time, you’re in the right place. Let’s get started! ⚡️
 
+[!embed allowFullScreen="false"](https://player.vimeo.com/video/1054418669?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
+
 ## Account Setup
 
 ### Create Your Customer Profile
