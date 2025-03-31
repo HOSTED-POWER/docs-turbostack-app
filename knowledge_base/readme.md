@@ -1,5 +1,5 @@
 ---
-title: Welcome to the Knowledge Base
+title: Knowledge Base
 icon: book
 ---
 
