@@ -46,12 +46,20 @@ links:
     target: blank
   - text: Customer Center
     icon: ":information_desk_person:"
-    link: https://portal.hosted-power.com/
+    link: https://portal.hosted-power.com
+    target: blank
+  - text: Knowledge Base
+    icon: ":book:"
+    link: https://docs.hosted-power.com/knowledge_base
     target: blank
   - text: Submit a Ticket
     icon: ":incoming_envelope:"
     link: mailto:support@hosted-power.com
     target: blank
+
+nav:
+  - scope: /  # Quickstart pages appear at the top level with no parent entry
+  - scope: /knowledge_base/  # Knowledge Base pages appear separately, with no parent entry
 
 edit:
   repo: "https://github.com/HOSTED-POWER/docs-turbostack-app"
