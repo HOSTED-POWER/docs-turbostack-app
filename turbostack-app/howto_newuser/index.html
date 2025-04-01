@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796826235227">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796829817576">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796826235227" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796829817576" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796826235227" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796829817576" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796826235227" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796826235227" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796829817576" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.796829817576" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -360,7 +360,7 @@ Scenario: creating a Magento2 application, listening on <code v-pre>www.example.
 </figure>
 </li>
 <li>Go to <code v-pre>Hostnames</code> and 1 or more names the website should listen on</li>
-<li>Choose a website SSL certificate, there are 3 options: <code v-pre>letsencrypt</code>(default), <code v-pre>selfsigned</code> and <code v-pre>custom</code>(bring your own)
+<li>Choose a website SSL certificate, there are 3 options: <code v-pre>letsencrypt</code>(default), <code v-pre>self-signed</code> and <code v-pre>custom</code>(install your own 3rd party certificate)
 <figure class="content-center">
     <img src="../../img/turbostackapp/newapp/tsa_app4.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
@@ -373,13 +373,13 @@ Scenario: creating a Magento2 application, listening on <code v-pre>www.example.
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
 </li>
-<li>Scroll down to enable <code v-pre>varnish</code> on our websitedat
+<li>Scroll down to enable <code v-pre>varnish</code>
 <figure class="content-center">
     <img src="../../img/turbostackapp/newapp/tsa_app6.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
 </li>
-<li>When going live set a <code v-pre>monitoring url</code> so Hosted Power will monitor 24/7.
+<li>When going live, set a <code v-pre>monitoring url</code> so Hosted Power will monitor 24/7.
 <figure class="content-center">
     <img src="../../img/turbostackapp/newapp/tsa_app7.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
@@ -392,7 +392,7 @@ Scenario: creating a Magento2 application, listening on <code v-pre>www.example.
 </figure>
 </li>
 </ol>
-<p>Now, the new application is configured, click <code v-pre>Save &amp; Publish</code> to deploy the configuration to the server.</p>
+<p>Now the new application is configured, click <code v-pre>Save &amp; Publish</code> to deploy the configuration to the server.</p>
 <p><figure class="content-center">
     <img src="../../img/turbostackapp/newapp/tsa_app9.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
@@ -411,7 +411,7 @@ Scenario: creating a Magento2 application, listening on <code v-pre>www.example.
         </span></span>
     </h3>
 </doc-anchor-target>
-<p>for more advanced users there also the YAML configuration.
+<p>For more advanced users there also the YAML configuration.
 adding a new application can be done with</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">system_users:
@@ -421,7 +421,7 @@ adding a new application can be done with</p>
         app_type: magento2
         php_version: &quot;8.2&quot;
         varnish_enabled: true
-        cert_type: selfsigned</code></pre>
+        cert_type: self-signed</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
