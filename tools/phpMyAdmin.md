@@ -1,6 +1,6 @@
 ---
 order: 100
-icon: columns
+icon: table
 ---
 # phpMyAdmin
 
