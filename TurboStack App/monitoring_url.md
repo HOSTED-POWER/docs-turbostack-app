@@ -1,5 +1,5 @@
 ---
-order: 900
+order: 100 
 icon: info
 ---
 # Monitoring
