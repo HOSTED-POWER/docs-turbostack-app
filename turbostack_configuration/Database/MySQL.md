@@ -1,6 +1,6 @@
 ---
 order: 200
-icon: database
+icon: columns
 ---
 
 # MySQL
