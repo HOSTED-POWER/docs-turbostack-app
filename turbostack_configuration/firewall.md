@@ -43,7 +43,7 @@ Furthermore it would allow access to ports which are otherwise closed (blocked) 
 
 ## Control Panels with Firewall GUI
 
-If you're using a control panel like [DirectAdmin](../control_panels/directadmin.md) or [cPanel](../control_panels/cpanel.md), you'll also be able to use the Firewall GUI.
+If you're using a control panel like [DirectAdmin](../technologies/control_panels/directadmin.md) or [cPanel](../technologies/control_panels/cpanel.md), you'll also be able to use the Firewall GUI.
 
 ### Unblock an IP Address in Configserver & Reason for blocking
 

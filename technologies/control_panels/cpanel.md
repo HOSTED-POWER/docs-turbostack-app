@@ -26,7 +26,7 @@ This now requires each subdomain be verified individually. If this fails, they w
 
 To resolve this, we recommend you check the configured domains. As you can see in the screenshot below, this often includes auto-generated cPanel subdomains
 
-![AutoSSL issue](../img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png)
+![AutoSSL issue](../../img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png)
 
 As you can see, there's a lot of unprotected subdomains, however, none of these are actually in use. As such, you can safely exclude these from your certificate.
 To do this, you need to be logged in as the user of the domain for which the certificate is being generated.
@@ -34,7 +34,7 @@ To do this, you need to be logged in as the user of the domain for which the cer
 Once logged in, you need to find the following option in your main menu: SSL/TLS Status 
 
 That page will look like this:
-![AutoSSL issue2](../img/turbostackapp/control_panels/kb-cpanel-autossl-issue2.png)
+![AutoSSL issue2](../../img/turbostackapp/control_panels/kb-cpanel-autossl-issue2.png)
 
 Here you can see what your subdomains might look like. "AutoSSL Domain Validated" means it works, so you can ignore those. Then, all subdomains in red need to be checked. If you don't use the subdomain, you should click "Exclude from AutoSSL" as seen in the second item in the screenshot. 
 Once you've dealt with all subdomains in error, you can click the "Run AutoSSL" button at the top of the page to re-run the validation. This will mean no more errors when running AutoSSL, and no more alert spam!

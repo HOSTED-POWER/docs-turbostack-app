@@ -1,4 +1,4 @@
 label: Control Panels
-order: 70
-icon: apps
+order: 100
+icon: sliders
 expanded: false
