@@ -29,7 +29,7 @@ ProxyPass "/" "http://localhost:8086/"
 ProxyPassReverse "/" "http://localhost:8086/"
 ```
 
-![Apache Reverse Proxy DirectAdmin](../img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png "Apache Reverse Proxy DirectAdmin")
+![Apache Reverse Proxy DirectAdmin](../../img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png "Apache Reverse Proxy DirectAdmin")
 
 ## Override e-mail in DirectAdmin
 
@@ -44,7 +44,7 @@ DirectAdmin sometimes has an unwanted default email sender address from when usi
   5. Make sure to apply on all php versions
   6. Hit the save button
 
-![Override mail DirectAdmin](../img/turbostackapp/control_panels/fix-email-from.png)
+![Override mail DirectAdmin](../../img/turbostackapp/control_panels/fix-email-from.png)
 
 ## Disable Local Mail Delivery for a Domain
 
