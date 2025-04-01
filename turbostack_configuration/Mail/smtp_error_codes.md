@@ -1,6 +1,6 @@
 ---
 order: 50
-icon: mail
+icon: alert
 ---
 
 # SMTP Errors
@@ -19,13 +19,13 @@ If you have any questions or difficulties, don't hesitate to contact us!
 
 **550-5.7.1 (Generic)**
 
-- ** Meaning: This is a general status code indicating an issue with the sender’s reputation, resulting in emails being blocked by the receiving mail server. It is used by many mail providers, who don’t provide more specific reasons for blocking mails.
-- ** Solution: As the exact cause of distrust is unclear from the error message, please check all other 550-5.7.1 codes. 
+- Meaning: This is a general status code indicating an issue with the sender’s reputation, resulting in emails being blocked by the receiving mail server. It is used by many mail providers, who don’t provide more specific reasons for blocking mails.
+- Solution: As the exact cause of distrust is unclear from the error message, please check all other 550-5.7.1 codes. 
 
 **550-5.7.1 "This message is likely unsolicited email"**
 
-- ** Meaning: To reduce spam, the receiving mail server has blocked the message because it is likely unsolicited email.
-- ** Solution: Review email content and ensure compliance with the receiving mail server’s anti-spam policies. Refer to their guidelines for more information. 
+- Meaning: To reduce spam, the receiving mail server has blocked the message because it is likely unsolicited email.
+- Solution: Review email content and ensure compliance with the receiving mail server’s anti-spam policies. Refer to their guidelines for more information. 
 
 **550-5.7.1 "This message is likely suspicious due to the very low reputation of the sending IP address"**
 

@@ -1,6 +1,6 @@
 ---
 order: 100
-icon: mail
+icon: paper-airplane
 ---
 # Email Deliverability
 Ensuring your emails land in the recipient’s inbox—and not their spam folder—requires careful attention to email delivery practices. Poor email delivery can harm your reputation, reduce engagement, and hinder communication with your audience.
