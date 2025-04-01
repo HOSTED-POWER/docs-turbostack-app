@@ -21,4 +21,4 @@ The key principles behind Let's Encrypt, taken from their <a href="http://www.le
 
 ## Third Party Certificate
 
-[Contact our support](../support/standard_support) if you need to install a third party certificate.
+[Contact our support](../Support/standard_support) if you need to install a third party certificate.
