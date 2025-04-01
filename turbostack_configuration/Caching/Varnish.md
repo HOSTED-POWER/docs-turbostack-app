@@ -1,6 +1,6 @@
 ---
 order: 190
-icon: database
+icon: cache
 ---
 
 # Varnish
