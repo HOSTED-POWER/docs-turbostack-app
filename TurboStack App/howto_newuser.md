@@ -72,7 +72,7 @@ Scenario: creating a Magento2 application, listening on `www.example.com` and us
 4. Go to `Hostnames` and 1 or more names the website should listen on
 5. Choose a website SSL certificate, there are 3 options: `letsencrypt`(default), `self-signed` and `custom`(install your own 3rd party certificate)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app4.png)
-6. Go to `Technologies` and set the app type that matches your application
+6. Go to `Technologies` and set the app type(*) that matches your application
 7. Enable PHP or another technology that your application requires
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app5.png)
 8. Scroll down to enable `varnish`
@@ -86,6 +86,8 @@ Now the new application is configured, click `Save & Publish` to deploy the conf
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app9.png)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app10.png)
+
+(*) The app type should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can't find your CMS of framework in this list? Contact us!
 
 ### Creating a new application in source code mode (YAML) [!badge icon="alert" text="Advanced"]
 
@@ -125,7 +127,7 @@ Here’s how to do it:
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user9.png)
 5. You'll be prompted to decide whether to copy the source account to an existing account or create a new account. Make your selection and click `Next`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user10.png)
-6. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Next` to finalize.
+6. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Next` to finalize.  
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user11.png)
 
 And that’s it! Your application is now cloned to a new account. Be sure to save the configuration and publish it when you're ready.
