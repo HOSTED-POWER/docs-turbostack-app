@@ -2,7 +2,7 @@
 order: 100
 icon: code-square
 ---
-# Infrastructure as Code (YAML source)
+# YAML editor (Infrastructure-as-code)
 
 _This page is under construction_
 
