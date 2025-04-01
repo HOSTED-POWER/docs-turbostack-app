@@ -16,7 +16,7 @@ TurboStack® offers a suite of scalable packages designed for lightning-fast per
 ### Create Your Customer Profile
 Before you start, create a new account in our Customer Center. This grants you access to your profile and environments. Sign up [here](https://portal.hosted-power.com/signup/) and fill in the required details to get started.
 
-## Login into the Hosted Power Customer Center
+### Log to the Hosted Power Customer Center
 Access the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/ "Hosted Power Customer Center").
 
 Our customer center enables you to:
@@ -39,11 +39,11 @@ Adding relevant contacts to your account ensures that the right people receive t
 !!!
 
 ### External Partner Integration (optional)
-*Ihis section is only relevant if you're working with a partner that needs access to your account to configure the environments and/or has to be notified about support tickets etc.*
+*This section is only relevant if you're working with a partner that needs access to your account to configure the environments and/or has to be notified about support tickets etc.*
 
-If you're a customer working through a partner, from now on referred to as "Hosted Partner" -*pun intended*-, TurboStack provides a seamless integration process. Request to link your account to the Hosted Partner using our innovative "teams" feature. The Hosted Partner can then supply you a unique code, enabling you to seamlessly join your account.
+If you're a customer working through a partner, from now on referred to as "Hosted Partner" -*pun intended*-, TurboStack provides a seamless integration process. Request to link your account to the Hosted Partner using our innovative "teams" feature. The Hosted Partner can then supply you with a unique code, enabling you to seamlessly join your account.
 
-When the partner is linked to your account, the partner will automatically be linked to your account and they will for example be able to get support ticket notifications (if enabled). Furthermore they will be able to control your environments and servers via our TurboStack® GUI portal.
+When the partner is linked to your account, they will automatically be linked to your account, and will for example be able to get support ticket notifications (if enabled). Furthermore, they will be able to control your environments and servers via our TurboStack® GUI portal.
 
 Under Customer Center > Managed Contacts > Teams you will find the invite team button where you can invite the partner as soon as you received the "Invite Code"
 
@@ -63,7 +63,7 @@ TurboStack empowers you with granular control over account permissions. Navigate
 
 ## TurboStack® Suite GUI
 
-Once you have your customer profile set up, it's time for the real work. Login to the [TurboStack App](https://my.turbostack.app "TurboStack App") with your new credentials and get your application online! The next steps in this knowledge base will tell you all you need to know to do so.
+Once you have your customer profile set up, it's time for the real work. Log into the [TurboStack App](https://my.turbostack.app "TurboStack App") with your new credentials and get your application online! The next steps in this knowledge base will tell you all you need to know to do so.
 
 
 
