@@ -15,7 +15,7 @@ Should any threat arise, our skilled engineers are on standby to swiftly interve
 
 In critical situations , Hosted Power activates its On Call procedure. Our on call team is on standby 24/7, ensuring swift manual investigation and resolution of issues, regardless of office hours. If the primary On Call colleague doesn’t respond within 30 minutes, an alert automatically triggers escalation to the entire on call team, engaging our Operations engineers on call "pool" until someone acknowledges the issue en starts to research.
 
-Once alerted, our On Call colleeague tackles the issue, whether it involves tasks like disk space optimization, restarting services, or mitigating abusive traffic. If necessary, escalation to our cloud providers occurs for issues unrelated to **Hosted Power**. 
+Once alerted, our On Call colleague tackles the issue, whether it involves tasks like disk space optimization, restarting services, or mitigating abusive traffic. If necessary, escalation to our cloud providers occurs for issues unrelated to **Hosted Power**. 
 
 ## Escalation Matrix
 This matrix shows how our escalation processes take place.
@@ -24,11 +24,11 @@ This matrix shows how our escalation processes take place.
 * Operations engineer (technical) or account manager (commercial)
 * (Servicemanager) if applicable
 * Operations manager
-* Technical teamlead (technical problems) or COO (commercial problems)
+* Technical Team Lead (technical problems) or COO (commercial problems)
 
 ### Internal technical escalation
 * Operations engineer
-* Technical teamlead
+* Technical Team Lead
 * CEO
 
 ### Internal commercial escalation

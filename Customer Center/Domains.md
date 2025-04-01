@@ -32,12 +32,12 @@ There you can see the pricing for all TLDs and lookup if your preferred domain i
 1. on the left hand menu open `services` and select `Domains`
 2. Choose the domain you no longer need and click the arrow.
 3. select the `Auto Renew` option
-4. Change the auto renew to `Off`
+4. Change the auto-renewal to `Off`
 5. save the changes
 
-!!!info Info
+!!!Info
 All domains are registered and paid for 1 year at the time.
-disabling the auto renew will make sure the domain is not charged anymore to your account
+disabling the auto-renewal will make sure the domain is not charged anymore to your account
 after the expiration date.
 !!!
 
