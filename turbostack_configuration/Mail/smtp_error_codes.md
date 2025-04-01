@@ -15,7 +15,7 @@ Many of these errors stem from email deliverability issues. To improve your emai
 
 If you have any questions or difficulties, don't hesitate to contact us!
 
-## Error codes
+## Error codes ##
 
 **550-5.7.1 (Generic)**
 
