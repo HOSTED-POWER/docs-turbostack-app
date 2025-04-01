@@ -1,6 +1,6 @@
 ---
 order: 190
-icon: globe
+icon: milestone
 ---
 # DNS
 
