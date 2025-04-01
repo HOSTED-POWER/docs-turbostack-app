@@ -1,6 +1,6 @@
 ---
 order: 100
-icon: apps
+icon: sliders
 ---
 
 # cPanel

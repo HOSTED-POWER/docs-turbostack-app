@@ -1,6 +1,6 @@
 ---
 order: 90
-icon: apps
+icon: sliders
 ---
 # DirectAdmin
 
