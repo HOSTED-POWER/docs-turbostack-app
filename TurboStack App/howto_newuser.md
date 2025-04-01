@@ -70,26 +70,26 @@ Scenario: creating a Magento2 application, listening on `www.example.com` and us
 3. The first application for each user should always be `default`
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app3.png)
 4. Go to `Hostnames` and 1 or more names the website should listen on
-5. Choose a website SSL certificate, there are 3 options: `letsencrypt`(default), `selfsigned` and `custom`(bring your own)
+5. Choose a website SSL certificate, there are 3 options: `letsencrypt`(default), `self-signed` and `custom`(install your own 3rd party certificate)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app4.png)
 6. Go to `Technologies` and set the app type that matches your application
 7. Enable PHP or another technology that your application requires
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app5.png)
-8. Scroll down to enable `varnish` on our websitedat
+8. Scroll down to enable `varnish`
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app6.png)
-9. When going live set a `monitoring url` so Hosted Power will monitor 24/7.
+9. When going live, set a `monitoring url` so Hosted Power will monitor 24/7.
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app7.png)
 10. Click `Save` to save and exit the configuration wizard.
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app8.png)
 
-Now, the new application is configured, click `Save & Publish` to deploy the configuration to the server.
+Now the new application is configured, click `Save & Publish` to deploy the configuration to the server.
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app9.png)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app10.png)
 
 ### Creating a new application in source code mode (YAML) [!badge icon="alert" text="Advanced"]
 
-for more advanced users there also the YAML configuration.
+For more advanced users there also the YAML configuration.
 adding a new application can be done with
 
 ```yaml
@@ -100,7 +100,7 @@ system_users:
         app_type: magento2
         php_version: "8.2"
         varnish_enabled: true
-        cert_type: selfsigned
+        cert_type: self-signed
 ```
 
 !!! 

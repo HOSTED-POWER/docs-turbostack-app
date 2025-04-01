@@ -10,4 +10,4 @@ Are you accessing your Proof-of-Concept environment or a brand-new production Tu
 
 Already a Turbostack user? If you need information from our knowledge base, use the navigation bar on the left or the search bar in the upper right to quickly find what you're looking for.
 
-Still can't find what you're looking for? Our [support team](https://docs.turbostack.app/support/standard_support "support team") is always ready to help out! 
+Still stuck in the mud? Our [support team](https://docs.turbostack.app/support/standard_support "support team") is always ready to help out! 
