@@ -1,8 +1,8 @@
 ---
 order: 190
-icon: database
+icon: cache
 ---
 
-#Varnish
+# Varnish
 
 You can add Varnish config to the VCL by adding files to the /etc/varnish/conf.d directory.
