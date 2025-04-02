@@ -70,9 +70,9 @@ Scenario: creating a Magento2 application, listening on `www.example.com` and us
 3. The first application for each user should always be `default`
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app3.png)
 4. Go to `Hostnames` and 1 or more names the website should listen on
-5. Choose a website SSL certificate, there are 3 options: `letsencrypt`(default), `self-signed` and `custom` (3rd party certificate) (1)
+5. Choose a website SSL certificate, there are 3 options: `letsencrypt`(default), `self-signed` and `custom` (3rd party certificate) (*)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app4.png)
-6. Go to `Technologies` and set the app type (2) that matches your application
+6. Go to `Technologies` and set the app type (**) that matches your application
 7. Enable PHP or another technology that your application requires
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app5.png)
 8. Scroll down to enable `varnish`
@@ -87,8 +87,9 @@ Now the new application is configured, click `Save & Publish` to deploy the conf
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app9.png)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app10.png)
 
-(1) Let's Encrypt certificates can only be validated of the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let's Encrypt whenever you're ready.
-(2) The app type should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can't find your CMS of framework in this list? Contact us!
+(*) Let's Encrypt certificates can only be validated of the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let's Encrypt whenever you're ready.
+
+(**) The app type should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can't find your CMS of framework in this list? Contact us!
 
 ### Creating a new application in source code mode (YAML) [!badge icon="alert" text="Advanced"]
 
