@@ -4,8 +4,6 @@ icon: table
 ---
 # phpMyAdmin
 
- Introduction
-
 phpMyAdmin is a web-based tool designed to manage MySQL and MariaDB databases. It provides a user-friendly graphical interface, allowing users to perform database tasks without needing to write SQL commands manually. With phpMyAdmin, you can create, modify, and delete databases, tables, fields, and records, as well as execute SQL queries, manage user permissions, and import/export data.
 On Turbostack servers with MySQL enabled, phpMyAdmin comes pre-installed by default, making database management convenient and accessible right out of the box!
 
