@@ -11,38 +11,30 @@ There you can see the pricing for all TLDs and lookup if your preferred domain i
 
 ## How to order a domain
 
-![TurboStackNewDomain](../img/customercenter/domains/cc_domain1.png)
-![TurboStackNewDomain](../img/customercenter/domains/cc_domain2.png)
-![TurboStackNewDomain](../img/customercenter/domains/cc_domain3.png)
-![TurboStackNewDomain](../img/customercenter/domains/cc_domain4.png)
-
 1. Open the order menu
+![TurboStackNewDomain](../img/customercenter/domains/cc_domain1.png)
 2. Select `Domain Names` from the menu
-3. searchbar for domain names
-4. search the domain name you want to register/purchase
-5. now you can register a new domain
-6. start the transfer from a domain hosted at another registrar
+![TurboStackNewDomain](../img/customercenter/domains/cc_domain2.png)
+3. Search bar for domain names
+![TurboStackNewDomain](../img/customercenter/domains/cc_domain3.png)
+4. Search the domain name you want to register/purchase
+5. Now you can register a new domain...
+6. ... or start the transfer from a domain hosted at another registrar
+![TurboStackNewDomain](../img/customercenter/domains/cc_domain4.png)
 
 ## How to remove a domain
 
-![TurboStackNewDomain](../img/customercenter/domains/cc_domain5.png)
-![TurboStackNewDomain](../img/customercenter/domains/cc_domain6.png)
-![TurboStackNewDomain](../img/customercenter/domains/cc_domain7.png)
-
-1. on the left hand menu open `services` and select `Domains`
+1. On the left hand menu, open `services` and select `Domains`
 2. Choose the domain you no longer need and click the arrow.
-3. select the `Auto Renew` option
-4. Change the auto-renewal to `Off`
-5. save the changes
+![TurboStackNewDomain](../img/customercenter/domains/cc_domain5.png)
+3. Select the `Auto-renew` option
+![TurboStackNewDomain](../img/customercenter/domains/cc_domain6.png)
+4. Set the auto-renewal to `Off`
+5. Save the changes
+![TurboStackNewDomain](../img/customercenter/domains/cc_domain7.png)
 
 !!!Info
 All domains are registered and paid for 1 year at the time.
 disabling the auto-renewal will make sure the domain is not charged anymore to your account
 after the expiration date.
 !!!
-
-## (Bulk) transfer domains
-
-## Change owner
-
-...

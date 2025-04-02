@@ -7,7 +7,7 @@ icon: table
 
 ## MySQL Import & Export
 
-For large databases we recommend exporting and importing trough the commandline
+For large databases we recommend exporting and importing via the commandline
 
 ### MySQL Export
 ```
@@ -55,7 +55,7 @@ cat DBNAME.sql | sed -e 's/ROW_FORMAT=COMPACT/ROW_FORMAT=DYNAMIC/g' | mysql DBNA
 
 _Example script to convert a whole database to a certain charset and collation_ 
 
-cat fixcollaction.bash
+cat fixcollection.bash
 ```
 #!/bin/bash
 
