@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796835515506">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796909024370">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>SSL/TLS configuration</title>
-    <meta name="title" content="SSL/TLS configuration">
-    <meta name="description" content="A Certificate authority is a trusted entity responsible for issuing digital certificates used to authenticate the identities of entities such as...">
+    <title>SSL Certificates</title>
+    <meta name="title" content="SSL Certificates">
+    <meta name="description" content="An SSL certificate is a digital certificate that encrypts data between a website and its visitors, ensuring secure communication.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/configuration/ssl-tls_configuration/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/configuration/ssl-tls_configuration/">
-    <meta property="og:title" content="SSL/TLS configuration">
-    <meta property="og:description" content="A Certificate authority is a trusted entity responsible for issuing digital certificates used to authenticate the identities of entities such as...">
+    <meta property="og:title" content="SSL Certificates">
+    <meta property="og:description" content="An SSL certificate is a digital certificate that encrypts data between a website and its visitors, ensuring secure communication.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/configuration/ssl-tls_configuration/">
-    <meta property="twitter:title" content="SSL/TLS configuration">
-    <meta property="twitter:description" content="A Certificate authority is a trusted entity responsible for issuing digital certificates used to authenticate the identities of entities such as...">
+    <meta property="twitter:title" content="SSL Certificates">
+    <meta property="twitter:description" content="An SSL certificate is a digital certificate that encrypts data between a website and its visitors, ensuring secure communication.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796835515506" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796909024370" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796835515506" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796909024370" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796835515506" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796909024370" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,27 +207,35 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../configuration/ssl-tls_configuration/" class="pr-4">
-                                                SSL/TLS configuration
+                                                SSL Certificates
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="ssltls-configuration" class="break-words">
+<doc-anchor-target id="ssl-certificates" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ssltls-configuration">#</doc-anchor-trigger>
-        <span>SSL/TLS configuration</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ssl-certificates">#</doc-anchor-trigger>
+        <span>SSL Certificates</span>
     </h1>
 </doc-anchor-target>
-<p>A Certificate authority is a trusted entity responsible for issuing digital certificates used to authenticate the identities of entities such as websites, servers, users, and devices on the internet or within a private network</p>
-<doc-anchor-target id="lets-encrypt-certificate">
+<p>An SSL certificate is a digital certificate that encrypts data between a website and its visitors, ensuring secure communication. It verifies a website’s identity and enables HTTPS, protecting sensitive information like passwords and credit card details from hackers. SSL is essential for the correct functioning of your website over HTTPS!</p>
+<doc-anchor-target id="certificate-authorities-ca">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lets-encrypt-certificate">#</doc-anchor-trigger>
-        <span>Let&#x27;s Encrypt Certificate</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#certificate-authorities-ca">#</doc-anchor-trigger>
+        <span>Certificate Authorities (CA)</span>
     </h2>
 </doc-anchor-target>
-<p>LetsEncrypt is a certificate authority that provides X.509 certificates for Transport Layer Security (TLS) encryption at no charge. The certificate is valid for 90 days, during which renewal can take place at anytime. The offer is accompanied by an automated process designed to overcome manual creation, validation, signing, installation, and renewal of certificates for secure websites</p>
+<p>A Certificate authority is a trusted entity responsible for issuing digital certificates used to authenticate the identities of entities such as websites, servers, users, and devices on the internet or within a private network.</p>
+<doc-anchor-target id="lets-encrypt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lets-encrypt">#</doc-anchor-trigger>
+        <span>Let&#x27;s Encrypt</span>
+    </h3>
+</doc-anchor-target>
+<p>LetsEncrypt is a certificate authority that provides X.509 certificates for Transport Layer Security (TLS) encryption at no charge. The certificate is valid for 90 days, during which renewal can take place at any time. The offer is accompanied by an automated process designed to overcome manual creation, validation, signing, installation, and renewal of certificates for secure websites.</p>
+<p>Installing Let’s Encrypt on your TurboStack server is quick and simple. The only requirement is that your hostname(s) correctly point to the server in DNS. For detailed setup instructions, click <a href="https://docs.turbostack.app/turbostack-app/howto_newuser/" class="outbound" title="here" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>here</span></a>.</p>
 <p>The key principles behind Let&#x27;s Encrypt, taken from their <a href="http://www.letsencrypt.org" target="_blank">website</a></p>
 <ul>
 <li>Free - Anyone who owns a domain name can use Let’s Encrypt to obtain a trusted certificate at zero cost.</li>
@@ -237,13 +245,14 @@
 <li>Open: The automatic issuance and renewal protocol is published as an open standard that others can adopt.</li>
 <li>Cooperative: Much like the underlying Internet protocols themselves, Let’s Encrypt is a joint effort to benefit the community, beyond the control of any one organization.</li>
 </ul>
-<doc-anchor-target id="third-party-certificate">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#third-party-certificate">#</doc-anchor-trigger>
-        <span>Third Party Certificate</span>
-    </h2>
+<doc-anchor-target id="third-party-certificates">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#third-party-certificates">#</doc-anchor-trigger>
+        <span>Third Party Certificates</span>
+    </h3>
 </doc-anchor-target>
-<p><a href="../../support/standard_support/">Contact our support</a> if you need to install a third party certificate.</p>
+<p>Need an SSL certificate other than Let’s Encrypt? No problem! We offer Sectigo certificates—simply contact support for more details.</p>
+<p>If you’ve purchased a certificate from another provider, you can still install it easily on your TurboStack server through the Account Management section of the <a href="https://my.turbostack.app" class="outbound" title="TurboStack App" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>TurboStack App</span></a>. More info on how to do so can be found <a href="https://docs.turbostack.app/turbostack-app/howto_newuser/" class="outbound" title="here" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>here</span></a></p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -316,6 +325,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "SSL/TLS configuration", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "SSL Certificates", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

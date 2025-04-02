@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796835515506">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.796909024370">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Firewall</title>
     <meta name="title" content="Firewall">
-    <meta name="description" content="It's possible you, certain API calls or your customers get blocked by the security mechanisms of our Firewall.">
+    <meta name="description" content="Your access, certain API calls, or your customers may be blocked by our firewall's security mechanisms.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/configuration/firewall/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/configuration/firewall/">
     <meta property="og:title" content="Firewall">
-    <meta property="og:description" content="It's possible you, certain API calls or your customers get blocked by the security mechanisms of our Firewall.">
+    <meta property="og:description" content="Your access, certain API calls, or your customers may be blocked by our firewall's security mechanisms.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/configuration/firewall/">
     <meta property="twitter:title" content="Firewall">
-    <meta property="twitter:description" content="It's possible you, certain API calls or your customers get blocked by the security mechanisms of our Firewall.">
+    <meta property="twitter:description" content="Your access, certain API calls, or your customers may be blocked by our firewall's security mechanisms.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.796835515506" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.796909024370" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796835515506" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.796909024370" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796835515506" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.796909024370" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -226,16 +226,16 @@
         <span>Firewall Brute Force Protection</span>
     </h2>
 </doc-anchor-target>
-<p>It&#x27;s possible you, certain API calls or your customers get blocked by the security mechanisms of our Firewall. The &quot;Login Failure Daemon&quot; component of our firewall could block too many failed login attempts to SSH, FTP, POP3, IMAP, HTTP, etc.</p>
-<p>Unlike other applications, LFD is a daemon process that monitors logs continuously and so can react within seconds of detecting such attempts. It also monitors across protocols, so if attempts are made on different protocols in a short space of time, all those attempts will be counted against the threshold.</p>
-<p>Normally the protection is configured so it should not generate false positives easily. However you can whitelist your known ip addresses if needed trough the TurboStack App or via the ts-cli as explained below.</p>
+<p>Your access, certain API calls, or your customers may be blocked by our firewall&#x27;s security mechanisms. The Login Failure Daemon (LFD) component actively monitors failed login attempts across multiple protocols, including SSH, FTP, POP3, IMAP, and HTTP, and may block access after too many failures.</p>
+<p>Unlike other applications, LFD operates as a continuous monitoring daemon, reacting within seconds to suspicious activity. It also tracks failed attempts across different protocols, counting them collectively against the security threshold.</p>
+<p>While the protection is designed to minimize false positives, you can whitelist trusted IP addresses if needed. This can be done easily via the TurboStack App or the TurboStack CLI, as outlined below.</p>
 <doc-anchor-target id="firewall-cli-on-turbostack">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#firewall-cli-on-turbostack">#</doc-anchor-trigger>
         <span>Firewall CLI on TurboStack®</span>
     </h2>
 </doc-anchor-target>
-<p>Hosted Power prefers you to use our <a href="https://docs.turbostack.app/turbostack-app/turbostackcli/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>TS CLI</span></a> commands if you want to make changes to the Firewall settings.</p>
+<p>Hosted Power prefers you to use our <a href="https://docs.turbostack.app/turbostack-app/turbostackcli/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Turbostack CLI</span></a> commands if you want to make changes to the Firewall settings.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">Usage: tscli firewall [OPTIONS] COMMAND [ARGS]...
  
@@ -258,40 +258,16 @@ Commands:
         <span>Whitelist an IP address in the TurboStack® App</span>
     </h3>
 </doc-anchor-target>
-<p>If you want to completely whitelist an ip address this, it could be done trough the TurboStack® app. A whitelisted ip address will never be blocked by the brute force protections.</p>
-<p>Furthermore it would allow access to ports which are otherwise closed (blocked) by the firewall. So it could be used to allow accessing certain restricted ports like for MySQL and other databases (Direct external access).</p>
-<p><figure class="content-center">
-    <img src="image/firewall/1715869950499.png" alt="Whitelist Ip Address trough the TurboStack App" title="Whitelist Ip Address trough the TurboStack App">
-    <figcaption class="caption">Whitelist Ip Address trough the TurboStack App</figcaption>
-</figure>
-</p>
+<p>To completely whitelist an IP address, you can use the TurboStack App. A whitelisted IP address will never be blocked by brute force protection.</p>
+<p>Additionally, whitelisting an IP grants access to ports that are otherwise blocked by the firewall. This can be useful for enabling remote access to MySQL and other databases or allowing connections to restricted services.</p>
+<p>Firewall settings can be managed in the Security tab of your host&#x27;s management section within the <a href="https://my.turbostack.app" class="outbound" title="TurboStack App" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>TurboStack App</span></a>. For detailed instructions on modifying firewall settings, please refer to the documentation <a href="https://docs.turbostack.app/turbostack-app/" class="outbound" title="Here" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>here</span></a>.</p>
 <doc-anchor-target id="control-panels-with-firewall-gui">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#control-panels-with-firewall-gui">#</doc-anchor-trigger>
         <span>Control Panels with Firewall GUI</span>
     </h2>
 </doc-anchor-target>
-<p>If you&#x27;re using a control panel like <a href="../technologies/control20panels/directadmin.md">DirectAdmin</a> or <a href="../technologies/control20panels/cpanel.md">cPanel</a>, you&#x27;ll also be able to use the Firewall GUI.</p>
-<doc-anchor-target id="unblock-an-ip-address-in-configserver--reason-for-blocking">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#unblock-an-ip-address-in-configserver--reason-for-blocking">#</doc-anchor-trigger>
-        <span>Unblock an IP Address in Configserver &amp; Reason for blocking</span>
-    </h3>
-</doc-anchor-target>
-<p>This can be done via:</p>
-<p>Home » Plugins » ConfigServer Security &amp; Firewall</p>
-<p>To determine whether an IP address is blocked, you can use the Search for IP button on the ConfigServer Security&amp;Firewall page. Simply enter the IP address into the search field and click the button.</p>
-<p>If the IP address is blocked, the reason for the block will be listed and an unlocked padlock icon will appear to the right of the blocked IP address. Clicking the padlock icon will unblock the IP in the firewall.</p>
-<doc-anchor-target id="whitelist-an-ip-address-in-csf">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whitelist-an-ip-address-in-csf">#</doc-anchor-trigger>
-        <span>Whitelist an IP address in CSF</span>
-    </h3>
-</doc-anchor-target>
-<p>It&#x27;s possible to ignore some IP-Addresses for your office, home office or third party that are working for something like testing the website/application or if you running a vulnerability scan. Sometimes it can be happy that you will be blocked by the CSF for many failed logins how we explained here above the article. Ignoring an IP-address will be a good solutions to avoid blocking.</p>
-<p>Ignoring (Whitelisting) an IP Address
-Home »Plugins »ConfigServer Security &amp; Firewall</p>
-<p>To ignore an IP address in the firewall (csf.ignore), you can enter the IP address into the Quick Ignore section,  allow such as “Office network”, and click the Quick Ignore button.</p>
+<p>If you’re using a control panel like <a href="../technologies/control20panels/directadmin.md">DirectAdmin</a> or <a href="../technologies/control20panels/cpanel.md">cPanel</a>, you can also manage firewall settings directly through their graphical user interface (GUI). For detailed instructions, please refer to their respective knowledge bases.</p>
 
                                 
                                 <!-- Required only on API pages -->
