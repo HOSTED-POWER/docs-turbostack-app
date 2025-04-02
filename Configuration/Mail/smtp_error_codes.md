@@ -40,7 +40,7 @@ If you have any questions or difficulties, don't hesitate to contact us!
 **550-5.7.1 "DKIM signature verification failed"**
 
 - Meaning: The DKIM signature in the email did not match the public key in DNS.
-- olution: Ensure that the correct private key is used to sign emails and the DNS entry is properly configured. 
+- Solution: Ensure that the correct private key is used to sign emails and the DNS entry is properly configured. 
 
 **550-5.7.24 "The SPF record of the sending domain has one or more suspicious entries"**
 
