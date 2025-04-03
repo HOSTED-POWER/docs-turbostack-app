@@ -37,9 +37,9 @@ If you’ve purchased a certificate from another provider, you can still install
 
 Ordering a standalone certificate can be done easily through your [customer portal]().
 
-Unless you're looking for a specific kind of certificate, or were instructed to get a specific kind of certificate, you're looking for a 'Comodo Positive SSL' certificate. When ordering, you'll be asked for a CSR (Certificate Signing Request). Either you know what this is already, you've been given one to use for this order, or you need to choose the option 'I don't have my CSR ready. I want to generate one now.'.
+Unless you're looking for a specific kind of certificate, or were instructed to get a specific kind of certificate, you're looking for a 'Sectigo Positive SSL' certificate. When ordering, you'll be asked for a CSR (Certificate Signing Request). Either you know what this is already, you've been given one to use for this order, or you need to choose the option 'I don't have my CSR ready. I want to generate one now.'.
 
-Once you do, you'll be asked to fill in the organization data of the organization requesting this certificate. Specifically for this type of certificate (Comodo Positive), this data will NOT be verified against public records. When asked for the 'Certificate Common Name', you need to provide the domain you're looking to use this certificate for.
+Once you do, you'll be asked to fill in the organization data of the organization requesting this certificate. Specifically for this type of certificate (Sectigo Positive), this data will NOT be verified against public records. When asked for the 'Certificate Common Name', you need to provide the domain you're looking to use this certificate for.
 
 Lastly, you need to choose an email address for the email validation of your certificate to be sent to. This MUST be an email address on the root domain of the requested domain, and can only be one of 5 specific users:
 
