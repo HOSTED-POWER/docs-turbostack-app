@@ -20,7 +20,7 @@ magento@dylano-dev1:~/nginx$ ls -la
 
 **20rewrites.conf**  will allow you to configure redirects/rewrites from the domains on the server to a different (sub)domain or a specific page. (More on that in a different documentation page)
 
-The structure of the nginx folder will be a bit different when **varnish is enabled**, then an outside map will be created:
+The structure of the nginx folder will be a bit different when **varnish is enabled**, then an outside folder will be created:
 
 ```
 ├── 20rewrites.conf
@@ -38,7 +38,7 @@ In the outside directory, you can define rewrites/redirects that need to bypass 
 ##### 1\. Using IP-whitelisting 
 
 Using deny all in the nginx configuration will block access to all IP addresses except those you explicitly allowed.
-The best way to do this is by creating a file **10auth.conf** in the **/var/www/<user/nginx** directory and place the whitelisting configuration in there, which will apply to the concerning websites owned by that user. 
+The best way to do this is by creating a file **10auth.conf** in the **/var/www/`<user>`/nginx** directory and place the whitelisting configuration in there, which will apply to the applications under that user. 
 
 An example is shown below where all IP's are denied expect the IP's 178.238.102.146, 178.238.102.148 and 78.22.198.62.
 
@@ -50,7 +50,7 @@ magento@dylano-dev1:/var/www/magento/nginx# cat 10auth.conf
         deny all;
 ```
 
-If per example your Turbostack configuration of your server looks as follows:
+If for example your Turbostack configuration of your server looks like this:
 
 ```yaml
 ---
@@ -76,27 +76,79 @@ system_users:
 Then this configuration will apply to the domains dylano-magento.hosted-power.dev and dylano-magento2.hosted-power.dev but not to docker-learning.hosted-power.dev as it belongs to a different user.
 
 Another option would be to place it in the **50main.conf** file in the location you want to be protected by the whitelisting.
-Per example setting this in the **location /**  will protect the environment starting from the root location (as per example www.test.com).
-If you would per example set the whitelisting configuration in **location /page/** then [www.test.com/page](https://www.test.com/page) will be protected.
+For example setting this in the **location /**  will protect the environment starting from the root location (e.g. www.test.com).
+If you would set the whitelisting configuration in **location /page/** then [www.test.com/page](https://www.test.com/page) will be protected.
 
 As the example provided below will protect **location /** :
 
 ```
     location / {
         try_files $uri $uri/ /index.php$is_args$args;
-      
+  
         allow 35.187.75.91;
         allow 87.233.217.242/28;
-      
+  
         satisfy any;
     }
 ```
 
-**When doing any changes within the nginx directory, you will have to reload the service to push the change:
-**tscli nginx reload 
+!!!
+When doing any changes within the nginx directory, you will have to reload the service to push the change:
+tscli nginx reload
+!!! 
 
-2\. Enable Basic Authentication on your website for NGINX
+##### 2. Enable Basic Authentication on your website for NGINX
 
-It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack.  This way you can block access to your development version of the website for non-authenticated users. 
+It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack. This way you can block access to your development version of the website for non-authenticated users. This guide assumes you know what Basic Authentication is.
 
-This guide assumes you know what Basic Authentication is.  More information can be found on [https://docs.turbostack.app/turbostack\_configuration/web-server/nginx/](https://docs.turbostack.app/turbostack_configuration/web-server/nginx/)
+First locate your nginx main configuration file from the home directory of your user:
+
+```
+
+vim nginx/50main.conf
+
+```
+
+Then, uncomment the following lines to activate Basic Authentication:
+
+```
+
+location / {
+
+#auth_basic "Administrator’s Area";
+
+#auth_basic_user_file /var/www/staging/.secrets/htpasswd;
+
+#satisfy any;
+
+```
+
+OPTIONAL: You can add whitelisting based on IP-addresses for connections that will not need to identify using the Basic Auth service, simply add "allow ":
+
+```
+
+location / {
+
+auth_basic "Administrator’s Area";
+
+auth_basic_user_file /var/www/staging/.secrets/htpasswd;
+
+allow 35.187.75.91;
+
+allow 34.76.59.175;
+
+allow 34.76.201.228;
+
+allow 87.233.217.242/28;
+
+satisfy any;
+
+```
+
+Lastly, to enact your changes, reload the NGINX service:
+
+```
+
+tscli nginx reload
+
+```
