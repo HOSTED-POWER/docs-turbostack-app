@@ -1,5 +1,5 @@
 ---
-hidden: false
+hidden: true
 ---
 
 # Add an SSH key to an existing server
