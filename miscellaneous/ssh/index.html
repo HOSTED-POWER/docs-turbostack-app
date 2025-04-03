@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797005779967">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797006597647">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.797005779967" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797006597647" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797005779967" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797006597647" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797005779967" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797005779967" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797006597647" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797006597647" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -217,10 +217,10 @@
 </doc-anchor-target>
 <p>Depending on your type of server, your method of adding SSH keys may change. In this article, we&#x27;ll go over the different ways to add your SSH key to your TurboStack server (and how to create a keypair if you haven&#x27;t already). Please note we recommend using <strong>ed25519</strong> as scheme, however all our different platforms support any OpenSSH-compatible scheme.</p>
 <doc-anchor-target id="step-0-making-a-new-ssh-keypair">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#step-0-making-a-new-ssh-keypair">#</doc-anchor-trigger>
         <span>Step 0: Making a new SSH keypair</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>If you already have your SSH key you&#x27;d like to add, feel free to <strong>skip to step 1.</strong></p>
 <p>You only need to <strong>choose one</strong> of the methods below to generate your SSH key:</p>
@@ -229,10 +229,10 @@
 <li><strong>Method 2: Using PuTTY Key Generator</strong> (For Windows users who prefer PuTTY)</li>
 </ul>
 <doc-anchor-target id="method-1-wsl-linux-mac-terminal">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#method-1-wsl-linux-mac-terminal">#</doc-anchor-trigger>
         <span>Method 1: WSL, Linux, Mac terminal</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">ssh-keygen -t ed25519 -C &quot;your-email@example.com&quot;</code></pre>
@@ -256,26 +256,26 @@
 <pre class="language-bash"><code v-pre class="language-bash">cat ~/.ssh/id_ed25519.pub</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="method-2-putty-key-generator">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#method-2-putty-key-generator">#</doc-anchor-trigger>
         <span>Method 2: Putty Key Generator</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <doc-anchor-target id="1-open-puttygen">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#1-open-puttygen">#</doc-anchor-trigger>
         <span>1. Open PuTTYgen</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li>Download PuTTY from <a href="https://www.chiark.greenend.org.uk/%7Esgtatham/putty/latest.html" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</span></a> if you don’t already have it installed.</li>
 <li>Open <strong>PuTTYgen</strong> (<code v-pre>puttygen.exe</code>).</li>
 </ul>
 <doc-anchor-target id="2-generate-an-ed25519-key">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2-generate-an-ed25519-key">#</doc-anchor-trigger>
         <span>2. Generate an Ed25519 Key</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li>In the <strong>PuTTY Key Generator</strong> window, locate the <strong>Parameters</strong> section.</li>
@@ -289,10 +289,10 @@
 </figure>
 </p>
 <doc-anchor-target id="3-save-your-ssh-key-files">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#3-save-your-ssh-key-files">#</doc-anchor-trigger>
         <span>3. Save Your SSH Key Files</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li>Click <strong>Save private key</strong> and save it as <code v-pre>id_ed25519.ppk</code>.
@@ -304,16 +304,16 @@
 <li>(Optional) If your server requires an <strong>OpenSSH format key</strong>, go to <strong>Conversions &gt; Export OpenSSH Key</strong>, then save it as <code v-pre>id_ed25519</code>.</li>
 </ul>
 <doc-anchor-target id="step-1-adding-your-ssh-key-to-your-server">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-adding-your-ssh-key-to-your-server">#</doc-anchor-trigger>
         <span>Step 1: Adding your SSH key to your server</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <doc-anchor-target id="11-turbostack-server">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#11-turbostack-server">#</doc-anchor-trigger>
         <span>1.1. Turbostack server.</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <ol>
 <li>Go to your <strong>Turbostack</strong> server in the GUI.</li>
@@ -328,16 +328,16 @@
 </p>
 <p>If you need to add keys to multiple servers, you can use the <a href="https://docs.turbostack.app/turbostack-app/groups/#groups" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>groups</span></a> functionality to streamline this process.</p>
 <doc-anchor-target id="12-alternative-cpanel">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#12-alternative-cpanel">#</doc-anchor-trigger>
         <span>1.2. Alternative: cPanel</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <doc-anchor-target id="121-normal-user">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#121-normal-user">#</doc-anchor-trigger>
         <span>1.2.1. Normal User</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
 <ol>
 <li><p><strong>Log into cPanel</strong></p>
@@ -369,11 +369,11 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="121-root-user">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#121-root-user">#</doc-anchor-trigger>
-        <span>1.2.1. Root user</span>
-    </h5>
+<doc-anchor-target id="122-root-user">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#122-root-user">#</doc-anchor-trigger>
+        <span>1.2.2. Root user</span>
+    </h4>
 </doc-anchor-target>
 <ol>
 <li><p><strong>Log in to WHM</strong></p>
@@ -406,10 +406,10 @@
 </li>
 </ol>
 <doc-anchor-target id="13-alternative-directadmin">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#13-alternative-directadmin">#</doc-anchor-trigger>
         <span>1.3. Alternative: DirectAdmin</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <ol>
 <li><p><strong>Log in to DirectAdmin</strong></p>
