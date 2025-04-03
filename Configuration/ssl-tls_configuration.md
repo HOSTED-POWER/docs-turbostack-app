@@ -44,9 +44,13 @@ Once you do, you'll be asked to fill in the organization data of the organizatio
 Lastly, you need to choose an email address for the email validation of your certificate to be sent to. This MUST be an email address on the root domain of the requested domain, and can only be one of 5 specific users:
 
 > admin@domain.com
+>
 > administrator@domain.com
+>
 > hostmaster@domain.com
+>
 > webmaster@domain.com
+>
 > postmaster@domain.com
 
 Once you've completed your order, you'll be sent an email to that chosen address, with instructions to validate your request. Once validated, within 10 minutes your certificate should be issued, and available in your customer portal!
