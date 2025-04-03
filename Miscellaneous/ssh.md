@@ -65,7 +65,7 @@ cat ~/.ssh/id_ed25519.pub
 
 ## Step 1: Adding your SSH key to your server
 
-### 1.1. Turbostack server.
+### 1.1. Turbostack server
 
 1. Go to your **Turbostack** server in the GUI.
 2. In the ribbon menu, click '**SSH**'.
