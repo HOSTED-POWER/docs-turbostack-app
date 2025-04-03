@@ -37,7 +37,7 @@ The **server** tab defines some basic middleware configuration, like the type of
 The **account** tab defines the server users and the applications. Typically, a user can have one or more
 applications.
 In the examples below we have 2 users, `prod` and `stag`.
-The prod user has an application running on the weburl `example.com` and `www.example.com`
+The prod user has an application running on the hostnames `example.com` and `www.example.com`
 
 ![TurboStackAppAccountTab](../img/turbostackapp/basicinstall/tsa_account_tab1.png)
 
@@ -68,10 +68,12 @@ More info on groups can be found [Here](https://docs.turbostack.app/turbostack-a
 
 ## SSH tab
 
-The **SSH** tab defines one or more public ssh keys that allow shell access to a TurboStack node without using password authentication.
+The **SSH** tab defines one or more public SSH keys that allow shell access to a TurboStack node without using password authentication.
 SSH keys can be added, deleted and edited here.
 
 You can also disable SSH password authentication completely by activating the checkbox "Only allow SSH authentication by keys".
+
+
 
 ![TurboStackAppSshTab](../img/turbostackapp/basicinstall/tsa_ssh_tab1.png)
 
@@ -81,7 +83,7 @@ You can also disable SSH password authentication completely by activating the ch
 This is an advanced section, use with caution!
 !!!
 
-The **Security** tab allows you modify the certain firewall settings.
+The **Security** tab allows you to modify the certain firewall settings.
 
 ![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
 
