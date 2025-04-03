@@ -1,5 +1,3 @@
-
-
 ---
 hidden: true
 ---
