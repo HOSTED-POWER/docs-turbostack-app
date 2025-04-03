@@ -1,6 +1,6 @@
 ---
 order: 150
-icon: info
+icon: eye
 ---
 # Monitoring
 
