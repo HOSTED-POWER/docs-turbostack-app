@@ -101,7 +101,7 @@ If you need to add keys to multiple servers, you can use the [groups](https://do
    * Find your newly added key under the **Public Keys** section.
    * Click **Manage** → **Authorize** to enable the key for SSH access.
 
-#### 1.2.1. Root user
+#### 1.2.2. Root user
 
 1. **Log in to WHM**
 
