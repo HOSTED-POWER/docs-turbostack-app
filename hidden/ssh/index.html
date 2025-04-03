@@ -9,26 +9,26 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>FTP</title>
-    <meta name="title" content="FTP">
-    <meta name="description" content="Incorrect login details used: Login details used by users for FTP access include their username and password.">
+    <title>Add an SSH key to an existing server</title>
+    <meta name="title" content="Add an SSH key to an existing server">
+    <meta name="description" content="Depending on your type of server, your method of adding SSH keys may change.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.turbostack.app/configuration/ftp/">
+    <link rel="canonical" href="https://docs.turbostack.app/hidden/ssh/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.turbostack.app/configuration/ftp/">
-    <meta property="og:title" content="FTP">
-    <meta property="og:description" content="Incorrect login details used: Login details used by users for FTP access include their username and password.">
-    <meta property="og:image" content="https://docs.turbostack.app/configuration/image/ftp/1715871329616.png">
+    <meta property="og:url" content="https://docs.turbostack.app/hidden/ssh/">
+    <meta property="og:title" content="Add an SSH key to an existing server">
+    <meta property="og:description" content="Depending on your type of server, your method of adding SSH keys may change.">
+    <meta property="og:image" content="https://docs.turbostack.app/hidden/image/ssh/1743683160931.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.turbostack.app/configuration/ftp/">
-    <meta property="twitter:title" content="FTP">
-    <meta property="twitter:description" content="Incorrect login details used: Login details used by users for FTP access include their username and password.">
-    <meta property="twitter:image" content="https://docs.turbostack.app/configuration/image/ftp/1715871329616.png">
+    <meta property="twitter:url" content="https://docs.turbostack.app/hidden/ssh/">
+    <meta property="twitter:title" content="Add an SSH key to an existing server">
+    <meta property="twitter:description" content="Depending on your type of server, your method of adding SSH keys may change.">
+    <meta property="twitter:image" content="https://docs.turbostack.app/hidden/image/ssh/1743683160931.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -37,6 +37,7 @@
     <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797002381494" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797002381494" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797002381494" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -187,55 +188,234 @@
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
-                                <nav class="breadcrumb" aria-label="Breadcrumb">
-                                    <ol role="list">
-                                        <li class="pr-4">
-                                            <a href="../../" class="pr-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                                </svg>
-                                            </a>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <span class="pr-4">
-                                                Configuration
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <a href="../../configuration/ftp/" class="pr-4">
-                                                FTP
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </nav>
-                
                                 <!-- Page content  -->
-<doc-anchor-target id="ftp" class="break-words">
+<doc-anchor-target id="add-an-ssh-key-to-an-existing-server" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ftp">#</doc-anchor-trigger>
-        <span>FTP</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#add-an-ssh-key-to-an-existing-server">#</doc-anchor-trigger>
+        <span>Add an SSH key to an existing server</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="what-could-cause-a-login-failed-error-">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-could-cause-a-login-failed-error-">#</doc-anchor-trigger>
-        <span>What could cause a “Login failed” error ?</span>
-    </h2>
+<p>Depending on your type of server, your method of adding SSH keys may change. In this article, we&#x27;ll go over the different ways to add your SSH key to your TurboStack server (and how to create a keypair if you haven&#x27;t already). Please note we recommend using <strong>ed25519</strong> as scheme, however all our different platforms support any OpenSSH-compatible scheme.</p>
+<doc-anchor-target id="step-0-making-a-new-ssh-keypair">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-0-making-a-new-ssh-keypair">#</doc-anchor-trigger>
+        <span>Step 0: Making a new SSH keypair</span>
+    </h3>
+</doc-anchor-target>
+<p>If you already have your SSH key you&#x27;d like to add, feel free to <strong>skip to step 1.</strong></p>
+<p>You only need to <strong>choose one</strong> of the methods below to generate your SSH key:</p>
+<ul>
+<li><strong>Method 1: Using WSL, Linux, or Mac Terminal</strong> (Recommended for most users)</li>
+<li><strong>Method 2: Using PuTTY Key Generator</strong> (For Windows users who prefer PuTTY)</li>
+</ul>
+<doc-anchor-target id="method-1-wsl-linux-mac-terminal">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#method-1-wsl-linux-mac-terminal">#</doc-anchor-trigger>
+        <span>Method 1: WSL, Linux, Mac terminal</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">ssh-keygen -t ed25519 -C &quot;your-email@example.com&quot;</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>The <code v-pre>-t ed25519</code> flag specifies the <strong>ed25519</strong> algorithm, which is more secure and faster than older schemes like RSA.</li>
+<li>The <code v-pre>-C &quot;your-email@example.com&quot;</code> flag adds a comment to help identify your key.</li>
+</ul>
+<p>After running the command, you&#x27;ll be prompted to:</p>
+<ul>
+<li>Choose a file location to save the key (press <strong>Enter</strong> to accept the default <code v-pre>~/.ssh/id_ed25519</code>).</li>
+<li>Set a passphrase for added security (optional but recommended).</li>
+</ul>
+<p>Once generated, you should have two files:</p>
+<ul>
+<li><strong><code v-pre>id_ed25519</code></strong> – This is your private key (never share it!).</li>
+<li><strong><code v-pre>id_ed25519.pub</code></strong> – This is your public key (this is the key you will add to your server).</li>
+</ul>
+<p>To display the contents of your public key, use the following command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">cat ~/.ssh/id_ed25519.pub</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="method-2-putty-key-generator">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#method-2-putty-key-generator">#</doc-anchor-trigger>
+        <span>Method 2: Putty Key Generator</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="1-open-puttygen">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-open-puttygen">#</doc-anchor-trigger>
+        <span>1. Open PuTTYgen</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Download PuTTY from <a href="https://www.chiark.greenend.org.uk/%7Esgtatham/putty/latest.html" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</span></a> if you don’t already have it installed.</li>
+<li>Open <strong>PuTTYgen</strong> (<code v-pre>puttygen.exe</code>).</li>
+</ul>
+<doc-anchor-target id="2-generate-an-ed25519-key">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-generate-an-ed25519-key">#</doc-anchor-trigger>
+        <span>2. Generate an Ed25519 Key</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>In the <strong>PuTTY Key Generator</strong> window, locate the <strong>Parameters</strong> section.</li>
+<li>Select <strong>EdDSA</strong> (Ed25519 should be the default curve).</li>
+<li>Click <strong>Generate</strong> and move your mouse randomly over the blank area to generate randomness.</li>
+<li>Once completed, PuTTYgen will display the <strong>public key</strong> at the top.</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../image/ssh/1743683160931.png" alt="1743683160931">
+    <figcaption class="caption">1743683160931</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="3-save-your-ssh-key-files">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-save-your-ssh-key-files">#</doc-anchor-trigger>
+        <span>3. Save Your SSH Key Files</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Click <strong>Save private key</strong> and save it as <code v-pre>id_ed25519.ppk</code>.
+<ul>
+<li>(Optional) Enter a <strong>passphrase</strong> for additional security.</li>
+</ul>
+</li>
+<li>Click <strong>Save public key</strong> and save it as <code v-pre>id_ed25519.pub</code>.</li>
+<li>(Optional) If your server requires an <strong>OpenSSH format key</strong>, go to <strong>Conversions &gt; Export OpenSSH Key</strong>, then save it as <code v-pre>id_ed25519</code>.</li>
+</ul>
+<doc-anchor-target id="step-1-adding-your-ssh-key-to-your-server">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-adding-your-ssh-key-to-your-server">#</doc-anchor-trigger>
+        <span>Step 1: Adding your SSH key to your server</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="11-turbostack-server">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#11-turbostack-server">#</doc-anchor-trigger>
+        <span>1.1. Turbostack server.</span>
+    </h4>
 </doc-anchor-target>
 <ol>
-<li><strong>Incorrect login details used</strong>:
-Login details used by users for FTP access include their username and password. If these credentials are given wrongly in the FTP client, it can result in a 530 login error in FTP.
-&quot;530 Login authentication failed&quot; errors also happen due to wrong password. Even a single additional space at the beginning or the back of a password can cause a login failure.</li>
-<li><strong>Path doesn&#x27;t exist</strong>:
-When the FTP users is created, a path will be assigned on creation. If the path doesn&#x27;t exist on the server, this will cause a login failure.</li>
-<li><strong>No TLS used</strong>:
-TLS is required and enforced for security reasons. It&#x27;s a very bad idea to disable it, since passwords would be sent in plaintext. Make sure to activate &quot;Explicit SSL/TLS&quot; in your FTP client. However, if you need to disable SSL anyway (For example incompatible ERP system that only supports plain text FTP)<img src="../image/ftp/1715871329616.png" alt="Disable SSL resquirement for a single user" title="Disable SSL resquirement for a single user" />, you can do so here:</li>
+<li>Go to your <strong>Turbostack</strong> server in the GUI.</li>
+<li>In the ribbon menu, click &#x27;<strong>SSH</strong>&#x27;.</li>
+<li>Paste your <strong>public key</strong> into the textbox.</li>
+<li>Click &#x27;<strong>Save &amp; Publish</strong>&#x27;</li>
+</ol>
+<p><figure class="content-center">
+    <img src="../image/ssh/1743683172047.png" alt="1743683172047">
+    <figcaption class="caption">1743683172047</figcaption>
+</figure>
+</p>
+<p>If you need to add keys to multiple servers, you can use the <a href="https://docs.turbostack.app/turbostack-app/groups/#groups" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>groups</span></a> functionality to streamline this process.</p>
+<doc-anchor-target id="12-alternative-cpanel">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#12-alternative-cpanel">#</doc-anchor-trigger>
+        <span>1.2. Alternative: cPanel</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="121-normal-user">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#121-normal-user">#</doc-anchor-trigger>
+        <span>1.2.1. Normal User</span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Log into cPanel</strong></p>
+<ul>
+<li>Navigate to your cPanel account (usually at <code v-pre>https://your-domain.com:2083</code> or <code v-pre>https://your-server-ip:2083</code>).</li>
+<li>Enter your <strong>username</strong> and <strong>password</strong> to log in.</li>
+</ul>
+</li>
+<li><p><strong>Go to the SSH Access Section</strong></p>
+<ul>
+<li>In the cPanel <strong>Dashboard</strong>, locate the <strong>Security</strong> section.</li>
+<li>Click on <strong>SSH Access</strong>.</li>
+</ul>
+</li>
+<li><p><strong>Import Your SSH Key</strong></p>
+<ul>
+<li>Click <strong>Manage SSH Keys</strong> → <strong>Import Key</strong>.</li>
+<li>Under <strong>Public Key</strong>, paste the contents of your <strong>id_ed25519.pub</strong> file.</li>
+<li>(Optional) You can also upload a private key here if needed for authentication.</li>
+<li>(Optional) You can provide a passphrase for extra security.</li>
+<li>Click <strong>Import</strong> to save the key.</li>
+</ul>
+</li>
+<li><p><strong>Authorize the SSH Key</strong></p>
+<ul>
+<li>After importing, return to <strong>Manage SSH Keys</strong>.</li>
+<li>Find your newly added key under the <strong>Public Keys</strong> section.</li>
+<li>Click <strong>Manage</strong> → <strong>Authorize</strong> to enable the key for SSH access.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="121-root-user">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#121-root-user">#</doc-anchor-trigger>
+        <span>1.2.1. Root user</span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Log in to WHM</strong></p>
+<ul>
+<li>Access WHM via <code v-pre>https://your-server-ip:2087</code> or <code v-pre>https://your-hostname.com:2087</code>.</li>
+<li>Enter your <strong>root credentials</strong> to log in.</li>
+</ul>
+</li>
+<li><p><strong>Go to the SSH Key Management Section</strong></p>
+<ul>
+<li>In the WHM <strong>Dashboard</strong>, locate <strong>Security Center</strong>.</li>
+<li>Click on <strong>Manage root’s SSH Keys</strong>.</li>
+</ul>
+</li>
+<li><p><strong>Import the SSH Key</strong></p>
+<ul>
+<li>Click <strong>Import Key</strong>.</li>
+<li>In the <strong>Public Key</strong> field, paste the contents of your <code v-pre>id_ed25519.pub</code> file.</li>
+<li>(Optional) You can also import a private key if needed.</li>
+<li>(Optional) You can provide a passphrase for extra security.</li>
+<li>Click <strong>Import</strong> to save the key.</li>
+</ul>
+</li>
+<li><p><strong>Authorize the SSH Key</strong></p>
+<ul>
+<li>Go back to <strong>Manage root’s SSH Keys</strong>.</li>
+<li>Locate your newly added key under <strong>Public Keys</strong>.</li>
+<li>Click <strong>Manage</strong> → <strong>Authorize</strong> to enable the key.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="13-alternative-directadmin">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#13-alternative-directadmin">#</doc-anchor-trigger>
+        <span>1.3. Alternative: DirectAdmin</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Log in to DirectAdmin</strong></p>
+<ul>
+<li>Open DirectAdmin at <code v-pre>https://your-server-ip:2222</code> or <code v-pre>https://your-domain.com:2222</code>.</li>
+<li>Enter your <strong>admin</strong> or <strong>user</strong> credentials.</li>
+</ul>
+</li>
+<li><p><strong>Navigate to the SSH Key Manager</strong></p>
+<ul>
+<li>Go to: <strong>User Level &gt; SSH Keys</strong></li>
+</ul>
+</li>
+<li><p><strong>Add a New SSH Key</strong></p>
+<ul>
+<li>Click <strong>Add SSH Key</strong>.</li>
+<li>In the <strong>Public Key</strong> field, paste your SSH key (from <code v-pre>id_ed25519.pub</code>).</li>
+<li>Click <strong>Save</strong>.</li>
+</ul>
+</li>
+<li><p><strong>Authorize the SSH Key</strong></p>
+<ul>
+<li>After adding, ensure the key is <strong>enabled</strong> in the SSH Keys list.</li>
+<li>If needed, set <strong>key permissions</strong> to allow login.</li>
+</ul>
+</li>
 </ol>
 
                                 
@@ -244,33 +424,12 @@ TLS is required and enforced for security reasons. It&#x27;s a very bad idea to 
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Configuration/FTP.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Hidden/ssh.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../configuration/firewall/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Firewall</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../configuration/ssl-tls_configuration/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">SSL Certificates</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
                             </footer>
                         </main>
                 
@@ -309,6 +468,6 @@ TLS is required and enforced for security reasons. It&#x27;s a very bad idea to 
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "FTP", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Add an SSH key to an existing server", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
