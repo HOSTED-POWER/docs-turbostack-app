@@ -1,7 +1,3 @@
----
-hidden: false
----
-
 # Add an SSH key to an existing server
 
 Depending on your type of server, your method of adding SSH keys may change. In this article, we'll go over the different ways to add your SSH key to your TurboStack server (and how to create a keypair if you haven't already). Please note we recommend using **ed25519** as scheme, however all our different platforms support any OpenSSH-compatible scheme.
