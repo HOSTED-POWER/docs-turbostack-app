@@ -47,6 +47,12 @@ The prod user has an application running on the weburl `example.com` and `www.ex
 
 More info on accounts and application management can be found [Here](https://docs.turbostack.app/turbostack-app/howto_newuser/ "Here").
 
+# Advanced tab
+
+The **advanced** tab offers some more advanced configuration options for specific services, such as mail, Varnish, RabbitMQ, FTP, etc.
+
+![TurboStackAppAdvancedTab](../img/turbostackapp/basicinstall/advanced.png)
+
 ## Groups tab
 
 The **groups** tab can link a server to an existing group.
