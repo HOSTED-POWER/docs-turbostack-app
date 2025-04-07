@@ -4,7 +4,7 @@ icon: code-square
 ---
 # YAML editor
 
-Our platform offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using YAML (YAML Ain't Markup Language). This editor provides you with direct access to your server's configuration in YAML format, granting you fine-grained control and flexibility.
+Our platform offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using [YAML (YAML Ain't Markup Language)](https://yaml.org/). This editor provides you with direct access to your server's configuration in YAML format, granting you fine-grained control and flexibility.
 
 Leveraging the power of Infrastructure as Code (IaC), this YAML representation allows for rapid server replication. By simply copying the YAML configuration and applying it to new servers, you can create fully identical setups in seconds. This ensures consistency and significantly reduces deployment time, making it ideal for scaling your infrastructure efficiently.
 
@@ -44,11 +44,17 @@ The top-level of the YAML file contains global parameters that apply to the enti
 
 - `webserver`: the web server used (e.g., `nginx`).
 - `mysql_version`: the version of the MySQL database server (e.g., `8.0`).
+- `mysql_innodb_size`: the memory size of the MySQL database engine (e.g, '2G')
 - `postgresql_version`: the major version of the PostgreSQL database server (e.g., `17`).
+- `elasticsearch_version`: the major version of ElasticSearch to install (e.g., `8.x`)
+- `elasticsearch_heap_size`: the heap size of the ElasticSearch search engine (e.g., `2g`)
+- `varnish_cache_size`: the size of the Varnish cache (e.g., `4g`)
+- `redis_enabled`: whether the Redis cache is enabled, default: `true`.
 - `redis_memory`: the memory to be used by the Redis cache (e.g., `5gb`).
 - `firewall_country_block`: comma separated list of [ISO 3166 2-letter country codes](https://www.iso.org/obp/ui/#search) to block in the firewall (e.g., `CN,GB,RU,US`)
-- `firewall_whitelist`: a YAML list of public IPv4/IPv6 addresses and CIDRs to whitelist in the firewall.
-- `ssh_keys`: a YAML list of SSH public keys that will be allowed to login passwordless.
+- `firewall_whitelist`: a list of public IPv4/IPv6 addresses and CIDRs to whitelist in the firewall.
+- `ssh_keys`: a list of SSH public keys that will be allowed to login passwordless.
+- `os_extra_packages`: a list of packages, to be installed by the package manager, required by the application.
 
 A full list of global settings will come soon.
 
@@ -56,6 +62,7 @@ A full list of global settings will come soon.
 The `system_users` section is a list of individual user configurations. Each user represents a Linux user with a dedicated home directory located at `/var/www/$username`. It can have these properties:
 - `username`: The name of the system user (e.g., `prod`). This property is mandatory!
 - `vhosts`: A list of virtual hosts (web applications) associated with the system user ([see below](#vhosts)).
+- `ftp`: The ftp user configuration.
 
 ### vhosts
 Each vhosts entry defines a web application hosted within the user's directory. The configuration can contain:
@@ -65,43 +72,52 @@ Each vhosts entry defines a web application hosted within the user's directory. 
 - `php_version`: The PHP version used by the application (e.g., `8.4`, `8.3`, `8.2`, `8.1`, `8.0`, `7.4`, ...). This parameter is only relevant if the app_type uses php.
 - `nodejs_version`: The nodejs major version used by the application (e.g. `22.x`).
 - `cert_type`: The type of SSL certificate used (e.g., `letsencrypt`, `selfsigned` or `custom`).
+- `docker_enabled`: A boolean value indicating whether the web app can use Docker.
+- `rabbitmq_enabled`: A boolean value indicating whether the web app can use RabbitMQ.
+- `varnish_enabled`: A boolean value indicating whether the web app can use Varnish.
+- `k8s_enabled`: A boolean value indicating whether the web app can use K8S.
 
 ### Example
-For clarity, consider this example:
+For clarity, consider this example with some global parameters and a `prod` and `dev` system user with some applications and a custom certificate.
 ```
 ---
-
 webserver: nginx
 mysql_version: 8.0
 
-firewall_whitelist
-  - "1.2.3.4 # IP home"
-  - "5.6.7.8/24 # Office range"
+os_extra_packages:
+- ffmpeg
+- pwgen
+
+elasticsearch_version: 7.x
+
+firewall_country_block: CN,RU
+firewall_whitelist:
+- "1.2.3.4 # Home IP"
+- "5.6.7.8/24 # Office range"
 
 ssh_keys:
-  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDDKuK2+TIvERToLFqb+UYyJ/JZqia30Ksmd2Hsm/WML user@laptop
+- ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDDKuK2+TIvERToLFqb+UYyJ/JZqia30Ksmd2Hsm/WML user@laptop
   
 system_users:
-  - username: prod
-    vhosts:
-      - server_name: prod.mydomain.com prod.mydomain.eu
-        app_type: my_app
-        app_install: false
-        php_version: 8.3
-        nodejs_version: 22.x
-        cert_type: letsencrypt
-  - username: dev
-    vhosts:
-      - server_name: dev.mydomain.com
-        app_type: my_app
-        app_install: false
-        php_version: 8.4
-        nodejs_version: 22.x
-        cert_type: letsencrypt
-      - server_name: megento2dev.mydomain.com
-        app_type: magento2
-        app_install: true
-        cert_type: custom
+- username: prod
+  vhosts:
+  - server_name: prod.mydomain.com prod.mydomain.eu
+    app_type: my_app
+    app_install: false
+    php_version: 8.3
+    nodejs_version: 22.x
+    cert_type: letsencrypt
+- username: dev
+  vhosts:
+  - server_name: dev.mydomain.com
+    app_type: my_app
+    app_install: false
+    php_version: 8.4
+    nodejs_version: 22.x
+    cert_type: letsencrypt
+  - server_name: megento2dev.mydomain.com
+    app_type: magento2
+    app_install: true
     cert_type: custom
     cert_pvk: |
       -----BEGIN PRIVATE KEY-----
@@ -114,6 +130,9 @@ system_users:
       -----BEGIN CERTIFICATE-----
       ...
       -----END CERTIFICATE-----
+  ftp:
+  - user: dev-ftp
+    homedir: /var/www/dev/ftp
 ```
 
 ### Templates
