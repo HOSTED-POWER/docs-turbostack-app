@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797339752066">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797344891357">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.797339752066" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797344891357" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797339752066" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797344891357" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797339752066" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797344891357" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -222,7 +222,7 @@
         <span>YAML editor</span>
     </h1>
 </doc-anchor-target>
-<p>Our platform offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using YAML (YAML Ain&#x27;t Markup Language). This editor provides you with direct access to your server&#x27;s configuration in YAML format, granting you fine-grained control and flexibility.</p>
+<p>Our platform offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using <a href="https://yaml.org/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>YAML (YAML Ain&#x27;t Markup Language)</span></a>. This editor provides you with direct access to your server&#x27;s configuration in YAML format, granting you fine-grained control and flexibility.</p>
 <p>Leveraging the power of Infrastructure as Code (IaC), this YAML representation allows for rapid server replication. By simply copying the YAML configuration and applying it to new servers, you can create fully identical setups in seconds. This ensures consistency and significantly reduces deployment time, making it ideal for scaling your infrastructure efficiently.</p>
 <doc-anchor-target id="what-is-yaml">
     <h2>
@@ -300,11 +300,17 @@
 <ul>
 <li><code v-pre>webserver</code>: the web server used (e.g., <code v-pre>nginx</code>).</li>
 <li><code v-pre>mysql_version</code>: the version of the MySQL database server (e.g., <code v-pre>8.0</code>).</li>
+<li><code v-pre>mysql_innodb_size</code>: the memory size of the MySQL database engine (e.g, &#x27;2G&#x27;)</li>
 <li><code v-pre>postgresql_version</code>: the major version of the PostgreSQL database server (e.g., <code v-pre>17</code>).</li>
+<li><code v-pre>elasticsearch_version</code>: the major version of ElasticSearch to install (e.g., <code v-pre>8.x</code>)</li>
+<li><code v-pre>elasticsearch_heap_size</code>: the heap size of the ElasticSearch search engine (e.g., <code v-pre>2g</code>)</li>
+<li><code v-pre>varnish_cache_size</code>: the size of the Varnish cache (e.g., <code v-pre>4g</code>)</li>
+<li><code v-pre>redis_enabled</code>: whether the Redis cache is enabled, default: <code v-pre>true</code>.</li>
 <li><code v-pre>redis_memory</code>: the memory to be used by the Redis cache (e.g., <code v-pre>5gb</code>).</li>
 <li><code v-pre>firewall_country_block</code>: comma separated list of <a href="https://www.iso.org/obp/ui/#search" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>ISO 3166 2-letter country codes</span></a> to block in the firewall (e.g., <code v-pre>CN,GB,RU,US</code>)</li>
-<li><code v-pre>firewall_whitelist</code>: a YAML list of public IPv4/IPv6 addresses and CIDRs to whitelist in the firewall.</li>
-<li><code v-pre>ssh_keys</code>: a YAML list of SSH public keys that will be allowed to login passwordless.</li>
+<li><code v-pre>firewall_whitelist</code>: a list of public IPv4/IPv6 addresses and CIDRs to whitelist in the firewall.</li>
+<li><code v-pre>ssh_keys</code>: a list of SSH public keys that will be allowed to login passwordless.</li>
+<li><code v-pre>os_extra_packages</code>: a list of packages, to be installed by the package manager, required by the application.</li>
 </ul>
 <p>A full list of global settings will come soon.</p>
 <doc-anchor-target id="system_users">
@@ -317,6 +323,7 @@
 <ul>
 <li><code v-pre>username</code>: The name of the system user (e.g., <code v-pre>prod</code>). This property is mandatory!</li>
 <li><code v-pre>vhosts</code>: A list of virtual hosts (web applications) associated with the system user (<doc-anchor-trigger to="#vhosts">see below</doc-anchor-trigger>).</li>
+<li><code v-pre>ftp</code>: The ftp user configuration.</li>
 </ul>
 <doc-anchor-target id="vhosts">
     <h3>
@@ -332,6 +339,10 @@
 <li><code v-pre>php_version</code>: The PHP version used by the application (e.g., <code v-pre>8.4</code>, <code v-pre>8.3</code>, <code v-pre>8.2</code>, <code v-pre>8.1</code>, <code v-pre>8.0</code>, <code v-pre>7.4</code>, ...). This parameter is only relevant if the app_type uses php.</li>
 <li><code v-pre>nodejs_version</code>: The nodejs major version used by the application (e.g. <code v-pre>22.x</code>).</li>
 <li><code v-pre>cert_type</code>: The type of SSL certificate used (e.g., <code v-pre>letsencrypt</code>, <code v-pre>selfsigned</code> or <code v-pre>custom</code>).</li>
+<li><code v-pre>docker_enabled</code>: A boolean value indicating whether the web app can use Docker.</li>
+<li><code v-pre>rabbitmq_enabled</code>: A boolean value indicating whether the web app can use RabbitMQ.</li>
+<li><code v-pre>varnish_enabled</code>: A boolean value indicating whether the web app can use Varnish.</li>
+<li><code v-pre>k8s_enabled</code>: A boolean value indicating whether the web app can use K8S.</li>
 </ul>
 <doc-anchor-target id="example">
     <h3>
@@ -339,41 +350,46 @@
         <span>Example</span>
     </h3>
 </doc-anchor-target>
-<p>For clarity, consider this example:</p>
+<p>For clarity, consider this example with some global parameters and a <code v-pre>prod</code> and <code v-pre>dev</code> system user with some applications and a custom certificate.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">---
-
 webserver: nginx
 mysql_version: 8.0
 
-firewall_whitelist
-  - &quot;1.2.3.4 # IP home&quot;
-  - &quot;5.6.7.8/24 # Office range&quot;
+os_extra_packages:
+- ffmpeg
+- pwgen
+
+elasticsearch_version: 7.x
+
+firewall_country_block: CN,RU
+firewall_whitelist:
+- &quot;1.2.3.4 # Home IP&quot;
+- &quot;5.6.7.8/24 # Office range&quot;
 
 ssh_keys:
-  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDDKuK2+TIvERToLFqb+UYyJ/JZqia30Ksmd2Hsm/WML user@laptop
+- ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDDKuK2+TIvERToLFqb+UYyJ/JZqia30Ksmd2Hsm/WML user@laptop
   
 system_users:
-  - username: prod
-    vhosts:
-      - server_name: prod.mydomain.com prod.mydomain.eu
-        app_type: my_app
-        app_install: false
-        php_version: 8.3
-        nodejs_version: 22.x
-        cert_type: letsencrypt
-  - username: dev
-    vhosts:
-      - server_name: dev.mydomain.com
-        app_type: my_app
-        app_install: false
-        php_version: 8.4
-        nodejs_version: 22.x
-        cert_type: letsencrypt
-      - server_name: megento2dev.mydomain.com
-        app_type: magento2
-        app_install: true
-        cert_type: custom
+- username: prod
+  vhosts:
+  - server_name: prod.mydomain.com prod.mydomain.eu
+    app_type: my_app
+    app_install: false
+    php_version: 8.3
+    nodejs_version: 22.x
+    cert_type: letsencrypt
+- username: dev
+  vhosts:
+  - server_name: dev.mydomain.com
+    app_type: my_app
+    app_install: false
+    php_version: 8.4
+    nodejs_version: 22.x
+    cert_type: letsencrypt
+  - server_name: megento2dev.mydomain.com
+    app_type: magento2
+    app_install: true
     cert_type: custom
     cert_pvk: |
       -----BEGIN PRIVATE KEY-----
@@ -385,7 +401,10 @@ system_users:
       -----END CERTIFICATE-----
       -----BEGIN CERTIFICATE-----
       ...
-      -----END CERTIFICATE-----</code></pre>
+      -----END CERTIFICATE-----
+  ftp:
+  - user: dev-ftp
+    homedir: /var/www/dev/ftp</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="templates">
     <h3>
