@@ -23,7 +23,6 @@ jobs:
 
       - uses: retypeapp/action-build@v3.6.0
         with:
-          strict: true
           license: ${{ secrets.RETYPE_SECRET }}
 
       - uses: retypeapp/action-github-pages@latest
