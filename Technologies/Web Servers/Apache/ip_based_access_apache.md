@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Grant or deny access to server for specific IPs with basic auth
 
 In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auth enabled, based on it's IP-address.
@@ -8,6 +12,7 @@ In that case, no login is asked and you'll be redirected to the site. Like a VIP
 This method is used for Apache2
 
 ## Method 1: Server without Varnish enabled
+
 There is a difference when a server has or doesn't have Varnish enabled.
 For now, we'll make it simple assuming there is no interruption with any service like Varnish. In that case we'll use the next setup:
 
