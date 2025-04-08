@@ -1,1 +1,1 @@
-[Grant or deny access to server for specific IPs with basic auth](apache_ip_based_access)
+* [Grant or deny access to server for specific IPs with basic auth](apache_ip_based_access)
