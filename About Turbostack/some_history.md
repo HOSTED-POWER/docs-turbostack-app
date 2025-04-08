@@ -5,7 +5,7 @@ icon: mortar-board
 
 # Some history
 
-⚡ *At Hosted Power you will find experts in managed hosting, who are people-oriented and think along with you based on their passion for Cloud technology. * ⚡
+⚡ At Hosted Power you will find experts in managed hosting, who are people-oriented and think along with you based on their passion for Cloud technology. ⚡
 
 ## One team of people
 

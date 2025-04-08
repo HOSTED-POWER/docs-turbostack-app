@@ -1,3 +1,8 @@
+---
+order: 200
+icon: info
+---
+
 # Overview
 
 ## Login and locate your managed servers
@@ -73,7 +78,7 @@ SSH keys can be added, deleted and edited here.
 
 You can also disable SSH password authentication completely by activating the checkbox "Only allow SSH authentication by keys".
 
-
+For more details on creating and using SSH keys, click [here](../Miscellaneous/ssh.md)!
 
 ![TurboStackAppSshTab](../img/turbostackapp/basicinstall/tsa_ssh_tab1.png)
 
