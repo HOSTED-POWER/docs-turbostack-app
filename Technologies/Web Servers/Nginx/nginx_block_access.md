@@ -101,7 +101,7 @@ tscli nginx reload
 
 It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack. This way you can block access to your development version of the website for non-authenticated users. This guide assumes you know what Basic Authentication is.
 
-First locate your nginx main configuration file from the home directory of your user:
+First locate your nginx main configuration file in the home directory of your user:
 
 ```
 
@@ -123,7 +123,7 @@ location / {
 
 ```
 
-OPTIONAL: You can add whitelisting based on IP-addresses for connections that will not need to identify using the Basic Auth service, simply add "allow ":
+OPTIONAL: You can add whitelisting based on IP addresses for connections that will not need to identify using the Basic Auth service, simply add "allow `<ip address>`" as in the example below:
 
 ```
 
@@ -145,7 +145,7 @@ satisfy any;
 
 ```
 
-Lastly, to enact your changes, reload the NGINX service:
+Lastly, reload the NGINX service to activate your changes:
 
 ```
 
