@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797434181293">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.797434487597">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.797434181293" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.797434487597" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797434181293" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.797434487597" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797434181293" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.797434487597" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.797434487597" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -235,7 +236,7 @@
 <p>This command-line tool is used to check disk usage on a mounted filesystem, displaying the total size of the disk space, the amount of disk space used, the amount available and on which path it is mounted.</p>
 <p>In the example below, we see the option &#x27;-h&#x27; has been defined, which makes the output human-readable. ( Use df --help in case you want to dive deeper into the options the command provides)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">
+<pre class="language-bash"><code v-pre class="language-bash">
 ssh-user@dylano-dev1:~$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 udev            1.9G     0  1.9G   0% /dev
@@ -256,10 +257,10 @@ tmpfs           1.9G  1.2M  1.9G   1% /dev/shm</code></pre>
 <p>As an SSH user on the server, you will be able to scan everything within your home directory.</p>
 <p>As an example, we will start scanning the <strong>current</strong> directory (which in this case will be the home directory <strong>/var/www/prod/</strong>)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">prod@web2:~$ ncdu .</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">prod@web2:~$ ncdu .</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">--- /var/www/prod -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<pre class="language-bash"><code v-pre class="language-bash">--- /var/www/prod -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   304.2 GiB [##########################] /magento2
     1.4 GiB [                          ] /.db.dumps
     1.2 GiB [                          ]  prod_db.sql.gz
@@ -279,7 +280,7 @@ tmpfs           1.9G  1.2M  1.9G   1% /dev/shm</code></pre>
 </doc-codeblock></div>
 <p>You can navigate to a (sub)directory by pressing the enter button:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">--- /var/www/prod/magento2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+<pre class="language-bash"><code v-pre class="language-bash">--- /var/www/prod/magento2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
                                          /..
   289.9 GiB [##########################] /shared
    14.1 GiB [#                         ] /releases
@@ -287,7 +288,7 @@ tmpfs           1.9G  1.2M  1.9G   1% /dev/shm</code></pre>
 </doc-codeblock></div>
 <p>By navigating deeper within these subdirectories, it will be easier to pinpoint which directory is consuming the most storage space:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">--- /var/www/prod/magento2/shared/pub/media/catalog/product -------------------------------------------------------------------------------------------------------------------------------
+<pre class="language-bash"><code v-pre class="language-bash">--- /var/www/prod/magento2/shared/pub/media/catalog/product -------------------------------------------------------------------------------------------------------------------------------
                                          /..
   263.1 GiB [##########################] /cache
     4.6 GiB [                          ] /p
@@ -385,6 +386,6 @@ To delete a file or directory in <code v-pre>ncdu</code> you would have the pre
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Manage your disk space usage", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Manage your disk space usage", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
