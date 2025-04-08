@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Take care of your disk space usage
 
 ### There's a lot of risk in running out of disk space!
