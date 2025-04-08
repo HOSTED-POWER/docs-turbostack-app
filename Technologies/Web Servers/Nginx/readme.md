@@ -1,2 +1,2 @@
-* [Enable Basic Authentication on your website for NGINX](basic_auth_nginx.md)
+[Use nginx to block access to your application](nginx_block_access.md)
 
