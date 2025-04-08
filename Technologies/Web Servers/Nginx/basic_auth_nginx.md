@@ -1,11 +1,4 @@
----
-order: 200
-icon: browser
----
-
-# Nginx 
-
-## Enable Basic Authentication on your website for NGINX
+# Enable Basic Authentication on your website for NGINX
 
 It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack. This way you can block access to your development version of the website for non-authenticated users. This guide assumes you know what Basic Authentication is.
 
@@ -24,7 +17,7 @@ location / {
 #satisfy any;
 ```
 
-OPTIONAL: You can add whitelisting based on IP-addresses for connections that will not need to identify using the Basic Auth service, simply add "allow ":
+OPTIONAL: You can add whitelisting based on IP-addresses for connections that will not need to identify using the Basic Auth service, simply add "allow":
 ```
 location / {
 auth_basic "Administrator’s Area";
