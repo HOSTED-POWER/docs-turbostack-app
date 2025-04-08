@@ -21,9 +21,9 @@ jobs:
         with:
           dotnet-version: 7.0.x
 
-      - uses: retypeapp/action-build@latest
+      - uses: retypeapp/action-build@v3.6.0
         with:
-          version: "3.6.0"
+          strict: true
           license: ${{ secrets.RETYPE_SECRET }}
 
       - uses: retypeapp/action-github-pages@latest
