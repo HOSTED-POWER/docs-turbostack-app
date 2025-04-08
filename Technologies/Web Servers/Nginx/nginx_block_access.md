@@ -5,7 +5,7 @@ hidden: true
 
 Sometimes, during development or under specific circumstances, you might want to block all unauthorized access to your web page or application. nginx allows you to do this quite easily and it even provides multiple ways to allow authorization:
 
-### The structure within the /var/www/`<user>`/nginx directory
+## The structure within the /var/www/`<user>`/nginx directory
 
 The way our Turbostack works is it will create an nginx folder in the home directory of each system user with the following files:
 
@@ -33,9 +33,9 @@ The structure of the nginx folder will be a bit different when **varnish is ena
 
 In the outside directory, you can define rewrites/redirects that need to bypass the varnish caching.
 
-### Enough about the structure, let's talk about protecting the environment.
+## Enough about the structure, let's talk about protecting the environment.
 
-#### 1\. Using IP-whitelisting 
+### 1\. Using IP-whitelisting 
 
 Using deny all in the nginx configuration will block access to all IP addresses except those you explicitly allowed.
 The best way to do this is by creating a file **10auth.conf** in the **/var/www/`<user>`/nginx** directory and place the whitelisting configuration in there, which will apply to the applications under that user. 
@@ -97,7 +97,7 @@ When doing any changes within the nginx directory, you will have to reload the s
 tscli nginx reload
 !!! 
 
-#### 2. Enable Basic Authentication on your website for NGINX
+### 2. Enable Basic Authentication on your website for NGINX
 
 It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack. This way you can block access to your development version of the website for non-authenticated users. This guide assumes you know what Basic Authentication is.
 
