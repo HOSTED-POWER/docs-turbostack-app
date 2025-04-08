@@ -18,7 +18,7 @@ This command-line tool is used to check disk usage on a mounted filesystem, disp
 
 In the example below, we see the option '-h' has been defined, which makes the output human-readable. ( Use df --help in case you want to dive deeper into the options the command provides)
 
-```bash
+``` bash
 
 ssh-user@dylano-dev1:~$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
@@ -42,11 +42,11 @@ As an SSH user on the server, you will be able to scan everything within your ho
 
 As an example, we will start scanning the **current** directory (which in this case will be the home directory **/var/www/prod/**)
 
-```bash
+``` bash
 prod@web2:~$ ncdu .
 ```
 
-```bash
+``` bash
 --- /var/www/prod -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   304.2 GiB [##########################] /magento2
     1.4 GiB [                          ] /.db.dumps
@@ -68,7 +68,7 @@ prod@web2:~$ ncdu .
 
 You can navigate to a (sub)directory by pressing the enter button:
 
-```bash
+``` bash
 --- /var/www/prod/magento2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
                                          /..
   289.9 GiB [##########################] /shared
@@ -78,7 +78,7 @@ You can navigate to a (sub)directory by pressing the enter button:
 
 By navigating deeper within these subdirectories, it will be easier to pinpoint which directory is consuming the most storage space:
 
-```bash
+``` bash
 --- /var/www/prod/magento2/shared/pub/media/catalog/product -------------------------------------------------------------------------------------------------------------------------------
                                          /..
   263.1 GiB [##########################] /cache

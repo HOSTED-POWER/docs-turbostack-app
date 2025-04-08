@@ -1,22 +1,20 @@
 ---
-order: 190
-icon: browser
+hidden: true
 ---
 
-# Apache
-
-## Grant or deny access to server for specific IP's while using basic auth
+# Grant or deny access to server for specific IPs with basic auth
 
 In this article, we'll tackle the problem how we can decide if a visitor should or should not login on a server with basic auth enabled, based on it's IP-address.
  
-So what is the result we want to achieve? We want to implement an .htpasswd so visitors need to have a valid login, except when the request came from a whitelisted IP adress.
+So what is the result we want to achieve? We want to implement an .htpasswd so visitors need to have a valid login, except when the request came from a whitelisted IP address.
 In that case, no login is asked and you'll be redirected to the site. Like a VIP that would skip a waiting queue for a club.
 
 This method is used for Apache2
 
-### Method 1: Server without varnish enabled
+## Method 1: Server without Varnish enabled
+
 There is a difference when a server has or doesn't have Varnish enabled.
-For now we'll make it simple assuming there is no interruption with any service like Varnish. In that case we'll use the next setup:
+For now, we'll make it simple assuming there is no interruption with any service like Varnish. In that case we'll use the next setup:
 
 _For best practice, we put this code at the top of our .htaccess file_ 
 
@@ -29,9 +27,9 @@ AuthUserFile /var/www/user/apache2/.htpasswd
 # Only a person with valid credentials will be redirected require valid-user
 ```
 
-### Method 2: Server with varnish enabled
+## Method 2: Server with varnish enabled
 For a server with varnish enabled, is a different approach needed. All requests that go through varnish will pass the header (X-Forwarded-For), but it may contain some tempered information about the visitors IP.
-Because of this modification, the request for immediate access will be denied and the visitor will be asked to login. To make sure this won't happen, we'll add a variable for the header that contains the whitelisted IP-adress.
+Because of this modification, the request for immediate access will be denied and the visitor will be asked to log in. To make sure this won't happen, we'll add a variable for the header that contains the whitelisted IP-address.
 
 
 The code below will do the trick:
