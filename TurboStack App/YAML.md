@@ -44,7 +44,7 @@ The top-level of the YAML file contains global parameters that apply to the enti
 
 - `webserver`: the web server used (e.g., `nginx`).
 - `mysql_version`: the version of the MySQL database server (e.g., `8.0`).
-- `mysql_innodb_size`: the memory size of the MySQL database engine (e.g, '2G')
+- `mysql_innodb_size`: the memory size of the MySQL database engine (e.g, `2G`)
 - `postgresql_version`: the major version of the PostgreSQL database server (e.g., `17`).
 - `elasticsearch_version`: the major version of ElasticSearch to install (e.g., `8.x`)
 - `elasticsearch_heap_size`: the heap size of the ElasticSearch search engine (e.g., `2g`)
