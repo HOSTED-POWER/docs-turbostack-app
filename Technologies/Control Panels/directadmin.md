@@ -8,7 +8,7 @@ icon: sliders
 
 DirectAdmin has very extensive [documentation](https://docs.directadmin.com/getting-started/first-steps/overview.html "DirectAdmin Official Documentation") as well as a significant amount of information on their [forum](https://forum.directadmin.com/ "DirectAdmin Official Forum"). It is most likely a very good starting point if anything is not working as expected.
 
-## Apache reverse proxy to docker, nodejs or any other service
+## Apache reverse proxy to docker, nodeJS or any other service
 
 It's possible to use reverse proxy on DirectAdmin quite easily, however it's important to not block for example Let's Encrypt.
 
