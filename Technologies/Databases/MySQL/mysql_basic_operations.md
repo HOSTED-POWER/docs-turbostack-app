@@ -1,6 +1,5 @@
 ---
-order: 200
-icon: table
+hidden: true
 ---
 
 # MySQL
