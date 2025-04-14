@@ -3,3 +3,4 @@ Nginx (pronounced "engine-x") is a high-performance web server and reverse proxy
 ### How-To Guides
 
 * [Use nginx to block access to your application](nginx_block_access.md)
+* [Change the nginx document root (docroot)](nginx_change_docroot.md)
