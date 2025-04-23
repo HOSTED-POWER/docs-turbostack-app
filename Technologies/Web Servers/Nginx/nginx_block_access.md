@@ -35,7 +35,29 @@ In the outside directory, you can define rewrites/redirects that need to bypass 
 
 ## Enough about the structure, let's talk about protecting the environment.
 
-### 1\. Using IP-whitelisting 
+### 1. Generating the htpasswd file
+The htpasswd file contains the username and hashed password for the Basic Authentication. Depending on your setup, this file can be located elsewhere. We will use a common location for this example.
+
+To generate the htpasswd file, we'll need to borrow some functionality from the **apache2-utils** package.
+
+To install the package, add the following to the turbostack YAML and publish the change:
+
+```yaml
+os_extra_packages:
+  - apache2-utils
+```
+
+**_Hint:_** if your config already has **os_extra_packages**, just add the second line under it.
+
+Once the package is installed, we can generate the htpasswd file:
+
+```bash
+htpasswd -c /var/www/username/.secrets/htpasswd username
+```
+
+This will prompt you for a password. Consider using a long and complex password.
+
+### 2. Using IP-whitelisting 
 
 Using deny all in the nginx configuration will block access to all IP addresses except those you explicitly allowed.
 The best way to do this is by creating a file **10auth.conf** in the **/var/www/`<user>`/nginx** directory and place the whitelisting configuration in there, which will apply to the applications under that user. 
@@ -97,7 +119,7 @@ When doing any changes within the nginx directory, you will have to reload the s
 tscli nginx reload
 !!! 
 
-### 2. Enable Basic Authentication on your website for NGINX
+### 3. Enable Basic Authentication on your website for NGINX
 
 It's relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack. This way you can block access to your development version of the website for non-authenticated users. This guide assumes you know what Basic Authentication is.
 
