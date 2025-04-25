@@ -44,7 +44,7 @@ cat ~/.ssh/id_ed25519.pub
 
 #### 1\. Open PuTTYgen
 
-* Download PuTTY from https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html if you don’t already have it installed.
+* Download PuTTY from [the official source](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) if you don’t already have it installed.
 * Open **PuTTYgen** (`puttygen.exe`).
 
 #### 2\. Generate an Ed25519 Key
