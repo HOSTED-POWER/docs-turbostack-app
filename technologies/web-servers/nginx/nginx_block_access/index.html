@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799227824034">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799228844130">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.799227824034" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.799228844130" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.799227824034" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.799228844130" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.799227824034" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.799227824034" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.799228844130" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.799228844130" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -338,6 +338,31 @@ tscli nginx reload</p>
     </h3>
 </doc-anchor-target>
 <p>It&#x27;s relatively easy to configure Basic Authentication using a .htpasswd file (similar to a basic auth block in Apache .htaccess) in NGINX on TurboStack. This way you can block access to your development version of the website for non-authenticated users. This guide assumes you know what Basic Authentication is.</p>
+<doc-anchor-target id="1-generating-the-htpasswd-file">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-generating-the-htpasswd-file">#</doc-anchor-trigger>
+        <span>1. Generating the htpasswd file</span>
+    </h4>
+</doc-anchor-target>
+<p>The htpasswd file contains the username and hashed password for the Basic Authentication. Depending on your setup, this file can be located elsewhere. We will use a common location for this example. If you already have a .htpasswd file, or you will generate one elsewhere, continue straight to Activating Basic Authentication,</p>
+<p>To generate the htpasswd file, we&#x27;ll need to borrow some functionality from the <strong>apache2-utils</strong> package.</p>
+<p>To install the package, add the following to the turbostack YAML and publish the change:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">os_extra_packages:
+  - apache2-utils</code></pre>
+</doc-codeblock></div>
+<p><strong><em>Hint:</em></strong> if your config already has <strong>os_extra_packages</strong>, just add the second line under it.</p>
+<p>Once the package is installed, we can generate the htpasswd file:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">htpasswd -c /var/www/username/.secrets/htpasswd username</code></pre>
+</doc-codeblock></div>
+<p>This will prompt you for a password. Consider using a long and complex password.</p>
+<doc-anchor-target id="2-activating-basic-authentication">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-activating-basic-authentication">#</doc-anchor-trigger>
+        <span>2. Activating Basic Authentication</span>
+    </h4>
+</doc-anchor-target>
 <p>First locate your nginx main configuration file in the home directory of your user:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">
