@@ -1,3 +1,6 @@
+---
+hidden: true
+---
 # Managing Applications with systemd User Services
 
 Sometimes, your application needs to be managed like a system service. Easy to start, stop, restart, and ideally run automatically on system boot or after crashes. This is where **systemd** user services come in handy.
