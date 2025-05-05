@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799231236331">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799765528159">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>cPanel</title>
     <meta name="title" content="cPanel">
-    <meta name="description" content="Login via ssh as the account user (or login via cPanel -> Cronjobs)">
+    <meta name="description" content="If you notice issues with one or more domains not getting their certificates, you probably already know to check the 'AutoSSL' page to retry.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/technologies/control-panels/cpanel/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/technologies/control-panels/cpanel/">
     <meta property="og:title" content="cPanel">
-    <meta property="og:description" content="Login via ssh as the account user (or login via cPanel -> Cronjobs)">
+    <meta property="og:description" content="If you notice issues with one or more domains not getting their certificates, you probably already know to check the 'AutoSSL' page to retry.">
     <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/technologies/control-panels/cpanel/">
     <meta property="twitter:title" content="cPanel">
-    <meta property="twitter:description" content="Login via ssh as the account user (or login via cPanel -> Cronjobs)">
+    <meta property="twitter:description" content="If you notice issues with one or more domains not getting their certificates, you probably already know to check the 'AutoSSL' page to retry.">
     <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.799231236331" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.799765528159" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.799231236331" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.799765528159" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.799231236331" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.799765528159" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -230,6 +230,20 @@
         <span>cPanel</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="troubleshoot-failed-autossllets-encrypt-certificate-request">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#troubleshoot-failed-autossllets-encrypt-certificate-request">#</doc-anchor-trigger>
+        <span>Troubleshoot failed AutoSSL/Let&#x27;s Encrypt certificate request</span>
+    </h2>
+</doc-anchor-target>
+<p>If you notice issues with one or more domains not getting their certificates, you probably already know to check the &#x27;AutoSSL&#x27; page to retry. There&#x27;s also a way to check how the failed request went on <a href="https://web2.monkeyhost.be:2087/cpsess2457181835/scripts12/autossl#/providers/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>this page</span></a> though, and often you can easily identify the issues.</p>
+<p>We strongly recommend retrying the request only once, for the specific user that is experiencing the issue, and then fixing the issue using that log. Further retries will count towards the Let&#x27;s Encrypt request limit, which will block further requests eventually.</p>
+<p>Reading through this log may seem daunting, as there is a lot of information especially for users with a lot of domains. Most of it can be safely ignored however, we&#x27;re mostly looking for warnings and errors. When going down the list, you&#x27;ll find &#x27;HTTP DCV&#x27; mentioned. This means &#x27;domain control validation&#x27;, or the validation that you own the domain you&#x27;re requesting a certificate for, over HTTP. If you find &#x27;WARN Local HTTP DCV error&#x27; for a specific domain, said validation did not succeed for this domain. Take a look at the example below:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none"> WARN Local HTTP DCV error (www.hosted-power.com): The system failed to fetch the DCV (Domain Control Validation) file at “http://www.hosted-power.com/.well-known/acme-challenge/C8FHCBYKJ8VMHGMNAQDWOYK9T3KU11AO” because of an error: The system failed to send an HTTP (Hypertext Transfer Protocol) “GET” request to “http://www.hosted-power.com/.well-known/acme-challenge/C8FHCBYKJ8VMHGMNAQDWOYK9T3KU11AO” because of an error: Timed out while waiting for socket to become ready for reading. The domain “www.hosted-power.com” resolved to an IP address “94.237.46.68” that does not exist on this server.</code></pre>
+</doc-codeblock></div>
+<p>This error tells us that Let&#x27;s Encrypt was not able to reach the validation file (the URL provided) and the reason why. In this case, we can see the domain resolved to an IP address that cPanel could not find on the server, indicating the domain does not point towards the server we&#x27;re requesting the certificate on. So we could resolve this either by fixing the DNS records to point towards this server, or we can <doc-anchor-trigger to="#fix---autossl-reduced-ssl-coverage">exclude this domain</doc-anchor-trigger> from AutoSSL for this user.</p>
+<p>Other common errors are a 404 response, indicating that the site may resolve to this server correctly, but the file is still not reachable. This could be due to redirections you have setup, or even a faulty Magento runmaps setup.</p>
 <doc-anchor-target id="how-to-correctly-configure-a-magento-2-cronjob-under-cpanel">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-correctly-configure-a-magento-2-cronjob-under-cpanel">#</doc-anchor-trigger>
