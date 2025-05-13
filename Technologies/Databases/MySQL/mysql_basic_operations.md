@@ -20,10 +20,7 @@ For larger databases (tens of gigabytes or bigger), compress the database to con
 mysqldump --single-transaction --triggers --routines --events -y DBNAME | gzip -3 -v > DBNAME.gz
 ```
 
-### MySQL Import
-```
-mysql DBNAME < DBNAME.sql
-```
+
 ### Transferring the Database
 
 Use `scp` to transfer the file:
