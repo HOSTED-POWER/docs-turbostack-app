@@ -6,14 +6,17 @@ hidden: true
 
 ## MySQL Import & Export
 
-For large databases we recommend exporting and importing via the commandline
+We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.
 
 ### MySQL Export
-```
+For most databases (only a couple of gigabytes big), you can dump the database with this command:
+```bash
 mysqldump --single-transaction --triggers --routines --events -y DBNAME > DBNAME.sql
 ```
-OR with gzip (much smaller)
-```
+
+For larger databases (tens of gigabytes or bigger), compress the database to conserve disk space and speed up transfer:
+
+```bash
 mysqldump --single-transaction --triggers --routines --events -y DBNAME | gzip -3 -v > DBNAME.gz
 ```
 
@@ -21,58 +24,119 @@ mysqldump --single-transaction --triggers --routines --events -y DBNAME | gzip -
 ```
 mysql DBNAME < DBNAME.sql
 ```
+### Transferring the Database
 
-### Potential errors & resolution
+Use `scp` to transfer the file:
 
-* ERROR 1227 (42000) at line xxx: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
-* SQLSTATE[42000]: Syntax error or access violation: 1142 TRIGGER command denied to user 'xxx'@'%' for table 'xxx', query was: ...
-* ERROR 1449 (HY000) at line xxx: The user specified as a definer ('xxx'@'%') does not exist, query was: ...
-  
-* ERROR 1227 (42000) at line xxx: Access denied; you need (at least one of) the SUPER or SET_USER_ID privilege(s) for this operation
-This is most likely because your database has routines/views, make sure to strip the definer owner during export:
+```bash
+scp FileName user@HostnameOrIP:Path/To/Folder
 ```
+
+> **Hint:** To place the file in the user's home directory, remove everything after the colon.
+
+### Importing the Database
+
+```bash
+mysql DBNAME < DBNAME.sql
+```
+
+Or, if compressed:
+
+```bash
+gunzip -c DBNAME.gz | mysql DBNAME
+```
+
+> **Hint:** Large databases can take time to import, especially on high-load servers.
+
+---
+## Extra Tips
+
+### Nohup
+
+Use `nohup` to ensure the dump or import continues if the connection is lost.
+
+### Screen
+
+Use `screen` to allow session sharing or recovery:
+
+- Create a session:
+
+  ```bash
+  screen -S <session_name>
+  ```
+
+- Disconnect (keep running):
+
+  ```
+  Ctrl + A, then D
+  ```
+
+- Reattach or take over session:
+
+  ```bash
+  screen -dr <session_name>
+  ```
+
+- List sessions:
+
+  ```bash
+  screen -ls
+  ```
+
+### SSH Key
+
+Avoid password prompts by setting up SSH key authentication.
+
+---
+
+## Fixes for Potential Errors
+
+### MySQL ERROR 1227 (42000)
+
+> *Access denied; you need (at least one of) the SUPER privilege(s) for this operation*
+
+This is caused by `routines`, `views`, or `triggers` defined with a definer the user cannot access.
+
+**Solution:** Strip the definer using `sed`:
+
+```bash
 mysqldump --routines --single-transaction --triggers --routines --events -y DBNAME | sed -e 's/DEFINER=[^*]*\*/\*/g' > DBNAME.sql
 ```
-OR
-```
+
+**Or with compression:**
+
+```bash
 mysqldump --single-transaction --triggers --routines --events -y DBNAME | sed -e 's/DEFINER=[^*]*\*/\*/g' | gzip -3 -v > DBNAME.gz
 ```
-Or if you have already a dump file, you can also remove it during import:
-```
+
+**If you already have the file:**
+
+```bash
 cat DBNAME.sql | sed -e 's/DEFINER=[^*]*\*/\*/g' | mysql DBNAME
 ```
 
-* mysqldump: Error: 'Access denied; you need (at least one of) the PROCESS privilege(s) for this operation' when trying to dump tablespaces
-If you see this error, make sure to use the "-y" argument as in the above example when dumping MySQL database (This is the no-tablespaces option), your dump will still contain everything needed.
-* mysql: ERROR 1118 (42000) at line xxx: Row size too large (> 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.
-If you see this error, probably your data has grown too large to still be imported/exported with the ROW_FORMAT=COMPACT. You can import most likely by converting to ROW_FORMAT=DYNAMIC with the following command
+**Compressed file:**
+
+```bash
+gunzip -c DBNAME.gz | sed -e 's/DEFINER=[^*]*\*/\*/g' | mysql DBNAME
 ```
+
+---
+
+### MySQL ERROR 1118 (42000)
+
+> *Row size too large (> 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help.*
+
+Caused by limits on row size when using `ROW_FORMAT=COMPACT`.
+
+**Fix during import:**
+
+```bash
 cat DBNAME.sql | sed -e 's/ROW_FORMAT=COMPACT/ROW_FORMAT=DYNAMIC/g' | mysql DBNAME
 ```
 
-## MySQL Charset & collation fix
+**Compressed file:**
 
-_Example script to convert a whole database to a certain charset and collation_ 
-
-cat fixcollection.bash
-```
-#!/bin/bash
-
-DB="$1"
-CHARSET="$2"
-COLL="$3"
-
-[ -n "$DB" ] || exit 1
-[ -n "$CHARSET" ] || CHARSET="utf8mb4"
-[ -n "$COLL" ] || COLL="utf8mb4_unicode_ci"
-
-echo $DB
-echo "ALTER DATABASE \`$DB\` CHARACTER SET $CHARSET COLLATE $COLL;" | mysql
-
-echo "USE \`$DB\`; SHOW TABLES;" | mysql -s | (
-    while read TABLE; do
-        echo $DB.$TABLE
-        echo "ALTER TABLE \`$TABLE\` CONVERT TO CHARACTER SET $CHARSET COLLATE $COLL;" | mysql $DB
-    done
-)
+```bash
+gunzip -c DBNAME.gz | sed -e 's/ROW_FORMAT=COMPACT/ROW_FORMAT=DYNAMIC/g' | mysql DBNAME
 ```
