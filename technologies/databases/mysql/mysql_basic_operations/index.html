@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.799765528159">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.800439474936">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>MySQL</title>
     <meta name="title" content="MySQL">
-    <meta name="description" content="For large databases we recommend exporting and importing via the commandline">
+    <meta name="description" content="We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/technologies/databases/mysql/mysql_basic_operations/">
@@ -20,21 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/technologies/databases/mysql/mysql_basic_operations/">
     <meta property="og:title" content="MySQL">
-    <meta property="og:description" content="For large databases we recommend exporting and importing via the commandline">
+    <meta property="og:description" content="We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/technologies/databases/mysql/mysql_basic_operations/">
     <meta property="twitter:title" content="MySQL">
-    <meta property="twitter:description" content="For large databases we recommend exporting and importing via the commandline">
+    <meta property="twitter:description" content="We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.799765528159" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.800439474936" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.799765528159" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.800439474936" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.799765528159" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.800439474936" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.800439474936" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -234,94 +235,151 @@
         <span>MySQL Import &amp; Export</span>
     </h2>
 </doc-anchor-target>
-<p>For large databases we recommend exporting and importing via the commandline</p>
+<p>We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.</p>
 <doc-anchor-target id="mysql-export">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mysql-export">#</doc-anchor-trigger>
         <span>MySQL Export</span>
     </h3>
 </doc-anchor-target>
+<p>For most databases (only a couple of gigabytes big), you can dump the database with this command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mysqldump --single-transaction --triggers --routines --events -y DBNAME &gt; DBNAME.sql</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mysqldump --single-transaction --triggers --routines --events -y DBNAME &gt; DBNAME.sql</code></pre>
 </doc-codeblock></div>
-<p>OR with gzip (much smaller)</p>
+<p>For larger databases (tens of gigabytes or bigger), compress the database to conserve disk space and speed up transfer:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mysqldump --single-transaction --triggers --routines --events -y DBNAME | gzip -3 -v &gt; DBNAME.gz</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mysqldump --single-transaction --triggers --routines --events -y DBNAME | gzip -3 -v &gt; DBNAME.gz</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="mysql-import">
+<doc-anchor-target id="transferring-the-database">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mysql-import">#</doc-anchor-trigger>
-        <span>MySQL Import</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#transferring-the-database">#</doc-anchor-trigger>
+        <span>Transferring the Database</span>
+    </h3>
+</doc-anchor-target>
+<p>Use <code v-pre>scp</code> to transfer the file:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">scp FileName user@HostnameOrIP:Path/To/Folder</code></pre>
+</doc-codeblock></div>
+<blockquote>
+<p><strong>Hint:</strong> To place the file in the user&#x27;s home directory, remove everything after the colon.</p>
+</blockquote>
+<doc-anchor-target id="importing-the-database">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#importing-the-database">#</doc-anchor-trigger>
+        <span>Importing the Database</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mysql DBNAME &lt; DBNAME.sql</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mysql DBNAME &lt; DBNAME.sql</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="potential-errors--resolution">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#potential-errors--resolution">#</doc-anchor-trigger>
-        <span>Potential errors &amp; resolution</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><p>ERROR 1227 (42000) at line xxx: Access denied; you need (at least one of) the SUPER privilege(s) for this operation</p>
-</li>
-<li><p>SQLSTATE[42000]: Syntax error or access violation: 1142 TRIGGER command denied to user &#x27;xxx&#x27;@&#x27;%&#x27; for table &#x27;xxx&#x27;, query was: ...</p>
-</li>
-<li><p>ERROR 1449 (HY000) at line xxx: The user specified as a definer (&#x27;xxx&#x27;@&#x27;%&#x27;) does not exist, query was: ...</p>
-</li>
-<li><p>ERROR 1227 (42000) at line xxx: Access denied; you need (at least one of) the SUPER or SET_USER_ID privilege(s) for this operation
-This is most likely because your database has routines/views, make sure to strip the definer owner during export:</p>
-</li>
-</ul>
+<p>Or, if compressed:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mysqldump --routines --single-transaction --triggers --routines --events -y DBNAME | sed -e 's/DEFINER=[^*]*\*/\*/g' &gt; DBNAME.sql</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">gunzip -c DBNAME.gz | mysql DBNAME</code></pre>
 </doc-codeblock></div>
-<p>OR</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mysqldump --single-transaction --triggers --routines --events -y DBNAME | sed -e 's/DEFINER=[^*]*\*/\*/g' | gzip -3 -v &gt; DBNAME.gz</code></pre>
-</doc-codeblock></div>
-<p>Or if you have already a dump file, you can also remove it during import:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">cat DBNAME.sql | sed -e 's/DEFINER=[^*]*\*/\*/g' | mysql DBNAME</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>mysqldump: Error: &#x27;Access denied; you need (at least one of) the PROCESS privilege(s) for this operation&#x27; when trying to dump tablespaces
-If you see this error, make sure to use the &quot;-y&quot; argument as in the above example when dumping MySQL database (This is the no-tablespaces option), your dump will still contain everything needed.</li>
-<li>mysql: ERROR 1118 (42000) at line xxx: Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.
-If you see this error, probably your data has grown too large to still be imported/exported with the ROW_FORMAT=COMPACT. You can import most likely by converting to ROW_FORMAT=DYNAMIC with the following command</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">cat DBNAME.sql | sed -e 's/ROW_FORMAT=COMPACT/ROW_FORMAT=DYNAMIC/g' | mysql DBNAME</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="mysql-charset--collation-fix">
+<blockquote>
+<p><strong>Hint:</strong> Large databases can take time to import, especially on high-load servers.</p>
+</blockquote>
+<hr>
+<doc-anchor-target id="extra-tips">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mysql-charset--collation-fix">#</doc-anchor-trigger>
-        <span>MySQL Charset &amp; collation fix</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extra-tips">#</doc-anchor-trigger>
+        <span>Extra Tips</span>
     </h2>
 </doc-anchor-target>
-<p><em>Example script to convert a whole database to a certain charset and collation</em></p>
-<p>cat fixcollection.bash</p>
+<doc-anchor-target id="nohup">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nohup">#</doc-anchor-trigger>
+        <span>Nohup</span>
+    </h3>
+</doc-anchor-target>
+<p>Use <code v-pre>nohup</code> to ensure the dump or import continues if the connection is lost.</p>
+<doc-anchor-target id="screen">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#screen">#</doc-anchor-trigger>
+        <span>Screen</span>
+    </h3>
+</doc-anchor-target>
+<p>Use <code v-pre>screen</code> to allow session sharing or recovery:</p>
+<ul>
+<li><p>Create a session:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">#!/bin/bash
-
-DB=&quot;$1&quot;
-CHARSET=&quot;$2&quot;
-COLL=&quot;$3&quot;
-
-[ -n &quot;$DB&quot; ] || exit 1
-[ -n &quot;$CHARSET&quot; ] || CHARSET=&quot;utf8mb4&quot;
-[ -n &quot;$COLL&quot; ] || COLL=&quot;utf8mb4_unicode_ci&quot;
-
-echo $DB
-echo &quot;ALTER DATABASE \`$DB\` CHARACTER SET $CHARSET COLLATE $COLL;&quot; | mysql
-
-echo &quot;USE \`$DB\`; SHOW TABLES;&quot; | mysql -s | (
-    while read TABLE; do
-        echo $DB.$TABLE
-        echo &quot;ALTER TABLE \`$TABLE\` CONVERT TO CHARACTER SET $CHARSET COLLATE $COLL;&quot; | mysql $DB
-    done
-)</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">screen -S &lt;session_name&gt;</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Disconnect (keep running):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Ctrl + A, then D</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Reattach or take over session:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">screen -dr &lt;session_name&gt;</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>List sessions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">screen -ls</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<doc-anchor-target id="ssh-key">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ssh-key">#</doc-anchor-trigger>
+        <span>SSH Key</span>
+    </h3>
+</doc-anchor-target>
+<p>Avoid password prompts by setting up SSH key authentication.</p>
+<hr>
+<doc-anchor-target id="fixes-for-potential-errors">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fixes-for-potential-errors">#</doc-anchor-trigger>
+        <span>Fixes for Potential Errors</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="mysql-error-1227-42000">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mysql-error-1227-42000">#</doc-anchor-trigger>
+        <span>MySQL ERROR 1227 (42000)</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p><em>Access denied; you need (at least one of) the SUPER privilege(s) for this operation</em></p>
+</blockquote>
+<p>This is caused by <code v-pre>routines</code>, <code v-pre>views</code>, or <code v-pre>triggers</code> defined with a definer the user cannot access.</p>
+<p><strong>Solution:</strong> Strip the definer using <code v-pre>sed</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">mysqldump --routines --single-transaction --triggers --routines --events -y DBNAME | sed -e 's/DEFINER=[^*]*\*/\*/g' &gt; DBNAME.sql</code></pre>
+</doc-codeblock></div>
+<p><strong>Or with compression:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">mysqldump --single-transaction --triggers --routines --events -y DBNAME | sed -e 's/DEFINER=[^*]*\*/\*/g' | gzip -3 -v &gt; DBNAME.gz</code></pre>
+</doc-codeblock></div>
+<p><strong>If you already have the file:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">cat DBNAME.sql | sed -e 's/DEFINER=[^*]*\*/\*/g' | mysql DBNAME</code></pre>
+</doc-codeblock></div>
+<p><strong>Compressed file:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">gunzip -c DBNAME.gz | sed -e 's/DEFINER=[^*]*\*/\*/g' | mysql DBNAME</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="mysql-error-1118-42000">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mysql-error-1118-42000">#</doc-anchor-trigger>
+        <span>MySQL ERROR 1118 (42000)</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p><em>Row size too large (&gt; 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help.</em></p>
+</blockquote>
+<p>Caused by limits on row size when using <code v-pre>ROW_FORMAT=COMPACT</code>.</p>
+<p><strong>Fix during import:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">cat DBNAME.sql | sed -e 's/ROW_FORMAT=COMPACT/ROW_FORMAT=DYNAMIC/g' | mysql DBNAME</code></pre>
+</doc-codeblock></div>
+<p><strong>Compressed file:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">gunzip -c DBNAME.gz | sed -e 's/ROW_FORMAT=COMPACT/ROW_FORMAT=DYNAMIC/g' | mysql DBNAME</code></pre>
 </doc-codeblock></div>
 
                                 
@@ -374,6 +432,6 @@ echo &quot;USE \`$DB\`; SHOW TABLES;&quot; | mysql -s | (
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "MySQL", level: 4, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "MySQL", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
