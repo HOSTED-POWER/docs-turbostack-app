@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.800439474936">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.800719533558">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Redis</title>
     <meta name="title" content="Redis">
-    <meta name="description" content="By default there are always at least 2 Redis instances available:">
+    <meta name="description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/configuration/caching/redis/">
@@ -20,21 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/configuration/caching/redis/">
     <meta property="og:title" content="Redis">
-    <meta property="og:description" content="By default there are always at least 2 Redis instances available:">
+    <meta property="og:description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/configuration/caching/redis/">
     <meta property="twitter:title" content="Redis">
-    <meta property="twitter:description" content="By default there are always at least 2 Redis instances available:">
+    <meta property="twitter:description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.800439474936" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.800719533558" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.800439474936" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.800719533558" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.800439474936" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.800719533558" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.800719533558" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -228,35 +229,222 @@
         <span>Redis</span>
     </h1>
 </doc-anchor-target>
-<p>By default there are always at least 2 Redis instances available:</p>
+<p>Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.</p>
+<p>This page explains how our Redis setup works, why certain choices were made, and how to make the most of Redis.</p>
+<hr>
+<doc-anchor-target id="1-our-redis-setup-two-instances-for-optimal-performance">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-our-redis-setup-two-instances-for-optimal-performance">#</doc-anchor-trigger>
+        <span>1. Our Redis Setup: Two Instances for Optimal Performance</span>
+    </h2>
+</doc-anchor-target>
+<p>By default, at least two Redis instances run on our servers:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Instance</th>
+<th>Port</th>
+<th>Purpose</th>
+<th>Data Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redis</td>
+<td>6379 (default)</td>
+<td>Caching</td>
+<td>Persistent</td>
+</tr>
+<tr>
+<td>Redis-persistent</td>
+<td>6378 (custom)</td>
+<td>Sessions &amp; critical data</td>
+<td>Persistent</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="why-two-redis-instances">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-two-redis-instances">#</doc-anchor-trigger>
+        <span>Why two Redis instances?</span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li>redis
-<ul>
-<li>port 6379 (default)</li>
-<li>socket file: /var/run/redis/redis.sock</li>
-<li>Suitable for cache</li>
-<li>Volatile data/information</li>
-<li>Can be cleared at all times, shouldn&#x27;t influence application when cleared</li>
-<li>Data = non persistent (volatile)</li>
-</ul>
+<li><p><strong>Faster cache processing:</strong><br />
+The standard Redis instance on port <strong>6379</strong> is used for <strong>temporary cache storage</strong>, improving <strong>load times and reducing database strain</strong>.</p>
 </li>
-<li>redis-persistent
-<ul>
-<li>port 6378 (non default)</li>
-<li>socket file: /var/run/redis-persistent/redis.sock</li>
-<li>Suitable for sessions</li>
-<li>Persistent data/information</li>
-<li>Should/will never be cleared, clearing would influence application</li>
-<li>Data = persistent (non-volatile)</li>
-</ul>
+<li><p><strong>Reliable session storage:</strong><br />
+The second Redis instance on port <strong>6378</strong> is set for <strong>persistent storage</strong>, ensuring session data is not lost on restart. This instance should never be cleared, as it can influence the stability of the application.</p>
 </li>
 </ul>
-<p>Notes:</p>
+<blockquote>
+<p><strong>Note:</strong> While both instances save an RDB file to disk, only the <code v-pre>redis</code> instance is affected by the <code v-pre>tscli redis clear</code> command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.</p>
+</blockquote>
+<hr>
+<doc-anchor-target id="a-use-the-socket-file-for-local-performance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-use-the-socket-file-for-local-performance">#</doc-anchor-trigger>
+        <span>A. Use the Socket File for Local Performance</span>
+    </h3>
+</doc-anchor-target>
+<p>If Redis runs locally, we recommend using <strong>socket files instead of network connections</strong> to reduce overhead and latency.</p>
 <ul>
-<li>Using the socket file is recommended when using local redis instances (less overhead = better performance!)</li>
-<li>Try to use seperate databases when having multiple websites/applications on the same server (e.g. db 1 , db 2, ...)</li>
-<li>By default there are 16 databases available (0-15), this could be increased on request</li>
+<li><p><strong>Cache Redis socket file:</strong><br />
+<code v-pre>/var/run/redis/redis.sock</code></p>
+</li>
+<li><p><strong>Persistent Redis socket file:</strong><br />
+<code v-pre>/var/run/redis-persistent/redis.sock</code></p>
+</li>
 </ul>
+<p><strong>Benefit:</strong> Socket files improve communication speed and reduce CPU usage.</p>
+<hr>
+<doc-anchor-target id="b-use-separate-databases-for-multiple-websitesapplications">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#b-use-separate-databases-for-multiple-websitesapplications">#</doc-anchor-trigger>
+        <span>B. Use Separate Databases for Multiple Websites/Applications</span>
+    </h3>
+</doc-anchor-target>
+<p>Redis supports <strong>multiple databases (0-15)</strong>. If running <strong>multiple websites or applications</strong> on the same server, use <strong>separate databases</strong>:</p>
+<ul>
+<li>Website A → <code v-pre>db 1</code></li>
+<li>Website B → <code v-pre>db 2</code></li>
+</ul>
+<p><strong>Benefit:</strong> Prevents applications from overwriting each other’s cache.<br />
+<strong>Note:</strong> If more databases are needed, these can be configured.</p>
+<hr>
+<doc-anchor-target id="c-set-ttl-and-expiry-properly">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#c-set-ttl-and-expiry-properly">#</doc-anchor-trigger>
+        <span>C. Set TTL and Expiry Properly</span>
+    </h3>
+</doc-anchor-target>
+<p>By default, Redis <strong>does not</strong> assign a TTL (Time-To-Live) to keys unless explicitly set.</p>
+<ul>
+<li><p><strong>Caching keys:</strong> Set a TTL for <strong>temporary data</strong> (e.g., API responses, HTML fragments):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">SET key value EX 3600  # Expires after 1 hour</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p><strong>Sessions:</strong> Use a longer TTL, such as <strong>24 hours</strong> for user sessions.</p>
+</li>
+<li><p><strong>Critical data:</strong> Do <strong>not</strong> set TTL for <strong>important data</strong> that must persist.</p>
+</li>
+</ul>
+<p><strong>Benefit:</strong> Optimizes memory usage and prevents Redis from filling up completely.</p>
+<hr>
+<doc-anchor-target id="2-setting-a-ttl">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-setting-a-ttl">#</doc-anchor-trigger>
+        <span>2. Setting a TTL</span>
+    </h2>
+</doc-anchor-target>
+<p>Keeping your redis memory usage below the limit is very important, as a lack of free memory can cause several front-end issues, based on implementation within the application. To help you get this under control, we have some procedures for the more popular CMSes listed below.</p>
+<doc-anchor-target id="wordpress">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wordpress">#</doc-anchor-trigger>
+        <span>WordPress:</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="cache-plugin">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-plugin">#</doc-anchor-trigger>
+        <span>Cache plugin</span>
+    </h4>
+</doc-anchor-target>
+<p>Wordpress uses a redis plugin. The config file can be found here:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/var/www/XXXX/public_html/wp-content/object-cache.php</code></pre>
+</doc-codeblock></div>
+<p>In this file we can find the default TTL that&#x27;s set for Redis entries when none was given upon creation of the key:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">if ( ! defined( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS' ) ) {
+	define( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS', 0 );
+}</code></pre>
+</doc-codeblock></div>
+<p>A TTL of 0 in Redis means &#x27;Never Expire&#x27;. Change this value to for example 28800 seconds (8 hours).</p>
+<p>To monitor the change, you can use the analysis tool in <a href="https://docs.hosted-power.com/books/redis/page/redis-insight" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Redis Insight</span></a> and sort on TTL.</p>
+<p><strong>Tip:</strong> you can clear the Redis cache with the &#x27; tscli redis clear &#x27; command.</p>
+<doc-anchor-target id="wp-cache-set-ttl">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wp-cache-set-ttl">#</doc-anchor-trigger>
+        <span>WP cache set TTL</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="set-default-value">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-default-value">#</doc-anchor-trigger>
+        <span>Set default value</span>
+    </h4>
+</doc-anchor-target>
+<p>In wordpress one of the more common ways to add something to the cache is by using the &#x27;wp_cache_set&#x27; instruction.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">wp_cache_set( 'my_key', 'my_value', 'default', 600 );</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="set-value-for-specific-namespace">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-value-for-specific-namespace">#</doc-anchor-trigger>
+        <span>Set value for specific namespace</span>
+    </h4>
+</doc-anchor-target>
+<p>Some plugins set keys to never expire, like the &#x27;posts&#x27; keys. To find where a key is added, use the following command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">grep -Ri &quot;wp_cache_set(&quot; | grep 'posts'</code></pre>
+</doc-codeblock></div>
+<p>This will give results like these:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">wp-content/plugins/woocommerce-product-search/lib/core/class-woocommerce-product-search-service.php:     $cached = wp_cache_set( $cache_key, $posts, self::GET_TERMS_POSTS_CACHE_GROUP, self::get_cache_lifetime() );</code></pre>
+</doc-codeblock></div>
+<p>In this file, it refers to itself ( <strong>self::get_cache_lifetime()</strong> ) to get the value. The function refers to the constant variable:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">const CACHE_LIFETIME   = 0;</code></pre>
+</doc-codeblock></div>
+<p>This is again, an infinite TTL. Change it to a more reasonable number.</p>
+<p><em>This needs to be set for all the different namespaces.</em></p>
+<doc-anchor-target id="drupal">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#drupal">#</doc-anchor-trigger>
+        <span>Drupal:</span>
+    </h3>
+</doc-anchor-target>
+<p>In the following file:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">nano public_html/modules/contrib/redis/src/Cache/CacheBase.php</code></pre>
+</doc-codeblock></div>
+<p>The following constant and function can be found:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">const LIFETIME_PERM_DEFAULT = 31536000;
+...
+if (($settings = Settings::get('redis.settings', [])) &amp;&amp; isset($settings['perm_ttl_' . $this-&gt;bin])) {
+  $ttl = $settings['perm_ttl_' . $this-&gt;bin];
+}
+else {
+  // fallback to 31536000 = 1 year
+}</code></pre>
+</doc-codeblock></div>
+<p>This means: if <em>perm_ttl_cache_menu</em> is not set, fall back to a TTL of 1 year. This is the general setting for all Redis keys.<br />
+If Redis Insight shows you really use only a couple of namespaces that can have a similar TTL, you can just edit this constant variable to the desired value.</p>
+<doc-anchor-target id="set-ttl-per-namespace">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-ttl-per-namespace">#</doc-anchor-trigger>
+        <span>Set TTL per namespace</span>
+    </h4>
+</doc-anchor-target>
+<p>You can also set this per namespace in the settings:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">nano public_html/sites/default/settings.php</code></pre>
+</doc-codeblock></div>
+<p>Add the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">$settings['redis.settings']['perm_ttl_cache_menu'] = 21600; // 6 hours</code></pre>
+</doc-codeblock></div>
+<p>Now the &#x27;menu&#x27; cache items will have a TTL of 6 hours.</p>
+<p>All that remains is clearing the Drupal cache and flushing Redis:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">drush cr
+tscli redis clear</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -329,6 +517,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Redis", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Redis", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
