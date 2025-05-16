@@ -17,7 +17,7 @@ By default, at least two Redis instances run on our servers:
 
 | Instance           | Port          | Purpose                   | Data Storage |
 |--------------------|---------------|----------------------------|---------------|
-| Redis              | 6379 (default) | Caching                   | Volatile      |
+| Redis              | 6379 (default) | Caching                   | Persistent    |
 | Redis-persistent   | 6378 (custom)  | Sessions & critical data  | Persistent    |
 
 ### Why two Redis instances?
