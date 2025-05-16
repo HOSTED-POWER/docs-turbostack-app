@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.800719533558">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.800719816191">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.800719533558" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.800719816191" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.800719533558" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.800719816191" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.800719533558" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.800719533558" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.800719816191" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.800719816191" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -214,24 +214,24 @@
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="theres-a-lot-of-risk-in-running-out-of-disk-space">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#theres-a-lot-of-risk-in-running-out-of-disk-space">#</doc-anchor-trigger>
         <span>There&#x27;s a lot of risk in running out of disk space!</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Not only will it cause downtime when services inevitably crash when no more space is available, this may cause data corruption that persists even after space is freed up, that will necessitate restoring from backup and thus lead to data loss. As such, we try to make sure you&#x27;re always informed when your disk is filling up, but an ounce of prevention is worth a pound of cure so we recommend using the following tips and tricks to keep a watchful eye on your application&#x27;s disk usage</p>
 <doc-anchor-target id="how-to-check-disk-space-usage">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-check-disk-space-usage">#</doc-anchor-trigger>
         <span><strong>How to check disk space usage</strong></span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Proactively checking the disk usage before pushing an update or a new release is a must if you want to avoid the chances of your server crashing. To start off with the first tool:</p>
 <doc-anchor-target id="df">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#df">#</doc-anchor-trigger>
         <span>df</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>This command-line tool is used to check disk usage on a mounted filesystem, displaying the total size of the disk space, the amount of disk space used, the amount available and on which path it is mounted.</p>
 <p>In the example below, we see the option &#x27;-h&#x27; has been defined, which makes the output human-readable. ( Use df --help in case you want to dive deeper into the options the command provides)</p>
@@ -248,10 +248,10 @@ tmpfs           1.9G  1.2M  1.9G   1% /dev/shm</code></pre>
 <p><strong>/dev/vda2</strong> is the root disk of your server and will be the one that is defined in our turbostack plans.</p>
 <p>The next command is the best one suited for your needs as a customer to dive deeper into how much disk space each directory takes up:</p>
 <doc-anchor-target id="ncdu-ncurses-disk-usage">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ncdu-ncurses-disk-usage">#</doc-anchor-trigger>
         <span><strong>ncdu</strong> (<strong>NC</strong>urses <strong>D</strong>isk <strong>U</strong>sage)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>This is a powerful, interactive tool that provides a more detailed and user-friendly way to analyze disk usage. It offers a visual representation of disk usage, making it easier to identify large files and directories.</p>
 <p>As an SSH user on the server, you will be able to scan everything within your home directory.</p>
@@ -300,38 +300,38 @@ tmpfs           1.9G  1.2M  1.9G   1% /dev/shm</code></pre>
 To delete a file or directory in <code v-pre>ncdu</code> you would have the press the <strong>d</strong> key, wherafter a confirmation of deletion pop-up will be shown, pressing enter afterwards will <strong>permanently</strong> delete the concerning directory and/or files.</p>
 <p>For more information about this tool, I&#x27;d like to refer you to <a href="https://dev.yorhel.nl/ncdu/man" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Ncdu 2.7 Manual</span></a></p>
 <doc-anchor-target id="common-causes">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#common-causes">#</doc-anchor-trigger>
         <span><strong>Common causes</strong></span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <doc-anchor-target id="1-old-backups">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#1-old-backups">#</doc-anchor-trigger>
         <span>1. Old Backups</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Backups are essential for data recovery, but they can consume a significant amount of disk space if not managed properly. Over time, old backups that are no longer needed can accumulate and take up valuable storage. Regularly reviewing and deleting outdated backups can help free up space.</p>
 <p>Be aware we take backups of your entire environment daily with a retention period of 20 days on a separate server.  It could be a backup was taken before pushing a new release in case a backup plan was needed but taking general daily backups of your environments is redundant as backups are taken from our side as well and your backups will unnecessarily consume disk space.</p>
 <doc-anchor-target id="2-log-files">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2-log-files">#</doc-anchor-trigger>
         <span>2. Log Files</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Log files are generated by various applications and services running on the server. These files can grow very large, especially if the server is handling a lot of traffic, debugging is enabled or if there are errors being logged frequently. It’s important to monitor log file sizes and implement log rotation policies to archive or delete old logs automatically.</p>
 <doc-anchor-target id="3-caching-folders">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#3-caching-folders">#</doc-anchor-trigger>
         <span>3. Caching Folders</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Caching is used to improve performance by storing frequently accessed data. However, cache folders can grow significantly over time, especially if they are not cleared regularly. Applications like web browsers, package managers, and web servers often use caching, and their cache directories can become quite large.</p>
 <doc-anchor-target id="4-temporary-files">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#4-temporary-files">#</doc-anchor-trigger>
         <span>4. Temporary Files</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Temporary files are created by various processes and applications. While these files are meant to be temporary, they can sometimes be left behind and accumulate over time. Regularly cleaning up temporary directories can help reclaim disk space.</p>
 <p>Please <strong>confirm with your development team</strong> before deleting files / directories when you are not sure about the status of these files.</p>
