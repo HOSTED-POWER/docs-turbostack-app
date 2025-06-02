@@ -3,7 +3,7 @@ hidden: true
 ---
 # Change your nginx docroot
 
-Some applications may require you to use a different docroot than the typical directory of '~/public_html'. Other times, your own application deploy flow may require you to change nginx' docroot, for example to point it to '~/current'. In this guide, we'll quickly go over some common situations and ways to set this up.
+Some applications may require you to use a different docroot than the typical directory of '~/public_html'. Other times, your own application deploy flow may require you to change NGINX' docroot, for example to point it to '~/current'. In this guide, we'll quickly go over some common situations and ways to set this up.
 
 !!!
 Note that this is mostly applicable for general applications. Many CMSes and frameworks have a custom docroot path, that we configure by default in nginx if you set up your application with the correct application type. Be sure to check your current settings before making any changes!
@@ -38,7 +38,7 @@ lrwxrwxrwx  1 sander sander     7 Apr 14 11:53 public_html -> current
 
 ## 2. Using nginx docroot
 
-Alternatively, you could change the actual path nginx looks for. In your home directory you'll find the nginx config directory, containing the '50main.conf' file. Here, you'll find your main application nginx config, including the docroot. Depending on your configured app type, the exact contents of this file will change. However, you can edit this file as desired. An example of how the docroot is defined in this file is below:
+Alternatively, you could change the actual path nginx looks for. In your home directory you'll find the NGINX config directory, containing the '50main.conf' file. Here, you'll find your main application NGINX config, including the docroot. Depending on your configured app type, the exact contents of this file will change. However, you can edit this file as desired. An example of how the docroot is defined in this file is below:
 
 ```
 root /var/www/sander/public_html;

@@ -1,13 +1,13 @@
 ---
 hidden: true
 ---
-# Use nginx to block access to your application
+# Use NGINX to block access to your application
 
-Sometimes, during development or under specific circumstances, you might want to block all unauthorized access to your web page or application. nginx allows you to do this quite easily and it even provides multiple ways to allow authorization:
+Sometimes, during development or under specific circumstances, you might want to block all unauthorized access to your web page or application. NGINX allows you to do this quite easily and it even provides multiple ways to allow authorization:
 
 ## The structure within the /var/www/`<user>`/nginx directory
 
-The way our Turbostack works is it will create an nginx folder in the home directory of each system user with the following files:
+The way our Turbostack works is it will create an NGINX folder in the home directory of each system user with the following files:
 
 ```bash
 magento@dylano-dev1:~/nginx$ ls -la
@@ -37,7 +37,7 @@ In the outside directory, you can define rewrites/redirects that need to bypass 
 
 ### 1. Using IP-whitelisting 
 
-Using deny all in the nginx configuration will block access to all IP addresses except those you explicitly allowed.
+Using deny all in the NGINX configuration will block access to all IP addresses except those you explicitly allowed.
 The best way to do this is by creating a file **10auth.conf** in the **/var/www/`<user>`/nginx** directory and place the whitelisting configuration in there, which will apply to the applications under that user. 
 
 An example is shown below where all IP's are denied expect the IP's 178.238.102.146, 178.238.102.148 and 78.22.198.62.
@@ -125,7 +125,7 @@ This will prompt you for a password. Consider using a long and complex password.
 
 #### 2. Activating Basic Authentication
 
-First locate your nginx main configuration file in the home directory of your user:
+First locate your NGINX main configuration file in the home directory of your user:
 
 ```
 
