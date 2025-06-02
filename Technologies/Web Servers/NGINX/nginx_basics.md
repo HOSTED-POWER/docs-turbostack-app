@@ -3,7 +3,7 @@ hidden: true
 ---
 # NGINX on TurboStack
 
-As our default (and recommended) webserver for TurboStack, nginx has been extensively tweaked for optimal performance. As such, many "quick code snippets" you can find online can't just be pasted into the config file, as they often expect you to be modifying the base config.
+As our default (and recommended) webserver for TurboStack, NGINX has been extensively tweaked for optimal performance. As such, many "quick code snippets" you can find online can't just be pasted into the config file, as they often expect you to be modifying the base config.
 
 ## NGINX "includes" and your customizations
 

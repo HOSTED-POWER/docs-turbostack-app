@@ -1,10 +1,10 @@
 Nginx (pronounced "engine-x") is a high-performance web server and reverse proxy server known for its speed, stability, and low resource usage. It’s commonly used to serve static content, handle load balancing, and manage HTTP requests in high-traffic websites. Nginx can also function as a mail proxy and supports features like SSL/TLS termination, caching, and URL rewriting. Its asynchronous, event-driven architecture allows it to handle thousands of simultaneous connections efficiently.
 
-### Nginx overview:
+### NGINX overview:
 
-* [nginx basics](nginx_basics.md)
+* [NGINX basics](nginx_basics.md)
 
 ### How-To Guides
 
-* [Use nginx to block access to your application](nginx_block_access.md)
-* [Change the nginx document root (docroot)](nginx_change_docroot.md)
+* [Use NGINX to block access to your application](nginx_block_access.md)
+* [Change the NGINX document root (docroot)](nginx_change_docroot.md)
