@@ -69,6 +69,15 @@ To add custom modules, place them in:
 
 You can also create symbolic links inside the addons directory to keep your structure modular.
 
+!!! Important
+To safely test new modules or updates, use a separate **staging server**. Do **not** run staging environments locally on the same production host.
+
+Why Separate Servers?
+* Prevents production disruption.
+* Isolates tests and experiments.
+* Maintains better performance and security.
+!!!
+
 ### Odoo.conf tuning
 
 You can find your configuration at:
