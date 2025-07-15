@@ -4,3 +4,7 @@ Odoo is an all-in-one, open-source business management software that integrates 
 
 * [Odoo Reference Guide](referenceguide.md)
 
+### How-To Guides
+
+* [Upgrade or install Add-ons](addons.md)
+* [Install Python Requirements](pythonrequirements.md)
