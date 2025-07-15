@@ -11,6 +11,8 @@ Why Separate Servers?
 * Prevents production disruption.
 * Isolates tests and experiments.
 * Maintains better performance and security.
+
+We offer affordable and optimized staging environments. Contact support to request a staging clone of your production Odoo.
 !!!
 
 ## Upgrade an Addon
