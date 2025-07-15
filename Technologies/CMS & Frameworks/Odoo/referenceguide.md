@@ -1,3 +1,6 @@
+---
+hidden: true
+---
 # Odoo Hosting Reference Guide
 
 As part of your hosting environment with Hosted Power, your Odoo application is managed via a `systemd` service under your Linux user account. This gives us robust process management, automatic restarts, and easy logging—without requiring containerization or root-level access.
