@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.805974550808">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.805976375518">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.805974550808" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.805976375518" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.805974550808" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.805976375518" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.805974550808" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.805974550808" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.805976375518" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.805976375518" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -339,6 +339,49 @@ php bin/magento cache:flush</code></pre>
 <pre class="language-bash"><code v-pre class="language-bash">tscli varnish clear
 tscli redis clear</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="message-queue-consumer-management">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#message-queue-consumer-management">#</doc-anchor-trigger>
+        <span>Message Queue Consumer Management</span>
+    </h2>
+</doc-anchor-target>
+<p>Magento uses message queues for async tasks. You can manage its consumers with <code v-pre>systemd</code>.</p>
+<p><strong>Path:</strong> <code v-pre>~/.config/systemd/user/magento-consumer@.service</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ini"><code v-pre class="language-ini">[Unit]
+Description=Magento Consumer (%i)
+After=network-online.target
+Requires=dbus.socket
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=%h/public_html
+ExecStart=php %h/public_html/bin/magento queue:consumers:start %I --single-thread --max-messages=10000
+RestartSec=10s
+Restart=always
+
+[Install]
+WantedBy=default.target</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="general-information">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#general-information">#</doc-anchor-trigger>
+        <span>General Information</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>%i</code> is a placeholder for the consumer name—reusable template</li>
+<li><code v-pre>%h</code> resolves to the user’s home directory</li>
+<li><code v-pre>--single-thread</code> ensures one thread per process</li>
+<li><code v-pre>--max-messages=10000</code> helps restart periodically to prevent memory issues</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">systemctl --user status magento-consumer@sales.rule.update.coupon.usage.service
+systemctl --user status magento-consumer@product_action_attribute.update.service</code></pre>
+</doc-codeblock></div>
+<p>You can repeat this for any other queue. Each one runs in its own isolated service.</p>
 <hr>
 <p>If you need a separate staging server, additional PHP modules, or caching setup, please contact our support team.</p>
 
