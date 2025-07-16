@@ -5,7 +5,7 @@ hidden: true
 
 We provide optimized server environments for running WordPress. As the hosting provider, we maintain the server and infrastructure, but WordPress configuration, themes, plugins, and customizations are your responsibility.
 
-This guide outlines the file structure, recommended permission settings, a
+This guide outlines the file structure, recommended permission settings, and caching options for Wordpress.
 
 ## File Structure
 
