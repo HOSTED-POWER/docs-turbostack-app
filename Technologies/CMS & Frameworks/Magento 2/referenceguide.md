@@ -77,6 +77,46 @@ tscli varnish clear
 tscli redis clear
 ```
 
+## Message Queue Consumer Management
+
+Magento uses message queues for async tasks. You can manage its consumers with `systemd`.
+
+**Path:** `~/.config/systemd/user/magento-consumer@.service`
+
+```ini
+[Unit]
+Description=Magento Consumer (%i)
+After=network-online.target
+Requires=dbus.socket
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=%h/public_html
+ExecStart=php %h/public_html/bin/magento queue:consumers:start %I --single-thread --max-messages=10000
+RestartSec=10s
+Restart=always
+
+[Install]
+WantedBy=default.target
+```
+
+### General Information
+
+- `%i` is a placeholder for the consumer name—reusable template
+- `%h` resolves to the user’s home directory
+- `--single-thread` ensures one thread per process
+- `--max-messages=10000` helps restart periodically to prevent memory issues
+
+**Examples:**
+
+```bash
+systemctl --user status magento-consumer@sales.rule.update.coupon.usage.service
+systemctl --user status magento-consumer@product_action_attribute.update.service
+```
+
+You can repeat this for any other queue. Each one runs in its own isolated service.
+
 ---
 
 If you need a separate staging server, additional PHP modules, or caching setup, please contact our support team.
