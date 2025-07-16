@@ -36,6 +36,8 @@ php bin/magento cache:flush
 
 These commands are commonly used for module installation, compilation, and deployment of static assets.
 
+A complete list of Magento CLI commands can be found [here](magento2cli.md)
+
 ## Installing Composer Dependencies
 
 Magento uses Composer to manage PHP dependencies. To install them:
