@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.805976541380">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.805985920610">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.805976541380" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.805985920610" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.805976541380" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.805985920610" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.805976541380" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.805976541380" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.805985920610" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -229,7 +228,7 @@
         <span>Magento 2 CLI</span>
     </h1>
 </doc-anchor-target>
-<p>Magento 2 provides a powerful command-line interface (CLI) tool to manage and configure your store efficiently. Below is a categorized overview of all major <code v-pre>php bin/magento</code> commands.</p>
+<p>Magento 2 provides a powerful command-line interface (CLI) tool to manage and configure your store efficiently. Below is a categorized overview of all major <code v-pre>php bin/magento</code> commands, with explanations where needed.</p>
 <hr>
 <doc-anchor-target id="setup--installation">
     <h2>
@@ -243,28 +242,84 @@
         <span>Install &amp; Upgrade</span>
     </h3>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:install
-php bin/magento setup:upgrade
-php bin/magento setup:di:compile
-php bin/magento setup:static-content:deploy
-php bin/magento setup:static-content:deploy -f
-php bin/magento setup:uninstall</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>setup:install</code></td>
+<td>Installs Magento with DB and admin configuration.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:upgrade</code></td>
+<td>Applies DB schema/data changes from modules.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:di:compile</code></td>
+<td>Compiles dependency injection code.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:static-content:deploy</code></td>
+<td>Deploys static view files for frontend.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:static-content:deploy -f</code></td>
+<td>Forces deployment even in developer mode.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:uninstall</code></td>
+<td>Uninstalls Magento and removes configuration.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="config-status--maintenance">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#config-status--maintenance">#</doc-anchor-trigger>
         <span>Config Status &amp; Maintenance</span>
     </h3>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:config:set
-php bin/magento setup:db:status
-php bin/magento setup:db:status --show-config
-php bin/magento maintenance:enable
-php bin/magento maintenance:disable
-php bin/magento maintenance:status</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>setup:config:set</code></td>
+<td>Sets configuration values like DB or admin URL.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:db:status</code></td>
+<td>Shows database upgrade status.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:db:status --show-config</code></td>
+<td>Shows current DB connection settings.</td>
+</tr>
+<tr>
+<td><code v-pre>maintenance:enable</code></td>
+<td>Enables maintenance mode.</td>
+</tr>
+<tr>
+<td><code v-pre>maintenance:disable</code></td>
+<td>Disables maintenance mode.</td>
+</tr>
+<tr>
+<td><code v-pre>maintenance:status</code></td>
+<td>Shows maintenance mode status.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="cache-management">
     <h2>
@@ -272,13 +327,38 @@ php bin/magento maintenance:status</code></pre>
         <span>Cache Management</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento cache:clean
-php bin/magento cache:flush
-php bin/magento cache:enable
-php bin/magento cache:disable
-php bin/magento cache:status</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>cache:clean</code></td>
+<td>Clears enabled cache types.</td>
+</tr>
+<tr>
+<td><code v-pre>cache:flush</code></td>
+<td>Clears all cache backends (e.g., Redis).</td>
+</tr>
+<tr>
+<td><code v-pre>cache:enable</code></td>
+<td>Enables specified cache types.</td>
+</tr>
+<tr>
+<td><code v-pre>cache:disable</code></td>
+<td>Disables specified cache types.</td>
+</tr>
+<tr>
+<td><code v-pre>cache:status</code></td>
+<td>Displays cache types and their status.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="index-management">
     <h2>
@@ -286,14 +366,42 @@ php bin/magento cache:status</code></pre>
         <span>Index Management</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento indexer:reindex
-php bin/magento indexer:status
-php bin/magento indexer:reset
-php bin/magento indexer:info
-php bin/magento indexer:show-mode
-php bin/magento indexer:set-mode {schedule|realtime} [indexer]</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>indexer:reindex</code></td>
+<td>Rebuilds indexers (e.g. product/category data).</td>
+</tr>
+<tr>
+<td><code v-pre>indexer:status</code></td>
+<td>Shows indexer status.</td>
+</tr>
+<tr>
+<td><code v-pre>indexer:reset</code></td>
+<td>Resets indexers that failed.</td>
+</tr>
+<tr>
+<td><code v-pre>indexer:info</code></td>
+<td>Lists all indexers.</td>
+</tr>
+<tr>
+<td><code v-pre>indexer:show-mode</code></td>
+<td>Displays indexer mode (schedule/realtime).</td>
+</tr>
+<tr>
+<td><code v-pre>indexer:set-mode {schedule|realtime} [indexer]</code></td>
+<td>Sets mode for a specific indexer.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="admin-user-management">
     <h2>
@@ -301,11 +409,30 @@ php bin/magento indexer:set-mode {schedule|realtime} [indexer]</code></pre>
         <span>Admin User Management</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento admin:user:create
-php bin/magento admin:user:unlock [username]
-php bin/magento admin:user:delete [username]</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>admin:user:create</code></td>
+<td>Creates a new admin user.</td>
+</tr>
+<tr>
+<td><code v-pre>admin:user:unlock [username]</code></td>
+<td>Unlocks a locked admin account.</td>
+</tr>
+<tr>
+<td><code v-pre>admin:user:delete [username]</code></td>
+<td>Deletes an admin user.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="security">
     <h2>
@@ -313,10 +440,26 @@ php bin/magento admin:user:delete [username]</code></pre>
         <span>Security</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento security:passwords:upgrade
-php bin/magento security:hash:upgrade</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>security:passwords:upgrade</code></td>
+<td>Upgrades customer password hash format.</td>
+</tr>
+<tr>
+<td><code v-pre>security:hash:upgrade</code></td>
+<td>Upgrades internal hash algorithms for better security.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="module-management">
     <h2>
@@ -324,12 +467,34 @@ php bin/magento security:hash:upgrade</code></pre>
         <span>Module Management</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento module:status
-php bin/magento module:enable [Module_Name]
-php bin/magento module:disable [Module_Name]
-php bin/magento module:uninstall [Module_Name]</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>module:status</code></td>
+<td>Lists all modules and their status.</td>
+</tr>
+<tr>
+<td><code v-pre>module:enable [Module_Name]</code></td>
+<td>Enables a module.</td>
+</tr>
+<tr>
+<td><code v-pre>module:disable [Module_Name]</code></td>
+<td>Disables a module.</td>
+</tr>
+<tr>
+<td><code v-pre>module:uninstall [Module_Name]</code></td>
+<td>Uninstalls a module and optionally removes its data.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="cron--job-scheduling">
     <h2>
@@ -337,10 +502,26 @@ php bin/magento module:uninstall [Module_Name]</code></pre>
         <span>Cron &amp; Job Scheduling</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento cron:run
-php bin/magento cron:install</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>cron:run</code></td>
+<td>Executes scheduled cron jobs immediately.</td>
+</tr>
+<tr>
+<td><code v-pre>cron:install</code></td>
+<td>Installs Magento cron jobs into system crontab.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="cleaning--logs">
     <h2>
@@ -348,10 +529,26 @@ php bin/magento cron:install</code></pre>
         <span>Cleaning &amp; Logs</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:upgrade --keep-generated
-php bin/magento dev:log:clean</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>setup:upgrade --keep-generated</code></td>
+<td>Keeps generated code during upgrade (for production).</td>
+</tr>
+<tr>
+<td><code v-pre>dev:log:clean</code></td>
+<td>Clears system and exception logs.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="developer-tools">
     <h2>
@@ -365,23 +562,68 @@ php bin/magento dev:log:clean</code></pre>
         <span>Mode &amp; Profiler</span>
     </h3>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento deploy:mode:show
-php bin/magento deploy:mode:set {developer|production|default} [-s|--skip-compilation]
-php bin/magento dev:profiler:enable
-php bin/magento dev:profiler:disable</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>deploy:mode:show</code></td>
+<td>Shows current deployment mode.</td>
+</tr>
+<tr>
+<td><code v-pre>deploy:mode:set {developer|production|default}</code></td>
+<td>Changes deployment mode.</td>
+</tr>
+<tr>
+<td><code v-pre>--skip-compilation</code></td>
+<td>Skips DI compilation during mode switch.</td>
+</tr>
+<tr>
+<td><code v-pre>dev:profiler:enable</code></td>
+<td>Enables performance profiler.</td>
+</tr>
+<tr>
+<td><code v-pre>dev:profiler:disable</code></td>
+<td>Disables the profiler.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="template--js">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#template--js">#</doc-anchor-trigger>
         <span>Template &amp; JS</span>
     </h3>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento dev:template-hints:enable
-php bin/magento dev:template-hints:disable
-php bin/magento dev:source-theme:deploy</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>dev:template-hints:enable</code></td>
+<td>Displays template hints in frontend.</td>
+</tr>
+<tr>
+<td><code v-pre>dev:template-hints:disable</code></td>
+<td>Hides template hints.</td>
+</tr>
+<tr>
+<td><code v-pre>dev:source-theme:deploy</code></td>
+<td>Deploys source files (e.g. LESS) for custom themes.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="store-configuration">
     <h2>
@@ -389,12 +631,34 @@ php bin/magento dev:source-theme:deploy</code></pre>
         <span>Store Configuration</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento config:set [path] [value]
-php bin/magento config:show [path]
-php bin/magento config:sensitive:set
-php bin/magento config:sensitive:remove</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>config:set [path] [value]</code></td>
+<td>Sets a configuration value.</td>
+</tr>
+<tr>
+<td><code v-pre>config:show [path]</code></td>
+<td>Shows a configuration value.</td>
+</tr>
+<tr>
+<td><code v-pre>config:sensitive:set</code></td>
+<td>Marks config value as sensitive (e.g., passwords).</td>
+</tr>
+<tr>
+<td><code v-pre>config:sensitive:remove</code></td>
+<td>Removes sensitive flag from a config.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="eav-entity-attribute-value">
     <h2>
@@ -402,9 +666,22 @@ php bin/magento config:sensitive:remove</code></pre>
         <span>EAV (Entity-Attribute-Value)</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento eav:attribute:remove</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>eav:attribute:remove</code></td>
+<td>Removes a custom attribute from the EAV model.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="inventory-management">
     <h2>
@@ -412,10 +689,26 @@ php bin/magento config:sensitive:remove</code></pre>
         <span>Inventory Management</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento inventory:reservation:list-inconsistencies
-php bin/magento inventory:reservation:create-compensations</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>inventory:reservation:list-inconsistencies</code></td>
+<td>Lists mismatches in stock reservations.</td>
+</tr>
+<tr>
+<td><code v-pre>inventory:reservation:create-compensations</code></td>
+<td>Fixes reservation issues by creating compensation records.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="testing-tools">
     <h2>
@@ -423,9 +716,22 @@ php bin/magento inventory:reservation:create-compensations</code></pre>
         <span>Testing Tools</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento dev:tests:run [unit|integration|functional]</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>dev:tests:run [unit|integration|functional]</code></td>
+<td>Runs specified test suite.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="search--elasticsearch">
     <h2>
@@ -433,10 +739,26 @@ php bin/magento inventory:reservation:create-compensations</code></pre>
         <span>Search &amp; Elasticsearch</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento indexer:reindex catalogsearch_fulltext
-php bin/magento config:set catalog/search/engine elasticsearch7</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>indexer:reindex catalogsearch_fulltext</code></td>
+<td>Reindexes product search data.</td>
+</tr>
+<tr>
+<td><code v-pre>config:set catalog/search/engine elasticsearch7</code></td>
+<td>Sets Elasticsearch as the search engine.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="backup--restore">
     <h2>
@@ -444,10 +766,26 @@ php bin/magento config:set catalog/search/engine elasticsearch7</code></pre>
         <span>Backup &amp; Restore</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:backup --code --media --db
-php bin/magento setup:rollback --code-file=... --db-file=...</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>setup:backup --code --media --db</code></td>
+<td>Creates backup of codebase, media, and DB.</td>
+</tr>
+<tr>
+<td><code v-pre>setup:rollback --code-file=... --db-file=...</code></td>
+<td>Restores from specified backup files.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <doc-anchor-target id="help">
     <h2>
@@ -455,13 +793,29 @@ php bin/magento setup:rollback --code-file=... --db-file=...</code></pre>
         <span>Help</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">php bin/magento list
-php bin/magento help [command]</code></pre>
-</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>list</code></td>
+<td>Lists all Magento CLI commands.</td>
+</tr>
+<tr>
+<td><code v-pre>help [command]</code></td>
+<td>Shows usage information for a command.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <blockquote>
-<p><strong>Tip</strong>: Always clear cache (<code v-pre>cache:clean</code> and <code v-pre>cache:flush</code>) and recompile (<code v-pre>setup:di:compile</code>) after enabling/disabling modules or making config changes.</p>
+<p><strong>Tip</strong>: After module changes or config updates, always run <code v-pre>cache:clean</code>, <code v-pre>cache:flush</code>, and <code v-pre>setup:di:compile</code> to apply changes properly.</p>
 </blockquote>
 
                                 
@@ -514,6 +868,6 @@ php bin/magento help [command]</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Magento 2 CLI", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Magento 2 CLI", level: 4, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
