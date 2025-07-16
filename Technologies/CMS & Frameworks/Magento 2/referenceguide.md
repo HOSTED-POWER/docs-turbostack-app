@@ -1,7 +1,6 @@
 ---
 hidden: true
 ---
-
 # Magento 2 Hosting Reference Guide
 
 We provide optimized server environments for running Magento 2. As the hosting provider, we maintain the server and infrastructure, but Magento configuration, upgrades, and customization are your responsibility.
