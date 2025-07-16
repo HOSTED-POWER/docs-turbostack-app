@@ -88,6 +88,21 @@ You can find your configuration at:
 ~/conf/odoo.conf
 ```
 
+#### Configuration key reference:
+
+| Key                    | Description                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| `workers`              | Set to 2×CPU by default. On high-demand systems, 3–4×CPU may be used.                 |
+| `limit_memory_hard`    | Upper memory cap per worker. Set around **½ total RAM**.                              |
+| `limit_memory_soft`    | Warning memory cap per worker. Set around **¼ total RAM**.                            |
+| `limit_request`        | Number of requests a worker handles before restarting. Default 8192 is fine for most. |
+| `limit_time_cpu`       | Max CPU time per request. `3600` (1 hour) ensures long operations are still capped.   |
+| `limit_time_real`      | Wall-clock time per request. `7200` (2 hours) is generous and rarely hit.             |
+| `limit_time_real_cron` | Time limit for cron jobs. `0` means unlimited. Can be set to `86400` (24h).           |
+| `max_cron_threads`     | Limit to about **⅓ of CPU cores**, up to ½ in large setups.                           |
+| `proxy_mode`           | Always set `True` if behind a reverse proxy (e.g. nginx, traefik).                    |
+| `db_maxconn`           | Leave at default (`64`). Our PostgreSQL is tuned for high concurrency.                |
+
 Here are some general tuning recommendations for various server sizes:
 
 #### 8 GB RAM / 4 CPU Cores:
@@ -128,21 +143,6 @@ Odoo logs are continuously appended to:
 
 Monitor this file to troubleshoot startup or runtime issues.
 
-## Configuration Key Reference
-
-| Key                    | Description                                                                           |
-| ---------------------- | ------------------------------------------------------------------------------------- |
-| `workers`              | Set to 2×CPU by default. On high-demand systems, 3–4×CPU may be used.                 |
-| `limit_memory_hard`    | Upper memory cap per worker. Set around **½ total RAM**.                              |
-| `limit_memory_soft`    | Warning memory cap per worker. Set around **¼ total RAM**.                            |
-| `limit_request`        | Number of requests a worker handles before restarting. Default 8192 is fine for most. |
-| `limit_time_cpu`       | Max CPU time per request. `3600` (1 hour) ensures long operations are still capped.   |
-| `limit_time_real`      | Wall-clock time per request. `7200` (2 hours) is generous and rarely hit.             |
-| `limit_time_real_cron` | Time limit for cron jobs. `0` means unlimited. Can be set to `86400` (24h).           |
-| `max_cron_threads`     | Limit to about **⅓ of CPU cores**, up to ½ in large setups.                           |
-| `proxy_mode`           | Always set `True` if behind a reverse proxy (e.g. nginx, traefik).                    |
-| `db_maxconn`           | Leave at default (`64`). Our PostgreSQL is tuned for high concurrency.                |
-
 ## Best practices
 
 * Keep your application/odoo directory clean and structured.
@@ -153,4 +153,3 @@ Monitor this file to troubleshoot startup or runtime issues.
 ## Need help?
 
 Contact our support if you're unsure about config tuning, migration, or if you experience performance bottlenecks. We’re here to assist with your Odoo stack.
-
