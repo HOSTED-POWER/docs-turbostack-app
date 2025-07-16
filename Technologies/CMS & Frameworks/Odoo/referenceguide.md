@@ -123,7 +123,7 @@ proxy_mode = True
 Odoo logs are continuously appended to:
 
 ```bash
-~/application/odoo/addons
+~/logs
 ```
 
 Monitor this file to troubleshoot startup or runtime issues.
