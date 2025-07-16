@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Addons</title>
-    <meta name="title" content="Addons">
-    <meta name="description" content="Upgrade or install Odoo modules using command-line tools.">
+    <title>Magento 2 CLI</title>
+    <meta name="title" content="Magento 2 CLI">
+    <meta name="description" content="Magento 2 provides a powerful command-line interface (CLI) tool to manage and configure your store efficiently.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.turbostack.app/technologies/cms-frameworks/odoo/addons/">
+    <link rel="canonical" href="https://docs.turbostack.app/technologies/cms-frameworks/magento-2/magento2cli/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.turbostack.app/technologies/cms-frameworks/odoo/addons/">
-    <meta property="og:title" content="Addons">
-    <meta property="og:description" content="Upgrade or install Odoo modules using command-line tools.">
+    <meta property="og:url" content="https://docs.turbostack.app/technologies/cms-frameworks/magento-2/magento2cli/">
+    <meta property="og:title" content="Magento 2 CLI">
+    <meta property="og:description" content="Magento 2 provides a powerful command-line interface (CLI) tool to manage and configure your store efficiently.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/cms-frameworks/odoo/addons/">
-    <meta property="twitter:title" content="Addons">
-    <meta property="twitter:description" content="Upgrade or install Odoo modules using command-line tools.">
+    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/cms-frameworks/magento-2/magento2cli/">
+    <meta property="twitter:title" content="Magento 2 CLI">
+    <meta property="twitter:description" content="Magento 2 provides a powerful command-line interface (CLI) tool to manage and configure your store efficiently.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -35,6 +35,7 @@
     <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.805973629392" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.805973629392" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.805973629392" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -214,89 +215,254 @@
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../../../technologies/cms-frameworks/odoo/" class="pr-4">
-                                                Odoo
+                                            <a href="../../../../technologies/cms-frameworks/magento-2/" class="pr-4">
+                                                Magento 2
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="addons" class="break-words">
+<doc-anchor-target id="magento-2-cli" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#addons">#</doc-anchor-trigger>
-        <span>Addons</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#magento-2-cli">#</doc-anchor-trigger>
+        <span>Magento 2 CLI</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="overview">
+<p>Magento 2 provides a powerful command-line interface (CLI) tool to manage and configure your store efficiently. Below is a categorized overview of all major <code v-pre>php bin/magento</code> commands.</p>
+<hr>
+<doc-anchor-target id="setup--installation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
-        <span>Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup--installation">#</doc-anchor-trigger>
+        <span>Setup &amp; Installation</span>
     </h2>
 </doc-anchor-target>
-<p>Upgrade or install Odoo modules using command-line tools. Our servers provide optimal system configurations, but managing Odoo itself remains your responsibility.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Important</h5>
-<p>To safely test new modules or updates, use a separate <strong>staging server</strong>. Do <strong>not</strong> run staging environments locally on the same production host.</p>
-<p>Why Separate Servers?</p>
-<ul>
-<li>Prevents production disruption.</li>
-<li>Isolates tests and experiments.</li>
-<li>Maintains better performance and security.</li>
-</ul>
-<p>We offer affordable and optimized staging environments. Contact support to request a staging clone of your production Odoo.</p>
-        </div>
-    </div>
-</div>
-<doc-anchor-target id="upgrade-an-addon">
+<doc-anchor-target id="install--upgrade">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install--upgrade">#</doc-anchor-trigger>
+        <span>Install &amp; Upgrade</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:install
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy
+php bin/magento setup:static-content:deploy -f
+php bin/magento setup:uninstall</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="config-status--maintenance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-status--maintenance">#</doc-anchor-trigger>
+        <span>Config Status &amp; Maintenance</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:config:set
+php bin/magento setup:db:status
+php bin/magento setup:db:status --show-config
+php bin/magento maintenance:enable
+php bin/magento maintenance:disable
+php bin/magento maintenance:status</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="cache-management">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#upgrade-an-addon">#</doc-anchor-trigger>
-        <span>Upgrade an Addon</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-management">#</doc-anchor-trigger>
+        <span>Cache Management</span>
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">systemctl --user stop application.service
-~/application/odoo/odoo-bin -u &lt;module_name&gt; -c ~/conf/odoo.conf --stop-after-init
-systemctl --user start application.service</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento cache:clean
+php bin/magento cache:flush
+php bin/magento cache:enable
+php bin/magento cache:disable
+php bin/magento cache:status</code></pre>
 </doc-codeblock></div>
-<p>Replace <code v-pre>&lt;module_name&gt;</code> with your actual addon/module name.</p>
-<doc-anchor-target id="install-a-new-addon">
+<hr>
+<doc-anchor-target id="index-management">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#install-a-new-addon">#</doc-anchor-trigger>
-        <span>Install a New Addon</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#index-management">#</doc-anchor-trigger>
+        <span>Index Management</span>
     </h2>
 </doc-anchor-target>
-<ol>
-<li>Upload the module to <code v-pre>~/application/addons/</code>.</li>
-<li>Run:</li>
-</ol>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">systemctl --user stop application.service
-~/application/odoo/odoo-bin -i &lt;module_name&gt; -c ~/conf/odoo.conf --stop-after-init
-systemctl --user start application.service</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento indexer:reindex
+php bin/magento indexer:status
+php bin/magento indexer:reset
+php bin/magento indexer:info
+php bin/magento indexer:show-mode
+php bin/magento indexer:set-mode {schedule|realtime} [indexer]</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="notes">
+<hr>
+<doc-anchor-target id="admin-user-management">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#notes">#</doc-anchor-trigger>
-        <span>Notes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#admin-user-management">#</doc-anchor-trigger>
+        <span>Admin User Management</span>
     </h2>
 </doc-anchor-target>
-<ul>
-<li>Always stop the service before upgrades.</li>
-<li>Make sure your addon contains a valid <code v-pre>__manifest__.py</code> file.</li>
-</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento admin:user:create
+php bin/magento admin:user:unlock [username]
+php bin/magento admin:user:delete [username]</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="security">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security">#</doc-anchor-trigger>
+        <span>Security</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento security:passwords:upgrade
+php bin/magento security:hash:upgrade</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="module-management">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#module-management">#</doc-anchor-trigger>
+        <span>Module Management</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento module:status
+php bin/magento module:enable [Module_Name]
+php bin/magento module:disable [Module_Name]
+php bin/magento module:uninstall [Module_Name]</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="cron--job-scheduling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cron--job-scheduling">#</doc-anchor-trigger>
+        <span>Cron &amp; Job Scheduling</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento cron:run
+php bin/magento cron:install</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="cleaning--logs">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cleaning--logs">#</doc-anchor-trigger>
+        <span>Cleaning &amp; Logs</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:upgrade --keep-generated
+php bin/magento dev:log:clean</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="developer-tools">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#developer-tools">#</doc-anchor-trigger>
+        <span>Developer Tools</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="mode--profiler">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mode--profiler">#</doc-anchor-trigger>
+        <span>Mode &amp; Profiler</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento deploy:mode:show
+php bin/magento deploy:mode:set {developer|production|default} [-s|--skip-compilation]
+php bin/magento dev:profiler:enable
+php bin/magento dev:profiler:disable</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="template--js">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#template--js">#</doc-anchor-trigger>
+        <span>Template &amp; JS</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento dev:template-hints:enable
+php bin/magento dev:template-hints:disable
+php bin/magento dev:source-theme:deploy</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="store-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#store-configuration">#</doc-anchor-trigger>
+        <span>Store Configuration</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento config:set [path] [value]
+php bin/magento config:show [path]
+php bin/magento config:sensitive:set
+php bin/magento config:sensitive:remove</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="eav-entity-attribute-value">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#eav-entity-attribute-value">#</doc-anchor-trigger>
+        <span>EAV (Entity-Attribute-Value)</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento eav:attribute:remove</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="inventory-management">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inventory-management">#</doc-anchor-trigger>
+        <span>Inventory Management</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento inventory:reservation:list-inconsistencies
+php bin/magento inventory:reservation:create-compensations</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="testing-tools">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#testing-tools">#</doc-anchor-trigger>
+        <span>Testing Tools</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento dev:tests:run [unit|integration|functional]</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="search--elasticsearch">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#search--elasticsearch">#</doc-anchor-trigger>
+        <span>Search &amp; Elasticsearch</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento indexer:reindex catalogsearch_fulltext
+php bin/magento config:set catalog/search/engine elasticsearch7</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="backup--restore">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#backup--restore">#</doc-anchor-trigger>
+        <span>Backup &amp; Restore</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento setup:backup --code --media --db
+php bin/magento setup:rollback --code-file=... --db-file=...</code></pre>
+</doc-codeblock></div>
+<hr>
+<doc-anchor-target id="help">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#help">#</doc-anchor-trigger>
+        <span>Help</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">php bin/magento list
+php bin/magento help [command]</code></pre>
+</doc-codeblock></div>
+<hr>
+<blockquote>
+<p><strong>Tip</strong>: Always clear cache (<code v-pre>cache:clean</code> and <code v-pre>cache:flush</code>) and recompile (<code v-pre>setup:di:compile</code>) after enabling/disabling modules or making config changes.</p>
+</blockquote>
 
                                 
                                 <!-- Required only on API pages -->
@@ -304,7 +470,7 @@ systemctl --user start application.service</code></pre>
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/CMS & Frameworks/Odoo/addons.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/CMS & Frameworks/Magento 2/magento2cli.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -348,6 +514,6 @@ systemctl --user start application.service</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Addons", level: 4, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Magento 2 CLI", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
