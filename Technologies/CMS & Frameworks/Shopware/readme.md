@@ -4,4 +4,4 @@ This guide outlines essential details for running Shopware on our hosting platfo
 
 ### Overview
 
-[Shopware Reference Guide](readme.md)
+[Shopware Reference Guide](referenceguide.md)
