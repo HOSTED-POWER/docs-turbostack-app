@@ -46,6 +46,15 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 [!badge icon="rocket" text="tscli opcache clear"] - Resets php's OpCache.
 
 
+### MySQL
+[!badge icon="rocket" text="tscli mysql restart"] - Restart MySQL. Use sparingly as this can add load to the server when restarting. Only works if MySQL is configured in turbostack.app
+
+### PostgresQL
+[!badge icon="rocket" text="tscli postgresql restart"] - Restart PostgresQL. Use sparingly as this can add load to the server when restarting. Only works if PostgresQL is configured in turbostack.app
+
+### MongoDB
+[!badge icon="rocket" text="tscli mongo restart"] - Restart MongoDB. Use sparingly as this can add load to the server when restarting. Only works if MongoDB is configured in turbostack.app
+
 ### Varnish Cache
 [!badge icon="rocket" text="tscli varnish clear"] - Clears everything from Varnish Cache's memory.
 
@@ -62,3 +71,13 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### RabbitMQ
 [!badge icon="rocket" text="tscli rabbitmq queue list <OPTIONS> <VHOSTNAME>"] - List RabbitMQ queues.
 
+### Tools
+#### Botload
+This tool allows you to analyze incoming traffic and get insights in the amount of bots connecting per website
+[!badge icon="rocket" text="tscli tools botload list "] - Get a list of log files, select which one you want to analyze. Takes the optional `--time` parameter followed by two timestamps in "%H:%M:%S" format (e.g. `tscli tools botload list --time 07:15:00 08:15:00`)
+
+[!badge icon="rocket" text="tscli tools botload shared"] - Perform the analysis on all available log files, showing the top 10 results. Takes the optional `--top-results`, `-n` parameter to show more/less results
+
+[!badge icon="rocket" text="tscli tools botload ip <IP address>"] - Get the percentage of entries in all logs that come from the provided IP address. Takes the optional `--cidr` parameter to do the analysis for an IP range
+
+[!badge icon="rocket" text="tscli tools botload live"] - Pick a log file to get a live analysis of all current incoming traffic. 
