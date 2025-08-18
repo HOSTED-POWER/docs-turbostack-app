@@ -2,6 +2,6 @@ Shopware is a modern eCommerce platform built for performance, flexibility, and 
 
 This guide outlines essential details for running Shopware on our hosting platform, including file structure, permission settings, and caching options. While we provide a high-performance server environment, application-level management (plugins, themes, Shopware updates) remains your responsibility.
 
-### Overview
+### Overview:
 
-[Shopware Reference Guide](referenceguide.md)
+* [Shopware Reference Guide](referenceguide.md)

@@ -1,6 +1,8 @@
 ---
 hidden: true
 ---
+# Shopware Hosting Reference Guide
+
 ## File Structure
 
 Your Shopware project is expected to use `~/public_html` as the public web root. This must point to Shopware’s `/public` directory, either directly or via symlink. The same applies to the main Shopware directory — you may symlink it if you are using a release-based deployment.
