@@ -16,7 +16,7 @@ TurboStack® offers a suite of scalable packages designed for lightning-fast per
 ### Create Your Customer Profile
 Before you start, create a new account in our Customer Center. This grants you access to your profile and environments. Sign up [here](https://portal.hosted-power.com/signup/) and fill in the required details to get started.
 
-### Log to the Hosted Power Customer Center
+### Log into the Hosted Power Customer Center
 Access the Customer Center via this link: [portal.hosted-power.com](https://portal.hosted-power.com/ "Hosted Power Customer Center").
 
 Our customer center enables you to:
