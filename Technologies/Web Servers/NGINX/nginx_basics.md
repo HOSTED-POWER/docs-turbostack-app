@@ -1,111 +1,151 @@
 ---
 hidden: true
 ---
-# NGINX on TurboStack
 
-As our default (and recommended) webserver for TurboStack, NGINX has been extensively tweaked for optimal performance. As such, many "quick code snippets" you can find online can't just be pasted into the config file, as they often expect you to be modifying the base config.
+# Custom Nginx Configurations
 
-## NGINX "includes" and your customizations
+When working with hosted environments, you may not always want to touch the global Nginx configuration. Instead, you can place **custom Nginx configs** in a per-account directory under:  
 
-The NGINX folder is conveniently located in:
-
-```
-/var/www/<user>/nginx
+```bash
+/nginx
 ```
 
-This folder contains the NGINX configuration files for the application. A primary configuration file, named **50main.conf**, holds the general setup and directives. Additional custom configuration files can be placed in the same folder. For these custom files to be recognized by NGINX, they **must** end with **.conf**.
+This approach allows you to extend or override server behavior safely without interfering with the main system configs.
 
-When Varnish is enabled, an extra directory **outside** is generated.
+---
 
+## Load Order of Config Files
+
+Nginx processes config files in **alphabetical order**. This is important when deciding how to name your files.  
+
+By default, you’ll find two core configs in the directory:  
+
+- **`20-rewrites.conf`** → handles rewrite rules  
+- **`50-main.conf`** → the main configuration block  
+
+Since files are loaded alphabetically, anything you add with a **higher prefix number** than `50` will be loaded *after* the default `50-main.conf`. Similarly, using a lower prefix (e.g. `10-...`) ensures your rules are applied earlier.
+
+**Tip:** To control priority and keep your configuration well-organised, always choose your filename carefully.
+
+---
+
+## Placement in Relation to Varnish
+
+In case Varnish is enabled on your server, it sits in front of Nginx on our Turbostack. Your config placement determines whether it runs **before** or **after** Varnish:
+
+- **Inside `/nginx`**  
+  → Files here are loaded **after Varnish**. This is ideal for app-level rewrites, caching rules, or security headers.  
+
+- **Inside `/nginx/outside/main`**  
+  → Files here are loaded **before Varnish**. Use this if you need to manipulate requests at the edge, before they hit the Varnish layer.  
+
+---
+
+## Special Supported File Types
+
+Apart from standard `.conf` files, two special file formats are supported:
+
+- **`.runmaps` files**  
+  These are commonly used for **Mage runmaps** (Magento routing definitions).  
+
+- **`.http` files**  
+  Example: `backend.http`. These can define backend-specific rules or HTTP-specific configs.  
+
+This flexibility allows more modular configuration management, especially in multi-app setups.
+
+---
+
+## Reloading Nginx
+
+After making changes, reload Nginx to apply them using:
+
+```bash
+tscli nginx reload
 ```
-/var/www/user/nginx
-├── 20rewrites.conf -> outside/main/20rewrites.conf (symlink)
-├── 50main.conf
-└── outside
-    └── main
-        ├── 20rewrites.conf
-        └── 30headers.conf
+
+This ensures your new configuration is active without requiring a full restart.
+
+**Tip:** If you get an error, a mistake has found its way into the config! The message should point you in the right direction to troubleshoot the issue. 
+
+---
+
+## Use Case Examples
+
+### Rewrites (`20-rewrites.conf`)
+
+1. **Custom Rewrite Rule (after Varnish)**  
+   Place in `/nginx/20-rewrites.conf`:  
+
+   ```bash
+   location /blog {
+       rewrite ^/blog$ /blog/ permanent;
+   }
+   ```
+
+2. **Non-WWW to WWW Redirect**  
+   Place in `/nginx/20-rewrites.conf`:  
+
+   ```bash
+   if ($host ~ ^(?!www\.)(?<domain>.+)$) {
+       return 301 $scheme://www.$domain$request_uri;
+   }
+   ```
+
+3. **Redirect to a Specific Page**  
+   Place in `/nginx/20-rewrites.conf`:  
+
+   ```bash
+   if ($http_host ~* "^.*your-domain\.be$") {
+       rewrite ^/$ https://your-domain/page/ redirect;
+   }
+   ```
+
+4. **Redirect Multiple Domains to Main Domain (keep URI)**  
+   Place in `/nginx/20-rewrites.conf`:  
+
+   ```bash
+   if ($http_host ~* "^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$") {
+       rewrite ^(.*)$ https://www.main-site.com$request_uri redirect;
+   }
+   ```
+
+---
+
+### Pre-Varnish Whitelisting (`outside/10-whitelist.conf`)
+
+Place in `/nginx/outside/10-whitelist.conf`:  
+
+```bash
+allow 192.168.0.0/24;
+deny all;
 ```
 
-In this case rewrite and header config files need to be places in the **~/nginx/outside** folder so Varnish picks it up. 
+---
 
-### Load order
+### Magento Runmaps
 
-The config files are read in alphabetical order. this means:
+Add a `.runmaps` file in `/nginx` for routing tweaks. This is mainly used for Magento routing configuration.
 
-* **10cors.conf** is loaded before **50main.conf**.
-* **50main.conf** will overwrite settings of **10cors.conf** in case of conflicting settings.  
+---
 
-This file inclusion system allows flexibility and maintainability: you can modularize related directives into separate, clearly named config files while keeping the core configuration in **50main.conf**.
+### Security (`50-main.conf`)
 
-### Config examples
+Allow access to `robots.txt`, but disallow other `.txt` and `.log` files:  
 
-#### Redirects (20rewrites.conf)
-
-Non-WWW to WWW:
-
-```
-if ($host ~ ^(?!www\.)(?<domain>.+)$) {
-    return  301 $scheme://www.$domain$request_uri;
+```bash
+location = /robots.txt {
+    allow all;
+    log_not_found off;
+    access_log off;
 }
-```
 
-Redirect to certain page:
-
-```
-if ($http_host ~* "^.*your-domain\.be$"){
-    rewrite ^/$ https://your-domain/page/ redirect;
-}
-```
-
-Redirect multiple domains to main-domain while keeping the URI:
-
-```
-if ($http_host ~* "^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$"){
-    rewrite ^(.*)$ https://www.main-site.com$request_uri redirect;
-}
-```
-
-#### Security (50main.conf)
-
-Allow access to robots.txt, disallow other **.txt** and **.log** files.
-
-```
-    location = /robots.txt {
-        allow all;
-        log_not_found off;
-        access_log off;
-    }
-    
-    location ~* \.(txt|log)$ {
-        deny all;
-    }
-```
-
-Disallow direct access to any php gile in a 'dot directory' like **.git/** .
-
-```
-location ~ \..*/.*\.php$ {
-    return 403;
-}
-
-location ~ ^/sites/[^/]+/files/.*\.php$ {
+location ~* \. (txt|log)$ {
     deny all;
 }
 ```
 
-This prevents execution of PHP files stored in hidden or unintended locations (like version control folders), enhancing security by blocking potential backdoors or sensitive scripts.
-
-## Handy references
-
-Official NGINX documentation:
+## Official NGINX documentation:
 
 ```
 https://nginx.org/en/docs/
-```
-
-Configuring CORS headers:
-
-```
-https://www.baeldung.com/linux/nginx-cross-origin-policy-headers
 ```
