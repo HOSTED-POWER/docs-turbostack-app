@@ -2,9 +2,9 @@
 hidden: true
 ---
 
-# Custom Nginx Configurations
+# Nginx Configuration Basics
 
-When working with hosted environments, you may not always want to touch the global Nginx configuration. Instead, you can place **custom Nginx configs** in a per-account directory under:  
+Our implementation of Nginx offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place **custom Nginx configs** in a per-account directory under:  
 
 ```bash
 /nginx
@@ -111,9 +111,9 @@ This ensures your new configuration is active without requiring a full restart.
 
 ---
 
-### Pre-Varnish Whitelisting (`outside/10-whitelist.conf`)
+### Pre-Varnish Whitelisting (`outside/main/10-whitelist.conf`)
 
-Place in `/nginx/outside/10-whitelist.conf`:  
+Place in `/nginx/outside/main/10-whitelist.conf`:  
 
 ```bash
 allow 192.168.0.0/24;
