@@ -20,10 +20,10 @@ NGINX processes config files in **alphabetical order**. This is important when d
 
 By default, you’ll find two core configs in the directory:  
 
-- **`20-rewrites.conf`** → handles rewrite rules  
-- **`50-main.conf`** → the main configuration block  
+- **`20rewrites.conf`** → handles rewrite rules  
+- **`50main.conf`** → the main configuration block  
 
-Since files are loaded alphabetically, anything you add with a **higher prefix number** than `50` will be loaded *after* the default `50-main.conf`. Similarly, using a lower prefix (e.g. `10-...`) ensures your rules are applied earlier.
+Since files are loaded alphabetically, anything you add with a **higher prefix number** than `50` will be loaded *after* the default `50main.conf`. Similarly, using a lower prefix (e.g. `10...`) ensures your rules are applied earlier.
 
 **Tip:** To control priority and keep your configuration well-organised, always choose your filename carefully.
 
@@ -71,10 +71,10 @@ This ensures your new configuration is active without requiring a full restart.
 
 ## Use Case Examples
 
-### Rewrites (`20-rewrites.conf`)
+### Rewrites (`20rewrites.conf`)
 
 1. **Custom Rewrite Rule (after Varnish)**  
-   Place in `/nginx/20-rewrites.conf`:  
+   Place in `/nginx/20rewrites.conf`:  
 
    ```bash
    location /blog {
@@ -83,7 +83,7 @@ This ensures your new configuration is active without requiring a full restart.
    ```
 
 2. **Non-WWW to WWW Redirect**  
-   Place in `/nginx/20-rewrites.conf`:  
+   Place in `/nginx/20rewrites.conf`:  
 
    ```bash
    if ($host ~ ^(?!www\.)(?<domain>.+)$) {
@@ -92,7 +92,7 @@ This ensures your new configuration is active without requiring a full restart.
    ```
 
 3. **Redirect to a Specific Page**  
-   Place in `/nginx/20-rewrites.conf`:  
+   Place in `/nginx/20rewrites.conf`:  
 
    ```bash
    if ($http_host ~* "^.*your-domain\.be$") {
@@ -101,7 +101,7 @@ This ensures your new configuration is active without requiring a full restart.
    ```
 
 4. **Redirect Multiple Domains to Main Domain (keep URI)**  
-   Place in `/nginx/20-rewrites.conf`:  
+   Place in `/nginx/20rewrites.conf`:  
 
    ```bash
    if ($http_host ~* "^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$") {
@@ -111,9 +111,9 @@ This ensures your new configuration is active without requiring a full restart.
 
 ---
 
-### Pre-Varnish Whitelisting (`outside/main/10-whitelist.conf`)
+### Pre-Varnish Whitelisting (`outside/main/10whitelist.conf`)
 
-Place in `/nginx/outside/main/10-whitelist.conf`:  
+Place in `/nginx/outside/main/10whitelist.conf`:  
 
 ```bash
 allow 192.168.0.0/24;
@@ -128,7 +128,7 @@ Add a `.runmaps` file in `/nginx` for routing tweaks. This is mainly used for Ma
 
 ---
 
-### Security (`50-main.conf`)
+### Security (`50main.conf`)
 
 Allow access to `robots.txt`, but disallow other `.txt` and `.log` files:  
 
