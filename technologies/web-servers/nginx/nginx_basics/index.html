@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.808920360990">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.808929722105">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.808920360990" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.808929722105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.808920360990" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.808929722105" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.808920360990" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.808920360990" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.808929722105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.808929722105" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -244,10 +244,10 @@
 <p>NGINX processes config files in <strong>alphabetical order</strong>. This is important when deciding how to name your files.</p>
 <p>By default, you’ll find two core configs in the directory:</p>
 <ul>
-<li><strong><code v-pre>20-rewrites.conf</code></strong> → handles rewrite rules</li>
-<li><strong><code v-pre>50-main.conf</code></strong> → the main configuration block</li>
+<li><strong><code v-pre>20rewrites.conf</code></strong> → handles rewrite rules</li>
+<li><strong><code v-pre>50main.conf</code></strong> → the main configuration block</li>
 </ul>
-<p>Since files are loaded alphabetically, anything you add with a <strong>higher prefix number</strong> than <code v-pre>50</code> will be loaded <em>after</em> the default <code v-pre>50-main.conf</code>. Similarly, using a lower prefix (e.g. <code v-pre>10-...</code>) ensures your rules are applied earlier.</p>
+<p>Since files are loaded alphabetically, anything you add with a <strong>higher prefix number</strong> than <code v-pre>50</code> will be loaded <em>after</em> the default <code v-pre>50main.conf</code>. Similarly, using a lower prefix (e.g. <code v-pre>10...</code>) ensures your rules are applied earlier.</p>
 <p><strong>Tip:</strong> To control priority and keep your configuration well-organised, always choose your filename carefully.</p>
 <hr>
 <doc-anchor-target id="placement-in-relation-to-varnish">
@@ -302,15 +302,15 @@ Example: <code v-pre>backend.http</code>. These can define backend-specific rule
         <span>Use Case Examples</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="rewrites-20-rewritesconf">
+<doc-anchor-target id="rewrites-20rewritesconf">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#rewrites-20-rewritesconf">#</doc-anchor-trigger>
-        <span>Rewrites (<code v-pre>20-rewrites.conf</code>)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rewrites-20rewritesconf">#</doc-anchor-trigger>
+        <span>Rewrites (<code v-pre>20rewrites.conf</code>)</span>
     </h3>
 </doc-anchor-target>
 <ol>
 <li><p><strong>Custom Rewrite Rule (after Varnish)</strong><br />
-Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
+Place in <code v-pre>/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">location /blog {
     rewrite ^/blog$ /blog/ permanent;
@@ -318,7 +318,7 @@ Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
 </doc-codeblock></div>
 </li>
 <li><p><strong>Non-WWW to WWW Redirect</strong><br />
-Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
+Place in <code v-pre>/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">if ($host ~ ^(?!www\.)(?&lt;domain&gt;.+)$) {
     return 301 $scheme://www.$domain$request_uri;
@@ -326,7 +326,7 @@ Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
 </doc-codeblock></div>
 </li>
 <li><p><strong>Redirect to a Specific Page</strong><br />
-Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
+Place in <code v-pre>/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">if ($http_host ~* &quot;^.*your-domain\.be$&quot;) {
     rewrite ^/$ https://your-domain/page/ redirect;
@@ -334,7 +334,7 @@ Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
 </doc-codeblock></div>
 </li>
 <li><p><strong>Redirect Multiple Domains to Main Domain (keep URI)</strong><br />
-Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
+Place in <code v-pre>/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">if ($http_host ~* &quot;^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$&quot;) {
     rewrite ^(.*)$ https://www.main-site.com$request_uri redirect;
@@ -343,13 +343,13 @@ Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
 </li>
 </ol>
 <hr>
-<doc-anchor-target id="pre-varnish-whitelisting-outsidemain10-whitelistconf">
+<doc-anchor-target id="pre-varnish-whitelisting-outsidemain10whitelistconf">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pre-varnish-whitelisting-outsidemain10-whitelistconf">#</doc-anchor-trigger>
-        <span>Pre-Varnish Whitelisting (<code v-pre>outside/main/10-whitelist.conf</code>)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pre-varnish-whitelisting-outsidemain10whitelistconf">#</doc-anchor-trigger>
+        <span>Pre-Varnish Whitelisting (<code v-pre>outside/main/10whitelist.conf</code>)</span>
     </h3>
 </doc-anchor-target>
-<p>Place in <code v-pre>/nginx/outside/main/10-whitelist.conf</code>:</p>
+<p>Place in <code v-pre>/nginx/outside/main/10whitelist.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">allow 192.168.0.0/24;
 deny all;</code></pre>
@@ -363,10 +363,10 @@ deny all;</code></pre>
 </doc-anchor-target>
 <p>Add a <code v-pre>.runmaps</code> file in <code v-pre>/nginx</code> for routing tweaks. This is mainly used for Magento routing configuration.</p>
 <hr>
-<doc-anchor-target id="security-50-mainconf">
+<doc-anchor-target id="security-50mainconf">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#security-50-mainconf">#</doc-anchor-trigger>
-        <span>Security (<code v-pre>50-main.conf</code>)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-50mainconf">#</doc-anchor-trigger>
+        <span>Security (<code v-pre>50main.conf</code>)</span>
     </h3>
 </doc-anchor-target>
 <p>Allow access to <code v-pre>robots.txt</code>, but disallow other <code v-pre>.txt</code> and <code v-pre>.log</code> files:</p>
