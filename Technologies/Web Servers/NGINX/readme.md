@@ -2,7 +2,7 @@ NGINX (pronounced "engine-x") is a high-performance web server and reverse proxy
 
 ### Overview:
 
-* [NGINX Basics](nginx_basics.md)
+* [NGINX Configuration Basics](nginx_basics.md)
 
 ### How-To Guides
 
