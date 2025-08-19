@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.808824201591">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.808919034154">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>NGINX on TurboStack</title>
-    <meta name="title" content="NGINX on TurboStack">
-    <meta name="description" content="As our default (and recommended) webserver for TurboStack, NGINX has been extensively tweaked for optimal performance.">
+    <title>Custom Nginx Configurations</title>
+    <meta name="title" content="Custom Nginx Configurations">
+    <meta name="description" content="When working with hosted environments, you may not always want to touch the global Nginx configuration. Instead, you can place ">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/technologies/web-servers/nginx/nginx_basics/">
@@ -19,22 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/technologies/web-servers/nginx/nginx_basics/">
-    <meta property="og:title" content="NGINX on TurboStack">
-    <meta property="og:description" content="As our default (and recommended) webserver for TurboStack, NGINX has been extensively tweaked for optimal performance.">
+    <meta property="og:title" content="Custom Nginx Configurations">
+    <meta property="og:description" content="When working with hosted environments, you may not always want to touch the global Nginx configuration. Instead, you can place ">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/technologies/web-servers/nginx/nginx_basics/">
-    <meta property="twitter:title" content="NGINX on TurboStack">
-    <meta property="twitter:description" content="As our default (and recommended) webserver for TurboStack, NGINX has been extensively tweaked for optimal performance.">
+    <meta property="twitter:title" content="Custom Nginx Configurations">
+    <meta property="twitter:description" content="When working with hosted environments, you may not always want to touch the global Nginx configuration. Instead, you can place ">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.808824201591" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.808919034154" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.808824201591" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.808919034154" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.808824201591" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.808919034154" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.808919034154" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -222,119 +223,172 @@
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="nginx-on-turbostack" class="break-words">
+<doc-anchor-target id="custom-nginx-configurations" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nginx-on-turbostack">#</doc-anchor-trigger>
-        <span>NGINX on TurboStack</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-nginx-configurations">#</doc-anchor-trigger>
+        <span>Custom Nginx Configurations</span>
     </h1>
 </doc-anchor-target>
-<p>As our default (and recommended) webserver for TurboStack, NGINX has been extensively tweaked for optimal performance. As such, many &quot;quick code snippets&quot; you can find online can&#x27;t just be pasted into the config file, as they often expect you to be modifying the base config.</p>
-<doc-anchor-target id="nginx-includes-and-your-customizations">
+<p>When working with hosted environments, you may not always want to touch the global Nginx configuration. Instead, you can place <strong>custom Nginx configs</strong> in a per-account directory under:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">/nginx</code></pre>
+</doc-codeblock></div>
+<p>This approach allows you to extend or override server behavior safely without interfering with the main system configs.</p>
+<hr>
+<doc-anchor-target id="load-order-of-config-files">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nginx-includes-and-your-customizations">#</doc-anchor-trigger>
-        <span>NGINX &quot;includes&quot; and your customizations</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#load-order-of-config-files">#</doc-anchor-trigger>
+        <span>Load Order of Config Files</span>
     </h2>
 </doc-anchor-target>
-<p>The NGINX folder is conveniently located in:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/var/www/&lt;user&gt;/nginx</code></pre>
-</doc-codeblock></div>
-<p>This folder contains the NGINX configuration files for the application. A primary configuration file, named <strong>50main.conf</strong>, holds the general setup and directives. Additional custom configuration files can be placed in the same folder. For these custom files to be recognized by NGINX, they <strong>must</strong> end with <strong>.conf</strong>.</p>
-<p>When Varnish is enabled, an extra directory <strong>outside</strong> is generated.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/var/www/user/nginx
-├── 20rewrites.conf -&gt; outside/main/20rewrites.conf (symlink)
-├── 50main.conf
-└── outside
-    └── main
-        ├── 20rewrites.conf
-        └── 30headers.conf</code></pre>
-</doc-codeblock></div>
-<p>In this case rewrite and header config files need to be places in the <strong>~/nginx/outside</strong> folder so Varnish picks it up.</p>
-<doc-anchor-target id="load-order">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#load-order">#</doc-anchor-trigger>
-        <span>Load order</span>
-    </h3>
-</doc-anchor-target>
-<p>The config files are read in alphabetical order. this means:</p>
+<p>Nginx processes config files in <strong>alphabetical order</strong>. This is important when deciding how to name your files.</p>
+<p>By default, you’ll find two core configs in the directory:</p>
 <ul>
-<li><strong>10cors.conf</strong> is loaded before <strong>50main.conf</strong>.</li>
-<li><strong>50main.conf</strong> will overwrite settings of <strong>10cors.conf</strong> in case of conflicting settings.</li>
+<li><strong><code v-pre>20-rewrites.conf</code></strong> → handles rewrite rules</li>
+<li><strong><code v-pre>50-main.conf</code></strong> → the main configuration block</li>
 </ul>
-<p>This file inclusion system allows flexibility and maintainability: you can modularize related directives into separate, clearly named config files while keeping the core configuration in <strong>50main.conf</strong>.</p>
-<doc-anchor-target id="config-examples">
+<p>Since files are loaded alphabetically, anything you add with a <strong>higher prefix number</strong> than <code v-pre>50</code> will be loaded <em>after</em> the default <code v-pre>50-main.conf</code>. Similarly, using a lower prefix (e.g. <code v-pre>10-...</code>) ensures your rules are applied earlier.</p>
+<p><strong>Tip:</strong> To control priority and keep your configuration well-organised, always choose your filename carefully.</p>
+<hr>
+<doc-anchor-target id="placement-in-relation-to-varnish">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#placement-in-relation-to-varnish">#</doc-anchor-trigger>
+        <span>Placement in Relation to Varnish</span>
+    </h2>
+</doc-anchor-target>
+<p>In case Varnish is enabled on your server, it sits in front of Nginx on our Turbostack. Your config placement determines whether it runs <strong>before</strong> or <strong>after</strong> Varnish:</p>
+<ul>
+<li><p><strong>Inside <code v-pre>/nginx</code></strong><br />
+→ Files here are loaded <strong>after Varnish</strong>. This is ideal for app-level rewrites, caching rules, or security headers.</p>
+</li>
+<li><p><strong>Inside <code v-pre>/nginx/outside/main</code></strong><br />
+→ Files here are loaded <strong>before Varnish</strong>. Use this if you need to manipulate requests at the edge, before they hit the Varnish layer.</p>
+</li>
+</ul>
+<hr>
+<doc-anchor-target id="special-supported-file-types">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#special-supported-file-types">#</doc-anchor-trigger>
+        <span>Special Supported File Types</span>
+    </h2>
+</doc-anchor-target>
+<p>Apart from standard <code v-pre>.conf</code> files, two special file formats are supported:</p>
+<ul>
+<li><p><strong><code v-pre>.runmaps</code> files</strong><br />
+These are commonly used for <strong>Mage runmaps</strong> (Magento routing definitions).</p>
+</li>
+<li><p><strong><code v-pre>.http</code> files</strong><br />
+Example: <code v-pre>backend.http</code>. These can define backend-specific rules or HTTP-specific configs.</p>
+</li>
+</ul>
+<p>This flexibility allows more modular configuration management, especially in multi-app setups.</p>
+<hr>
+<doc-anchor-target id="reloading-nginx">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reloading-nginx">#</doc-anchor-trigger>
+        <span>Reloading Nginx</span>
+    </h2>
+</doc-anchor-target>
+<p>After making changes, reload Nginx to apply them using:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">tscli nginx reload</code></pre>
+</doc-codeblock></div>
+<p>This ensures your new configuration is active without requiring a full restart.</p>
+<p><strong>Tip:</strong> If you get an error, a mistake has found its way into the config! The message should point you in the right direction to troubleshoot the issue.</p>
+<hr>
+<doc-anchor-target id="use-case-examples">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-case-examples">#</doc-anchor-trigger>
+        <span>Use Case Examples</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="rewrites-20-rewritesconf">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#config-examples">#</doc-anchor-trigger>
-        <span>Config examples</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rewrites-20-rewritesconf">#</doc-anchor-trigger>
+        <span>Rewrites (<code v-pre>20-rewrites.conf</code>)</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="redirects-20rewritesconf">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#redirects-20rewritesconf">#</doc-anchor-trigger>
-        <span>Redirects (20rewrites.conf)</span>
-    </h4>
-</doc-anchor-target>
-<p>Non-WWW to WWW:</p>
+<ol>
+<li><p><strong>Custom Rewrite Rule (after Varnish)</strong><br />
+Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">if ($host ~ ^(?!www\.)(?&lt;domain&gt;.+)$) {
-    return  301 $scheme://www.$domain$request_uri;
+<pre class="language-bash"><code v-pre class="language-bash">location /blog {
+    rewrite ^/blog$ /blog/ permanent;
 }</code></pre>
 </doc-codeblock></div>
-<p>Redirect to certain page:</p>
+</li>
+<li><p><strong>Non-WWW to WWW Redirect</strong><br />
+Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">if ($http_host ~* &quot;^.*your-domain\.be$&quot;){
+<pre class="language-bash"><code v-pre class="language-bash">if ($host ~ ^(?!www\.)(?&lt;domain&gt;.+)$) {
+    return 301 $scheme://www.$domain$request_uri;
+}</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p><strong>Redirect to a Specific Page</strong><br />
+Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">if ($http_host ~* &quot;^.*your-domain\.be$&quot;) {
     rewrite ^/$ https://your-domain/page/ redirect;
 }</code></pre>
 </doc-codeblock></div>
-<p>Redirect multiple domains to main-domain while keeping the URI:</p>
+</li>
+<li><p><strong>Redirect Multiple Domains to Main Domain (keep URI)</strong><br />
+Place in <code v-pre>/nginx/20-rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">if ($http_host ~* &quot;^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$&quot;){
+<pre class="language-bash"><code v-pre class="language-bash">if ($http_host ~* &quot;^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$&quot;) {
     rewrite ^(.*)$ https://www.main-site.com$request_uri redirect;
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="security-50mainconf">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#security-50mainconf">#</doc-anchor-trigger>
-        <span>Security (50main.conf)</span>
-    </h4>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="pre-varnish-whitelisting-outside10-whitelistconf">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pre-varnish-whitelisting-outside10-whitelistconf">#</doc-anchor-trigger>
+        <span>Pre-Varnish Whitelisting (<code v-pre>outside/10-whitelist.conf</code>)</span>
+    </h3>
 </doc-anchor-target>
-<p>Allow access to robots.txt, disallow other <strong>.txt</strong> and <strong>.log</strong> files.</p>
+<p>Place in <code v-pre>/nginx/outside/10-whitelist.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">    location = /robots.txt {
-        allow all;
-        log_not_found off;
-        access_log off;
-    }
-    
-    location ~* \.(txt|log)$ {
-        deny all;
-    }</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">allow 192.168.0.0/24;
+deny all;</code></pre>
 </doc-codeblock></div>
-<p>Disallow direct access to any php gile in a &#x27;dot directory&#x27; like <strong>.git/</strong> .</p>
+<hr>
+<doc-anchor-target id="magento-runmaps">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#magento-runmaps">#</doc-anchor-trigger>
+        <span>Magento Runmaps</span>
+    </h3>
+</doc-anchor-target>
+<p>Add a <code v-pre>.runmaps</code> file in <code v-pre>/nginx</code> for routing tweaks. This is mainly used for Magento routing configuration.</p>
+<hr>
+<doc-anchor-target id="security-50-mainconf">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-50-mainconf">#</doc-anchor-trigger>
+        <span>Security (<code v-pre>50-main.conf</code>)</span>
+    </h3>
+</doc-anchor-target>
+<p>Allow access to <code v-pre>robots.txt</code>, but disallow other <code v-pre>.txt</code> and <code v-pre>.log</code> files:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">location ~ \..*/.*\.php$ {
-    return 403;
+<pre class="language-bash"><code v-pre class="language-bash">location = /robots.txt {
+    allow all;
+    log_not_found off;
+    access_log off;
 }
 
-location ~ ^/sites/[^/]+/files/.*\.php$ {
+location ~* \. (txt|log)$ {
     deny all;
 }</code></pre>
 </doc-codeblock></div>
-<p>This prevents execution of PHP files stored in hidden or unintended locations (like version control folders), enhancing security by blocking potential backdoors or sensitive scripts.</p>
-<doc-anchor-target id="handy-references">
+<doc-anchor-target id="official-nginx-documentation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#handy-references">#</doc-anchor-trigger>
-        <span>Handy references</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#official-nginx-documentation">#</doc-anchor-trigger>
+        <span>Official NGINX documentation:</span>
     </h2>
 </doc-anchor-target>
-<p>Official NGINX documentation:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">https://nginx.org/en/docs/</code></pre>
-</doc-codeblock></div>
-<p>Configuring CORS headers:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">https://www.baeldung.com/linux/nginx-cross-origin-policy-headers</code></pre>
 </doc-codeblock></div>
 
                                 
@@ -387,6 +441,6 @@ location ~ ^/sites/[^/]+/files/.*\.php$ {
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "NGINX on TurboStack", level: 4, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Custom Nginx Configurations", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
