@@ -4,7 +4,7 @@ hidden: true
 
 # Nginx Configuration Basics
 
-Our implementation of Nginx offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place **custom Nginx configs** in a per-account directory under:  
+Our implementation of NGINX offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place **custom NGINX configs** in a per-account directory under:  
 
 ```bash
 /nginx
@@ -16,7 +16,7 @@ This approach allows you to extend or override server behavior safely without in
 
 ## Load Order of Config Files
 
-Nginx processes config files in **alphabetical order**. This is important when deciding how to name your files.  
+NGINX processes config files in **alphabetical order**. This is important when deciding how to name your files.  
 
 By default, you’ll find two core configs in the directory:  
 
@@ -31,7 +31,7 @@ Since files are loaded alphabetically, anything you add with a **higher prefix n
 
 ## Placement in Relation to Varnish
 
-In case Varnish is enabled on your server, it sits in front of Nginx on our Turbostack. Your config placement determines whether it runs **before** or **after** Varnish:
+In case Varnish is enabled on your server, it sits in front of NGINX on our TurboStack. Your config placement determines whether it runs **before** or **after** Varnish:
 
 - **Inside `/nginx`**  
   → Files here are loaded **after Varnish**. This is ideal for app-level rewrites, caching rules, or security headers.  
@@ -55,9 +55,9 @@ This flexibility allows more modular configuration management, especially in mul
 
 ---
 
-## Reloading Nginx
+## Reloading NGINX
 
-After making changes, reload Nginx to apply them using:
+After making changes, reload NGINX to apply them using:
 
 ```bash
 tscli nginx reload
