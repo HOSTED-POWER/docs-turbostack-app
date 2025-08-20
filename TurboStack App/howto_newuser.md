@@ -117,6 +117,10 @@ a system_user (e.g. `prod`) is needed before an application can be deployed
 
 To make a clone of an existing application, we provide the `Clone Account` feature. This function replicates the entire configuration and copies the files and database, enabling a quick and efficient setup with minimal effort.
 
+!!!Info
+This feature is extremely useful to quickly copy your production environment to a staging environment or vice versa!
+!!!
+
 Here’s how to do it:
 
 1. Navigate to the `Accounts` tab in the TurboStack App under your host.
