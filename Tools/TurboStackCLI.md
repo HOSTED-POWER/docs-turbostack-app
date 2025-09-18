@@ -75,8 +75,8 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### RabbitMQ
 [!badge icon="rocket" text="tscli rabbitmq queue list <OPTIONS> <VHOSTNAME>"] - List RabbitMQ queues.
 
-### Tools
-#### Botload
+## Tools
+### Botload
 This tool allows you to analyze incoming traffic and get insights in the amount of bots connecting per website
 [!badge icon="rocket" text="tscli tools botload list "] - Get a list of log files, select which one you want to analyze. Takes the optional `--time` parameter followed by two timestamps in "%H:%M:%S" format (e.g. `tscli tools botload list --time 07:15:00 08:15:00`)
 
