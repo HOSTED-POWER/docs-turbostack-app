@@ -89,11 +89,11 @@ To assess your current email deliverability, we recommend running a test on [Mai
 
 Need help interpreting the results or taking the next steps? Feel free to reach out to us—we’re here to assist!
 
-# 5. Blocklists (RBLs) and How They Affect Deliverability  
+### 5. Blocklists (RBLs) and How They Affect Deliverability  
 
 Even with SPF, DKIM, and DMARC correctly set up, your emails may still struggle to reach inboxes if your server’s IP address or domain has been placed on a **blocklist** (often called an **RBL – Realtime Block List**).  
 
-## What is a Blocklist / RBL?  
+#### What is a Blocklist / RBL?  
 A blocklist is a database of IP addresses or domains flagged for sending spam or unwanted email. Many email providers and spam filters query these RBLs to decide whether to deliver, filter, or reject incoming messages.  
 
 If your server is listed, your emails may:  
@@ -103,7 +103,7 @@ If your server is listed, your emails may:
 
 **Info:** Different mail services rely on different RBLs for spam filtering! Because of this, your email may reach some recipients while being blocked by others. Which RBL is consulted depends entirely on the recipient’s mail provider.
 
-## Why You Might Be Blocklisted  
+#### Why You Might Be Blocklisted  
 Before looking at blocklist issues, make sure your email authentication and deliverability are set up correctly as described earlier (SPF, DKIM, DMARC, and content best practices). These are the **first priority**.  
 
 If problems persist after that, common reasons for blocklisting include:  
@@ -114,7 +114,7 @@ If problems persist after that, common reasons for blocklisting include:
 
 ⚠️ **Important:** Bulk mailing should **never** be done from your local SMTP service. Sending newsletters or large campaigns this way will almost always lead to blacklisting. Instead, always use a professional service such as [SendGrid](https://sendgrid.com/), [Amazon SES](https://aws.amazon.com/ses/), or [Mailchimp](https://mailchimp.com/) for mass mailings.  
 
-## How to Check if You’re Listed  
+#### How to Check if You’re Listed  
 You can quickly check if your domain or server IP is on a blocklist using these tools:  
 - [MXToolbox Blacklist Check](https://mxtoolbox.com/blacklists.aspx)  
 - [Spamhaus Blocklist Removal Center](https://check.spamhaus.org/)  
@@ -124,7 +124,7 @@ Simply enter your server’s IP address to see if it appears on any RBLs.
 
 **Tip:** If your [Mail Tester](https://www.mail-tester.com/) score looks fine but your messages are still not being delivered, it’s worth checking whether your IP or domain is listed on an RBL.  
 
-## What to Do if You’re Blocklisted  
+#### What to Do if You’re Blocklisted  
 1. **Secure your server**  
    - Scan for hacked sites, malware, or compromised accounts.  
    - Change email account passwords if needed.  
