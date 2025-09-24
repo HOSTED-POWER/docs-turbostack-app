@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.812033562445">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.812039194900">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.812033562445" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.812039194900" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.812033562445" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.812039194900" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.812033562445" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.812039194900" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -374,18 +374,18 @@
 <p>Properly configuring your DNS with SPF, DKIM, and DMARC is a significant step toward improving your email deliverability. However, if you’re still encountering issues, additional factors might be at play. Problems could stem from the content and formatting of your HTML email, SMTP server configurations, or even being blacklisted for other reasons.</p>
 <p>To assess your current email deliverability, we recommend running a test on <a href="https://mail-tester.com" class="outbound" title="Mail Tester" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Mail Tester</span></a>. If your score isn’t perfect, the test report will highlight areas for improvement.</p>
 <p>Need help interpreting the results or taking the next steps? Feel free to reach out to us—we’re here to assist!</p>
-<doc-anchor-target id="5-blocklists-rbls-and-how-they-affect-deliverability">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-blocklists-rbls-and-how-they-affect-deliverability">#</doc-anchor-trigger>
-        <span>5. Blocklists (RBLs) and How They Affect Deliverability</span>
-    </h3>
+<doc-anchor-target id="blocklists-rbls-and-how-they-affect-deliverability">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#blocklists-rbls-and-how-they-affect-deliverability">#</doc-anchor-trigger>
+        <span>Blocklists (RBLs) and How They Affect Deliverability</span>
+    </h2>
 </doc-anchor-target>
 <p>Even with SPF, DKIM, and DMARC correctly set up, your emails may still struggle to reach inboxes if your server’s IP address or domain has been placed on a <strong>blocklist</strong> (often called an <strong>RBL – Realtime Block List</strong>).</p>
 <doc-anchor-target id="what-is-a-blocklist--rbl">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-blocklist--rbl">#</doc-anchor-trigger>
         <span>What is a Blocklist / RBL?</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>A blocklist is a database of IP addresses or domains flagged for sending spam or unwanted email. Many email providers and spam filters query these RBLs to decide whether to deliver, filter, or reject incoming messages.</p>
 <p>If your server is listed, your emails may:</p>
@@ -396,10 +396,10 @@
 </ul>
 <p><strong>Info:</strong> Different mail services rely on different RBLs for spam filtering! Because of this, your email may reach some recipients while being blocked by others. Which RBL is consulted depends entirely on the recipient’s mail provider.</p>
 <doc-anchor-target id="why-you-might-be-blocklisted">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#why-you-might-be-blocklisted">#</doc-anchor-trigger>
         <span>Why You Might Be Blocklisted</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Before looking at blocklist issues, make sure your email authentication and deliverability are set up correctly as described earlier (SPF, DKIM, DMARC, and content best practices). These are the <strong>first priority</strong>.</p>
 <p>If problems persist after that, common reasons for blocklisting include:</p>
@@ -409,12 +409,12 @@
 <li>Too many recipients marked your emails as spam.</li>
 <li>Bulk email (such as newsletters) is being sent directly from your webserver instead of a proper mail delivery service.</li>
 </ul>
-<p><span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Important:</strong> Bulk mailing should <strong>never</strong> be done from your local SMTP service. Sending newsletters or large campaigns this way will almost always lead to blacklisting. Instead, always use a professional service such as <a href="https://sendgrid.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>SendGrid</span></a>, <a href="https://aws.amazon.com/ses/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Amazon SES</span></a>, or <a href="https://mailchimp.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Mailchimp</span></a> for mass mailings.</p>
+<p><strong>Important:</strong> Bulk mailing should <strong>never</strong> be done from your local SMTP service. Sending newsletters or large campaigns this way will almost always lead to blacklisting. Instead, always use a professional service such as <a href="https://sendgrid.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>SendGrid</span></a>, <a href="https://aws.amazon.com/ses/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Amazon SES</span></a>, or <a href="https://mailchimp.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Mailchimp</span></a> for mass mailings.</p>
 <doc-anchor-target id="how-to-check-if-youre-listed">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-check-if-youre-listed">#</doc-anchor-trigger>
         <span>How to Check if You’re Listed</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>You can quickly check if your domain or server IP is on a blocklist using these tools:</p>
 <ul>
@@ -425,10 +425,10 @@
 <p>Simply enter your server’s IP address to see if it appears on any RBLs.</p>
 <p><strong>Tip:</strong> If your <a href="https://www.mail-tester.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Mail Tester</span></a> score looks fine but your messages are still not being delivered, it’s worth checking whether your IP or domain is listed on an RBL.</p>
 <doc-anchor-target id="what-to-do-if-youre-blocklisted">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-to-do-if-youre-blocklisted">#</doc-anchor-trigger>
         <span>What to Do if You’re Blocklisted</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <ol>
 <li><p><strong>Secure your server</strong></p>
