@@ -88,3 +88,55 @@ Properly configuring your DNS with SPF, DKIM, and DMARC is a significant step to
 To assess your current email deliverability, we recommend running a test on [Mail Tester](https://mail-tester.com "Mail Tester"). If your score isn’t perfect, the test report will highlight areas for improvement.
 
 Need help interpreting the results or taking the next steps? Feel free to reach out to us—we’re here to assist!
+
+# 5. Blocklists (RBLs) and How They Affect Deliverability  
+
+Even with SPF, DKIM, and DMARC correctly set up, your emails may still struggle to reach inboxes if your server’s IP address or domain has been placed on a **blocklist** (often called an **RBL – Realtime Block List**).  
+
+## What is a Blocklist / RBL?  
+A blocklist is a database of IP addresses or domains flagged for sending spam or unwanted email. Many email providers and spam filters query these RBLs to decide whether to deliver, filter, or reject incoming messages.  
+
+If your server is listed, your emails may:  
+- Go straight to spam.  
+- Be delayed.  
+- Be rejected entirely.  
+
+**Info:** Different mail services rely on different RBLs for spam filtering! Because of this, your email may reach some recipients while being blocked by others. Which RBL is consulted depends entirely on the recipient’s mail provider.
+
+## Why You Might Be Blocklisted  
+Before looking at blocklist issues, make sure your email authentication and deliverability are set up correctly as described earlier (SPF, DKIM, DMARC, and content best practices). These are the **first priority**.  
+
+If problems persist after that, common reasons for blocklisting include:  
+- Your server was used to send spam (e.g., due to a hacked website or weak email account password).  
+- You’re sending to invalid or outdated email addresses.  
+- Too many recipients marked your emails as spam.  
+- Bulk email (such as newsletters) is being sent directly from your webserver instead of a proper mail delivery service.  
+
+⚠️ **Important:** Bulk mailing should **never** be done from your local SMTP service. Sending newsletters or large campaigns this way will almost always lead to blacklisting. Instead, always use a professional service such as [SendGrid](https://sendgrid.com/), [Amazon SES](https://aws.amazon.com/ses/), or [Mailchimp](https://mailchimp.com/) for mass mailings.  
+
+## How to Check if You’re Listed  
+You can quickly check if your domain or server IP is on a blocklist using these tools:  
+- [MXToolbox Blacklist Check](https://mxtoolbox.com/blacklists.aspx)  
+- [Spamhaus Blocklist Removal Center](https://check.spamhaus.org/)  
+- [MultiRBL Lookup](https://multirbl.valli.org/)  
+
+Simply enter your server’s IP address to see if it appears on any RBLs.  
+
+**Tip:** If your [Mail Tester](https://www.mail-tester.com/) score looks fine but your messages are still not being delivered, it’s worth checking whether your IP or domain is listed on an RBL.  
+
+## What to Do if You’re Blocklisted  
+1. **Secure your server**  
+   - Scan for hacked sites, malware, or compromised accounts.  
+   - Change email account passwords if needed.  
+
+2. **Avoid bulk mailing locally**  
+   - Do not send newsletters or campaigns from your webserver.  
+   - Move all bulk mailing to a dedicated provider like SendGrid.  
+
+3. **Request delisting**  
+   - Each RBL has a removal process (usually an online form).  
+   - Only request delisting once you’re sure the problem is fixed, otherwise you risk being re-listed.  
+
+---
+
+✅ **Tip:** After resolving the issue, monitor your IP reputation regularly. Staying off RBLs requires both secure server practices and responsible mailing practices.
