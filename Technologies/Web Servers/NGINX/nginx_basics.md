@@ -82,7 +82,7 @@ This ensures your new configuration is active without requiring a full restart.
    }
    ```
 
-2. **Non-WWW to WWW Redirect**  
+2. **Redirect Non-WWW to WWW**  
    Place in `/nginx/20rewrites.conf`:  
 
    ```bash
@@ -91,7 +91,16 @@ This ensures your new configuration is active without requiring a full restart.
    }
    ```
 
-3. **Redirect to a Specific Page**  
+3. **Redirect WWW to non-WWW redirect**   
+   Place in `/nginx/20rewrites.conf`: 
+
+   ```bash
+    if ($host ~* ^www\.(?<domain>.+)$) {
+        return 301 $scheme://$domain$request_uri;
+    }
+    ```
+
+4. **Redirect to a Specific Page**  
    Place in `/nginx/20rewrites.conf`:  
 
    ```bash
@@ -100,7 +109,7 @@ This ensures your new configuration is active without requiring a full restart.
    }
    ```
 
-4. **Redirect Multiple Domains to Main Domain (keep URI)**  
+5. **Redirect Multiple Domains to Main Domain (keep URI)**  
    Place in `/nginx/20rewrites.conf`:  
 
    ```bash
