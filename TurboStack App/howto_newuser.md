@@ -127,14 +127,12 @@ Here’s how to do it:
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user6.png)
 2. Click `Clone Account`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user7.png)
-3. In the next step, select the source host. This can be either the current server or another server you manage.
+3. In the next step, select the source host and the account you want to clone. This can be either the current server or another server you manage.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user8.png)
-4. Choose the account you want to clone, then click `Next`.
+4. Choose the destination account, which can be either an existing or a new account, then click `Next`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user9.png)
-5. You'll be prompted to decide whether to copy the source account to an existing account or create a new account. Make your selection and click `Next`.
+5. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Next` to finalize.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user10.png)
-6. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Next` to finalize.  
-![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user11.png)
 
 And that’s it! Your application is now cloned to a new account. Be sure to save the configuration and publish it when you're ready.
 
