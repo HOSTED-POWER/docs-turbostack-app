@@ -77,17 +77,6 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 
 ## Tools
 ### Botload
-This tool allows you to analyze incoming traffic and get insights in the amount of bots connecting per website
-[!badge icon="rocket" text="tscli tools botload list "] - Get a list of log files, select which one you want to analyze. Takes the optional `--time` parameter followed by two timestamps in "%H:%M:%S" format (e.g. `tscli tools botload list --time 07:15:00 08:15:00`)
-
-[!badge icon="rocket" text="tscli tools botload shared"] - Perform the analysis on all available log files, showing the top 10 results. Takes the optional `--top-results`, `-n` parameter to show more/less results
-
-[!badge icon="rocket" text="tscli tools botload ip <IP address>"] - Get the percentage of entries in all logs that come from the provided IP address. Takes the optional `--cidr` parameter to do the analysis for an IP range
-
-[!badge icon="rocket" text="tscli tools botload live"] - Pick a log file to get a live analysis of all current incoming traffic. 
-
-
-### Botload
 We provide a *botload* tool that grants you more insight in your nginx / apache logs.
 This is how you use it via our TurboStack CLI.
 ### Features
@@ -110,7 +99,7 @@ This is how you use it via our TurboStack CLI.
 [!badge icon="rocket" text="tscli tools botload list --time 07:15:00 08:15:00"] - Search between two given timeframes.
 
 ---
-# Example
+### Example
 
 The following, is an example of the main features. Take in mind that bigger logs, might take a couple of minutes. If the server has a high load, it will add on to the analysis time.
 
