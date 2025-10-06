@@ -18,11 +18,11 @@ Depending on the service, your access might be limited to the logs of the servic
 **Note:** Some services deviate from the 30-day policy to conserve diskspace.  
 **Note:** DirectAdmin and cPanel keep today's logs easily accessable. After the day has ended, it is consolidated into the monthly logfile.
 
-### Turbostack
+## Turbostack
 
 The logs for all the services are located in `/var/log/servicename`.
 
-#### Nginx
+### Nginx
 When switching to `/var/log/nginx`, you'll find:  
 
 - All the logs for the different environments.  
@@ -31,7 +31,7 @@ When switching to `/var/log/nginx`, you'll find:
 
 You can access the logs of all environments via one account.
 
-#### Apache2
+### Apache2
 Depending on the age of your setup, the logs will be located in:
 
 - `/var/log/apache` or `/var/log/apache/domlogs/yourSite`.  
@@ -44,28 +44,28 @@ Just like nginx, you'll find an **error.log** and **access.log** file to provide
 All the logs in this folder are also accessible via any system account.
 
 ---
-### DirectAdmin
+## DirectAdmin
 DA provides a handy interface for us to view the logs at the following locations:
 
-#### Admin level
+### Admin level
 - Navigate to **Admin Tools > Log Viewer**
 - Lets you view general service logs (Apache, Nginx, Exim, system messages).
-#### User level
+### User level
 - Navigate to **User Tools > Site Summary / Statistics / Logs**
 - This will give you the Apache logs for today
 - `Backed up Web Logs` opens a file viewer showing older, compressed logs
 
 ---
-### cPanel
+## cPanel
 
 cPanel provides a **web interface** for accessing logs. Direct access to system log files (like Apache’s `/usr/local/apache/logs/error_log`) is typically restricted to root users, and **not available via SSH** on shared hosting.
 
 The following logs can be consulted via the user account, not via the Admin.
-#### Error Logs
+### Error Logs
 - Accessible via **cPanel > Metrics > Errors**
 - Displays the most recent error log entries for your domain.
 - Useful for debugging PHP errors, missing files, or permission issues.
-#### Raw Access Logs
+### Raw Access Logs
 In this overview, you can download both the access logs from today, and the aggregated logs per month. The logs will be downloaded in a .gz file.
 
 - Found under **cPanel > Metrics > Raw Access**
@@ -73,10 +73,10 @@ In this overview, you can download both the access logs from today, and the aggr
 - You can **download raw log files** for offline analysis.
 - Logs are rotated daily; older ones are compressed.
 
-#### Awstats / Webalizer (Traffic Analysis)
+### Awstats / Webalizer (Traffic Analysis)
 - Found under **cPanel > Metrics > Awstats** (or Webalizer, depending on setup).
 - Offers a graphical interface for analyzing traffic, referrers, bots, and bandwidth usage.
-#### Email Logs
+### Email Logs
 While raw mail logs aren’t directly exposed, cPanel provides interfaces under **Email** (Email Deliverability, Track Delivery).
 
 For detailed troubleshooting, use **Track Delivery**:
@@ -84,10 +84,10 @@ For detailed troubleshooting, use **Track Delivery**:
 - Shows delivery attempts, successes, and failures.
 
 ---
-### How to search efficiently in the logs
+## How to search efficiently in the logs
 Once you have the raw logs downloaded, you can do a quick analysis on them. Here are some quick commands that can help you.
 
-#### Quick one liners
+### Quick one liners
 
 Show the top 5 IP addresses with the most requests:
 ```bash
@@ -109,7 +109,7 @@ Show the most common User Agents:
 awk -F\" '{print $6}' logname.log | sort | uniq -c | sort -nr | head -5
 ```
 
-#### Combining the info
+### Combining the info
 For example: You notice a lot of error 403's in the logs. This could be an indication of scraping or even an attempt to find a way to exploit a fault.
 
 In this case, we can find the IP's causing the most of these errors:
