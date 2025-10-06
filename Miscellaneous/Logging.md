@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 In this documentation we will show you where the logs are, how to access them, and how to interpret them.
 
 We rotate the logs daily and compress the older ones to save on storage.
