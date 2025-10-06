@@ -1,7 +1,4 @@
----
-order: 210
-icon: upload
----
+
 # (S)FTP Creation and troubleshooting
 ## Configuration
 We provide the possibility to make a (S)FTP user and choose the *home directory* for that user. This is mostly used to connect an ERP system to a webshop.
