@@ -3,9 +3,9 @@ order: 240
 icon: upload
 ---
 ## How to find and install packages
-We manage things for you, so you don't need root access on the server. However, this means you don't have the necessary permissions to install *apt* packages via the command line. This also has the benefit of easily setting up a server that requires a similar setup.
+We manage things for you, so you don't need root access on the server. However, this means you don't have the necessary permissions to install *apt* packages via the command line. To solve this issue, we provide the possibility to install these packages via our TurboStack Interface.
 
-To solve this issue, we provide the possibility to install these packages via our TurboStack Interface.
+Because all this config is contained in our turboStack, it's easier to setup similar servers in the future.
 
 You can find this feature under: **Advanced > Operating System > OS Extra Packages**. Here You can select some of the more common packages.
 
