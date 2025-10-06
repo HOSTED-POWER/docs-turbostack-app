@@ -47,4 +47,4 @@ If you have a new partner requiring access to your environment, you have the pos
 ## User/Teams Rights management 
 You have the choice to either manage the rights of single users or whole teams. **Hosted Power** advises to implement the "Teams" logic, even if you have only one person in this team. It makes management a lot easier in the future.
 
-For your colleagues to be able to log in to the <a href="https://my.turbostack.app" target="_blank">TurboStack App</a>, you need to give them access here.
+For your colleagues to be able to log in to the <a href="https://my.turbostack.app" target="_blank">TurboStack Platform</a>, you need to give them access here.

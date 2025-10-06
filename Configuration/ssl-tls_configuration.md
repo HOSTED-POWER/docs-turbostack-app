@@ -29,7 +29,7 @@ The key principles behind Let's Encrypt, taken from their <a href="http://www.le
 
 Need an SSL certificate other than Let’s Encrypt? No problem! We offer Sectigo certificates—simply contact support for more details.
 
-If you’ve purchased a certificate from another provider, you can still install it easily on your TurboStack server through the Account Management section of the [TurboStack App](https://my.turbostack.app "TurboStack App"). More info on how to do so can be found [here](https://docs.turbostack.app/turbostack-app/howto_newuser/ "here")
+If you’ve purchased a certificate from another provider, you can still install it easily on your TurboStack server through the Account Management section of the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"). More info on how to do so can be found [here](https://docs.turbostack.app/turbostack-app/howto_newuser/ "here")
 
 ### Order a standalone SSL certificate
 

@@ -10,7 +10,7 @@ Your access, certain API calls, or your customers may be blocked by our firewall
 
 Unlike other applications, LFD operates as a continuous monitoring daemon, reacting within seconds to suspicious activity. It also tracks failed attempts across different protocols, counting them collectively against the security threshold.
 
-While the protection is designed to minimize false positives, you can whitelist trusted IP addresses if needed. This can be done easily via the TurboStack App or the TurboStack CLI, as outlined below.
+While the protection is designed to minimize false positives, you can whitelist trusted IP addresses if needed. This can be done easily via the TurboStack Platform or the TurboStack CLI, as outlined below.
 
 ## Firewall CLI on TurboStack®
 
@@ -33,13 +33,13 @@ Commands:
   whitelist  Add the provided IP to both allow and ignore lists
 ```
 
-### Whitelist an IP address in the TurboStack® App
+### Whitelist an IP address in the TurboStack®Platform
 
-To completely whitelist an IP address, you can use the TurboStack App. A whitelisted IP address will never be blocked by brute force protection.
+To completely whitelist an IP address, you can use the TurboStack Platform. A whitelisted IP address will never be blocked by brute force protection.
 
 Additionally, whitelisting an IP grants access to ports that are otherwise blocked by the firewall. This can be useful for enabling remote access to MySQL and other databases or allowing connections to restricted services.
 
-Firewall settings can be managed in the Security tab of your host's management section within the [TurboStack App](https://my.turbostack.app "TurboStack App"). For detailed instructions on modifying firewall settings, please refer to the documentation [here](https://docs.turbostack.app/turbostack-app/overview/#security-tab "Here").
+Firewall settings can be managed in the Security tab of your host's management section within the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"). For detailed instructions on modifying firewall settings, please refer to the documentation [here](https://docs.turbostack.app/turbostack-app/overview/#security-tab "Here").
 
 ## Control Panels with Firewall GUI
 
