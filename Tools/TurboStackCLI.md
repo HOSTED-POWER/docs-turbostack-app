@@ -76,9 +76,11 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 [!badge icon="rocket" text="tscli rabbitmq queue list <OPTIONS> <VHOSTNAME>"] - List RabbitMQ queues.
 
 ## Tools
+
 ### Botload
 We provide a *botload* tool that grants you more insight in your nginx / apache logs.
 This is how you use it via our TurboStack CLI.
+
 #### Features
  - List your logfiles and their size.
  - Show the amount of requests, and bot percentage.
@@ -86,6 +88,7 @@ This is how you use it via our TurboStack CLI.
  - Top 10 IP addresses.
  - Hourly breakdown of requests.
  - Breakdown of requests (GET, POST, ...etc). 
+ - 
 #### Functions
 
 [!badge icon="rocket" text="tscli tools botload list "] - Get a list of log files, select which one you want to analyze.
@@ -96,15 +99,12 @@ This is how you use it via our TurboStack CLI.
 
 [!badge icon="rocket" text="tscli tools botload shared"] - Compact overview for shared packages.
 
-[!badge icon="rocket" text="tscli tools botload list --time 07:15:00 08:15:00"] - Search between two given timeframes.
+[!badge icon="rocket" text="tscli tools botload list --time hh:mm:ss hh:mm:ss"] - Search between two given timeframes.
 
 ---
 #### Example
 
 The following, is an example of the main features. Take in mind that bigger logs, might take a couple of minutes. If the server has a high load, it will add on to the analysis time.
-
-<details>
-<summary>Click to reveal example output</summary>
 
 ```
 Detected Nginx – logs in /var/log/nginx
@@ -178,4 +178,3 @@ Request methods:
         53 HEAD
         18 POST
 ```
-</details>
