@@ -5,7 +5,7 @@ icon: milestone
 # DNS
 
 The Hosted Power [customer center](https://portal.hosted-power.com/) has an application to manage DNS domains.
-It can be used to manage existing domains, or new ones after registering a new [domain](./Domains.md)
+It can be used to manage existing domains, or new ones after registering a new [domain](./domains)
 
 !!!danger Control panels
 if you already use a control panel like `DirectAdmin` or `cPanel`, we recommend using those internal DNS management tools. More information on DNS management in those control panels can be found in their own respective knowledge bases.
