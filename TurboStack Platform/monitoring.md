@@ -6,9 +6,9 @@ icon: eye
 
 Hosted Power proactively monitors your infrastructure to ensure server and service availability while simultaneously tracking resource usage. It alerts you if the load is too high, disk space is running low, or other critical thresholds are met, helping you maintain optimal performance.
 
-The general health of the server can be seen in the TurboStack App overview:
+The general health of the server can be seen in the TurboStack Platform overview:
 
-![TurboStack GUI](../img/feature/mon/TS_GUI_mon_1.png "TurboStack GUI")
+![TurboStack Platform](../img/feature/mon/TS_GUI_mon_1.png "TurboStack Platform")
 
 1. IPv4 and IPv6 check and general server uptime
 2. Memory and SWAP usage
@@ -20,7 +20,7 @@ If any of these checks alert, the icons will become red. When this is the case, 
 
 ## Website monitoring URL
 
-The TurboStack App is also able to monitor a website URL per application. In this case, the website URL will be added to our monitoring system
+The TurboStack Platform is also able to monitor a website URL per application. In this case, the website URL will be added to our monitoring system
 and Hosted Power will monitor the availability of the website based on the URL, and intervene 24/7 if an issue arises.
 
 Please follow the instructions below to activate the monitoring url on your server

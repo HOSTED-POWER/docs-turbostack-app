@@ -63,7 +63,7 @@ TurboStack empowers you with granular control over account permissions. Navigate
 
 ## TurboStack® Suite GUI
 
-Once you have your customer profile set up, it's time for the real work. Log into the [TurboStack App](https://my.turbostack.app "TurboStack App") with your new credentials and get your application online! The next steps in this knowledge base will tell you all you need to know to do so.
+Once you have your customer profile set up, it's time for the real work. Log into the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform") with your new credentials and get your application online! The next steps in this knowledge base will tell you all you need to know to do so.
 
 
 

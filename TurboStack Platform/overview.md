@@ -7,7 +7,7 @@ icon: info
 
 ## Login and locate your managed servers
 
-When going to the [TurboStack App](https://my.turbostack.app/ "TurboStack App") , login with your credentials for the [Customer Center](https://portal.hosted-power.com/ "Customer Center").
+When going to the [TurboStack Platform](https://my.turbostack.app/ "TurboStack Platform") , login with your credentials for the [Customer Center](https://portal.hosted-power.com/ "Customer Center").
 
 If you don't have a login to the Customer Center yet, you first have to create a Primary account. More info [here](https://docs.turbostack.app/#create-a-customer-profile).
 
@@ -17,7 +17,7 @@ Once logged in, all servers managed by this account will become visible in the *
 
 ![TurboStackAppServers](../img/turbostackapp/basicinstall/tsa_home_servers1.png)
 
-## Main TurboStack App functions
+## Main TurboStack Platform functions
 
 For each server there are main functions available.
 

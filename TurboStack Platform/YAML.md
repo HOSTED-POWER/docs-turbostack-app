@@ -136,4 +136,4 @@ system_users:
 ```
 
 ### Templates
-In the [templates section of the :rocket: TurboStack App](https://my.turbostack.app/templates), you'll find some more examples.
+In the [templates section of the :rocket: TurboStack Platform](https://my.turbostack.app/templates), you'll find some more examples.

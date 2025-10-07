@@ -50,7 +50,7 @@ DKIM adds a digital signature to your emails, allowing the recipient’s server 
 `cloud._domainkey.example.com IN TXT "k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDmzRmJRQxLEuyYiyMg4suA2SyMwR5MGHpP9diNT1hRiwUd/mZp1ro7kIDTKS8ttkI6z6eTRW9e9dDOxzSxNuXmume60Cjbu08gOyhPG3GfWdg7QkdN6kR4V75MFlw624VY35DaXBvnlTJTgRg/EW72O1DiYVThkyCgpSYS8nmEQIDAQAB"`
 
 !!! Info
-Activating DKIM on Turbostack is easily done via the [TurboStack App](https://my.turbostack.app "TurboStack App")! Simply navigate to your host and go to the 'Advanced' tab. Follow the instructions under 'Mail Settings' to set up DKIM.
+Activating DKIM on Turbostack is easily done via the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform")! Simply navigate to your host and go to the 'Advanced' tab. Follow the instructions under 'Mail Settings' to set up DKIM.
 !!!
 
 ### 3. DMARC (Domain-based Message Authentication, Reporting, and Conformance)

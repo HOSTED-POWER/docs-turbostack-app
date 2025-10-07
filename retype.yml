@@ -40,7 +40,7 @@ branding:
 url: docs.turbostack.app
 
 links:
-  - text: TurboStack App
+  - text: TurboStack Platform
     icon: ":rocket:"
     link: https://my.turbostack.app
     target: blank
@@ -51,6 +51,10 @@ links:
   - text: Submit a Ticket
     icon: ":incoming_envelope:"
     link: mailto:support@hosted-power.com
+    target: blank
+  - text: Hosted Power website
+    icon: ":globe_with_meridians:"
+    link: https://www.hosted-power.com
     target: blank
 
 edit:

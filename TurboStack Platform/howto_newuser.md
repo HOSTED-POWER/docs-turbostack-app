@@ -8,7 +8,7 @@ icon: cloud
 
 The account is a linux user which can be used simply to access the server. However, you probably want to deploy one or multiple **applications** under this user. This guide will explain how to deploy system users and all settings your application requires.
 
-In the [TurboStack App](https://my.turbostack.app "TurboStack App"), you can create accounts in two ways: either by creating a brand-new account or by cloning an existing one.
+In the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"), you can create accounts in two ways: either by creating a brand-new account or by cloning an existing one.
 
 !!!
 For staging and production instances of an application, best practice is always to use an entirely different server, because it's by design unavoidable that resources allocated for staging, will be (silently) "taken away" from production. Even when this staging application is rarely used, it would still consume memory for e.g. databases, causing avoidable overhead.
@@ -18,9 +18,9 @@ For staging and production instances of an application, best practice is always 
 
 ### How to deploy a new account in the GUI
 
-Creating a new user on the [TurboStack App](https://my.turbostack.app "TurboStack App").
+Creating a new user on the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform").
 
-* Open the TurboStack App
+* Open the TurboStack Platform
 * Open the server view
 
 1. Go to the `Accounts` page
@@ -48,17 +48,17 @@ Now an account is created. Applications can be installed.
 
 ## How to create a new application
 
-* Open the TurboStack app
+* Open the TurboStack Platform
 * Click the host view
 * Select to host to update
 
 ### Prerequisite
 
-Creating a new user on the [TurboStack App](https://my.turbostack.app "TurboStack App").
+Creating a new user on the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform").
 An account must exist before an application can be configured.
 How to create a new [account](./howto_newuser.md)
 
-### Creating a new application in the GUI
+### Creating a new application in the TurboStack Platform
 
 Creating a new (default) application under the newly created `prod` user.
 Scenario: creating a Magento2 application, listening on `www.example.com` and using varnish as caching
@@ -123,7 +123,7 @@ This feature is extremely useful to quickly copy your production environment to 
 
 Here’s how to do it:
 
-1. Navigate to the `Accounts` tab in the TurboStack App under your host.
+1. Navigate to the `Accounts` tab in the TurboStack Platform under your host.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user6.png)
 2. Click `Clone Account`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user7.png)
