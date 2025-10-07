@@ -2,7 +2,7 @@
 order: 240
 icon: upload
 ---
-## How to find and install packages
+# How to find and install packages
 We manage things for you, so you don't need root access on the server. However, this means you don't have the necessary permissions to install *apt* packages via the command line. To solve this issue, we provide the possibility to install these packages via our TurboStack Interface.
 
 Because all this config is contained in our turboStack, it's easier to setup similar servers in the future.
@@ -27,7 +27,7 @@ Debian uses the apt package manager. Via the command line, you can find the spec
 
 For this we use the following command:
 ```bash
-apt search packagename
+apt search <packagename>
 ```
 This will then return a list of packages for you to choose from. When you found the package, you'll need to copy the exact name in the TurboStack YAML of your Server, as described above.
 

@@ -1,4 +1,4 @@
----
+ ---
 hidden: true
 ---
 # Magento 2 CLI
