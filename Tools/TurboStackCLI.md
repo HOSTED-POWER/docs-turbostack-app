@@ -79,14 +79,14 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### Botload
 We provide a *botload* tool that grants you more insight in your nginx / apache logs.
 This is how you use it via our TurboStack CLI.
-### Features
+#### Features
  - List your logfiles and their size.
  - Show the amount of requests, and bot percentage.
  - Top 10 most common bots.
  - Top 10 IP addresses.
  - Hourly breakdown of requests.
  - Breakdown of requests (GET, POST, ...etc). 
-### Functions
+#### Functions
 
 [!badge icon="rocket" text="tscli tools botload list "] - Get a list of log files, select which one you want to analyze.
 
@@ -99,7 +99,7 @@ This is how you use it via our TurboStack CLI.
 [!badge icon="rocket" text="tscli tools botload list --time 07:15:00 08:15:00"] - Search between two given timeframes.
 
 ---
-### Example
+#### Example
 
 The following, is an example of the main features. Take in mind that bigger logs, might take a couple of minutes. If the server has a high load, it will add on to the analysis time.
 
