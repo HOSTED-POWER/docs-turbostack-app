@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.813157869218">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.813163309068">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Install packages</title>
-    <meta name="title" content="Install packages">
+    <title>How to find and install packages</title>
+    <meta name="title" content="How to find and install packages">
     <meta name="description" content="We manage things for you, so you don't need root access on the server. However, this means you don't have the necessary permissions to install ">
 
     <!-- Canonical -->
@@ -19,25 +19,25 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/configuration/install_packages/">
-    <meta property="og:title" content="Install packages">
+    <meta property="og:title" content="How to find and install packages">
     <meta property="og:description" content="We manage things for you, so you don't need root access on the server. However, this means you don't have the necessary permissions to install ">
     <meta property="og:image" content="https://docs.turbostack.app/configuration/image/packages/advanced_os_extra_packages.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/configuration/install_packages/">
-    <meta property="twitter:title" content="Install packages">
+    <meta property="twitter:title" content="How to find and install packages">
     <meta property="twitter:description" content="We manage things for you, so you don't need root access on the server. However, this means you don't have the necessary permissions to install ">
     <meta property="twitter:image" content="https://docs.turbostack.app/configuration/image/packages/advanced_os_extra_packages.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.813157869218" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.813163309068" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.813157869218" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.813163309068" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.813157869218" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.813157869218" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.813163309068" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.813163309068" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -222,24 +222,18 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../configuration/install_packages/" class="pr-4">
-                                                Install packages
+                                                How to find and install packages
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="install-packages" class="break-words">
+<doc-anchor-target id="how-to-find-and-install-packages" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#install-packages">#</doc-anchor-trigger>
-        <span>Install packages</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="how-to-find-and-install-packages">
-    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-find-and-install-packages">#</doc-anchor-trigger>
         <span>How to find and install packages</span>
-    </h2>
+    </h1>
 </doc-anchor-target>
 <p>We manage things for you, so you don&#x27;t need root access on the server. However, this means you don&#x27;t have the necessary permissions to install <em>apt</em> packages via the command line. To solve this issue, we provide the possibility to install these packages via our TurboStack Interface.</p>
 <p>Because all this config is contained in our turboStack, it&#x27;s easier to setup similar servers in the future.</p>
@@ -266,7 +260,7 @@
 <p>Debian uses the apt package manager. Via the command line, you can find the specific packages you need. This will also show whether or not the package is already installed.</p>
 <p>For this we use the following command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">apt search packagename</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">apt search &lt;packagename&gt;</code></pre>
 </doc-codeblock></div>
 <p>This will then return a list of packages for you to choose from. When you found the package, you&#x27;ll need to copy the exact name in the TurboStack YAML of your Server, as described above.</p>
 <doc-anchor-target id="php-example">
@@ -375,6 +369,6 @@ os_extra_packages:
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Install packages", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "How to find and install packages", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
