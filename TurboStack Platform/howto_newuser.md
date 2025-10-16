@@ -91,17 +91,15 @@ Afterwards, once the publication is successful, you can fetch the credentials fr
 To do this, click on the gear icon next to the user and navigate to the **Database Info** tab.
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_gearwheel.png)
-
 To get database credentials
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_fetch_db_creds.png)
-
 To get user credentials
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_fetch_user_creds.png)
 
-It is possible to add an additional database user with read-only or admin access to a database. You can also retrieve the credentials for this user.
+It is possible to add an additional database user with read-only or admin access to a databases. You can also retrieve the credentials for this user.
+![TurboStackNewApp](../img/turbostackapp/newapp/tsa_extra_db_user1.png)
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_extra_db_user2.png)
-
-**admin**: Full access to all server databases.
+**admin**: Full access to ALL server databases.
 **read-only**: Read-only access to the specific application database.
 
 (*) Lets Encrypt certificates can only be validated of the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let's Encrypt whenever you're ready.
