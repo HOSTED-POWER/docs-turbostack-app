@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.813163309068">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.813935665996">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.813163309068" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.813935665996" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.813163309068" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.813935665996" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.813163309068" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.813163309068" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.813935665996" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.813935665996" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -414,7 +414,35 @@ Scenario: creating a Magento2 application, listening on <code v-pre>www.example.
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
 </p>
-<p>(*) Let&#x27;s Encrypt certificates can only be validated of the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let&#x27;s Encrypt whenever you&#x27;re ready.</p>
+<p>Afterwards, once the publication is successful, you can fetch the credentials from the application you just created.
+To do this, click on the gear icon next to the user and navigate to the <strong>Database Info</strong> tab.</p>
+<p><figure class="content-center">
+    <img src="../../img/turbostackapp/newapp/tsa_gearwheel.png" alt="TurboStackNewApp">
+    <figcaption class="caption">TurboStackNewApp</figcaption>
+</figure>
+To get database credentials
+<figure class="content-center">
+    <img src="../../img/turbostackapp/newapp/tsa_fetch_db_creds.png" alt="TurboStackNewApp">
+    <figcaption class="caption">TurboStackNewApp</figcaption>
+</figure>
+To get user credentials
+<figure class="content-center">
+    <img src="../../img/turbostackapp/newapp/tsa_fetch_user_creds.png" alt="TurboStackNewApp">
+    <figcaption class="caption">TurboStackNewApp</figcaption>
+</figure>
+</p>
+<p>It is possible to add an additional database user with read-only or admin access to a databases. You can also retrieve the credentials for this user.
+<figure class="content-center">
+    <img src="../../img/turbostackapp/newapp/tsa_extra_db_user1.png" alt="TurboStackNewApp">
+    <figcaption class="caption">TurboStackNewApp</figcaption>
+</figure>
+<figure class="content-center">
+    <img src="../../img/turbostackapp/newapp/tsa_extra_db_user2.png" alt="TurboStackNewApp">
+    <figcaption class="caption">TurboStackNewApp</figcaption>
+</figure>
+<strong>admin</strong>: Full access to ALL server databases.
+<strong>read-only</strong>: Read-only access to the specific application database.</p>
+<p>(*) Let&#x27;s Encrypt certificates can only be validated if the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let&#x27;s Encrypt whenever you&#x27;re ready.</p>
 <p>(**) The app type should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can&#x27;t find your CMS of framework in this list? Contact us!</p>
 <doc-anchor-target id="creating-a-new-application-in-source-code-mode-yaml">
     <h3>
