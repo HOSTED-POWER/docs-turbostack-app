@@ -62,11 +62,11 @@ Would make the config you add to the 20_custom.vcl file be loaded in after the c
 
 ## Varnish inner workings
 
-Varnish functions as a sort of reverse proxy caching service. The requests sent to your application are first passed through Varnish, and modified as defined in the VCL config, or served entirely from it's own cache memory.
+Varnish functions as a sort of reverse proxy caching service. The requests sent to your application are first passed through Varnish, and modified as defined in the VCL config, or served entirely from its own cache memory.
 
 Varnish does this by storing images, full pages, etc. in RAM for fast access, removing the need for your application to process the request fully itself, saving your server resources and increasing performance.
 
-When a request comes in that doesn't yet have a response in it's cache, or when otherwise defined in the VCL, it is passed to the webserver again, this time to be handled by the actual application. Then, if possible, the response is stored by Varnish along with some metadata, most importantly the 'TTL' or 'Time To Live' which indicates how long Varnish should keep the information in RAM.
+When a request comes in that doesn't yet have a response in its cache, or when otherwise defined in the VCL, it is passed to the webserver again, this time to be handled by the actual application. Then, if possible, the response is stored by Varnish along with some metadata, most importantly the 'TTL' or 'Time To Live' which indicates how long Varnish should keep the information in RAM.
 
 Due to this, it is important to check for optimizations specific to your application as well, to make sure unnecessary data isn't being kept in memory and never retrieved, or data isn't being kept with a TTL that is too long. These could cause increased memory usage and lead to degraded performance of your server (and notifications from us about your memory/swap usage)
 
