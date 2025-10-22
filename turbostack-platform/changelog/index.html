@@ -9,33 +9,32 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>PostgreSQL</title>
-    <meta name="title" content="PostgreSQL">
-    <meta name="description" content="We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.">
+    <title>Changelog</title>
+    <meta name="title" content="Changelog">
+    <meta name="description" content="Welcome to the TurboStack Platform changelog. This page provides a transparent record of all updates, improvements, and fixes made to the platform.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.turbostack.app/technologies/databases/postgresql/postgresql_basic_operations/">
+    <link rel="canonical" href="https://docs.turbostack.app/turbostack-platform/changelog/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.turbostack.app/technologies/databases/postgresql/postgresql_basic_operations/">
-    <meta property="og:title" content="PostgreSQL">
-    <meta property="og:description" content="We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.">
+    <meta property="og:url" content="https://docs.turbostack.app/turbostack-platform/changelog/">
+    <meta property="og:title" content="Changelog">
+    <meta property="og:description" content="Welcome to the TurboStack Platform changelog. This page provides a transparent record of all updates, improvements, and fixes made to the platform.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/databases/postgresql/postgresql_basic_operations/">
-    <meta property="twitter:title" content="PostgreSQL">
-    <meta property="twitter:description" content="We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.">
+    <meta property="twitter:url" content="https://docs.turbostack.app/turbostack-platform/changelog/">
+    <meta property="twitter:title" content="Changelog">
+    <meta property="twitter:description" content="Welcome to the TurboStack Platform changelog. This page provides a transparent record of all updates, improvements, and fixes made to the platform.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.814441893246" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.814441893246" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.814441893246" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.814441893246" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.814441893246" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.814441893246" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.814441893246" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,10 +49,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../../img/logo-blue.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../../../img/logo-white.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../img/logo-blue.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../img/logo-white.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">TurboStack Docs</span>
                         </a>
@@ -201,7 +200,7 @@
                                 <nav class="breadcrumb" aria-label="Breadcrumb">
                                     <ol role="list">
                                         <li class="pr-4">
-                                            <a href="../../../../" class="pr-4">
+                                            <a href="../../" class="pr-4">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                                 </svg>
@@ -212,136 +211,68 @@
                                         </li>
                                         <li class="pr-4">
                                             <span class="pr-4">
-                                                Technologies
+                                                Turbo​Stack Platform
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <span class="pr-4">
-                                                Databases
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <a href="../../../../technologies/databases/postgresql/" class="pr-4">
-                                                Postgre​SQL
+                                            <a href="../../turbostack-platform/changelog/" class="pr-4">
+                                                Changelog
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="postgresql" class="break-words">
+<doc-anchor-target id="changelog" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#postgresql">#</doc-anchor-trigger>
-        <span>PostgreSQL</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#changelog">#</doc-anchor-trigger>
+        <span>Changelog</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="postgresql-import--export">
+<p>Welcome to the TurboStack Platform changelog. This page provides a transparent record of all updates, improvements, and fixes made to the platform. You will find details on new features, performance enhancements, security updates, and resolved issues.</p>
+<p>Helping you stay informed about what&#x27;s new and what&#x27;s changed in each release.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Do you have a suggestion for an update or missing documentation? Please open an <a href="https://github.com/HOSTED-POWER/docs-turbostack-app/issues" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>issue</span></a>
+or if you want to contribute, you can start <a href="https://github.com/HOSTED-POWER/docs-turbostack-app/fork" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>here</span></a>.</p>
+        </div>
+    </div>
+</div>
+<hr>
+<doc-anchor-target id="v0611">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#postgresql-import--export">#</doc-anchor-trigger>
-        <span>PostgreSQL Import &amp; Export</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#v0611">#</doc-anchor-trigger>
+        <span>v0.6.11</span>
     </h2>
 </doc-anchor-target>
-<p>We always recommend to dump and import through the command line, if possible. This documentation will explain how to do this securely.</p>
-<hr>
-<doc-anchor-target id="postgresql-export">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#postgresql-export">#</doc-anchor-trigger>
-        <span>PostgreSQL Export</span>
-    </h3>
-</doc-anchor-target>
-<p>For most databases (only a couple of gigabytes big), you can dump the database with this command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pg_dump -U DBUsername DatabaseName &gt; DBNAME.sql</code></pre>
-</doc-codeblock></div>
-<p>For larger databases (tens of gigabytes or bigger), compress the database to conserve disk space and speed up transfer:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pg_dump -U DBUsername DatabaseName | gzip -3 -v &gt; test.gz</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="transferring-the-database">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#transferring-the-database">#</doc-anchor-trigger>
-        <span>Transferring the Database</span>
-    </h3>
-</doc-anchor-target>
-<p>Use <code v-pre>scp</code> to transfer the file:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">scp FileName user@HostnameOrIP:Path/To/Folder</code></pre>
-</doc-codeblock></div>
-<blockquote>
-<p><strong>Hint:</strong> To place the file in the user&#x27;s home directory, remove everything after the colon.</p>
-</blockquote>
-<doc-anchor-target id="importing-the-database">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#importing-the-database">#</doc-anchor-trigger>
-        <span>Importing the Database</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">psql -U DBUsername DatabaseName &lt; dbname</code></pre>
-</doc-codeblock></div>
-<p>Or, if compressed:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">gunzip -c dbname.gz | psql -U DBUsername DatabaseName</code></pre>
-</doc-codeblock></div>
-<blockquote>
-<p><strong>Hint:</strong> Large databases can take time to import, especially on high-load servers.</p>
-</blockquote>
-<hr>
-<doc-anchor-target id="extra-tips">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extra-tips">#</doc-anchor-trigger>
-        <span>Extra Tips</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="nohup">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nohup">#</doc-anchor-trigger>
-        <span>Nohup</span>
-    </h3>
-</doc-anchor-target>
-<p>Use <code v-pre>nohup</code> to ensure the dump or import continues if the connection is lost.</p>
-<doc-anchor-target id="screen">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#screen">#</doc-anchor-trigger>
-        <span>Screen</span>
-    </h3>
-</doc-anchor-target>
-<p>Use <code v-pre>screen</code> to allow session sharing or recovery:</p>
+<p><strong>Released:</strong> <code v-pre>10-10-2025</code></p>
+<p>DB Credentials
+: Extra database users can now be created
+2 roles can be defined:</p>
 <ul>
-<li><p>Create a session:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">screen -S &lt;session_name&gt;</code></pre>
-</doc-codeblock></div>
-</li>
-<li><p>Disconnect (keep running):</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Ctrl + A, then D</code></pre>
-</doc-codeblock></div>
-</li>
-<li><p>Reattach or take over session:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">screen -dr &lt;session_name&gt;</code></pre>
-</doc-codeblock></div>
-</li>
-<li><p>List sessions:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">screen -ls</code></pre>
-</doc-codeblock></div>
-</li>
+<li>read only</li>
+<li>admin</li>
 </ul>
-<doc-anchor-target id="ssh-key">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ssh-key">#</doc-anchor-trigger>
-        <span>SSH Key</span>
-    </h3>
-</doc-anchor-target>
-<p>Avoid password prompts by setting up SSH key authentication.</p>
+<p>Backup restore
+: Daily backups can now be restored on both linux and windows servers.
+it can be either to a specified location or directly in place.</p>
+<p>Bugs
+: Minor bugfixes</p>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -349,12 +280,33 @@
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/Databases/PostgreSQL/postgresql_basic_operations.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/TurboStack Platform/changelog.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../turbostack-platform/templates/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Templates</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../customer-center/contacts/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Contacts & Teams</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -393,6 +345,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "PostgreSQL", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Changelog", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
