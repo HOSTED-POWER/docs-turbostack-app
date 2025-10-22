@@ -1,4 +1,5 @@
 ---
+order: 1
 icon: log
 ---
 # Changelog
@@ -8,8 +9,8 @@ Welcome to the TurboStack Platform changelog. This page provides a transparent r
 Helping you stay informed about what's new and what's changed in each release.
 
 !!!
-Do have a suggestion for an update or missing documentation? Please open an [issue](https://github.com/HOSTED-POWER/docs-turbostack-app/issues) 
-or if want to contribute, you can start [here](https://github.com/HOSTED-POWER/docs-turbostack-app/fork).
+Do you have a suggestion for an update or missing documentation? Please open an [issue](https://github.com/HOSTED-POWER/docs-turbostack-app/issues) 
+or if you want to contribute, you can start [here](https://github.com/HOSTED-POWER/docs-turbostack-app/fork).
 !!!
 
 ---
