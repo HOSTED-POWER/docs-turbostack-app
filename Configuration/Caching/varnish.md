@@ -58,7 +58,11 @@ drwxr-xr-x 3 root root  4096 Sep 11 15:41 ..
 prod@sander:/etc/varnish/conf.d$
 ```
 
-Would make the config you add to the 20_custom.vcl file be loaded in after the config from the 10_bypass.vcl file, but before the directives in the 50main.vcl file.
+would make the config you add to the 20_custom.vcl file be loaded in after the config from the 10_bypass.vcl file, but before the directives in the 50main.vcl file.
+
+Importantly, to reload Varnish after you make any changes, you can use [!ref  TSCLI](/Tools/turbostackcli.md):
+
+`tscli varnish reload`
 
 ## Varnish inner workings
 
