@@ -19,19 +19,14 @@ or if you want to contribute, you can start [here](https://github.com/HOSTED-POW
 **Released:** `10-10-2025`
 
 
-DB Credentials
-: Extra database users can now be created
-  2 roles can be defined:
++++ Features :icon-shield-check:
 
-  - read only
-  - admin
+1. [!badge variant="info" text="DB Credentials"](https://docs.turbostack.app/turbostack-platform/howto_newuser/#fetch-database-and-user-credentials) Extra database users can now be created, 2 roles can be defined `read only` and `admin`
+2. [!badge variant="info" text="Backup restore"] Daily backups can now be restored on both linux and windows servers. it can be either to a specified location or directly in place.
 
-Backup restore
-: Daily backups can now be restored on both linux and windows servers.
-  it can be either to a specified location or directly in place.
++++ Bugfixes :icon-bug:
 
-Bugs
-: Minor bugfixes
+1. Minor bugfixes
 
 
 ---
