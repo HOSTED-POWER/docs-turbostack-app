@@ -113,6 +113,36 @@ a system_user (e.g. `prod`) is needed before an application can be deployed
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app11.png)
 
+## Migrating your application using Migration Hero
+
+To make a clone of an existing application, we provide the `Clone Account` feature. This function replicates the entire configuration and copies the files and database, enabling a quick and efficient setup with minimal effort.
+
+!!!Info
+Before starting you need have created an application an already got a succesfull Save and Publish.
+!!!
+!!!Info
+If you want to migrate a application from Turbostack to Turbostack please use the Clone feature that is documented below.
+!!!
+
+Here’s how to do it:
+
+1. Navigate to the `Accounts` tab in the TurboStack Platform under your host.
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user6.png)
+2. Click `Migration Hero`.
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero1.png)
+3. In the next step, enter the remote host and the user you want to migrate an choose the authentication method you want to use to connect to the remote host.
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero2.png)
+4. Option 1: Enter password of the user from the remote host and click next.
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero3.png)
+5. Option 2: Generate and add this public ssh key to the .ssh/authorized_keys of the remote host and click next.
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero4.png)
+6. Choose the destination account which can only be an existing and choose whether to migrate the database and/or files. Click `Next`. 
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero5.png)
+7. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Start Import` to finalize.
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero6.png)
+8. You will see a migrating popup leftside of the corner, when this is finished the migration should be completed
+![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero7.png)
+
 ## Cloning an account
 
 To make a clone of an existing application, we provide the `Clone Account` feature. This function replicates the entire configuration and copies the files and database, enabling a quick and efficient setup with minimal effort.
