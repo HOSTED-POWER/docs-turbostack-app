@@ -136,7 +136,7 @@ You can now configure your application:
 ## Troubleshoot SSL problems
 ![screenshot of Firefox error message "Did Not Connect: Potential Security Issue"](image/ssl/ssl_error.png)
 
-The screenshot above, and others like it depending on your browser, indicates an issue with the SSL certificate on the website your trying to visit. In the steps below, I'll explain how you can get the necessary information out of your browser to pinpoint the problem and to figure out how to fix it.
+The screenshot above, and others like it depending on your browser, indicates an issue with the SSL certificate on the website you're trying to visit. In the steps below, I'll explain how you can get the necessary information out of your browser to pinpoint the problem and to figure out how to fix it.
 
 ### Gather intel
 First, you should check the URL in your address bar and make sure the website you're trying to reach is supposed to have an SSL certificate. When connecting to staging environments, or the server's hostname for example, there may not be a valid certificate configured. You can check which URLs are covered by a valid SSL certificate in the 'Users' tab of your server in Turbostack App, all domains connected to an application configured with 'letsencrypt' or a 'custom' certificate should have a valid certificate installed. Once we're sure there is a problem, we can check the actual certificate being presented to our browser:
@@ -161,7 +161,7 @@ Here we see the 'Issuer' of the certificate is Let's Encrypt, a valid certificat
 
 ![Screenshot of Firefox connection security fold-out displaying a connection validated by Lets Encrypt](image/ssl/ssl_firefox_secure_advanced.png)
 
-### Header 2
+### Investigate the cause
 Now that we know where to find the certificate details, we'll go over all the likely causes of a safe connection not being able to be made.
 
 #### Expired certificate
