@@ -113,7 +113,7 @@ a system_user (e.g. `prod`) is needed before an application can be deployed
 
 ![TurboStackNewApp](../img/turbostackapp/newapp/tsa_app11.png)
 
-## Migrating your application using Migration Hero
+## Migrating your external application using Migration Hero
 
 To simplify the migration of your external application to TurboStack, the **Migration Hero** feature is available. It automatically transfers the full configuration, files and database. Enabling a fast and efficient setup with minimal effort.
 
