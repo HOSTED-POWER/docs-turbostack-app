@@ -67,6 +67,10 @@ This option allows you to set up a server-wide MongoDB instance with your prefer
 
 Similarly to MySQL, MongoDB is only reachable from localhost (127.0.0.1) for security reasons. If for any reason you need external access, you can set the BIND address to 0.0.0.0, or a default local IP of your choice. 
 
+!!! info
+Setting the BIND address to anything other than localhost does NOT allow access from any WAN IP! Only whitelisted IP addresses have remote database access. For IP whitelisting options, see the Security tab.
+!!!
+
 ## Redis
 
 This option allows you to set up a server-wide Redis service. 
