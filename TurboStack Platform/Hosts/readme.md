@@ -3,11 +3,11 @@ order: 1000
 icon: info
 ---
 
-# Overview
+# Hosts overview
 
 A few main functions are available for each server:
 
-![General Functions](..%2F..%2Fimg%2Fturbostackapp%2Fbasicinstall%2Ftsa_server_header1.png)
+![General functions](img/tsa_server_tab1.png)
 
 1. Switch between the GUI layout and the (advanced) YAML layout
 2. Revisions: shows all historic configuration changes made to the server
