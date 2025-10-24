@@ -2,7 +2,7 @@
 order: 800
 icon: cloud
 ---
-# Accounts & Application Management
+# Accounts tab - setting up your environment
 
 ## What is an account and what is it used for?
 
