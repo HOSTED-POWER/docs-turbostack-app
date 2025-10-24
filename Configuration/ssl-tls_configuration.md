@@ -15,7 +15,7 @@ A Certificate authority is a trusted entity responsible for issuing digital cert
 
 LetsEncrypt is a certificate authority that provides X.509 certificates for Transport Layer Security (TLS) encryption at no charge. The certificate is valid for 90 days, during which renewal can take place at any time. The offer is accompanied by an automated process designed to overcome manual creation, validation, signing, installation, and renewal of certificates for secure websites.
 
-Installing Let’s Encrypt on your TurboStack server is quick and simple. The only requirement is that your hostname(s) correctly point to the server in DNS. For detailed setup instructions, click [here](/TurboStack%20Platform/howto_newuser.md#creating-a-new-application-in-the-turbostack-platform).
+Installing Let’s Encrypt on your TurboStack server is quick and simple. The only requirement is that your hostname(s) correctly point to the server in DNS. For detailed setup instructions, click [here](/TurboStack%20Platform/accounts#creating-a-new-application-in-the-turbostack-platform).
 
 The key principles behind Let's Encrypt, taken from their <a href="http://www.letsencrypt.org" target="_blank">website</a>
 * Free - Anyone who owns a domain name can use Let’s Encrypt to obtain a trusted certificate at zero cost.
@@ -29,7 +29,7 @@ The key principles behind Let's Encrypt, taken from their <a href="http://www.le
 
 Need an SSL certificate other than Let’s Encrypt? No problem! We offer Sectigo certificates—simply contact support for more details.
 
-If you’ve purchased a certificate from another provider, you can still install it easily on your TurboStack server through the Account Management section of the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"). More info on how to do so can be found [here](/TurboStack%20Platform/howto_newuser.md#creating-a-new-application-in-the-turbostack-platform)
+If you’ve purchased a certificate from another provider, you can still install it easily on your TurboStack server through the Account Management section of the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"). More info on how to do so can be found [here](/TurboStack%20Platform/accounts#creating-a-new-application-in-the-turbostack-platform)
 
 ### Order a standalone SSL certificate
 
@@ -178,7 +178,7 @@ Windows: `nslookup domain.com`
 - If all of these are fine, you can publish your server configuration using the `Save & publish` button. If anything goes wrong with the publish, the error should describe the problem. If this doesn't clear it up, please open a support ticket so we can provide you further assistance. If the configuration is succesfully published, but you still have issues with your SSL certificate, please contact support so we can help you troubleshoot further
 
 #### Unknown authority
-If the certificate issuer isn't one of the recognized root CAs, your browser is likely to not recognize the certificate itself. On our servers, this should only happen if your app's SSL is set to `selfsigned`. In this case, the issuer in the SSL detail view will be the hostname of the server itself, e.g. `web1.hosted-power.com`. You can verify this by checking your app's SSL setting in [TurboStack App](https://my.turbostack.app "TurboStack App") and enable it as described [here](/TurboStack%20Platform/howto_newuser.md#creating-a-new-application-in-the-turbostack-platform)
+If the certificate issuer isn't one of the recognized root CAs, your browser is likely to not recognize the certificate itself. On our servers, this should only happen if your app's SSL is set to `selfsigned`. In this case, the issuer in the SSL detail view will be the hostname of the server itself, e.g. `web1.hosted-power.com`. You can verify this by checking your app's SSL setting in [TurboStack App](https://my.turbostack.app "TurboStack App") and enable it as described [here](/TurboStack%20Platform/accounts#creating-a-new-application-in-the-turbostack-platform)
 
 #### Certificate hostname not known
 This error indicates the URL you're connecting to is not part of the, otherwise valid, SSL certificate that is configured on the website. This usually only happens with custom SSL certificates, where not all hostnames linked to the app in [TurboStack App](https://my.turbostack.app "TurboStack App") are covered by the installed certificate. In this case, you need to either remove these hostnames from your application's configuration, or have your certificate provider reissue the certificate with the added hostname(s)

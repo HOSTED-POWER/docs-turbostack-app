@@ -1,5 +1,5 @@
 ---
-order: 200
+order: 1000
 icon: info
 ---
 
@@ -13,29 +13,9 @@ If you don't have a login to the Customer Center yet, you first have to create a
 
 ![TurboStackAppLogin](../img/turbostackapp/basicinstall/tsa_login1.png)
 
-Once logged in, all servers managed by this account will become visible in the **"Hosts"** tab.
+Once logged in, all servers managed by this account will become visible in the **Hosts** tab.
 
 ![TurboStackAppServers](../img/turbostackapp/basicinstall/tsa_home_servers1.png)
-
-## Main TurboStack Platform functions
-
-For each server there are main functions available.
-
-![TurboStackAppHeader](../img/turbostackapp/basicinstall/tsa_server_header1.png)
-
-1. Switch between the GUI layout and the (advanced) YAML layout
-2. Revisions: shows all historic configuration changes made to the server
-3. Fetch the credentials and IPs of the server's users and databases
-4. Save any changes made to the configuration
-5. Save and Publish: saves and deploys the changes made to the server(*)
-
-(*) There is also an option to save & full publish. This will ensure everything is deployed, as opposed to only the changes.
-
-## Server tab
-
-The **server** tab defines some basic middleware configuration, like the type of webserver and several types of supported databases.
-
-![TurboStackAppServerTab](../img/turbostackapp/basicinstall/tsa_server_tab1.png)
 
 ## Accounts tab
 

@@ -11,7 +11,7 @@ Freemail providers such as Gmail and Hotmail provide specific error codes that i
 
 If you've received an email from our support team with a link to this article, it means we detected an alert associated with one of the error codes listed below. This guide will help you identify the issue and find steps to resolve it.
 
-Many of these errors stem from email deliverability issues. To improve your email deliverability, visit [this page](https://docs.turbostack.app/turbostack_configuration/mail/deliverability/ "this page").
+Many of these errors stem from email deliverability issues. For more information on improving your email deliverability, visit [this page](deliverability.md "this page").
 
 If you have any questions or difficulties, don't hesitate to contact us!
 
