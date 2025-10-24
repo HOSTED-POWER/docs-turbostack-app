@@ -8,7 +8,7 @@ Hosted Power proactively monitors your infrastructure to ensure server and servi
 
 The general health of the server can be seen in the TurboStack Platform overview:
 
-![TurboStack Platform](../img/feature/mon/TS_GUI_mon_1.png "TurboStack Platform")
+![TurboStack Platform](../../img/feature/mon/TS_GUI_mon_1.png "TurboStack Platform")
 
 1. IPv4 and IPv6 check and general server uptime
 2. Memory and SWAP usage
@@ -16,7 +16,6 @@ The general health of the server can be seen in the TurboStack Platform overview
 4. Disk usage
 
 If any of these checks alert, the icons will become red. When this is the case, please contact the Hosted Power support asap.
-
 
 ## Website monitoring URL
 

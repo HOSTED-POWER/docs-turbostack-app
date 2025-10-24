@@ -15,11 +15,11 @@ YAML is a human-readable data serialization language. Think of it as a way to re
 ## How can I edit my server's YAML?
 You can easily switch from the GUI to the YAML view by pressing the following button:
 
-![Yaml Source Code](../img/turbostackapp/YAML/source-code.png)
+![Yaml Source Code](../../img/turbostackapp/YAML/source-code.png)
 
 You could also choose to display YAML by default via the profile settings:
 
-![Profile Settings](../img/turbostackapp/YAML/profile-settings.png)
+![Profile Settings](../../img/turbostackapp/YAML/profile-settings.png)
 
 ## What can be done with the YAML editor?
 
