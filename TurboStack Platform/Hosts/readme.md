@@ -1,8 +1,3 @@
----
-order: 1000
-icon: info
----
-
 # Hosts overview
 
 A few main functions are available for each server:

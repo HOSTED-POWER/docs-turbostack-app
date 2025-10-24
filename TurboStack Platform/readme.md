@@ -1,8 +1,3 @@
----
-order: 1000
-icon: info
----
-
 # Overview
 
 ## Login and locate your managed servers
