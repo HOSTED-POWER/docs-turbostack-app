@@ -1,6 +1,6 @@
 ---
 order: 1000
-icon: info
+icon: server
 ---
 
 # Hosts overview

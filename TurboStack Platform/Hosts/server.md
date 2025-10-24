@@ -11,7 +11,7 @@ The **server** tab defines some basic middleware configuration, like the type of
 
 We offer both Nginx and Apache2 as web server options. For optimal performance and efficiency, Nginx is our default choice, though Apache2 remains fully compatible and performs reliably on our TurboStack.
 
-![Webserver settings](servertabwebserver.png)
+![Webserver settings](img/servertabwebserver.png)
 
 ## MySQL
 
