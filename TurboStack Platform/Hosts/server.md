@@ -3,7 +3,7 @@ order: 900
 icon: server
 ---
 
-# Server tab
+# Server tab - setting up server-wide services
 
 The **server** tab defines some basic middleware configuration, like the type of webserver and several types of supported databases. This page describes all configuration options within the server tab.
 
