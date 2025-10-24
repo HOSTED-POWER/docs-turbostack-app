@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814625487799">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814626646881">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Hosts overview</title>
-    <meta name="title" content="Hosts overview">
-    <meta name="description" content="A few main functions are available for each server:">
+    <title>Hosts</title>
+    <meta name="title" content="Hosts">
+    <meta name="description" content="The Hosts section lets you configure and manage your TurboStack server.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/turbostack-platform/hosts/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/turbostack-platform/hosts/">
-    <meta property="og:title" content="Hosts overview">
-    <meta property="og:description" content="A few main functions are available for each server:">
+    <meta property="og:title" content="Hosts">
+    <meta property="og:description" content="The Hosts section lets you configure and manage your TurboStack server.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/turbostack-platform/hosts/">
-    <meta property="twitter:title" content="Hosts overview">
-    <meta property="twitter:description" content="A few main functions are available for each server:">
+    <meta property="twitter:title" content="Hosts">
+    <meta property="twitter:description" content="The Hosts section lets you configure and manage your TurboStack server.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.814625487799" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.814626646881" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.814625487799" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.814626646881" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.814625487799" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.814626646881" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -219,33 +219,78 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../turbostack-platform/hosts/" class="pr-4">
-                                                Hosts overview
+                                                Hosts
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="hosts-overview" class="break-words">
+<doc-anchor-target id="hosts" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#hosts-overview">#</doc-anchor-trigger>
-        <span>Hosts overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hosts">#</doc-anchor-trigger>
+        <span>Hosts</span>
     </h1>
 </doc-anchor-target>
-<p>A few main functions are available for each server:</p>
+<p>The <strong>Hosts</strong> section lets you configure and manage your TurboStack server. This section will serve as your reference guide to help you set up your application within minutes!</p>
+<p>Before we get down to the details, let&#x27;s look into some general functionality:</p>
 <p><figure class="content-center">
     <img src="img/tsa_server_tab1.png" alt="General functions">
     <figcaption class="caption">General functions</figcaption>
 </figure>
 </p>
-<ol>
-<li>Switch between the GUI layout and the (advanced) YAML layout</li>
-<li>Revisions: shows all historic configuration changes made to the server</li>
-<li>Fetch the credentials and IPs of the server&#x27;s users and databases</li>
-<li>Save any changes made to the configuration</li>
-<li>Save and Publish: saves and deploys the changes made to the server(*)</li>
-</ol>
-<p>(*) There is also an option to save &amp; full publish. This will ensure everything is deployed, as opposed to only the changes.</p>
+<doc-anchor-target id="1-switch-between-the-gui-layout-and-the-advanced-yaml-layout">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-switch-between-the-gui-layout-and-the-advanced-yaml-layout">#</doc-anchor-trigger>
+        <span>1. Switch between the GUI layout and the (advanced) YAML layout</span>
+    </h2>
+</doc-anchor-target>
+<p>You can deploy your server using the GUI, or if you&#x27;re more of an infrastructure-as-code nerd, you can dive straight into the YAML. Any changes you make in either GUI or YAML will be reflected in the other, so feel free to try both!</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>If you want to set YAML as default, you can do so by clicking the icon on the top right and clicking &#x27;Profile settings&#x27;. Here, you can switch between GUI and source.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="2-revisions-shows-all-historic-configuration-changes-made-to-the-server">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-revisions-shows-all-historic-configuration-changes-made-to-the-server">#</doc-anchor-trigger>
+        <span>2. Revisions: shows all historic configuration changes made to the server</span>
+    </h2>
+</doc-anchor-target>
+<p>We all make mistakes, but we have you covered: The revision function allows you to review the full history of server configuration changes and revert to a past version at the click of a button.</p>
+<doc-anchor-target id="3-fetch-the-credentials-and-ips-of-the-servers-users-and-databases">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-fetch-the-credentials-and-ips-of-the-servers-users-and-databases">#</doc-anchor-trigger>
+        <span>3. Fetch the credentials and IPs of the server&#x27;s users and databases</span>
+    </h2>
+</doc-anchor-target>
+<p>The credentials button gives you a full overview of all your server credentials, including system users, database users, FTP users, etc.</p>
+<doc-anchor-target id="4-save-any-changes-made-to-the-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-save-any-changes-made-to-the-configuration">#</doc-anchor-trigger>
+        <span>4. Save any changes made to the configuration</span>
+    </h2>
+</doc-anchor-target>
+<p>Save your changes when settings have been modified, without deploying the changes to the server.</p>
+<doc-anchor-target id="5-save-and-publish-saves-and-deploys-the-changes-made-to-the-server">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-save-and-publish-saves-and-deploys-the-changes-made-to-the-server">#</doc-anchor-trigger>
+        <span>5. Save and Publish: saves and deploys the changes made to the server</span>
+    </h2>
+</doc-anchor-target>
+<p>Save the changes you&#x27;ve made to the configuration, and immediately deploy them to the server. There is also an option to save &amp; full publish, which will ensure everything is deployed, as opposed to only the changes.</p>
 <p>The following pages describe configuration options for all tabs in the host management console.</p>
 
                                 
@@ -275,7 +320,7 @@
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../turbostack-platform/hosts/server/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Server tab</span>
+                                                <span class="block mt-1">Server tab - setting up server-​wide services</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -319,6 +364,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Hosts overview", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Hosts", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
