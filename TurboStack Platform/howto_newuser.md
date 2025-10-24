@@ -115,13 +115,14 @@ a system_user (e.g. `prod`) is needed before an application can be deployed
 
 ## Migrating your application using Migration Hero
 
-To make a clone of an existing application, we provide the `Clone Account` feature. This function replicates the entire configuration and copies the files and database, enabling a quick and efficient setup with minimal effort.
+To simplify the migration of your external application to TurboStack, the **Migration Hero** feature is available. It automatically transfers the full configuration, files and database. Enabling a fast and efficient setup with minimal effort.
 
-!!!Info
-Before starting you need have created an application an already got a succesfull Save and Publish.
+!!! info
+Before starting, make sure you have already created an application and successfully performed a **Save and Publish**.
 !!!
-!!!Info
-If you want to migrate a application from Turbostack to Turbostack please use the Clone feature that is documented below.
+
+!!! info
+If you want to migrate an application from TurboStack to TurboStack, please use the **Clone** feature documented below.
 !!!
 
 Here’s how to do it:
@@ -130,17 +131,18 @@ Here’s how to do it:
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_user6.png)
 2. Click `Migration Hero`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero1.png)
-3. In the next step, enter the remote host and the user you want to migrate an choose the authentication method you want to use to connect to the remote host.
+3. In the next step, enter the remote host and the user you want to migrate. 
+Then, choose the authentication method you want to use to connect to the remote host.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero2.png)
-4. Option 1: Enter password of the user from the remote host and click next.
+4. **Option 1:** Enter the password for the user on the remote host, then click `Next`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero3.png)
-5. Option 2: Generate and add this public ssh key to the .ssh/authorized_keys of the remote host and click next.
+5. **Option 2:** Generate and add the provided public SSH key to the `.ssh/authorized_keys` file on the remote host, then click `Next`.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero4.png)
-6. Choose the destination account which can only be an existing and choose whether to migrate the database and/or files. Click `Next`. 
+6. Choose the destination account (it must be an existing one) and select whether to migrate the database, files, or both. Then click `Next`. 
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero5.png)
-7. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Start Import` to finalize.
+7. Select the hostname(s) you want to associate with the account and choose the type of certificate to activate. Click `Start Import` to begin the migration.
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero6.png)
-8. You will see a migrating popup leftside of the corner, when this is finished the migration should be completed
+8. A migration progress popup will appear in the bottom-right corner. Once it finishes, your migration is complete. 
 ![TurboStackNewUser](../img/turbostackapp/newapp/tsa_migration_hero7.png)
 
 ## Cloning an account
