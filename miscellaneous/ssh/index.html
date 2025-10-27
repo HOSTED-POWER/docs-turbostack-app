@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814894053572">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814894599791">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.814894053572" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.814894599791" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.814894053572" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.814894599791" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.814894053572" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.814894053572" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.814894599791" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.814894599791" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -345,12 +345,6 @@
         <span>cPanel</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="normal-user">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#normal-user">#</doc-anchor-trigger>
-        <span>Normal User</span>
-    </h4>
-</doc-anchor-target>
 <ol>
 <li><p><strong>Log into cPanel</strong></p>
 <ul>
@@ -378,42 +372,6 @@
 <li>After importing, return to <strong>Manage SSH Keys</strong>.</li>
 <li>Find your newly added key under the <strong>Public Keys</strong> section.</li>
 <li>Click <strong>Manage</strong> → <strong>Authorize</strong> to enable the key for SSH access.</li>
-</ul>
-</li>
-</ol>
-<doc-anchor-target id="root-user">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#root-user">#</doc-anchor-trigger>
-        <span>Root user</span>
-    </h4>
-</doc-anchor-target>
-<ol>
-<li><p><strong>Log in to WHM</strong></p>
-<ul>
-<li>Access WHM via <code v-pre>https://your-server-ip:2087</code> or <code v-pre>https://your-hostname.com:2087</code>.</li>
-<li>Enter your <strong>root credentials</strong> to log in.</li>
-</ul>
-</li>
-<li><p><strong>Go to the SSH Key Management Section</strong></p>
-<ul>
-<li>In the WHM <strong>Dashboard</strong>, locate <strong>Security Center</strong>.</li>
-<li>Click on <strong>Manage root’s SSH Keys</strong>.</li>
-</ul>
-</li>
-<li><p><strong>Import the SSH Key</strong></p>
-<ul>
-<li>Click <strong>Import Key</strong>.</li>
-<li>In the <strong>Public Key</strong> field, paste the contents of your <code v-pre>id_ed25519.pub</code> file.</li>
-<li>(Optional) You can also import a private key if needed.</li>
-<li>(Optional) You can provide a passphrase for extra security.</li>
-<li>Click <strong>Import</strong> to save the key.</li>
-</ul>
-</li>
-<li><p><strong>Authorize the SSH Key</strong></p>
-<ul>
-<li>Go back to <strong>Manage root’s SSH Keys</strong>.</li>
-<li>Locate your newly added key under <strong>Public Keys</strong>.</li>
-<li>Click <strong>Manage</strong> → <strong>Authorize</strong> to enable the key.</li>
 </ul>
 </li>
 </ol>
