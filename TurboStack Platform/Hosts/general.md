@@ -1,9 +1,9 @@
 ---
 order: 1000
-icon: server
+icon: info
 ---
 
-# Hosts
+# General
 
 The **Hosts** section lets you configure and manage your TurboStack server. This section will serve as your reference guide to help you set up your application within minutes!
 
