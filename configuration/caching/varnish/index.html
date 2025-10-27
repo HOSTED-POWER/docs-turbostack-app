@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814876686254">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814888248590">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Varnish</title>
     <meta name="title" content="Varnish">
-    <meta name="description" content="Varnish is an optional caching service available in your Turbostack control panel.">
+    <meta name="description" content="Varnish is an optional caching service available in your TurboStack control panel.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/configuration/caching/varnish/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/configuration/caching/varnish/">
     <meta property="og:title" content="Varnish">
-    <meta property="og:description" content="Varnish is an optional caching service available in your Turbostack control panel.">
+    <meta property="og:description" content="Varnish is an optional caching service available in your TurboStack control panel.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/configuration/caching/varnish/">
     <meta property="twitter:title" content="Varnish">
-    <meta property="twitter:description" content="Varnish is an optional caching service available in your Turbostack control panel.">
+    <meta property="twitter:description" content="Varnish is an optional caching service available in your TurboStack control panel.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.814876686254" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.814888248590" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.814876686254" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.814888248590" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.814876686254" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.814888248590" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -240,7 +240,7 @@
         <span>Varnish</span>
     </h1>
 </doc-anchor-target>
-<p>Varnish is an optional caching service available in your Turbostack control panel. When you activate this option, the service will be installed and a default configuration provided. You may still need to configure your application to make full use of Varnish.</p>
+<p>Varnish is an optional caching service available in your TurboStack control panel. When you activate this option, the service will be installed and a default configuration provided. You may still need to configure your application to make full use of Varnish.</p>
 <p>Varnish default port: 6081</p>
 <doc-anchor-target id="varnish-configuration">
     <h2>
@@ -248,7 +248,7 @@
         <span>Varnish configuration</span>
     </h2>
 </doc-anchor-target>
-<p>Our Turbostack has a default VCL config file, based on  the <code v-pre>app_type</code> defined in Turbostack App. Using your system user(s), you can read these files in <code v-pre>/etc/varnish/conf.d</code>, the file called 50main.vcl is our default config, based on a default VCL for your CMS where appropriate, expanded with our own optimizations. The following config is our <code v-pre>default.vcl</code> file, which will be loaded in and will then load in the contents of the conf.d directory mentioned earlier:</p>
+<p>Our TurboStack has a default VCL config file, based on  the <strong>app_type</strong> defined in TurboStack App. Using your system user(s), you can read these files in <code v-pre>/etc/varnish/conf.d</code>, the file called 50main.vcl is our default config, based on a default VCL for your CMS where appropriate, expanded with our own optimizations. The following config is our <code v-pre>default.vcl</code> file, which will be loaded in and will then load in the contents of the conf.d directory mentioned earlier:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">vcl 4.1;
 import std;
@@ -291,20 +291,7 @@ drwxr-xr-x 3 root root  4096 Sep 11 15:41 ..
 prod@sander:/etc/varnish/conf.d$</code></pre>
 </doc-codeblock></div>
 <p>would make the config you add to the 20_custom.vcl file be loaded in after the config from the 10_bypass.vcl file, but before the directives in the 50main.vcl file.</p>
-<p>Importantly, to reload Varnish after you make any changes, you can use 
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
-    <div class="flex items-center text-blue-500 dark:text-blue-400">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">TSCLI</span>
-    </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>../../../tools/turbostackcli/</span>
-    </div>
-    <a href="../../../tools/turbostackcli/" class="absolute block inset-0"></a>
-</div>
-:</p>
+<p>Importantly, to reload Varnish after you make any changes, you can use <a href="../../../tools/turbostackcli/">TSCLI</a>:</p>
 <p><code v-pre>tscli varnish reload</code></p>
 <doc-anchor-target id="varnish-inner-workings">
     <h2>
