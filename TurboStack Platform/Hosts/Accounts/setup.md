@@ -2,13 +2,13 @@
 order: 1000
 icon: info
 ---
-# Overview
+# Setup
+
+This article explains how to set up your application environment from scratch. If you want to replicate an existing environment, or want to migrate an application from an external server to TurboStack, please consult the [Account Cloning](accountclone.md) and [Migration Hero](migrationhero.md) articles respectively.
 
 ## What is an account and what is it used for?
 
 The account is a linux user which can be used simply to access the server. However, you probably want to deploy one or multiple **applications** under this user. This guide will explain how to deploy system users and all settings your application requires.
-
-In the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"), you can create accounts in two ways: either by creating a brand-new account or by cloning an existing one.
 
 !!!
 For staging and production instances of an application, best practice is always to use an entirely different server, because it's by design unavoidable that resources allocated for staging, will be (silently) "taken away" from production. Even when this staging application is rarely used, it would still consume memory for e.g. databases, causing avoidable overhead.
@@ -96,36 +96,11 @@ system_users:
 ```
 
 !!! info
-a system_user (e.g. `prod`) is needed before an application can be deployed
+A system_user (e.g. `prod`) is needed before an application can be deployed
 !!!
 
 ![TurboStackNewApp](../../../img/turbostackapp/newapp/tsa_app11.png)
 
 More info on using the YAML editor can be found [here](../yaml.md).
-
-## Cloning an account
-
-To make a clone of an existing application, we provide the `Clone Account` feature. This function replicates the entire configuration and copies the files and database, enabling a quick and efficient setup with minimal effort.
-
-!!!Info
-This feature is extremely useful to quickly copy your production environment to a staging environment or vice versa!
-!!!
-
-Here’s how to do it:
-
-1. Navigate to the `Accounts` tab in the TurboStack Platform under your host.
-![TurboStackNewUser](../../../img/turbostackapp/newapp/tsa_user6.png)
-2. Click `Clone Account`.
-![TurboStackNewUser](../../../img/turbostackapp/newapp/tsa_user7.png)
-3. In the next step, select the source host and the account you want to clone. This can be either the current server or another server you manage.
-![TurboStackNewUser](../../../img/turbostackapp/newapp/tsa_user8.png)
-4. Choose the destination account, which can be either an existing or a new account, and choose whether to clone the database and/or files. Click `Next`. 
-![TurboStackNewUser](../../../img/turbostackapp/newapp/tsa_user9.png)
-5. Select the hostname(s) you'd like to associate with the account and choose the type of certificate you want to activate. Click `Next` to finalize.
-![TurboStackNewUser](../../../img/turbostackapp/newapp/tsa_user10.png)
-
-And that’s it! Your application is now cloned to a new account. Be sure to save the configuration and publish it when you're ready.
-
-
 
 

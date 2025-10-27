@@ -2,14 +2,14 @@
 order: 200
 icon: globe
 ---
-# Domains
+# Domain names
 
-Hosted Power is a domain registrar. Meaning domains can be bought, registered and managed
+Hosted Power is a domain name registrar, meaning domains can be bought, registered and managed
 within our [customer center](https://portal.hosted-power.com/checkdomain/domain-registration/)
 
-There you can see the pricing for all TLDs and lookup if your preferred domain is still available.
+Here, you can see the pricing for all TLDs and look up if your preferred domain is still available.
 
-## How to order a domain
+## Ordering a domain name
 
 1. Open the order menu
 ![TurboStackNewDomain](../img/customercenter/domains/cc_domain1.png)
@@ -22,7 +22,7 @@ There you can see the pricing for all TLDs and lookup if your preferred domain i
 6. ... or start the transfer from a domain hosted at another registrar
 ![TurboStackNewDomain](../img/customercenter/domains/cc_domain4.png)
 
-## How to remove a domain
+## How to cancel a domain name
 
 1. On the left hand menu, open `services` and select `Domains`
 2. Choose the domain you no longer need and click the arrow.
