@@ -78,8 +78,6 @@ If you need to add keys to multiple servers, you can use the [groups](https://do
 
 ### cPanel
 
-#### Normal User
-
 1. **Log into cPanel**
 
    * Navigate to your cPanel account (usually at `https://your-domain.com:2083` or `https://your-server-ip:2083`).
@@ -100,29 +98,6 @@ If you need to add keys to multiple servers, you can use the [groups](https://do
    * After importing, return to **Manage SSH Keys**.
    * Find your newly added key under the **Public Keys** section.
    * Click **Manage** → **Authorize** to enable the key for SSH access.
-
-#### Root user
-
-1. **Log in to WHM**
-
-   * Access WHM via `https://your-server-ip:2087` or `https://your-hostname.com:2087`.
-   * Enter your **root credentials** to log in.
-2. **Go to the SSH Key Management Section**
-
-   * In the WHM **Dashboard**, locate **Security Center**.
-   * Click on **Manage root’s SSH Keys**.
-3. **Import the SSH Key**
-
-   * Click **Import Key**.
-   * In the **Public Key** field, paste the contents of your `id_ed25519.pub` file.
-   * (Optional) You can also import a private key if needed.
-   * (Optional) You can provide a passphrase for extra security.
-   * Click **Import** to save the key.
-4. **Authorize the SSH Key**
-
-   * Go back to **Manage root’s SSH Keys**.
-   * Locate your newly added key under **Public Keys**.
-   * Click **Manage** → **Authorize** to enable the key.
 
 ### DirectAdmin
 
