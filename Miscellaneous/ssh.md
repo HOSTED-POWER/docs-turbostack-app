@@ -6,7 +6,7 @@ hidden: true
 
 Depending on your type of server, your method of adding SSH keys may change. In this article, we'll go over the different ways to add your SSH key to your TurboStack server (and how to create a keypair if you haven't already). Please note we recommend using **ed25519** as scheme, however all our different platforms support any OpenSSH-compatible scheme.
 
-## Step 0: Making a new SSH keypair
+## Step 1: Generating a new SSH keypair
 
 If you already have your SSH key you'd like to add, feel free to **skip to step 1.**
 
@@ -42,12 +42,12 @@ cat ~/.ssh/id_ed25519.pub
 
 ### Method 2: Putty Key Generator
 
-#### 1\. Open PuTTYgen
+#### 1. Open PuTTYgen
 
 * Download PuTTY from [the official source](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) if you don’t already have it installed.
 * Open **PuTTYgen** (`puttygen.exe`).
 
-#### 2\. Generate an Ed25519 Key
+#### 2. Generate an Ed25519 Key
 
 * In the **PuTTY Key Generator** window, locate the **Parameters** section.
 * Select **EdDSA** (Ed25519 should be the default curve).
@@ -56,16 +56,16 @@ cat ~/.ssh/id_ed25519.pub
 
 ![1743683160931](image/ssh/1743683160931.png)
 
-#### 3\. Save Your SSH Key Files
+#### 3. Save Your SSH Key Files
 
 * Click **Save private key** and save it as `id_ed25519.ppk`.
   * (Optional) Enter a **passphrase** for additional security.
 * Click **Save public key** and save it as `id_ed25519.pub`.
 * (Optional) If your server requires an **OpenSSH format key**, go to **Conversions > Export OpenSSH Key**, then save it as `id_ed25519`.
 
-## Step 1: Adding your SSH key to your server
+## Step 2: Adding your SSH key to your server
 
-### 1.1. Turbostack server
+###  Turbostack server
 
 1. Go to your **Turbostack** server in the GUI.
 2. In the ribbon menu, click '**SSH**'.
@@ -76,9 +76,9 @@ cat ~/.ssh/id_ed25519.pub
 
 If you need to add keys to multiple servers, you can use the [groups](https://docs.turbostack.app/turbostack-app/groups/#groups) functionality to streamline this process.
 
-### 1.2. Alternative: cPanel
+### cPanel
 
-#### 1.2.1. Normal User
+#### Normal User
 
 1. **Log into cPanel**
 
@@ -101,7 +101,7 @@ If you need to add keys to multiple servers, you can use the [groups](https://do
    * Find your newly added key under the **Public Keys** section.
    * Click **Manage** → **Authorize** to enable the key for SSH access.
 
-#### 1.2.2. Root user
+#### Root user
 
 1. **Log in to WHM**
 
@@ -124,7 +124,7 @@ If you need to add keys to multiple servers, you can use the [groups](https://do
    * Locate your newly added key under **Public Keys**.
    * Click **Manage** → **Authorize** to enable the key.
 
-### 1.3. Alternative: DirectAdmin
+### DirectAdmin
 
 1. **Log in to DirectAdmin**
 
