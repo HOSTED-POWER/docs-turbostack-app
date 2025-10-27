@@ -1,6 +1,6 @@
 ---
 order: 700
-icon: server
+icon: alert
 ---
 
 # Advanced tab
@@ -17,9 +17,9 @@ The **advanced** tab offers some more advanced configuration options for specifi
 
 1. Fill in the FQDN (Fully Qualified Domain Name), which is the domain you want to mail from.
 2. Choose a selector for the DKIM record. This selector will be used as the subdomain part of the record.
-3. SSH to the server and use the command **tscli dkim records** to acquire your DKIM record.
+3. SSH to the server and use the command `tscli dkim records` to acquire your DKIM record.
 4. Create the DKIM record in your domain's DNS settings
-5. SSH to the server and use the command **tscli dkim validate** to check if the DNS record was created correctly.
+5. SSH to the server and use the command `tscli dkim validate` to check if the DNS record was created correctly.
 6. All done!
 
 !!! info
