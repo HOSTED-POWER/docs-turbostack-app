@@ -1,5 +1,5 @@
 ---
-order: 500
+order: 400
 icon: move-to-end
 label: Migration Hero
 ---
