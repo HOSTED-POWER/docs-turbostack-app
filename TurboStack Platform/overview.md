@@ -64,16 +64,31 @@ For more details on creating and using SSH keys, click [here](../Miscellaneous/s
 
 ## Security tab
 
-!!!
-This is an advanced section, use with caution!
-!!!
+This is an advanced feature, please be cautious while changing values here.
 
-The **Security** tab allows you to modify the certain firewall settings.
+The **Security** tab allows you to modify certain firewall settings.
 
-![TurboStackAppSecurityTab](../img/turbostackapp/basicinstall/tsa_security_tab1.png)
+### Whitelist IP Addresses
 
-1. Allow (whitelist) one or more IPs or IP ranges
-   1. These IPs will not be blocked by any brute force protections
-   2. These IPs will also have FULL access to any otherwise closed ports.
-2. Block (blacklist) one or more countries
-3. Only allow (whitelist) one or more countries
+Here you can allow important IP adresses or range for your application.
+
+For example:
+* Your office IP
+* Deployment server
+* External service
+
+A whitelisted IP will not be blocked by any _brute force_ protections and has access to any otherwise closed ports.
+
+![TurboStackAppSecurityTabWhitelist](img/security_whitelist_IP.png)
+
+### FireWall GeoIP Filtering
+Use this to explicitly allow or block whole countries. It's important to know that if you **allow** one or more countries, the rest will be blocked. 
+
+You can search by either country code or the name of the whole country.
+
+![TurboStackAppSecurityTabGeoIPFilter](img/security_geoIP_filter.png)
+
+### Web Application Firewall
+Here you can enable Imunify360 on your TurboStack server and configure the incident notification email address.
+
+![TurboStackAppSecurityTabGeoIPFilter](img/security_WAF.png)
