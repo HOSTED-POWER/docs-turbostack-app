@@ -11,7 +11,7 @@ TurboStack® offers a suite of scalable packages designed for lightning-fast per
 
 [!embed allowFullScreen="false"](https://player.vimeo.com/video/1054418669?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
 
-## Account Setup
+## Customer Account Setup
 
 ### Create Your Customer Profile
 Before you start, create a new account in our Customer Center. This grants you access to your profile and environments. Sign up [here](https://portal.hosted-power.com/signup/) and fill in the required details to get started.

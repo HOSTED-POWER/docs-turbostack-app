@@ -5,13 +5,13 @@ icon: cache
 
 # Varnish
 
-Varnish is an optional caching service available in your Turbostack control panel. When you activate this option, the service will be installed and a default configuration provided. You may still need to configure your application to make full use of Varnish. 
+Varnish is an optional caching service available in your TurboStack control panel. When you activate this option, the service will be installed and a default configuration provided. You may still need to configure your application to make full use of Varnish. 
 
 Varnish default port: 6081 
 
 ## Varnish configuration
 
-Our Turbostack has a default VCL config file, based on  the `app_type` defined in Turbostack App. Using your system user(s), you can read these files in `/etc/varnish/conf.d`, the file called 50main.vcl is our default config, based on a default VCL for your CMS where appropriate, expanded with our own optimizations. The following config is our `default.vcl` file, which will be loaded in and will then load in the contents of the conf.d directory mentioned earlier:
+Our TurboStack has a default VCL config file, based on  the **app_type** defined in TurboStack App. Using your system user(s), you can read these files in `/etc/varnish/conf.d`, the file called 50main.vcl is our default config, based on a default VCL for your CMS where appropriate, expanded with our own optimizations. The following config is our `default.vcl` file, which will be loaded in and will then load in the contents of the conf.d directory mentioned earlier:
 
 ```
 vcl 4.1;
@@ -60,7 +60,7 @@ prod@sander:/etc/varnish/conf.d$
 
 would make the config you add to the 20_custom.vcl file be loaded in after the config from the 10_bypass.vcl file, but before the directives in the 50main.vcl file.
 
-Importantly, to reload Varnish after you make any changes, you can use [!ref  TSCLI](/Tools/turbostackcli.md):
+Importantly, to reload Varnish after you make any changes, you can use [TSCLI](../../Tools/turbostackcli.md):
 
 `tscli varnish reload`
 

@@ -6,7 +6,7 @@ icon: people
 
 Groups make it possible to apply certain settings across multiple Turbostack nodes, such as time zones or SSH key access.
 
-## Create a group
+## Creating Groups
 
 Open the Groups tab to efficiently manage settings without the need to make changes individually for each user or project. Create partner groups, which enables you to provide SSH key access to multiple employees across different end user or partner environments.
 
@@ -24,7 +24,7 @@ Centralized user rights can streamline access control and simplify administratio
 * Regularly review user access and group memberships to ensure that they align with your current organizational requirements.
 
 !!!
-Hosted Power monitors system logs for any unauthorized access attempts and take appropriate action if necessary.
+Hosted Power monitors system logs for any unauthorized access attempts and takes appropriate action if necessary.
 !!!
 
 ### Scenario 2: Use Groups for centralised TurboStack Node management
