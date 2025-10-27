@@ -1,9 +1,9 @@
 ---
-order: 97
-icon: rocket
+order: 1000
+icon: info
 ---
 
-# TurboStack Platform
+# Overview
 
 ## Login and locate your managed servers
 
