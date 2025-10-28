@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814894599791">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.814968231407">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.814894599791" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.814968231407" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.814894599791" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.814968231407" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.814894599791" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.814968231407" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -311,14 +311,36 @@
     <figcaption class="caption">CreateTeams</figcaption>
 </figure>
 </p>
-<doc-anchor-target id="userteams-rights-management">
+<doc-anchor-target id="contactsteams-permission-management">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#userteams-rights-management">#</doc-anchor-trigger>
-        <span>User/Teams Rights management</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contactsteams-permission-management">#</doc-anchor-trigger>
+        <span>Contacts/Teams permission management</span>
     </h2>
 </doc-anchor-target>
-<p>You have the choice to either manage the rights of single users or whole teams. <strong>Hosted Power</strong> advises to implement the &quot;Teams&quot; logic, even if you have only one person in this team. It makes management a lot easier in the future.</p>
+<p>You have the choice to either manage the rights of single contacts or whole teams. <strong>Hosted Power</strong> advises to implement the &quot;Teams&quot; logic, even if you have only one person in this team. It makes management a lot easier in the future.</p>
 <p>For your colleagues to be able to log in to the <a href="https://my.turbostack.app" target="_blank">TurboStack Platform</a>, you need to give them access here.</p>
+<doc-anchor-target id="assigning-permissions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assigning-permissions">#</doc-anchor-trigger>
+        <span>Assigning permissions</span>
+    </h3>
+</doc-anchor-target>
+<p>The access you can give an individual contact and a team are exactly the same, only the individual contact doesn&#x27;t have a team invite code.</p>
+<p>To start changing permissions, click on the team or contact.</p>
+<p>Under &#x27;Status&#x27; you can choose whether or not the team or contact is active. When closed, all permissions will be denied, until activated again.</p>
+<p>Under the <em>Save Changes</em> button, are some handy presets for you to choose from. These will autimatically set all permissions for the predefined roles.</p>
+<p>If you need more granular control over these permissions, you can always go down a bit and manage these permissions manually.</p>
+<p><figure class="content-center">
+    <img src="../../image/readme/teams_permissions_top.png" alt="EditPermissions">
+    <figcaption class="caption">EditPermissions</figcaption>
+</figure>
+</p>
+<p>In the granular controls, you will have the option to choose specific permissions per category, like opening tickets, but not receive email notifications for them.</p>
+<p><figure class="content-center">
+    <img src="../../image/readme/teams_permissions_detail_support.png" alt="EditPermissions">
+    <figcaption class="caption">EditPermissions</figcaption>
+</figure>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
