@@ -44,7 +44,24 @@ If you have a new partner requiring access to your environment, you have the pos
 
 ![CreateTeams](../img/turbostackapp/groups/ManageContacts.png)
 
-## User/Teams Rights management 
-You have the choice to either manage the rights of single users or whole teams. **Hosted Power** advises to implement the "Teams" logic, even if you have only one person in this team. It makes management a lot easier in the future.
+## Contacts/Teams permission management 
+You have the choice to either manage the rights of single contacts or whole teams. **Hosted Power** advises to implement the "Teams" logic, even if you have only one person in this team. It makes management a lot easier in the future.
 
 For your colleagues to be able to log in to the <a href="https://my.turbostack.app" target="_blank">TurboStack Platform</a>, you need to give them access here.
+
+### Assigning permissions
+The access you can give an individual contact and a team are exactly the same, only the individual contact doesn't have a team invite code.
+
+To start changing permissions, click on the team or contact.
+
+Under 'Status' you can choose whether or not the team or contact is active. When closed, all permissions will be denied, until activated again.
+
+Under the _Save Changes_ button, are some handy presets for you to choose from. These will autimatically set all permissions for the predefined roles.
+
+If you need more granular control over these permissions, you can always go down a bit and manage these permissions manually.
+
+![EditPermissions](/image/readme/teams_permissions_top.png)
+
+In the granular controls, you will have the option to choose specific permissions per category, like opening tickets, but not receive email notifications for them.
+
+![EditPermissions](/image/readme/teams_permissions_detail_support.png)
