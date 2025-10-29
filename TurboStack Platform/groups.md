@@ -12,7 +12,7 @@ Open the Groups tab to efficiently manage settings without the need to make chan
 
 ### Scenario 1: Use Groups for centralised user rights management with SSH keys
 
-![SSHTab](../img/turbostackapp/groups/SSHTab.png)
+![](../img/turbostackapp/groups/SSHTab.png)
 
 Centralized user rights can streamline access control and simplify administration.
 
@@ -29,7 +29,7 @@ Hosted Power monitors system logs for any unauthorized access attempts and takes
 
 ### Scenario 2: Use Groups for centralised TurboStack Node management
 
-![HostsTab](../img/turbostackapp/groups/HostsTab.png)
+![](../img/turbostackapp/groups/HostsTab.png)
 
 Managing TurboStack nodes using groups can help streamline operations and ensure consistency across your infrastructure.
 
