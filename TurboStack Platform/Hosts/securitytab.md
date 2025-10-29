@@ -19,16 +19,16 @@ For example:
 
 A whitelisted IP will not be blocked by any _brute force_ protections and has access to any otherwise closed ports.
 
-![TurboStackAppSecurityTabWhitelist](img/security_whitelist_IP.png)
+![](img/security_whitelist_IP.png)
 
 ## FireWall GeoIP Filtering
 Use this to explicitly allow or block whole countries. It's important to know that if you **allow** one or more countries, the rest will be blocked. 
 
 You can search by either country code or the name of the whole country.
 
-![TurboStackAppSecurityTabGeoIPFilter](img/security_geoIP_filter.png)
+![](img/security_geoIP_filter.png)
 
 ## Web Application Firewall
 Here you can enable Imunify360 on your TurboStack server and configure the incident notification email address.
 
-![TurboStackAppSecurityTabGeoIPFilter](img/security_WAF.png)
+![](img/security_WAF.png)
