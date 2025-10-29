@@ -26,10 +26,10 @@ Creating a new user on the [TurboStack Platform](https://my.turbostack.app "Turb
 1. Go to the **Accounts** page
 ![](../../../img/turbostackapp/newapp/tsa_user1.png)
 
-2. Add a new account (user)
+2. Click **Add new account**
 ![](../../../img/turbostackapp/newapp/tsa_user2.png)
 
-3. Give the account a name and save
+3. Give the account a **username** and save
 ![](../../../img/turbostackapp/newapp/tsa_user3.png)
 
 4. **Save and Publish** will deploy the change to the host
@@ -53,12 +53,11 @@ More info on using the YAML editor can be found [here](../yaml.md).
 ### Creating a new application in the TurboStack Platform GUI
 
 Creating a new (default) application under the newly created **prod** user.
-Scenario: creating a Magento2 application, listening on `www.example.com` and using varnish as caching
 
 1. Open the detail section for the user.
 ![](../../../img/turbostackapp/newapp/tsa_app1.png) 
 
-2. Click to add a new application.
+2. Click **Add app or database**
 ![](../../../img/turbostackapp/newapp/tsa_app2.png)
 
 3. The first application for each user should always be **default**.
@@ -68,7 +67,7 @@ Scenario: creating a Magento2 application, listening on `www.example.com` and us
 
 ![](../../../img/turbostackapp/newapp/tsa_appX.png)
 
-5. Choose an SSL certificate, there are 3 options: **letsencrypt**(default), **self-signed** and **custom** (3rd party certificate).
+5. Choose an **SSL certificate**, there are 3 options: **letsencrypt**(default), **self-signed** and **custom** (3rd party certificate).
 
 !!! info
 Let's Encrypt certificates can only be validated if the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let's Encrypt whenever you're ready. 
@@ -80,10 +79,10 @@ Let's Encrypt certificates can only be validated if the selected hostnames alrea
 ![](../../../img/turbostackapp/newapp/tsa_app5.png)
 
 !!! info
-The app type should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can't find your CMS of framework in this list? Contact us!
+The **app type** should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can't find your CMS of framework in this list? Contact us!
 !!!
 
-7. Enable all technologies that your application requires. This section is updated regularly, so keep an eye on our [changelog](../../changelog.md)!
+7. Enable all **technologies** that your application requires. This section is updated regularly, so keep an eye on our [changelog](../../changelog.md)!
 ![](../../../img/turbostackapp/newapp/tsa_app6.png)
 
 8. When going live, set a **monitoring url** so Hosted Power will monitor 24/7.
