@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815047191881">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815058870345">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.815047191881" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.815058870345" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.815047191881" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.815058870345" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.815047191881" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.815047191881" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.815058870345" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.815058870345" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -291,32 +291,36 @@
 <p>Creating a new user on the <a href="https://my.turbostack.app" class="outbound" title="TurboStack Platform" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>TurboStack Platform</span></a>.</p>
 <ul>
 <li>Open the TurboStack Platform</li>
-<li>Open the server view</li>
+<li>Open the server management console in the <strong>Hosts</strong> section</li>
 </ul>
 <ol>
-<li>Go to the <strong>Accounts</strong> page
+<li><p>Go to the <strong>Accounts</strong> page
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_user1.png" alt="TurboStackNewUser">
     <figcaption class="caption">TurboStackNewUser</figcaption>
 </figure>
+</p>
 </li>
-<li>Add a new account (user)
+<li><p>Add a new account (user)
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_user2.png" alt="TurboStackNewUser">
     <figcaption class="caption">TurboStackNewUser</figcaption>
 </figure>
+</p>
 </li>
-<li>Give the account a name and save
+<li><p>Give the account a name and save
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_user3.png" alt="TurboStackNewUser">
     <figcaption class="caption">TurboStackNewUser</figcaption>
 </figure>
+</p>
 </li>
-<li><strong>Save and Publish</strong> will deploy the change to the host
+<li><p><strong>Save and Publish</strong> will deploy the change to the host
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_user4.png" alt="TurboStackNewUser">
     <figcaption class="caption">TurboStackNewUser</figcaption>
 </figure>
+</p>
 </li>
 </ol>
 <doc-anchor-target id="deploying-a-new-account-in-the-source-yaml">
@@ -354,55 +358,97 @@
 <p>Creating a new (default) application under the newly created <strong>prod</strong> user.
 Scenario: creating a Magento2 application, listening on <code v-pre>www.example.com</code> and using varnish as caching</p>
 <ol>
-<li>Open the detail section for the user
+<li><p>Open the detail section for the user.
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app1.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
+</p>
 </li>
-<li>Click to add a new application
+<li><p>Click to add a new application.
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app2.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
+</p>
 </li>
-<li>The first application for each user should always be <strong>default</strong>
+<li><p>The first application for each user should always be <strong>default</strong>.
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app3.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
+</p>
 </li>
-<li>Go to <strong>Hostnames</strong> and 1 or more names the website should listen on</li>
-<li>Choose a website SSL certificate, there are 3 options: <strong>letsencrypt</strong>(default), <strong>self-signed</strong> and <strong>custom</strong> (3rd party certificate) (*)
-<figure class="content-center">
+<li><p>Fill in 1 or more <strong>hostnames</strong> your application will listen on.</p>
+</li>
+<li><p>Choose an SSL certificate, there are 3 options: <strong>letsencrypt</strong>(default), <strong>self-signed</strong> and <strong>custom</strong> (3rd party certificate).</p>
+</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Let&#x27;s Encrypt certificates can only be validated if the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let&#x27;s Encrypt whenever you&#x27;re ready.</p>
+        </div>
+    </div>
+</div>
+<p><figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app4.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
-</li>
-<li>Go to <strong>Technologies</strong> and set the app type (**) that matches your application</li>
-<li>Enable PHP or another technology that your application requires
-<figure class="content-center">
+6. Go to <strong>Technologies</strong> and set the app type that matches your application.</p>
+<p><figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app5.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
-</li>
-<li>Scroll down to enable <strong>varnish</strong>
+</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The app type should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can&#x27;t find your CMS of framework in this list? Contact us!</p>
+        </div>
+    </div>
+</div>
+<ol start="7">
+<li><p>Enable all technologies that your application requires. This section is updated regularly, so keep an eye on our <a href="../../../changelog/">changelog</a>!
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app6.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
+</p>
 </li>
-<li>When going live, set a <strong>monitoring url</strong> so Hosted Power will monitor 24/7.
+<li><p>When going live, set a <strong>monitoring url</strong> so Hosted Power will monitor 24/7.
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app7.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
+</p>
 </li>
-<li>Click <strong>Save</strong> to save and exit the configuration wizard.
+<li><p>Click <strong>Save</strong> to save and exit the configuration wizard.
 <figure class="content-center">
     <img src="../../../../img/turbostackapp/newapp/tsa_app8.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
+</p>
 </li>
 </ol>
 <p>Now the new application is configured, click <strong>Save &amp; Publish</strong> to deploy the configuration to the server.</p>
@@ -410,13 +456,13 @@ Scenario: creating a Magento2 application, listening on <code v-pre>www.example.
     <img src="../../../../img/turbostackapp/newapp/tsa_app9.png" alt="TurboStackNewApp">
     <figcaption class="caption">TurboStackNewApp</figcaption>
 </figure>
-<figure class="content-center">
-    <img src="../../../../img/turbostackapp/newapp/tsa_app10.png" alt="TurboStackNewApp">
-    <figcaption class="caption">TurboStackNewApp</figcaption>
+</p>
+<p>Depending on the amount of changes, publishing can take some time! When the publication of your TurboStack has completed successfully, a message indicating so with a timestamp will appear in the top right corner:</p>
+<p><figure class="content-center">
+    <img src="../../../../img/turbostackapp/newapp/publishsuccess.png" alt="Successful publication">
+    <figcaption class="caption">Successful publication</figcaption>
 </figure>
 </p>
-<p>(*) Let&#x27;s Encrypt certificates can only be validated if the selected hostnames already have the proper DNS settings to point them to the server. If this condition is not met, the validation will fail, and publishing will throw an error! If you cannot adjust DNS, but you do need HTTPS, you can choose a self-signed certificate and change it to Let&#x27;s Encrypt whenever you&#x27;re ready.</p>
-<p>(**) The app type should match the CMS or framework that will be installed on this environment, and automatically applies some application-specific configuration. Can&#x27;t find your CMS of framework in this list? Contact us!</p>
 <doc-anchor-target id="creating-a-new-application-in-source-code-mode-yaml">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-a-new-application-in-source-code-mode-yaml">#</doc-anchor-trigger>
