@@ -6,7 +6,7 @@ icon: project-template
 
 Our platform has several [templates](https://my.turbostack.app/templates "Templates link") available for you to kickstart your server configuration. These can only be used when your server's configuration is still empty, as this would override any existing settings. 
 
-## Step by step guide
+## Step-by step-guide
 
 The guide assumes you've gone through our [Getting Started](../quickstart.md "Quickstart guide link") guide. We'll be installing the Magento template as an example.
 

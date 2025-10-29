@@ -6,6 +6,10 @@ icon: plus-circle
 
 This article explains how to set up your application environment from scratch. If you want to replicate an existing environment, or want to migrate an application from an external server to TurboStack, please consult the [Account Cloning](accountclone.md) and [Migration Hero](migrationhero.md) articles respectively.
 
+!!! info
+New servers can also be auto-configured using **Templates**! Visit [this](../../templates.md) page for more information.
+!!!
+
 ## What is an account and what is it used for?
 
 The account is a linux user which can be used simply to access the server. However, you probably want to deploy one or multiple **applications** under this user. This guide will explain how to deploy system users and all settings your application requires.
