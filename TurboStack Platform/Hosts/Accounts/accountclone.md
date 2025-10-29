@@ -19,7 +19,7 @@ Here’s how to do it:
 ![](../../../img/turbostackapp/newapp/tsa_user7.png)
 3. In the next step, select the **source host** and the **account** you want to clone. This can be either the current server or another server you manage.
 ![](../../../img/turbostackapp/newapp/tsa_user8.png)
-4. Choose the **destination account**, which can be either an **existin**g or a **new account**, and choose whether to clone the **database** and/or **files**. Click **Next**. 
+4. Choose the **destination account**, which can be either an **existing** or a **new account**, and choose whether to clone the **database** and/or **files**. Click **Next**. 
 ![](../../../img/turbostackapp/newapp/tsa_user9.png)
 5. Select the **hostname(s)** you'd like to associate with the account and choose the type of certificate you want to activate. Click **Next** to finalize.
 ![](../../../img/turbostackapp/newapp/tsa_user10.png)
