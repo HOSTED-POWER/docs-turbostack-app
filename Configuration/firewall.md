@@ -14,7 +14,7 @@ While the protection is designed to minimize false positives, you can whitelist 
 
 ## Firewall CLI on TurboStack®
 
-Hosted Power prefers you to use our [Turbostack CLI](https://docs.turbostack.app/turbostack-app/turbostackcli/) commands if you want to make changes to the Firewall settings.
+Hosted Power prefers you to use our [Turbostack CLI](../Tools/turbostackcli.md) commands if you want to make changes to the Firewall settings.
 
 ```
 Usage: tscli firewall [OPTIONS] COMMAND [ARGS]...
