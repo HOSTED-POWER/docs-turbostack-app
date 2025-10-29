@@ -107,10 +107,6 @@ system_users:
         cert_type: self-signed
 ```
 
-!!! info
-A system_user (e.g. **prod**) is needed before an application can be deployed
-!!!
-
 ![](../../../img/turbostackapp/newapp/tsa_app11.png)
 
 More info on using the YAML editor can be found [here](../yaml.md).
