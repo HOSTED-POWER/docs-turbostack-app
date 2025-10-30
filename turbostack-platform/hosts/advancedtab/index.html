@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815148205527">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815149693268">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.815148205527" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.815149693268" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815148205527" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815149693268" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815148205527" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815149693268" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -264,7 +264,7 @@
 <li>Choose a <strong>selector</strong> for the DKIM record. This selector will be used as the <strong>subdomain</strong> part of the record.</li>
 <li>SSH to the server and use the command <code v-pre>tscli dkim records</code> to <strong>acquire your DKIM record</strong>.</li>
 <li><strong>Create the DKIM record</strong> in your domain&#x27;s DNS settings</li>
-<li>SSH to the server and use the command <code v-pre>tscli dkim validate</code> to check if the <strong>DNS record was created correctly</strong>.</li>
+<li>SSH to the server and use the command <code v-pre>tscli dkim validate</code> to <strong>check if the DNS record was created correctly</strong>.</li>
 <li>All done!</li>
 </ol>
 <div class="flex mb-6">
@@ -280,7 +280,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>DKIM is part of your domain&#x27;s mail <strong>deliverability</strong> optimisation. For more information on mail deliverability, take a look <a href="../../../configuration/mail/deliverability/">here</a>.</p>
+<p>DKIM is part of your domain&#x27;s <strong>mail deliverability</strong> optimisation. For more information on mail deliverability, take a look <a href="../../../configuration/mail/deliverability/">here</a>.</p>
         </div>
     </div>
 </div>
@@ -290,7 +290,7 @@
         <span>Mail Devtool - Enabling mail capturing and mail testing</span>
     </h3>
 </doc-anchor-target>
-<p>TurboStack allows you to use either <strong>Mailpit</strong> or <strong>Mailhog</strong> to test your mailing. Once activated, you can reach the GUI through the URLs https://<hostname>/mailpit or https://<hostname>/mailhog respectively. Here, a basic auth prompt will appear, where you can enter the <a href="../accounts/credentials/">system user&#x27;s credentials</a>.</p>
+<p>TurboStack allows you to use either <strong>Mailpit</strong> or <strong>Mailhog</strong> to test your mailing. Once activated, you can reach the GUI through the URLs <code v-pre>https://&lt;hostname&gt;/mailpit</code> or <code v-pre>https://&lt;hostname&gt;/mailhog</code> respectively. Here, a <strong>basic auth prompt</strong> will appear, where you can enter the <a href="../accounts/credentials/">system user&#x27;s credentials</a>.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -304,7 +304,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>We currently recommend Mailpit over Mailhog, as the Mailhog project is no longer receiving updates.</p>
+<p>We currently recommend Mailpit over Mailhog, as the Mailhog project is no longer receiving updates!</p>
         </div>
     </div>
 </div>
@@ -325,14 +325,14 @@
         <span>Varnish Cache Size</span>
     </h3>
 </doc-anchor-target>
-<p>This value determines the <strong>amount of memory</strong> that can be used by Varnish to store cached content. The default setting <strong>auto-scales</strong> based on your server flavour, but can be set to a size of your preference.</p>
+<p>This value determines the <strong>amount of memory</strong> that can be used by Varnish to <strong>store cached content</strong>. The default setting <strong>auto-scales</strong> based on your server flavour, but can be set to a size of your preference.</p>
 <doc-anchor-target id="use-your-own-varnish-custom-vcl">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#use-your-own-varnish-custom-vcl">#</doc-anchor-trigger>
         <span>Use your own Varnish custom VCL</span>
     </h3>
 </doc-anchor-target>
-<p>Your Varnish is set up to use a <strong>default VCL</strong> (Varnish Configuration Language) based on and optimised for your selected <strong>app type</strong>. However, you can use your own VCL if you wish. To do so, toggle this option on and add your VCL file to the directory <code v-pre>/etc/varnish/conf.d/</code> on your server.</p>
+<p>Your Varnish is set up to use a <strong>default VCL</strong> (Varnish Configuration Language) based on and optimised for your selected <strong>app type</strong>. However, you can use <strong>your own VCL</strong> if you wish. To do so, toggle this option on and add your VCL file to the directory <code v-pre>/etc/varnish/conf.d/</code> on your server.</p>
 <doc-anchor-target id="varnish-flavor">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#varnish-flavor">#</doc-anchor-trigger>
@@ -370,14 +370,14 @@
         <span>Enable Valid Certificate For FTP Server</span>
     </h3>
 </doc-anchor-target>
-<p>Generate an SSL certificate for FTP connections using a hostname of your choice. This hostname must point to the server IP in order to work!</p>
+<p><strong>Generate an SSL certificate</strong> for FTP connections using a <strong>ostname of your choice</strong>. This hostname must point to the server IP in order to work!</p>
 <doc-anchor-target id="enable-sftp-for-ftp-users">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#enable-sftp-for-ftp-users">#</doc-anchor-trigger>
         <span>Enable SFTP for FTP Users</span>
     </h3>
 </doc-anchor-target>
-<p>Enables SFTP connections over <strong>port 222</strong> using the existing FTP daemon and users. This does not work over port 22, as this is reserved for the SSH service.</p>
+<p><strong>Enables SFTP connections</strong> over <strong>port 222</strong> using the existing FTP daemon and users. This does not work over port 22, as this is reserved for the SSH service.</p>
 <doc-anchor-target id="operating-system">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#operating-system">#</doc-anchor-trigger>
@@ -395,7 +395,7 @@
         <span>OS Extra Packages</span>
     </h3>
 </doc-anchor-target>
-<p>A non-exhaustive list of packages to install. Please note this list is not complete, and more options are available when using source YAML mode! More info on editing YAML can be found <a href="../yaml/">here</a></p>
+<p>A non-exhaustive <strong>list of packages</strong> available for <strong>automated installation</strong>. Please note this list is not complete, and more options are available when using source YAML mode! More info on editing YAML can be found <a href="../yaml/">here</a></p>
 <doc-anchor-target id="maintenance-window">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#maintenance-window">#</doc-anchor-trigger>
