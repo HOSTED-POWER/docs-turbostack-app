@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815070766196">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815148205527">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.815070766196" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.815148205527" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815070766196" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815148205527" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815070766196" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815148205527" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -260,11 +260,11 @@
 </doc-anchor-target>
 <p><strong>DKIM (DomainKeys Identified Mail)</strong> is an email authentication method that helps prevent email spoofing. It works by adding a <strong>digital signature</strong> to outgoing messages, which receiving mail servers can verify using the <strong>public key</strong> published in the sender’s domain DNS records. This sections allows you to easily set up DKIM for your mail domain.</p>
 <ol>
-<li>Fill in the FQDN (Fully Qualified Domain Name), which is the domain you want to mail from.</li>
-<li>Choose a selector for the DKIM record. This selector will be used as the subdomain part of the record.</li>
-<li>SSH to the server and use the command <code v-pre>tscli dkim records</code> to acquire your DKIM record.</li>
-<li>Create the DKIM record in your domain&#x27;s DNS settings</li>
-<li>SSH to the server and use the command <code v-pre>tscli dkim validate</code> to check if the DNS record was created correctly.</li>
+<li>Fill in the <strong>FQDN (Fully Qualified Domain Name)</strong>, which is the domain you want to mail from.</li>
+<li>Choose a <strong>selector</strong> for the DKIM record. This selector will be used as the <strong>subdomain</strong> part of the record.</li>
+<li>SSH to the server and use the command <code v-pre>tscli dkim records</code> to <strong>acquire your DKIM record</strong>.</li>
+<li><strong>Create the DKIM record</strong> in your domain&#x27;s DNS settings</li>
+<li>SSH to the server and use the command <code v-pre>tscli dkim validate</code> to check if the <strong>DNS record was created correctly</strong>.</li>
 <li>All done!</li>
 </ol>
 <div class="flex mb-6">
@@ -280,7 +280,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>DKIM is part of your domain&#x27;s mail deliverability optimisation. For more information on mail deliverability, take a look <a href="../../../configuration/mail/deliverability/">here</a>.</p>
+<p>DKIM is part of your domain&#x27;s mail <strong>deliverability</strong> optimisation. For more information on mail deliverability, take a look <a href="../../../configuration/mail/deliverability/">here</a>.</p>
         </div>
     </div>
 </div>
@@ -290,7 +290,7 @@
         <span>Mail Devtool - Enabling mail capturing and mail testing</span>
     </h3>
 </doc-anchor-target>
-<p>TurboStack allows you to use either Mailpit or Mailhog to test your mailing. Once activated, you can reach the GUI through the URLs https://<hostname>/mailpit or https://<hostname>/mailhog respectively. Here, a basic auth prompt will appear, where you can enter the <a href="../accounts/credentials/">system user&#x27;s credentials</a>.</p>
+<p>TurboStack allows you to use either <strong>Mailpit</strong> or <strong>Mailhog</strong> to test your mailing. Once activated, you can reach the GUI through the URLs https://<hostname>/mailpit or https://<hostname>/mailhog respectively. Here, a basic auth prompt will appear, where you can enter the <a href="../accounts/credentials/">system user&#x27;s credentials</a>.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -325,22 +325,22 @@
         <span>Varnish Cache Size</span>
     </h3>
 </doc-anchor-target>
-<p>This value determines the amount of memory that can be used by Varnish to store cached content. The default setting auto-scales based on your server flavour, but can be set to a size of your preference.</p>
+<p>This value determines the <strong>amount of memory</strong> that can be used by Varnish to store cached content. The default setting <strong>auto-scales</strong> based on your server flavour, but can be set to a size of your preference.</p>
 <doc-anchor-target id="use-your-own-varnish-custom-vcl">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#use-your-own-varnish-custom-vcl">#</doc-anchor-trigger>
         <span>Use your own Varnish custom VCL</span>
     </h3>
 </doc-anchor-target>
-<p>Your Varnish is set up to use a default VCL (Varnish Configuration Language) based on and optimised for your selected app_type. However, you can use your own VCL if you wish. To do so, toggle this option on and add your VCL file to the directory /etc/varnish/conf.d/ on your server.</p>
+<p>Your Varnish is set up to use a <strong>default VCL</strong> (Varnish Configuration Language) based on and optimised for your selected <strong>app type</strong>. However, you can use your own VCL if you wish. To do so, toggle this option on and add your VCL file to the directory <code v-pre>/etc/varnish/conf.d/</code> on your server.</p>
 <doc-anchor-target id="varnish-flavor">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#varnish-flavor">#</doc-anchor-trigger>
         <span>Varnish Flavor</span>
     </h3>
 </doc-anchor-target>
-<p>Choose between the Open Source and Enterprise versions of Varnish. The Open Source flavor is free, while the Enterprise version requires you to buy a seperate license.</p>
-<p>The Open Source flavor includes an option to enable Varnish modules.</p>
+<p>Choose between the <strong>Open Source</strong> and <strong>Enterprise</strong> versions of Varnish. The Open Source flavor is free, while the Enterprise version requires you to buy a <strong>separate license</strong>.</p>
+<p>The Open Source flavor includes an option to <strong>enable Varnish modules</strong>.</p>
 <doc-anchor-target id="rabbitmq-options">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#rabbitmq-options">#</doc-anchor-trigger>
@@ -352,7 +352,7 @@
     <figcaption class="caption">RabbitMQ Options</figcaption>
 </figure>
 </p>
-<p>The RabbitMQ Plugins options allows you to easily install RabbitMQ plugins.</p>
+<p>The RabbitMQ Plugins options allows you to easily <strong>install RabbitMQ plugins</strong>.</p>
 <doc-anchor-target id="ftp--server-options">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ftp--server-options">#</doc-anchor-trigger>
@@ -377,7 +377,7 @@
         <span>Enable SFTP for FTP Users</span>
     </h3>
 </doc-anchor-target>
-<p>Enables SFTP connections over port 222 using the existing FTP daemon and users. This does not work over port 22, as this is reserved for the SSH service.</p>
+<p>Enables SFTP connections over <strong>port 222</strong> using the existing FTP daemon and users. This does not work over port 22, as this is reserved for the SSH service.</p>
 <doc-anchor-target id="operating-system">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#operating-system">#</doc-anchor-trigger>
@@ -395,14 +395,14 @@
         <span>OS Extra Packages</span>
     </h3>
 </doc-anchor-target>
-<p>A non-exhaustive list of packages to be installed. Please note this list is not complete, and more options are available when using source YAML mode! More info on editing YAML can be found <a href="../yaml/">here</a></p>
+<p>A non-exhaustive list of packages to install. Please note this list is not complete, and more options are available when using source YAML mode! More info on editing YAML can be found <a href="../yaml/">here</a></p>
 <doc-anchor-target id="maintenance-window">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#maintenance-window">#</doc-anchor-trigger>
         <span>Maintenance Window</span>
     </h3>
 </doc-anchor-target>
-<p>Set a maintenance window for patches and updates that require rebooting the server. This allows you to choose your least critical timing for this essential maintenance.</p>
+<p>Set a maintenance window for <strong>patches and updates</strong> that require rebooting the server. This allows you to choose your <strong>least critical timing</strong> for essential updates.</p>
 <doc-anchor-target id="advanced-database-monitoring">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-database-monitoring">#</doc-anchor-trigger>
@@ -414,8 +414,8 @@
     <figcaption class="caption">img.png</figcaption>
 </figure>
 </p>
-<p>Allows you to set up the database monitoring tool PMM (Percona Monitoring and Management) on your TurboStack.</p>
-<p>If you have a pmm advanced database analytics system, you can fill in the PMM master server&#x27;s hostname to link your TurboStack server to it. The PMM Sampling Rate can be set in Advanced Settings.</p>
+<p>Allows you to set up the database monitoring tool <strong>PMM (Percona Monitoring and Management)</strong> on your TurboStack.</p>
+<p>If you have a PMM advanced database analytics system, you can fill in the <strong>PMM master server&#x27;s hostname</strong> to link your TurboStack server to it. The <strong>PMM Sampling Rate</strong> can be set in Advanced Settings.</p>
 <p>More information on PMM can be found <a href="https://docs.percona.com/percona-monitoring-and-management/3/index.html" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>here</span></a>.</p>
 
                                 
