@@ -184,8 +184,7 @@ WantedBy=default.target
 > - Adjust PHP binary path and `WorkingDirectory` as needed.
 
 🔗 Extra Info:
-- [CraftCMS Config Docs - runqueueautomatically](https://craftcms.com/docs/4.x/config/general.html#runqueueautomatically)  
-- [Shopware Message Queue Guide](https://portal.hosted-power.com/knowledgebase/article/152/shopware-message-queue/)
+- [CraftCMS Config Docs - runqueueautomatically](https://craftcms.com/docs/5.x/reference/config/general.html#runqueueautomatically)
 
 ---
 
