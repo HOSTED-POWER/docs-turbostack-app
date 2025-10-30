@@ -76,7 +76,7 @@ The RabbitMQ Plugins options allows you to easily **install RabbitMQ plugins**.
 
 ### OS Extra Packages
 
-A non-exhaustive **list of packages** available for **automated installation**. Please note this list is not complete, and more options are available when using source YAML mode! More info on editing YAML can be found [here](yaml.md)
+A non-exhaustive **list of packages** available for **automated installation**. Please note this list only includes some of the more common packages! More info on installing packages, including ones not available in this list, can be found [here](../../Configuration/install_packages.md).
 
 ### Maintenance Window
 
