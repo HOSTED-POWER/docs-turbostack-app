@@ -9,9 +9,9 @@ label: Migration Hero
 To simplify the migration of your external application to TurboStack, the **Migration Hero** feature is available. It automatically transfers the full configuration, files and database. Enabling a fast and efficient setup with minimal effort.
 
 !!! info
-If you want to migrate an application from TurboStack to TurboStack, please use the **Account Cloning** feature documented below.
+If you want to migrate an application from TurboStack to TurboStack, please use the [Account Cloning](accountclone.md) feature.
 !!!
-
+[accountclone.md](accountclone.md)
 Before starting, make sure you have already **created an application** and successfully performed a **Save and Publish**.
 
 1. Navigate to the **Accounts** tab in the TurboStack Platform under your host.
@@ -21,7 +21,7 @@ Before starting, make sure you have already **created an application** and succe
 ![](../../../img/turbostackapp/newapp/tsa_migration_hero1.png)
 
 3. In the next step, enter the **remote host** and the **user** you want to migrate. 
-Then, choose the authentication method you want to use to connect to the remote host.
+Then, choose the **authentication method** you want to use to connect to the remote host.
 ![](../../../img/turbostackapp/newapp/tsa_migration_hero2.png)
 
 4. **Option 1:** Enter the password for the user on the remote host, then click **Next**.
@@ -36,5 +36,5 @@ Then, choose the authentication method you want to use to connect to the remote 
 7. Select the **hostname(s)** you want to associate with the account and choose the **type of certificate** to generate. Click **Start Import** to begin the migration.
 ![](../../../img/turbostackapp/newapp/tsa_migration_hero6.png)
 
-8. A migration progress popup will appear in the bottom-right corner. Once it finishes, your migration is complete. 
+8. A migration progress popup will appear in the bottom-right corner. Once it finishes, your migration is complete!
 ![](../../../img/turbostackapp/newapp/tsa_migration_hero7.png)

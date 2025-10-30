@@ -10,10 +10,10 @@ Leveraging the power of **Infrastructure-as-Code (IaC)**, this YAML representati
 
 ## What is YAML?
 
-YAML is a human-readable data serialization language. Think of it as a way to represent complex data structures in a simple, text-based format. It uses indentation and simple syntax to define key-value pairs, lists, and nested structures. This makes it easy to understand and edit, even for users who are not professional developers.
+YAML is a **human-readable data serialization language**. Think of it as a way to **represent complex data structures in a simple, text-based format**. It uses indentation and simple syntax to **define key-value pairs, lists, and nested structures**. This makes it **easy to understand and edit**, even for users who are not professional developers.
 
 ## How can I edit my server's YAML?
-You can easily switch from the GUI to the YAML view by pressing the following button:
+You can easily switch from the **GUI** to the **YAML** view by pressing the following button:
 
 ![Yaml Source Code](../../img/turbostackapp/YAML/source-code.png)
 
@@ -53,7 +53,7 @@ The top-level of the YAML file contains global parameters that apply to the enti
 - `redis_memory`: the memory to be used by the Redis cache (e.g., `5gb`).
 - `firewall_country_block`: comma separated list of [ISO 3166 2-letter country codes](https://www.iso.org/obp/ui/#search) to block in the firewall (e.g., `CN,GB,RU,US`)
 - `firewall_whitelist`: a list of public IPv4/IPv6 addresses and CIDRs to whitelist in the firewall.
-- `ssh_keys`: a list of SSH public keys that will be allowed to login passwordless.
+- `ssh_keys`: a list of SSH public keys that will be allowed to log in passwordless.
 - `os_extra_packages`: a list of packages, to be installed by the package manager, required by the application.
 
 A full list of global settings will come soon.
@@ -70,7 +70,7 @@ Each vhosts entry defines a web application hosted within the user's directory. 
 - `app_type`: The type of application (e.g., `drupal`, `odoo`, `magento2`, `shopware`, `wordpress`, ...).
 - `app_install`: A boolean value indicating whether the application should be automatically installed, or is managed by the customer.
 - `php_version`: The PHP version used by the application (e.g., `8.4`, `8.3`, `8.2`, `8.1`, `8.0`, `7.4`, ...). This parameter is only relevant if the app_type uses php.
-- `nodejs_version`: The nodejs major version used by the application (e.g. `22.x`).
+- `nodejs_version`: The Node.js major version used by the application (e.g. `22.x`).
 - `cert_type`: The type of SSL certificate used (e.g., `letsencrypt`, `selfsigned` or `custom`).
 - `docker_enabled`: A boolean value indicating whether the web app can use Docker.
 - `rabbitmq_enabled`: A boolean value indicating whether the web app can use RabbitMQ.

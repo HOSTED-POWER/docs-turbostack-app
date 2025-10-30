@@ -5,7 +5,7 @@ icon: upload
 
 #  Cloning an account
 
-To make a clone of an **existing application**, we provide the **Clone Account** feature. This function **replicates the entire configuration** and **copies the files and database**, enabling a quick and efficient setup with minimal effort.
+To make a **clone of an existing application**, we provide the **Clone Account** feature. This function **replicates the entire configuration** and  optionally **copies the files and/or database**, enabling a quick and efficient setup with minimal effort.
 
 !!!Info
 This feature is extremely useful to quickly copy your production environment to a staging environment or vice versa!
