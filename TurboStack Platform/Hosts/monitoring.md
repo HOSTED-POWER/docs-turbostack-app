@@ -15,7 +15,7 @@ The general health of the server can be seen in the TurboStack Platform overview
 3. CPU load and usage
 4. Disk usage
 
-If any of these checks alert, the icons will become red. When this is the case, please contact the [Hosted Power Support](../../Support/standard_support.md) asap.
+If any of these checks alert, the icons will become red. When this is the case, please contact our [Support](../../Support/standard_support.md) ASAP.
 
 ## Website monitoring URL
 

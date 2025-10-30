@@ -12,7 +12,7 @@ New servers can also be autoconfigured using **Templates**! Visit [this](../../t
 
 ## What is an account and what is it used for?
 
-The account is a **Linux user** which can be used simply to access the server. However, you probably want to deploy one or multiple **applications** under this user. This guide will explain how to deploy system users and all settings your application requires.
+The account is a **Linux user** which can be used simply to access the server. However, you probably want to deploy **one or multiple applications** under this user. This guide will explain how to deploy system users and all settings your application requires.
 
 !!!
 For staging and production instances of an application, best practice is always to use an entirely different server, because it's by design unavoidable that resources allocated for staging, will be (silently) "taken away" from production. Even when this staging application is rarely used, it would still consume memory for e.g. databases, causing avoidable overhead.
@@ -22,9 +22,7 @@ For staging and production instances of an application, best practice is always 
 
 ### Deploying a new account in the GUI
 
-Creating a new user on the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform").
-
-* Open the TurboStack Platform
+* Open the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform")
 * Open the server management console in the **Hosts** section
 
 1. Go to the **Accounts** page
@@ -60,7 +58,7 @@ Creating a new (default) application under the newly created **prod** user.
 ![](../../../img/turbostackapp/newapp/tsa_app2.png)
 3. The first application for each user should always be **default**.
 ![](../../../img/turbostackapp/newapp/tsa_app3.png)
-4. Fill in 1 or more **hostnames** your application will listen on.
+4. Fill in **1 or more hostnames** your application will listen on.
 ![](../../../img/turbostackapp/newapp/tsa_appX.png)
 5. Choose an **SSL certificate**, there are 3 options: **letsencrypt**(default), **self-signed** and **custom** (3rd party certificate).
 
@@ -87,12 +85,14 @@ The **app type** should match the CMS or framework that will be installed on thi
 
 Please note that two more publishing options are available:
 
-- **Save & Full Publish**: Redeploy the whole server configuration as opposed to only the changes
+- **Save & Full Publish**: Redeploy the **whole server configuration** as opposed to only the changes
 - **Save, Delete & Full Publish**: Same as **Save & Full Publish**, but is required when **explicitly deleting** certain configs. You will be prompted to verify this option by typing 'DELETE' as a failsafe.
 
 ![](../../../img/turbostackapp/newapp/tsa_app10.png)
 
+!!! info
 Depending on the volume and impact of changes, publishing can take some time! When the publication of your TurboStack has completed successfully, a message indicating so with a timestamp will appear in the top right corner:
+!!!
 
 ![Successful publication](../../../img/turbostackapp/newapp/publishsuccess.png)
 

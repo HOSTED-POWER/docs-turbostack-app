@@ -8,7 +8,7 @@ icon: lock
 This is an advanced feature, please be cautious while changing values here!
 !!!
 
-The **Security** tab allows you to modify certain firewall settings.
+The **Security** tab allows you to **modify certain firewall settings**.
 
 ## Whitelist IP Addresses
 

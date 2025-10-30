@@ -10,10 +10,10 @@ Leveraging the power of **Infrastructure-as-Code (IaC)**, this YAML representati
 
 ## What is YAML?
 
-YAML is a human-readable data serialization language. Think of it as a way to represent complex data structures in a simple, text-based format. It uses indentation and simple syntax to define key-value pairs, lists, and nested structures. This makes it easy to understand and edit, even for users who are not professional developers.
+YAML is a **human-readable data serialization language**. Think of it as a way to **represent complex data structures in a simple, text-based format**. It uses indentation and simple syntax to **define key-value pairs, lists, and nested structures**. This makes it **easy to understand and edit**, even for users who are not professional developers.
 
 ## How can I edit my server's YAML?
-You can easily switch from the GUI to the YAML view by pressing the following button:
+You can easily switch from the **GUI** to the **YAML** view by pressing the following button:
 
 ![Yaml Source Code](../../img/turbostackapp/YAML/source-code.png)
 
