@@ -3,40 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815155162561">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815156597079">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>cPanel</title>
-    <meta name="title" content="cPanel">
-    <meta name="description" content="If you notice issues with one or more domains not getting their certificates, you probably already know to check the 'AutoSSL' page to retry.">
+    <title>Redis</title>
+    <meta name="title" content="Redis">
+    <meta name="description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.turbostack.app/technologies/control-panels/cpanel/">
+    <link rel="canonical" href="https://docs.turbostack.app/technologies/caching/redis/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.turbostack.app/technologies/control-panels/cpanel/">
-    <meta property="og:title" content="cPanel">
-    <meta property="og:description" content="If you notice issues with one or more domains not getting their certificates, you probably already know to check the 'AutoSSL' page to retry.">
-    <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png">
+    <meta property="og:url" content="https://docs.turbostack.app/technologies/caching/redis/">
+    <meta property="og:title" content="Redis">
+    <meta property="og:description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/control-panels/cpanel/">
-    <meta property="twitter:title" content="cPanel">
-    <meta property="twitter:description" content="If you notice issues with one or more domains not getting their certificates, you probably already know to check the 'AutoSSL' page to retry.">
-    <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png">
+    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/caching/redis/">
+    <meta property="twitter:title" content="Redis">
+    <meta property="twitter:description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.815155162561" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.815156597079" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815155162561" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815156597079" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815155162561" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815156597079" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.815156597079" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,81 +220,243 @@
                                         </li>
                                         <li class="pr-4">
                                             <span class="pr-4">
-                                                Control Panels
+                                                Caching
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../../technologies/control-panels/cpanel/" class="pr-4">
-                                                c​Panel
+                                            <a href="../../../technologies/caching/redis/" class="pr-4">
+                                                Redis
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="cpanel" class="break-words">
+<doc-anchor-target id="redis" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cpanel">#</doc-anchor-trigger>
-        <span>cPanel</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#redis">#</doc-anchor-trigger>
+        <span>Redis</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="troubleshoot-failed-autossllets-encrypt-certificate-request">
+<p>Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.</p>
+<p>This page explains how our Redis setup works, why certain choices were made, and how to make the most of Redis.</p>
+<hr>
+<doc-anchor-target id="1-our-redis-setup-two-instances-for-optimal-performance">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#troubleshoot-failed-autossllets-encrypt-certificate-request">#</doc-anchor-trigger>
-        <span>Troubleshoot failed AutoSSL/Let&#x27;s Encrypt certificate request</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-our-redis-setup-two-instances-for-optimal-performance">#</doc-anchor-trigger>
+        <span>1. Our Redis Setup: Two Instances for Optimal Performance</span>
     </h2>
 </doc-anchor-target>
-<p>If you notice issues with one or more domains not getting their certificates, you probably already know to check the &#x27;AutoSSL&#x27; page to retry. There&#x27;s also a way to check how the failed request went on <a href="https://web2.monkeyhost.be:2087/cpsess2457181835/scripts12/autossl#/providers/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>this page</span></a> though, and often you can easily identify the issues.</p>
-<p>We strongly recommend retrying the request only once, for the specific user that is experiencing the issue, and then fixing the issue using that log. Further retries will count towards the Let&#x27;s Encrypt request limit, which will block further requests eventually.</p>
-<p>Reading through this log may seem daunting, as there is a lot of information especially for users with a lot of domains. Most of it can be safely ignored however, we&#x27;re mostly looking for warnings and errors. When going down the list, you&#x27;ll find &#x27;HTTP DCV&#x27; mentioned. This means &#x27;domain control validation&#x27;, or the validation that you own the domain you&#x27;re requesting a certificate for, over HTTP. If you find &#x27;WARN Local HTTP DCV error&#x27; for a specific domain, said validation did not succeed for this domain. Take a look at the example below:</p>
+<p>By default, at least two Redis instances run on our servers:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Instance</th>
+<th>Port</th>
+<th>Purpose</th>
+<th>Data Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redis</td>
+<td>6379 (default)</td>
+<td>Caching</td>
+<td>Persistent</td>
+</tr>
+<tr>
+<td>Redis-persistent</td>
+<td>6378 (custom)</td>
+<td>Sessions &amp; critical data</td>
+<td>Persistent</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="why-two-redis-instances">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-two-redis-instances">#</doc-anchor-trigger>
+        <span>Why two Redis instances?</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Faster cache processing:</strong><br />
+The standard Redis instance on port <strong>6379</strong> is used for <strong>temporary cache storage</strong>, improving <strong>load times and reducing database strain</strong>.</p>
+</li>
+<li><p><strong>Reliable session storage:</strong><br />
+The second Redis instance on port <strong>6378</strong> is set for <strong>persistent storage</strong>, ensuring session data is not lost on restart. This instance should never be cleared, as it can influence the stability of the application.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> While both instances save an RDB file to disk, only the <code v-pre>redis</code> instance is affected by the <code v-pre>tscli redis clear</code> command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.</p>
+</blockquote>
+<hr>
+<doc-anchor-target id="a-use-the-socket-file-for-local-performance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-use-the-socket-file-for-local-performance">#</doc-anchor-trigger>
+        <span>A. Use the Socket File for Local Performance</span>
+    </h3>
+</doc-anchor-target>
+<p>If Redis runs locally, we recommend using <strong>socket files instead of network connections</strong> to reduce overhead and latency.</p>
+<ul>
+<li><p><strong>Cache Redis socket file:</strong><br />
+<code v-pre>/var/run/redis/redis.sock</code></p>
+</li>
+<li><p><strong>Persistent Redis socket file:</strong><br />
+<code v-pre>/var/run/redis-persistent/redis.sock</code></p>
+</li>
+</ul>
+<p><strong>Benefit:</strong> Socket files improve communication speed and reduce CPU usage.</p>
+<hr>
+<doc-anchor-target id="b-use-separate-databases-for-multiple-websitesapplications">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#b-use-separate-databases-for-multiple-websitesapplications">#</doc-anchor-trigger>
+        <span>B. Use Separate Databases for Multiple Websites/Applications</span>
+    </h3>
+</doc-anchor-target>
+<p>Redis supports <strong>multiple databases (0-15)</strong>. If running <strong>multiple websites or applications</strong> on the same server, use <strong>separate databases</strong>:</p>
+<ul>
+<li>Website A → <code v-pre>db 1</code></li>
+<li>Website B → <code v-pre>db 2</code></li>
+</ul>
+<p><strong>Benefit:</strong> Prevents applications from overwriting each other’s cache.<br />
+<strong>Note:</strong> If more databases are needed, these can be configured.</p>
+<hr>
+<doc-anchor-target id="c-set-ttl-and-expiry-properly">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#c-set-ttl-and-expiry-properly">#</doc-anchor-trigger>
+        <span>C. Set TTL and Expiry Properly</span>
+    </h3>
+</doc-anchor-target>
+<p>By default, Redis <strong>does not</strong> assign a TTL (Time-To-Live) to keys unless explicitly set.</p>
+<ul>
+<li><p><strong>Caching keys:</strong> Set a TTL for <strong>temporary data</strong> (e.g., API responses, HTML fragments):</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none"> WARN Local HTTP DCV error (www.hosted-power.com): The system failed to fetch the DCV (Domain Control Validation) file at “http://www.hosted-power.com/.well-known/acme-challenge/C8FHCBYKJ8VMHGMNAQDWOYK9T3KU11AO” because of an error: The system failed to send an HTTP (Hypertext Transfer Protocol) “GET” request to “http://www.hosted-power.com/.well-known/acme-challenge/C8FHCBYKJ8VMHGMNAQDWOYK9T3KU11AO” because of an error: Timed out while waiting for socket to become ready for reading. The domain “www.hosted-power.com” resolved to an IP address “94.237.46.68” that does not exist on this server.</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">SET key value EX 3600  # Expires after 1 hour</code></pre>
 </doc-codeblock></div>
-<p>This error tells us that Let&#x27;s Encrypt was not able to reach the validation file (the URL provided) and the reason why. In this case, we can see the domain resolved to an IP address that cPanel could not find on the server, indicating the domain does not point towards the server we&#x27;re requesting the certificate on. So we could resolve this either by fixing the DNS records to point towards this server, or we can <doc-anchor-trigger to="#fix---autossl-reduced-ssl-coverage">exclude this domain</doc-anchor-trigger> from AutoSSL for this user.</p>
-<p>Other common errors are a 404 response, indicating that the site may resolve to this server correctly, but the file is still not reachable. This could be due to redirections you have setup, or even a faulty Magento runmaps setup.</p>
-<doc-anchor-target id="how-to-correctly-configure-a-magento-2-cronjob-under-cpanel">
+</li>
+<li><p><strong>Sessions:</strong> Use a longer TTL, such as <strong>24 hours</strong> for user sessions.</p>
+</li>
+<li><p><strong>Critical data:</strong> Do <strong>not</strong> set TTL for <strong>important data</strong> that must persist.</p>
+</li>
+</ul>
+<p><strong>Benefit:</strong> Optimizes memory usage and prevents Redis from filling up completely.</p>
+<hr>
+<doc-anchor-target id="2-setting-a-ttl">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-correctly-configure-a-magento-2-cronjob-under-cpanel">#</doc-anchor-trigger>
-        <span>How to correctly configure a Magento 2 cronjob under cPanel</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-setting-a-ttl">#</doc-anchor-trigger>
+        <span>2. Setting a TTL</span>
     </h2>
 </doc-anchor-target>
-<p>Login via ssh as the account user (or login via cPanel -&gt; Cronjobs)</p>
+<p>Keeping your redis memory usage below the limit is very important, as a lack of free memory can cause several front-end issues, based on implementation within the application. To help you get this under control, we have some procedures for the more popular CMSes listed below.</p>
+<doc-anchor-target id="wordpress">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wordpress">#</doc-anchor-trigger>
+        <span>WordPress:</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="cache-plugin">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-plugin">#</doc-anchor-trigger>
+        <span>Cache plugin</span>
+    </h4>
+</doc-anchor-target>
+<p>Wordpress uses a redis plugin. The config file can be found here:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none"># crontab -e
-MAILTO=&quot;&quot;
-* * * * * /usr/local/bin/php -d memory_limit=-1 /home/demoshop/public_html/bin/magento cron:run &gt; /home/demoshop/public_html/var/log/magento.cron.log
-* * * * * /usr/local/bin/php -d memory_limit=-1 /home/demoshop/public_html/update/cron.php &gt; /home/demoshop/public_html/var/log/update.cron.log
-* * * * * /usr/local/bin/php -d memory_limit=-1 /home/demoshop/public_html/bin/magento setup:cron:run &gt; /home/demoshop/public_html/var/log/setup.cron.log</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/var/www/XXXX/public_html/wp-content/object-cache.php</code></pre>
 </doc-codeblock></div>
-<p>(Replace demoshop by your own account name)</p>
-<doc-anchor-target id="fix---autossl-reduced-ssl-coverage">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fix---autossl-reduced-ssl-coverage">#</doc-anchor-trigger>
-        <span>FIX - AutoSSL reduced SSL coverage</span>
-    </h2>
+<p>In this file we can find the default TTL that&#x27;s set for Redis entries when none was given upon creation of the key:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">if ( ! defined( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS' ) ) {
+	define( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS', 0 );
+}</code></pre>
+</doc-codeblock></div>
+<p>A TTL of 0 in Redis means &#x27;Never Expire&#x27;. Change this value to for example 28800 seconds (8 hours).</p>
+<p>To monitor the change, you can use the analysis tool in <a href="https://docs.hosted-power.com/books/redis/page/redis-insight" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Redis Insight</span></a> and sort on TTL.</p>
+<p><strong>Tip:</strong> you can clear the Redis cache with the &#x27; tscli redis clear &#x27; command.</p>
+<doc-anchor-target id="wp-cache-set-ttl">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wp-cache-set-ttl">#</doc-anchor-trigger>
+        <span>WP cache set TTL</span>
+    </h4>
 </doc-anchor-target>
-<p>This is a known problem in cPanel AutoSSL.</p>
-<p>This now requires each subdomain be verified individually. If this fails, they will automatically stop including them in the attempt and send an alert to your configured mail addresses. This can get very spammy, so you might want to solve the root cause. You can find more context in <a href="https://support.cpanel.net/hc/en-us/articles/4416419981335-Potential-reduced-AutoSSL-coverage-notification" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>the official cPanel docs</span></a>.</p>
-<p>To resolve this, we recommend you check the configured domains. As you can see in the screenshot below, this often includes auto-generated cPanel subdomains</p>
-<p><figure class="content-center">
-    <img src="../../../img/turbostackapp/control_panels/kb-cpanel-autossl-issue1.png" alt="AutoSSL issue">
-    <figcaption class="caption">AutoSSL issue</figcaption>
-</figure>
-</p>
-<p>As you can see, there&#x27;s a lot of unprotected subdomains, however, none of these are actually in use. As such, you can safely exclude these from your certificate.
-To do this, you need to be logged in as the user of the domain for which the certificate is being generated.</p>
-<p>Once logged in, you need to find the following option in your main menu: SSL/TLS Status</p>
-<p>That page will look like this:
-<figure class="content-center">
-    <img src="../../../img/turbostackapp/control_panels/kb-cpanel-autossl-issue2.png" alt="AutoSSL issue2">
-    <figcaption class="caption">AutoSSL issue2</figcaption>
-</figure>
-</p>
-<p>Here you can see what your subdomains might look like. &quot;AutoSSL Domain Validated&quot; means it works, so you can ignore those. Then, all subdomains in red need to be checked. If you don&#x27;t use the subdomain, you should click &quot;Exclude from AutoSSL&quot; as seen in the second item in the screenshot.
-Once you&#x27;ve dealt with all subdomains in error, you can click the &quot;Run AutoSSL&quot; button at the top of the page to re-run the validation. This will mean no more errors when running AutoSSL, and no more alert spam!</p>
+<doc-anchor-target id="set-default-value">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-default-value">#</doc-anchor-trigger>
+        <span>Set default value</span>
+    </h4>
+</doc-anchor-target>
+<p>In wordpress one of the more common ways to add something to the cache is by using the &#x27;wp_cache_set&#x27; instruction.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">wp_cache_set( 'my_key', 'my_value', 'default', 600 );</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="set-value-for-specific-namespace">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-value-for-specific-namespace">#</doc-anchor-trigger>
+        <span>Set value for specific namespace</span>
+    </h4>
+</doc-anchor-target>
+<p>Some plugins set keys to never expire, like the &#x27;posts&#x27; keys. To find where a key is added, use the following command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">grep -Ri &quot;wp_cache_set(&quot; | grep 'posts'</code></pre>
+</doc-codeblock></div>
+<p>This will give results like these:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">wp-content/plugins/woocommerce-product-search/lib/core/class-woocommerce-product-search-service.php:     $cached = wp_cache_set( $cache_key, $posts, self::GET_TERMS_POSTS_CACHE_GROUP, self::get_cache_lifetime() );</code></pre>
+</doc-codeblock></div>
+<p>In this file, it refers to itself ( <strong>self::get_cache_lifetime()</strong> ) to get the value. The function refers to the constant variable:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">const CACHE_LIFETIME   = 0;</code></pre>
+</doc-codeblock></div>
+<p>This is again, an infinite TTL. Change it to a more reasonable number.</p>
+<p><em>This needs to be set for all the different namespaces.</em></p>
+<doc-anchor-target id="drupal">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#drupal">#</doc-anchor-trigger>
+        <span>Drupal:</span>
+    </h3>
+</doc-anchor-target>
+<p>In the following file:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">nano public_html/modules/contrib/redis/src/Cache/CacheBase.php</code></pre>
+</doc-codeblock></div>
+<p>The following constant and function can be found:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">const LIFETIME_PERM_DEFAULT = 31536000;
+...
+if (($settings = Settings::get('redis.settings', [])) &amp;&amp; isset($settings['perm_ttl_' . $this-&gt;bin])) {
+  $ttl = $settings['perm_ttl_' . $this-&gt;bin];
+}
+else {
+  // fallback to 31536000 = 1 year
+}</code></pre>
+</doc-codeblock></div>
+<p>This means: if <em>perm_ttl_cache_menu</em> is not set, fall back to a TTL of 1 year. This is the general setting for all Redis keys.<br />
+If Redis Insight shows you really use only a couple of namespaces that can have a similar TTL, you can just edit this constant variable to the desired value.</p>
+<doc-anchor-target id="set-ttl-per-namespace">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-ttl-per-namespace">#</doc-anchor-trigger>
+        <span>Set TTL per namespace</span>
+    </h4>
+</doc-anchor-target>
+<p>You can also set this per namespace in the settings:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">nano public_html/sites/default/settings.php</code></pre>
+</doc-codeblock></div>
+<p>Add the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">$settings['redis.settings']['perm_ttl_cache_menu'] = 21600; // 6 hours</code></pre>
+</doc-codeblock></div>
+<p>Now the &#x27;menu&#x27; cache items will have a TTL of 6 hours.</p>
+<p>All that remains is clearing the Drupal cache and flushing Redis:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">drush cr
+tscli redis clear</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -303,7 +464,7 @@ Once you&#x27;ve dealt with all subdomains in error, you can click the &quot;Run
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/Control Panels/cpanel.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/Caching/redis.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -321,10 +482,10 @@ Once you&#x27;ve dealt with all subdomains in error, you can click the &quot;Run
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/control-panels/directadmin/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/caching/varnish/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Direct​Admin</span>
+                                                <span class="block mt-1">Varnish</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -368,6 +529,6 @@ Once you&#x27;ve dealt with all subdomains in error, you can click the &quot;Run
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "cPanel", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Redis", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

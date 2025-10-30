@@ -3,40 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815155162561">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.815156597079">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>DirectAdmin</title>
-    <meta name="title" content="DirectAdmin">
-    <meta name="description" content="DirectAdmin has very extensive documentation as well as a significant amount of information on their ">
+    <title>Varnish</title>
+    <meta name="title" content="Varnish">
+    <meta name="description" content="Varnish is an optional caching service available in your TurboStack control panel.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.turbostack.app/technologies/control-panels/directadmin/">
+    <link rel="canonical" href="https://docs.turbostack.app/technologies/caching/varnish/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.turbostack.app/technologies/control-panels/directadmin/">
-    <meta property="og:title" content="DirectAdmin">
-    <meta property="og:description" content="DirectAdmin has very extensive documentation as well as a significant amount of information on their ">
-    <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png">
+    <meta property="og:url" content="https://docs.turbostack.app/technologies/caching/varnish/">
+    <meta property="og:title" content="Varnish">
+    <meta property="og:description" content="Varnish is an optional caching service available in your TurboStack control panel.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/control-panels/directadmin/">
-    <meta property="twitter:title" content="DirectAdmin">
-    <meta property="twitter:description" content="DirectAdmin has very extensive documentation as well as a significant amount of information on their ">
-    <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png">
+    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/caching/varnish/">
+    <meta property="twitter:title" content="Varnish">
+    <meta property="twitter:description" content="Varnish is an optional caching service available in your TurboStack control panel.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.815155162561" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.815156597079" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815155162561" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.815156597079" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815155162561" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.815156597079" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,114 +219,101 @@
                                         </li>
                                         <li class="pr-4">
                                             <span class="pr-4">
-                                                Control Panels
+                                                Caching
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../../technologies/control-panels/directadmin/" class="pr-4">
-                                                Direct​Admin
+                                            <a href="../../../technologies/caching/varnish/" class="pr-4">
+                                                Varnish
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="directadmin" class="break-words">
+<doc-anchor-target id="varnish" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#directadmin">#</doc-anchor-trigger>
-        <span>DirectAdmin</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#varnish">#</doc-anchor-trigger>
+        <span>Varnish</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="introduction">
+<p>Varnish is an optional caching service available in your TurboStack control panel. When you activate this option, the service will be installed and a default configuration provided. You may still need to configure your application to make full use of Varnish.</p>
+<p>Varnish default port: 6081</p>
+<doc-anchor-target id="varnish-configuration">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#introduction">#</doc-anchor-trigger>
-        <span>Introduction</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#varnish-configuration">#</doc-anchor-trigger>
+        <span>Varnish configuration</span>
     </h2>
 </doc-anchor-target>
-<p>DirectAdmin has very extensive <a href="https://docs.directadmin.com/getting-started/first-steps/overview.html" class="outbound" title="DirectAdmin Official Documentation" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>documentation</span></a> as well as a significant amount of information on their <a href="https://forum.directadmin.com/" class="outbound" title="DirectAdmin Official Forum" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>forum</span></a>. It is most likely a very good starting point if anything is not working as expected.</p>
-<doc-anchor-target id="apache-reverse-proxy-to-docker-nodejs-or-any-other-service">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#apache-reverse-proxy-to-docker-nodejs-or-any-other-service">#</doc-anchor-trigger>
-        <span>Apache reverse proxy to docker, nodeJS or any other service</span>
-    </h2>
-</doc-anchor-target>
-<p>It&#x27;s possible to use reverse proxy on DirectAdmin quite easily, however it&#x27;s important to not block for example Let&#x27;s Encrypt.</p>
-<p>We will use port <strong>8086</strong> as an example here, navigate as admin user to:
-Server Manager &gt;&gt; Custom HTTPD Configurations &gt;&gt; &quot;Select applicable domain&quot; <strong>httpd.conf</strong> &gt;&gt; Customize &gt;&gt; Put the following code under <strong>CUSTOM2</strong></p>
+<p>Our TurboStack has a default VCL config file, based on  the <strong>app_type</strong> defined in TurboStack App. Using your system user(s), you can read these files in <code v-pre>/etc/varnish/conf.d</code>, the file called 50main.vcl is our default config, based on a default VCL for your CMS where appropriate, expanded with our own optimizations. The following config is our <code v-pre>default.vcl</code> file, which will be loaded in and will then load in the contents of the conf.d directory mentioned earlier:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">RewriteEngine On
-RewriteCond %{REQUEST_URI} !^\.well-known/(.*)
-RewriteCond %{HTTPS} !=on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+<pre class="language-none"><code v-pre class="language-none">vcl 4.1;
+import std;
 
-RequestHeader set &quot;X-Forwarded-Proto&quot; expr=%{REQUEST_SCHEME}
-ProxyPreserveHost On
+include &quot;/etc/varnish/backend.vcl&quot;;
+include &quot;/etc/varnish/acl.vcl&quot;;
 
-ProxyPass /.well-known !
-ProxyPass &quot;/&quot; &quot;http://localhost:8086/&quot;
-ProxyPassReverse &quot;/&quot; &quot;http://localhost:8086/&quot;</code></pre>
+include +glob &quot;/etc/varnish/conf.d/*.vcl&quot;;
+
+sub vcl_recv {
+    # Happens before we check if we have this in cache already.
+    #
+    # Typically you clean up the request here, removing cookies you don't need,
+    # rewriting the request, etc.
+}
+
+sub vcl_backend_response {
+    # Happens after we have read the response headers from the backend.
+    #
+    # Here you clean the response headers, removing silly Set-Cookie headers
+    # and other mistakes your backend does.
+}
+
+sub vcl_deliver {
+    # Happens when we have all the pieces we need, and are about to send the
+    # response to the client.
+    #
+    # You can do accounting or modifying the final object here.
+}</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
-    <img src="../../../img/turbostackapp/control_panels/directadmin-apache-reverse-proxy.png" alt="Apache Reverse Proxy DirectAdmin" title="Apache Reverse Proxy DirectAdmin">
-    <figcaption class="caption">Apache Reverse Proxy DirectAdmin</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="override-e-mail-in-directadmin">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#override-e-mail-in-directadmin">#</doc-anchor-trigger>
-        <span>Override e-mail in DirectAdmin</span>
-    </h2>
-</doc-anchor-target>
-<p>DirectAdmin sometimes has an unwanted default email sender address from when using a web form. There are 2 possible solutions:</p>
-<ul>
-<li>Use an SMTP connector/plugin and configure it to use localhost (Recommended)</li>
-<li>Override the EMAIL tag in the php fpm setting
-<ol>
-<li>Go to Custom HTTPD Configurations</li>
-<li>Open the &quot;php-fpm.conf&quot; from the affected website/account</li>
-<li>Inside php-fpm Global |CUSTOM1|</li>
-<li>Add the override, for example |<a href="mailto:?EMAIL=john.doe@example.com">?EMAIL=john.doe@example.com</a>|</li>
-<li>Make sure to apply on all php versions</li>
-<li>Hit the save button</li>
-</ol>
-</li>
-</ul>
-<p><figure class="content-center">
-    <img src="../../../img/turbostackapp/control_panels/fix-email-from.png" alt="Override mail DirectAdmin">
-    <figcaption class="caption">Override mail DirectAdmin</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="disable-local-mail-delivery-for-a-domain">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-local-mail-delivery-for-a-domain">#</doc-anchor-trigger>
-        <span>Disable Local Mail Delivery for a Domain</span>
-    </h2>
-</doc-anchor-target>
-<p>When you add a domain on your DirectAdmin server, the mail is configured to be delivered locally as a default. This can cause problems if an external provider is used to to deliver emails, because it would try to deliver locally by default, causing a message like the following:</p>
-<p><em>SMTP-error (550) Recipient could not be added (No such recipient here).</em></p>
-<p>You can easily solve this by disabling the local delivery for the mails of your domain.</p>
-<p>To do this, log in as the user of your domain and navigate to the option &#x27;DNS Management&#x27;, found under &#x27;Account Manager&#x27;. Here you have the option &#x27;Modify MX records&#x27;, Then uncheck &#x27;Use this server to handle my emails&#x27;.</p>
-<doc-anchor-target id="spamexperts-or-other-mail--spf-failures">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#spamexperts-or-other-mail--spf-failures">#</doc-anchor-trigger>
-        <span>Spamexperts (or other) mail / SPF failures</span>
-    </h2>
-</doc-anchor-target>
-<p>When using spamassisin in front of DirectAdmin, you see messages like:</p>
+<p>As defined here, all .vcl files in the <code v-pre>/etc/varnish/conf.d</code> directory will be loaded in when Varnish is reloaded. If you want to add extra/custom configurations, your users have the necessary permissions to add files in this directory. Files are loaded in alphabetical order, which we use by prefixing all files with an index to determine their loading order, with the lower indexes getting loaded in first.</p>
+<p>For example, creating a new file called 20_custom.vcl when the current directory structure looks like this:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">2022-04-20 05:41:24 H=out7.antispamcloud.com [94.75.244.176] X=TLS1.2:ECDHE-ECDSA-AES128-GCM-SHA256:128 CV=no F=&lt;info@email.ibood.com&gt; rejected RCPT &lt;recipient@example.com&gt;: SPF: 123.123.123.123 is not allowed to send mail from email.ibood.com: Please see http://www.open-spf.org/Why : Reason: mechanism
-2022-04-20 06:38:26 H=out7.antispamcloud.com [94.75.244.176] X=TLS1.2:ECDHE-ECDSA-AES128-GCM-SHA256:128 CV=no F=&lt;fd_ochtendnieuws@messagent.fdmediagroep.nl&gt; rejected RCPT &lt;recipient@example.com&gt;: SPF: 123.123.123.123 is not allowed to send mail from messagent.fdmediagroep.nl: Please see http://www.open-spf.org/Why : Reason: mechanism</code></pre>
+<pre class="language-none"><code v-pre class="language-none">prod@sander:/etc/varnish/conf.d$ ls -la
+total 28
+drwxrwxrwx 2 root root  4096 Oct 20 13:46 .
+drwxr-xr-x 3 root root  4096 Sep 11 15:41 ..
+-rw-r--r-- 1 root root  1007 Sep 11 15:41 10_bypass.vcl
+-rw-r--r-- 1 root root 14799 Oct 13 15:06 50_main.vcl
+prod@sander:/etc/varnish/conf.d$</code></pre>
 </doc-codeblock></div>
-<p>This is because you need to add spamexperts to the safe senders (relayhost), this can be done as following:</p>
-<p>edit this file: /etc/virtual/esf_skip_hosts</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">delivery.antispamcloud.com
-*.antispamcloud.com</code></pre>
-</doc-codeblock></div>
-<p>(Afterwards restart spamassassin)</p>
+<p>would make the config you add to the 20_custom.vcl file be loaded in after the config from the 10_bypass.vcl file, but before the directives in the 50main.vcl file.</p>
+<p>Importantly, to reload Varnish after you make any changes, you can use <a href="../../../tools/turbostackcli/">TSCLI</a>:</p>
+<p><code v-pre>tscli varnish reload</code></p>
+<doc-anchor-target id="varnish-inner-workings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#varnish-inner-workings">#</doc-anchor-trigger>
+        <span>Varnish inner workings</span>
+    </h2>
+</doc-anchor-target>
+<p>Varnish functions as a sort of reverse proxy caching service. The requests sent to your application are first passed through Varnish, and modified as defined in the VCL config, or served entirely from its own cache memory.</p>
+<p>Varnish does this by storing images, full pages, etc. in RAM for fast access, removing the need for your application to process the request fully itself, saving your server resources and increasing performance.</p>
+<p>When a request comes in that doesn&#x27;t yet have a response in its cache, or when otherwise defined in the VCL, it is passed to the webserver again, this time to be handled by the actual application. Then, if possible, the response is stored by Varnish along with some metadata, most importantly the &#x27;TTL&#x27; or &#x27;Time To Live&#x27; which indicates how long Varnish should keep the information in RAM.</p>
+<p>Due to this, it is important to check for optimizations specific to your application as well, to make sure unnecessary data isn&#x27;t being kept in memory and never retrieved, or data isn&#x27;t being kept with a TTL that is too long. These could cause increased memory usage and lead to degraded performance of your server (and notifications from us about your memory/swap usage)</p>
+<doc-anchor-target id="varnish-links">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#varnish-links">#</doc-anchor-trigger>
+        <span>Varnish links</span>
+    </h2>
+</doc-anchor-target>
+<p>Here&#x27;s some useful links to the Varnish docs, like the &#x27;Tutorials&#x27;:</p>
+<p><a href="https://varnish-cache.org/docs/7.7/tutorial/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://varnish-cache.org/docs/7.7/tutorial/</span></a></p>
+<p>Or for other versions:</p>
+<p><a href="https://varnish-cache.org/docs/index.html" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://varnish-cache.org/docs/index.html</span></a></p>
+<p>Do note these tutorials include steps to setup Varnish yourself, but we already provide a Varnish instance installed and running.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -336,7 +321,7 @@ ProxyPassReverse &quot;/&quot; &quot;http://localhost:8086/&quot;</code></pre>
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/Control Panels/directadmin.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/Caching/varnish.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -344,11 +329,11 @@ ProxyPassReverse &quot;/&quot; &quot;http://localhost:8086/&quot;</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/control-panels/cpanel/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/caching/redis/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">c​Panel</span>
+                                                <span class="block mt-1">Redis</span>
                                             </span>
                                         </a>
                                     </div>
@@ -401,6 +386,6 @@ ProxyPassReverse &quot;/&quot; &quot;http://localhost:8086/&quot;</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "DirectAdmin", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Varnish", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
