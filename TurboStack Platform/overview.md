@@ -9,9 +9,9 @@ Welcome to the TurboStack Platform, your go-to place for all server configuratio
  
 ## Locating your managed servers
  
-When going to the [TurboStack Platform](https://my.turbostack.app/ "TurboStack Platform") , log in with your credentials for the [Customer Center](https://portal.hosted-power.com/ "Customer Center").
+When going to the [TurboStack Platform](https://my.turbostack.app/ "TurboStack Platform"), log in with your credentials for the [Customer Center](https://portal.hosted-power.com/ "Customer Center").
  
-If you don't have credentials for the Customer Center yet, you first have to create a Primary account. More info [here](../quickstart.md "here").
+If you don't have credentials for the [Customer Center](https://portal.hosted-power.com/ "Customer Center") yet, you first have to create a Primary account. More info [here](../quickstart.md "here").
  
 ![](../img/turbostackapp/basicinstall/tsa_login1.png)
  
