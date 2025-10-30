@@ -23,7 +23,7 @@ If you want to set YAML as default, you can do so by clicking the icon on the to
 
 #### 2. Revisions: shows all historic configuration changes made to the server
 
-We all make mistakes, but we have you covered: The **revision function** allows you to review the full history of server configuration changes and **revert to a past version** at the click of a button.
+We all make mistakes, but we have you covered: The **revision function** allows you to review the **full history** of server configuration changes and **revert to a past version** at the click of a button.
 
 #### 3. Fetch the credentials and IPs of the server's users and databases
 
