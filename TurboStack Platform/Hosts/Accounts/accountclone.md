@@ -5,7 +5,7 @@ icon: upload
 
 #  Cloning an account
 
-To make a clone of an existing application, we provide the **Clone Account** feature. This function replicates the entire configuration and copies the files and database, enabling a quick and efficient setup with minimal effort.
+To make a clone of an **existing application**, we provide the **Clone Account** feature. This function **replicates the entire configuration** and **copies the files and database**, enabling a quick and efficient setup with minimal effort.
 
 !!!Info
 This feature is extremely useful to quickly copy your production environment to a staging environment or vice versa!
@@ -27,5 +27,3 @@ Here’s how to do it:
 ![](../../../img/turbostackapp/newapp/publishing.png)
 7. If the account clone has succeeded, it will be indicated in the top right with a timestamp.
 ![](../../../img/turbostackapp/newapp/publishsuccess.png)
-
-And that’s it! Your application is now cloned to a new account. Be sure to save the configuration and publish it when you're ready.

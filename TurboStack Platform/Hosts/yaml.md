@@ -4,9 +4,9 @@ icon: code-square
 ---
 # YAML editor
 
-Our platform offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using [YAML (YAML Ain't Markup Language)](https://yaml.org/). This editor provides you with direct access to your server's configuration in YAML format, granting you fine-grained control and flexibility.
+The [TurboStack Platform](https://my.turbostack.app/ "TurboStack Platform") offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using [YAML (YAML Ain't Markup Language)](https://yaml.org/). This editor provides you with direct access to your server's configuration in **YAML format**, granting you fine-grained control and flexibility.
 
-Leveraging the power of Infrastructure as Code (IaC), this YAML representation allows for rapid server replication. By simply copying the YAML configuration and applying it to new servers, you can create fully identical setups in seconds. This ensures consistency and significantly reduces deployment time, making it ideal for scaling your infrastructure efficiently.
+Leveraging the power of **Infrastructure-as-Code (IaC)**, this YAML representation allows for **rapid server replication**. By simply copying the YAML configuration and applying it to new servers, you can create **fully identical setups** in seconds. This ensures **consistency** and significantly **reduces deployment time**, making it ideal for **scaling your infrastructure efficiently**.
 
 ## What is YAML?
 
