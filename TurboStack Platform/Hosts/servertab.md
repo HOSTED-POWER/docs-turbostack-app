@@ -5,11 +5,11 @@ icon: server
 
 # Server tab - setting up server-wide services
 
-The **server** tab defines some basic middleware configuration, like the type of webserver and several types of supported databases. This page describes all configuration options within the server tab.
+The **server** tab defines some basic middleware configuration, like the type of **webserver** and several types of supported **databases**. This page describes all configuration options within the server tab.
 
 ## Webserver
 
-We offer both Nginx and Apache2 as web server options. For optimal performance and efficiency, Nginx is our default choice, though Apache2 remains fully compatible and performs reliably on our TurboStack.
+We offer both **nginx and Apache2** as web server options. For **optimal performance** and **efficiency**, nginx is our default choice, though Apache2 remains fully compatible and performs reliably on our TurboStack.
 
 ![Webserver settings](img/servertabwebserver.png)
 
