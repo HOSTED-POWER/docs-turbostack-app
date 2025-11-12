@@ -13,6 +13,8 @@ If you've received an email from our support team with a link to this article, i
 
 Many of these errors stem from email deliverability issues. For more information on improving your email deliverability, visit [this page](deliverability.md "this page").
 
+[These open-source docs](https://smtp.codes) document these same error codes, as well as some vendor-specific information. While we make our best effort to keep our own doc up to date, checking several sources when investigating these issues is highly recommended.
+
 If you have any questions or difficulties, don't hesitate to contact us!
 
 ## Error codes ##
