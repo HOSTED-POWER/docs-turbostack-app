@@ -36,7 +36,7 @@ To do this, in the upper-right corner of the **Templates** tab, click **Create**
 
 ![](./img/create_template.png)
 
-After choosing a logical name for your template, save your template.
+After choosing a logical name for your template, create your template.
 
 You will now be brought to our _YAML_ editor. Here you can paste a generalized config of a server, of which you want to make a template.
 
