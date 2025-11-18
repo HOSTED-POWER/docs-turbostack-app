@@ -5,6 +5,19 @@ icon: people
 # Groups
 
 Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.
+![](../img/turbostackapp/groups/GroupsTab.png)
+
+## Normal group vs Partner group
+
+You can differentiate between normal and partner groups. The partner group, will have a blue group icon visible next to the _Manage_ button.
+
+### Normal group
+
+A normal group is created within a specific customer’s account. It only applies to that customer, and you can only add servers that belong to that customer.
+
+### Partner group
+
+A partner group is one level higher. It has the same type of configuration options as a normal group, but it can be applied across multiple customers. With a partner group, you can add servers from any customer you have TurboStack access to, allowing you to manage shared settings across all of your customer environments instead of configuring each one individually.
 
 ## Creating Groups
 
