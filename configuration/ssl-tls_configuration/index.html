@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.816864406406">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.816865170807">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.816864406406" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.816865170807" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.816864406406" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.816865170807" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.816864406406" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.816864406406" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.816865170807" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.816865170807" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -347,6 +347,21 @@ DNS.5 = mail.hosted-power.com</code></pre>
 </doc-codeblock></div>
 <p>In this case, <strong>server.csr</strong> is our signing request. Provide this to your preferred CA to generate the required files (public key, CA certificate, ...etc)</p>
 <hr>
+<doc-anchor-target id="extracting-keys-and-certificates-from-a-pfx-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extracting-keys-and-certificates-from-a-pfx-file">#</doc-anchor-trigger>
+        <span>Extracting Keys and Certificates From a PFX File</span>
+    </h3>
+</doc-anchor-target>
+<p>Some certificate providers will provide you with a <em>pfx</em> file, containing your encrypted certificates. This will show you how to extract the certificates from that file.</p>
+<p>Extract the <em>fullchain</em> certificate:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">openssl pkcs12 -in /path/to/certificate.pfx -nokey -out certificate.pem -nodes</code></pre>
+</doc-codeblock></div>
+<p>Extract the private key:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">openssl pkcs12 -in /path/to/certificate.pfx -nocerts -out priv-key.pem -nodes</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="turbostack">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#turbostack">#</doc-anchor-trigger>
