@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.816268120914">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.816864406406">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -21,22 +21,22 @@
     <meta property="og:url" content="https://docs.turbostack.app/turbostack-platform/groups/">
     <meta property="og:title" content="Groups">
     <meta property="og:description" content="Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.">
-    <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/groups/sshtab.png">
+    <meta property="og:image" content="https://docs.turbostack.app/img/turbostackapp/groups/groupstab.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/turbostack-platform/groups/">
     <meta property="twitter:title" content="Groups">
     <meta property="twitter:description" content="Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.">
-    <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/groups/sshtab.png">
+    <meta property="twitter:image" content="https://docs.turbostack.app/img/turbostackapp/groups/groupstab.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.816268120914" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.816864406406" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.816268120914" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.816864406406" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.816268120914" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.816864406406" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -234,7 +234,33 @@
         <span>Groups</span>
     </h1>
 </doc-anchor-target>
-<p>Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.</p>
+<p>Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.
+<figure class="content-center">
+    <img src="../../img/turbostackapp/groups/groupstab.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="normal-group-vs-partner-group">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#normal-group-vs-partner-group">#</doc-anchor-trigger>
+        <span>Normal group vs Partner group</span>
+    </h2>
+</doc-anchor-target>
+<p>You can differentiate between normal and partner groups. The partner group, will have a blue group icon visible next to the <em>Manage</em> button.</p>
+<doc-anchor-target id="normal-group">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#normal-group">#</doc-anchor-trigger>
+        <span>Normal group</span>
+    </h3>
+</doc-anchor-target>
+<p>A normal group is created within a specific customer’s account. It only applies to that customer, and you can only add servers that belong to that customer.</p>
+<doc-anchor-target id="partner-group">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#partner-group">#</doc-anchor-trigger>
+        <span>Partner group</span>
+    </h3>
+</doc-anchor-target>
+<p>A partner group is one level higher. It has the same type of configuration options as a normal group, but it can be applied across multiple customers. With a partner group, you can add servers from any customer you have TurboStack access to, allowing you to manage shared settings across all of your customer environments instead of configuring each one individually.</p>
 <doc-anchor-target id="creating-groups">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-groups">#</doc-anchor-trigger>
