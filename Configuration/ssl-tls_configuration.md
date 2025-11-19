@@ -31,6 +31,7 @@ Need an SSL certificate other than Let’s Encrypt? No problem! We offer Sectigo
 
 If you’ve purchased a certificate from another provider, you can still install it easily on your TurboStack server through the Account Management section of the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"). More info on how to do so can be found [here](/TurboStack%20Platform/accounts#creating-a-new-application-in-the-turbostack-platform)
 
+
 ### Order a standalone SSL certificate
 
 > **It is almost never required to purchase a standalone SSL certificate on TurboStack! Let's Encrypt will cover almost all cases. If you're unsure if this is correct for you, check with our support team first.**
@@ -104,6 +105,19 @@ openssl req -sha256 -new -newkey rsa:4096 -nodes -keyout server.key -out server.
 In this case, **server.csr** is our signing request. Provide this to your preferred CA to generate the required files (public key, CA certificate, ...etc)
 
 ---
+### Extracting Keys and Certificates From a PFX File
+Some certificate providers will provide you with a _pfx_ file, containing your encrypted certificates. This will show you how to extract the certificates from that file.
+
+Extract the _fullchain_ certificate:
+```bash
+openssl pkcs12 -in /path/to/certificate.pfx -nokey -out certificate.pem -nodes
+```
+
+Extract the private key:
+```bash
+openssl pkcs12 -in /path/to/certificate.pfx -nocerts -out priv-key.pem -nodes
+```
+
 ### Turbostack
 
 _We recommend adding the private key and the certificates via the GUI, because of the formatting._
@@ -131,6 +145,7 @@ You can now configure your application:
 **Hint:** If the publish fails, the intermediary certificates could be in the wrong order.
 
 ![Turbostack GUI Step 2](image/csr/csr_account_hostname_custom_certificate.png)
+
 
 
 ## Troubleshoot SSL problems
