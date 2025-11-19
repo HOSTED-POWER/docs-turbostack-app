@@ -30,7 +30,9 @@ Once all configuration options have been filled in, clicking **Install** will se
 Don't forget to click **Save & publish** to actually deploy the config to your server!
 
 ### Make your own template
-You have the possibility to create your own templates. 
+You have the possibility to create your own templates. This comes in handy when you need to regularly set up servers that have specific requirements. like a certain MySQL version and/or extra PHP packages. 
+
+Using the templates, will make your deployments easier and faster.
 
 To do this, in the upper-right corner of the **Templates** tab, click **Create**. This will bring up a new screen where you can choose the name for the template.
 
