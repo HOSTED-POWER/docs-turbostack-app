@@ -28,3 +28,40 @@ Once all configuration options have been filled in, clicking **Install** will se
 ![](./img/finished_conf.png)
 
 Don't forget to click **Save & publish** to actually deploy the config to your server!
+
+### Make your own template
+You can create your own templates to quickly set up environments. This is especially useful when you regularly deploy multiple servers with similar configurations, such as a consistent MySQL version or a common set of PHP packages. 
+
+Using the templates, will make your deployments easier and faster.
+
+To do this, in the upper-right corner of the **Templates** tab, click **Create**. This will bring up a new screen where you can choose the name for the template.
+
+![](./img/create_template.png)
+
+After choosing a logical name for your template, create your template.
+
+You will now be brought to our _YAML_ editor. Here you can paste a generalized config of a server, of which you want to make a template.
+
+Here is an example:
+```yaml
+---
+webserver: nginx
+
+postgresql_version: 16
+
+os_extra_packages:
+- libxml2-dev
+- libxslt1-dev
+- libldap2-dev
+- libsasl2-dev
+
+system_users:
+- username: prod
+  vhosts:
+  - server_name: example.com www.example.com
+    app_name: odoo
+    app_type: odoo
+    python_version: 3.10.17
+    docker_enabled: true
+    cert_type: selfsigned
+```
