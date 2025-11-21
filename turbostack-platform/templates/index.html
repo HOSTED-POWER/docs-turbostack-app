@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.817044824597">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.817044967762">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.817044824597" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.817044967762" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.817044824597" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.817044967762" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.817044824597" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.817044967762" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.817044967762" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -269,6 +270,45 @@
 </figure>
 </p>
 <p>Don&#x27;t forget to click <strong>Save &amp; publish</strong> to actually deploy the config to your server!</p>
+<doc-anchor-target id="make-your-own-template">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#make-your-own-template">#</doc-anchor-trigger>
+        <span>Make your own template</span>
+    </h3>
+</doc-anchor-target>
+<p>You can create your own templates to quickly set up environments. This is especially useful when you regularly deploy multiple servers with similar configurations, such as a consistent MySQL version or a common set of PHP packages.</p>
+<p>Using the templates, will make your deployments easier and faster.</p>
+<p>To do this, in the upper-right corner of the <strong>Templates</strong> tab, click <strong>Create</strong>. This will bring up a new screen where you can choose the name for the template.</p>
+<p><figure class="content-center">
+    <img src="../img/create_template.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>After choosing a logical name for your template, create your template.</p>
+<p>You will now be brought to our <em>YAML</em> editor. Here you can paste a generalized config of a server, of which you want to make a template.</p>
+<p>Here is an example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">---
+webserver: nginx
+
+postgresql_version: 16
+
+os_extra_packages:
+- libxml2-dev
+- libxslt1-dev
+- libldap2-dev
+- libsasl2-dev
+
+system_users:
+- username: prod
+  vhosts:
+  - server_name: example.com www.example.com
+    app_name: odoo
+    app_type: odoo
+    python_version: 3.10.17
+    docker_enabled: true
+    cert_type: selfsigned</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -341,6 +381,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Templates", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Templates", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
