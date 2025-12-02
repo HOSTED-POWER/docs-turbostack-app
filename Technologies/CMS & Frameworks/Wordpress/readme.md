@@ -7,3 +7,7 @@ WordPress is a popular open-source content management system (CMS) that powers a
 ### How-To Guides
 
 * [WP-CLI Commands](wpcli.md)
+
+### Best Practices
+
+* [Wordpress Best Practices](bestpractices.md)
