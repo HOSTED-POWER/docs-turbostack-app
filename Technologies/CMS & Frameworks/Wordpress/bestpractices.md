@@ -1,7 +1,8 @@
 ---
 hidden: true
 ---
-# WordPress Optimization & Maintenance Notes
+# WordPress Best Practices
+Here you'll find some best practices and suggestions for WordPress, to get the most out of your TurboStack environment.
 
 ## Do NOT Update All Plugins
 Updating all plugins blindly often leads to errors.  
@@ -132,27 +133,46 @@ wp index-mysql enable SsW6eC_commentmeta SsW6eC_comments SsW6eC_options SsW6eC_p
 ```
 
 ### Extra plugins
+These are some extra plugins we recommend to use.
+
 - User indexing: https://wordpress.org/plugins/index-wp-users-for-speed/
 - Menu speedup: https://wordpress.org/plugins/speed-up-menu/
 
----
+### Give wordpress more resources
+For bigger environments, you can give wordpress more resources by adding the following to wp-config.php:
+```
+define('WP_MEMORY_LIMIT', '512M');
+define('WP_MAX_MEMORY_LIMIT', '512M');
+```
+Note that if you increase the memory limit in WordPress, you should also increase the memory limit for PHP.
+
+You can do this in the .user.ini file:
+```
+memory_limit = 512M
+```
+So WordPress cannot exceed PHP’s authority, it can only work _within_ it.
 
 ## Varnish Support
-Activate Varnish addon in WP Rocket AND install the Hosted Power **mu-plugin**.  
+Activate Varnish addon in WP Rocket AND install the Hosted Power **mu-plugin**.
+
+![Enable Varnish](img/enablevarnish.png)
+
+
+> You can download the file [here](https://files.hosted-power.com/srv/hostedpower.zip)
+
 Place `hostedpower.php` inside `/wp-content/mu-plugins`.
 
----
+This helper plugin ensures the hosting environment, caching layers, and WordPress all communicate correctly for optimal performance.
+It prevents cache-breaking behavior, enforces proper HTTPS detection, and ensures Varnish purges and full-page caching work reliably.
 
 ## Elementor Page Builder Speedup
 Activate **Element Caching** if using Elementor.
 
+This setting can be found in:
+`Elementor > Settings > Features > Element Caching`
+
+Activating Element Cache is beneficial, because Elementor dynamically assembles pages from many database queries, template parts, and metadata on every request.
+
+By caching these repeated lookups in memory (Redis/Memcached), Elementor pages render significantly faster for logged-in users and dynamic views, reducing database load and improving overall performance.
+
 ---
-
-## Extra Caches to Check
-Examples:
-- WP Rocket cache
-- Theme caches (e.g., Elementor → Tools → Clear Cache)
-- Filter cache
-
----
-
