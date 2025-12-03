@@ -37,7 +37,7 @@ Every minute:
 ```
 * * * * * cronlock /usr/local/bin/wp-cli cron event run --due-now --path=/var/www/xxx/public_html > /dev/null 2>&1
 ```
-> Note: Replace `xxx` with your actual domain name.
+> Note: Replace `xxx` with your actual user.
 
 ### Manual test:
 Run this in your terminal:
