@@ -44,6 +44,16 @@ Run this in your terminal:
 ```
 /usr/local/bin/wp-cli cron event run --due-now --path=/var/www/xxx/public_html
 ```
+The output of this command should be like this:
+```
+Executed the cron event 'action_scheduler_run_queue_rucss' in 0.026s.
+Executed the cron event 'action_scheduler_run_queue' in 2.179s.
+Executed the cron event 'rocket_saas_clean_rows_time_event' in 0.013s.
+Executed the cron event 'rocket_saas_pending_jobs' in 0.008s.
+Executed the cron event 'rocket_remove_saas_failed_jobs' in 0.007s.
+Executed the cron event 'rocket_saas_on_submit_jobs' in 0.005s.
+Success: Executed a total of 6 cron events.
+```
 
 ### Multisite Cronjob
 If you have a multi-site setup, it's not sufficient to run the cronjob once. It must run for each site:
