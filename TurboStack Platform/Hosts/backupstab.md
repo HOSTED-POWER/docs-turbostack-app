@@ -3,6 +3,10 @@ order: 700
 icon: undo
 ---
 
+!!! info
+This feature allows you to overwrite the existing files, folders or databases, or place the backup in a location of your choice. This procedure is described in full below.
+!!!
+
 # Backups tab
 
 The **Backups** tab is where you can restore files, folders and databases. This article will explain how you can use the backup tab. Restores for **files**, **folders**, **MySQL** and **PostgreSQL** are supported.
@@ -17,7 +21,7 @@ The **Backups** tab is where you can restore files, folders and databases. This 
 
 ![restorefile.png](img/restorefile.png)
 
-After clicking the "contents" button, a filetree will show up. Here you can search for the file/folder you are looking for. Once you have selected the file/folder you wish to restore click "Next".
+After clicking the "contents" button, a file tree will show up. Here you can search for the file/folder you are looking for. Once you have selected the file/folder you wish to restore click "Next".
 
 ### Restore path
 
