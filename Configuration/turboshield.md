@@ -7,13 +7,6 @@ icon: umbrella
 TurboShield is our tool to battle high load caused by request floods. It does two things:
   - Rate limit for bot _User Agents_ (Nginx).
   - Temporarily block IP addresses that are making too many requests (Nginx & Apache).
-## Parameters
-| name        | type           | default value | details |
-|-------------|----------------|----------------|---------|
-| enabled     | boolean        | false          | TurboShield is only configured when enabled is true. |
-| level       | string         | medium         | The rate limiting level. Allowed values: low, medium and high. Linked rate: low 10 r/s, medium 5 r/s, high 1 r/s. |
-| allow_bots  | list of strings| []             | List of user agents ignored by rate limiting. |
-| limit_bots  | list of strings| []             | List of user agents that will be rate limited. |
 
 ## Configuration
 To enable our configuration, add the following line above the **system_users**:
