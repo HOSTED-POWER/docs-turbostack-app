@@ -39,15 +39,7 @@ chown -R $USER:$USER ~/<Project>/<Shopname>
 ## Caching
 
 ### Redis
-MedusaJS uses Redis for caching. By default, Redis is installed on your server, but not enabled yet in MedusaJS.
 
-To enable it, follow the guide here:
-========== TODO IN OTHER BRANCH ==========
-
-To clear the cache, run the following command
-```bash
-tscli redis clear
-```
 ### Varnish
 The MedusaJS dashboard does not need any caching. We do recommend adding varnish to your storefront.
 
