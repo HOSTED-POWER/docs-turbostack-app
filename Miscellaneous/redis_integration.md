@@ -4,6 +4,19 @@ hidden: true
 # Redis integration
 Here you'll find how to enable and integrate Redis for your specific CMS, on our TurboStack environment.
 
+## General implementation check
+After implementing Redis, you can verify if data is being cached by using the following commands:
+
+```
+redis-cli
+127.0.0.1:6379> keys *
+(empty array)
+```
+If **empty array** displays, it means that nothing has been cached yet.
+Click around on your website, then try the commands again.
+
+If it remains empty, check if the implementation is correct.
+
 ## Drupal
 To enable the redis module in Drupal, go to **Manage > Extend > Performance > Redis**  and enable it:
 ![Redis Cache Drupal](image/redis%20implementation/redis_drupal_enabled.png)
@@ -136,3 +149,64 @@ This is again, an infinite TTL. Change it to a more reasonable number.
 ## Shopware
 
 ## MedusaJS
+MedusaJS offers Redis integration, but this is not enabled by default. Enabling and configuring Redis, must be done via the _terminal_.
+
+We recommend adding a TTL and a custom namespace per shop. This ensures that the cache is not shared between shops and reduces the chance of completely filling up Redis.
+### Configuration
+To start, we need to add the variables to the `.env` file in `~/<project>/<shopname>/.medusa/server/`:
+
+```
+# Enable the new caching system
+MEDUSA_FF_CACHING=true
+
+# Redis socket URL (percent-encoded)
+CACHE_REDIS_URL=redis://%2Fvar%2Frun%2Fredis%2Fredis.sock
+
+# Optional settings
+CACHE_TTL=28800   # 8 hours in seconds
+CACHE_PREFIX=shopname-cache:
+```
+> **Note:** The Redis URL for a Unix socket must be encoded like this (`%2F` instead of `/`).
+
+Now we must enable the _feature flag_ and the Redis module in `~/<project>/<shopname>/.medusa/server/medusa-config.ts`. To do this, we need to incorporate the following code:
+
+```javascript
+import { defineConfig } from "@medusajs/framework/utils"
+
+export default defineConfig({
+  featureFlags: {
+    caching: true,   // enable the feature flag
+  },
+
+  modules: [  //enable the caching module
+    {
+      resolve: "@medusajs/medusa/caching",
+      options: {
+        providers: [
+          {
+            id: "caching-redis",
+            resolve: "@medusajs/caching-redis",
+            is_default: true,
+            options: {
+              redisUrl: process.env.CACHE_REDIS_URL,
+              ttl: process.env.CACHE_TTL
+                ? parseInt(process.env.CACHE_TTL, 10)
+                : undefined,
+              prefix: process.env.CACHE_PREFIX,
+            },
+          },
+        ],
+      },
+    },
+  ],
+})
+```
+### Make your requests cache
+
+### Restarting PM2
+To reload these new changes, restart the PM2 processes:
+
+```
+pm2 restart
+```
+
