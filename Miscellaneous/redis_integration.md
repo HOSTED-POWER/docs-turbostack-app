@@ -151,24 +151,23 @@ This is again, an infinite TTL. Change it to a more reasonable number.
 ## MedusaJS
 MedusaJS offers Redis integration, but this is not enabled by default. Enabling and configuring Redis, must be done via the _terminal_.
 
-We recommend adding a TTL and a custom namespace per shop. This ensures that the cache is not shared between shops and reduces the chance of completely filling up Redis.
+We recommend adding a TTL and a custom namespace per shop. This ensures cache data can be differentiated between shops and reduces the chance of completely filling up Redis.
 ### Configuration
-To start, we need to add the variables to the `.env` file in `~/<project>/<shopname>/.medusa/server/`:
+To start, we need to add the variables to the `.env` file in `~/<project>/<shopname>/`:
 
 ```
 # Enable the new caching system
 MEDUSA_FF_CACHING=true
 
-# Redis socket URL (percent-encoded)
-CACHE_REDIS_URL=redis://%2Fvar%2Frun%2Fredis%2Fredis.sock
+# Redis URL
+CACHE_REDIS_URL=redis://127.0.0.1:6379
 
 # Optional settings
 CACHE_TTL=28800   # 8 hours in seconds
 CACHE_PREFIX=shopname-cache:
 ```
-> **Note:** The Redis URL for a Unix socket must be encoded like this (`%2F` instead of `/`).
 
-Now we must enable the _feature flag_ and the Redis module in `~/<project>/<shopname>/.medusa/server/medusa-config.ts`. To do this, we need to incorporate the following code:
+Now we must enable the _feature flag_ and the Redis module in `~/<project>/<shopname>/medusa-config.ts`. To do this, we need to incorporate the following code:
 
 ```javascript
 import { defineConfig } from "@medusajs/framework/utils"
@@ -202,11 +201,69 @@ export default defineConfig({
 })
 ```
 ### Make your requests cache
+MedusaJS supports Redis, but it does not cache the requests bydefault. To enable caching for specific requests, you need to create a workflow that handles caching and a corresponding route for the API.
 
+To make a workflow, create a file called `cache-products.ts` in `~/<project>/<shopname>/src/workflows/` with the following content:
+```javascript
+import {
+  createWorkflow,
+  WorkflowResponse,
+} from "@medusajs/framework/workflows-sdk"
+import { useQueryGraphStep } from "@medusajs/medusa/core-flows" 
+
+export const cacheProductsWorkflow = createWorkflow(
+  "cache-products",
+  () => {
+    const { data: products } = useQueryGraphStep({
+      entity: "product",
+      fields: ["id", "title"],
+      options: {
+        cache: {
+          enable: true,
+          providers: ["caching-redis"],
+        },
+      },
+    })
+
+    return new WorkflowResponse(products)
+  }
+)
+```
+This workflow queries the product entity and caches the response in Redis.
+
+---
+
+To make a route, create a file called `route.ts` in `~/<project>/<shopname>src/api/cache-product/route.ts` with the following content:
+```javascript
+import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { cacheProductsWorkflow } from "../../workflows/cache-products"
+
+export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+  const { result } = await cacheProductsWorkflow(req.scope)
+    .run({})
+
+  res.status(200).json(result)
+}
+```
+This route exposes an endpoint (/cache-product) that calls the caching workflow and returns the cached product data.
+
+---
+Now the route and workflow are ready to use, stop the backend process:
+```
+pm2 stop <process_name>
+```
+Build medusa again:
+```
+npx medusa build
+```
+Copy the .env file from the server to the .medusa/server folder:
+```
+cp .env .medusa/server/.env
+```
 ### Restarting PM2
-To reload these new changes, restart the PM2 processes:
-
+To reload these new changes, restart the PM2 process for the backend:
 ```
-pm2 restart
+pm2 restart <process_name>
 ```
+The Redis cache should now be used to cache products.
 
