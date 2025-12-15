@@ -143,8 +143,58 @@ This is again, an infinite TTL. Change it to a more reasonable number.
 > **Note:** This needs to be set for all the different namespaces.
 
 ## Magento2
+Configuring Magento2 to use Redis, must be done via the _terminal_.
 
+### Configuration
+To configure this, we must edit the `app/etc/env.php` file.
 
+Incorporate the following code in the file:
+
+```php
+<?php
+return [
+    'cache' => [
+        'frontend' => [
+            'default' => [
+                'backend' => 'Cm_Cache_Backend_Redis',
+                'backend_options' => [
+                    'server' => '127.0.0.1',
+                    'port' => '6379',
+                    'database' => '0',
+                    'id_prefix' => 'magento_prod_',
+                    'compress_data' => '1',
+                    'default_lifetime' => '600',
+                    'min_lifetime' => '60',
+                    'max_lifetime' => '86400'
+                ]
+            ],
+            'page_cache' => [
+                'backend' => 'Cm_Cache_Backend_Redis',
+                'backend_options' => [
+                    'server' => '127.0.0.1',
+                    'port' => '6379',
+                    'database' => '1',
+                    'id_prefix' => 'magento_prod_',
+                    'compress_data' => '0',
+                    'default_lifetime' => '86400'
+                ]
+            ]
+        ]
+    ]
+];
+```
+This tells magento how to connect to Redis, what database to use, the prefix and the default TTL.
+
+### Clearing the cache
+To clear the cache, you can use the following command:
+```
+php bin/magento cache:flush
+```
+If caching was not enabled before, you can enable it with the following command:
+```
+php bin/magento cache:enable
+```
+Redis will now be used for caching.
 ## Odoo
 
 ## Shopware
