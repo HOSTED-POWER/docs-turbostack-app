@@ -62,8 +62,13 @@ chown -R $USER:$USER ~/public_html
 This ensures files are readable and directories are executable by the web server.
 
 ## Caching
-
 Magento supports various caching backends. By default, it uses the filesystem, but we highly recommend using Redis and Varnish!
+
+### Configuring Redis
+You can find our documentation on how to set up Redis [here](../../../Miscellaneous/redis_integration.md)
+
+### Clearing the cache
+
 
 To clear Magento's internal caches:
 

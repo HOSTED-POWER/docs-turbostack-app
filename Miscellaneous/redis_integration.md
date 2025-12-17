@@ -185,6 +185,8 @@ return [
 ```
 This tells magento how to connect to Redis, what database to use, the prefix and the default TTL.
 
+> **Tip:** You can change _compress_data_ to '1' to enable compression. This will reduce the size of the cache data, but will increase the processing time slightly.
+
 ### Clearing the cache
 To clear the cache, you can use the following command:
 ```
@@ -195,9 +197,6 @@ If caching was not enabled before, you can enable it with the following command:
 php bin/magento cache:enable
 ```
 Redis will now be used for caching.
-## Odoo
-
-## Shopware
 
 ## MedusaJS
 MedusaJS offers Redis integration, but this is not enabled by default. Enabling and configuring Redis, must be done via the _terminal_.
