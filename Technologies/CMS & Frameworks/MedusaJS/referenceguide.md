@@ -38,7 +38,8 @@ chown -R $USER:$USER ~/<Project>/<Shopname>
 
 ## Caching
 
-### Redis
+### Configuring Redis
+You can find our documentation on how to set up Redis [here](../../../Miscellaneous/redis_integration.md)
 
 ### Varnish
 The MedusaJS dashboard does not need any caching. We do recommend adding varnish to your storefront.
@@ -48,8 +49,11 @@ You can enable Varnish in our TurboStack GUI by adding the following line to the
 ```yaml
 varnish_enabled: true
 ```
-to clear the varnish cache, run the following command
+### Clearing the cache
+To clear the caches, run the following commands:
 ```bash
 tscli varnish clear
+tscli redis clear
 ```
+
 ---
