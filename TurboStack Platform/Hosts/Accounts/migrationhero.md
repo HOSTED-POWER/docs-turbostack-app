@@ -11,7 +11,7 @@ To simplify the migration of your external application to TurboStack, the **Migr
 !!! info
 If you want to migrate an application from TurboStack to TurboStack, please use the [Account Cloning](accountclone.md) feature.
 !!!
-[accountclone.md](accountclone.md)
+
 Before starting, make sure you have already **created an application** and successfully performed a **Save and Publish**.
 
 1. Navigate to the **Accounts** tab in the TurboStack Platform under your host.
