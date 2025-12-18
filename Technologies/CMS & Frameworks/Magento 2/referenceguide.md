@@ -65,7 +65,7 @@ This ensures files are readable and directories are executable by the web server
 Magento supports various caching backends. By default, it uses the filesystem, but we highly recommend using Redis and Varnish!
 
 ### Configuring Redis
-You can find our documentation on how to set up Redis [here](../../../Miscellaneous/redis_integration.md)
+You can find our documentation on how to set up Redis [here](../../Caching/redis.md)
 
 ### Clearing the cache
 
