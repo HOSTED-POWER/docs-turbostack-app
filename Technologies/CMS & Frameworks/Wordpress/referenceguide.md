@@ -37,6 +37,10 @@ Using caching solutions such as Redis and Varnish is highly recommended for Word
 
 For users who prefer managing cache through the WordPress dashboard, several popular plugins like **W3 Total Cache**, **WP Super Cache**, and **LiteSpeed Cache** provide user-friendly interfaces to control various caching layers (object, page, browser). These plugins can be configured to automatically purge cache upon content updates and offer integration with CDN services.
 
+### Configuring Redis
+You can find our documentation on how to set up Redis [here](../../../Miscellaneous/redis_integration.md)
+
+### Clearing the cache
 Advanced users with SSH access can also manually flush caching layers as needed:
 
 ```bash
