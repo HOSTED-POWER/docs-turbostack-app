@@ -9,3 +9,4 @@ This page contains how-to guides and tutorials on a wide range of subjects.
 * [Managing applications using systemd user services](systemd.md)
 * [OpenSSH vulnerabilities false positive](openssh_FP.md)
 * [Server logs](logging.md)
+* [Redis integration](redis_insight.md)
