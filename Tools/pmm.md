@@ -32,7 +32,7 @@ You can enable PMM in the TurboStack GUI under **Advanced > Advanced Database Mo
 In this screen, you can fill in the hostname of the _master server_ and, if you want, the _sampling rate_.
 
 It's recommended to use the default sampling rate of 50. This value means it will collect metrics every _N<sup>th</sup>_ query. Lower values, will result in more data, but also more load on both servers.
-![Tubostack GUI PMM](image/pmm/pmm_turbostack.png)
+![Tubostack GUI PMM](../img/tools/pmm/pmm_turbostack.png)
 ### In the YAML
 You can also connect to the master server via YAML configuration. Add the following to your TurboStack config:
 ```yaml
