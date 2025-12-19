@@ -76,10 +76,10 @@ By default, Redis **does not** assign a TTL (Time-To-Live) to keys unless explic
 **Benefit:** Optimizes memory usage and prevents Redis from filling up completely.
 
 ---
-# Redis integration
+## Redis integration
 Here you'll find how to enable and integrate Redis for your specific CMS, on our TurboStack environment.
 
-## General implementation check
+### General implementation check
 After implementing Redis, you can verify if data is being cached by using the following commands:
 
 ```
@@ -92,7 +92,7 @@ Click around on your website, then try the commands again.
 
 If it remains empty, check if the implementation is correct.
 
-## Drupal
+### Drupal
 To enable the redis module in Drupal, go to **Manage > Extend > Performance > Redis**  and enable it:
 ![Redis Cache Drupal](../../img/technologies/redis/caching/redis_drupal_enabled.png)
 
@@ -116,7 +116,7 @@ $settings['redis.connection']['password'] = '';
 $settings['redis.connection']['prefix'] = 'ProjectName:';
 ```
 > **Note:** Don't forget to replace 'ProjectName' with your actual project name. and clear all caches after this change.
-### Setting the default TTL
+#### Setting the default TTL
 In the following file:
 
 ```
@@ -139,7 +139,7 @@ else {
 This means: if *perm_ttl_cache_menu* is not set, fall back to a TTL of 1 year. This is the general setting for all Redis keys.  
 If Redis Insight shows you really use only a couple of namespaces that can have a similar TTL, you can just edit this constant variable to the desired value.
 
-### Setting the TTL per namespace
+#### Setting the TTL per namespace
 You can also set this per namespace in the settings:
 
 ```
@@ -154,7 +154,7 @@ $settings['redis.settings']['perm_ttl_cache_menu'] = 21600; // 6 hours
 
 Now the 'menu' cache items will have a TTL of 6 hours.
 
-### Clearing the old keys in the cache
+#### Clearing the old keys in the cache
 To purge the old keys, you can use the following commands:
 
 ```
@@ -162,12 +162,12 @@ drush cr
 tscli redis clear
 ```
 
-## Wordpress
+### Wordpress
 To enable the redis plugin, go to the _plugins_ page and search for _Redis Object Cache_, click on _settings_. Here you can enable the plugin by clicking **Enable Object Cache**.
 
 ![Redis Object Cache WordPress](../../img/technologies/redis/caching/redis_wp_enabled.png)
 
-### Setting a TTL in object-cache.php
+#### Setting a TTL in object-cache.php
 It's important to set a TTL for your cache keys. This will prevent your cache from filling up and causing issues with your website. Currently the plugin does not have the functionality to set a TTL via the interface. You can set it in the config file:
 
 ```
@@ -188,7 +188,7 @@ To monitor the change, you can use the analysis tool in [Redis Insight](https://
 
 > **Tip:** you can clear the Redis cache with the ' tscli redis clear ' command.
 
-### Setting a TTL outside of object-cache.php
+#### Setting a TTL outside of object-cache.php
 In wordpress one of the more common ways to add something to the cache is by using the 'wp_cache_set' instruction:
 
 ```
@@ -217,10 +217,10 @@ This is again, an infinite TTL. Change it to a more reasonable number.
 
 > **Note:** This needs to be set for all the different namespaces.
 
-## Magento2
+### Magento2
 Configuring Magento2 to use Redis, must be done via the _terminal_.
 
-### Configuration
+#### Configuration
 To configure this, we must edit the `app/etc/env.php` file.
 
 Incorporate the following code in the file:
@@ -262,7 +262,7 @@ This tells magento how to connect to Redis, what database to use, the prefix and
 
 > **Tip:** You can change _compress_data_ to '1' to enable compression. This will reduce the size of the cache data, but will increase the processing time slightly.
 
-### Clearing the cache
+#### Clearing the cache
 To clear the cache, you can use the following command:
 ```
 php bin/magento cache:flush
@@ -273,11 +273,11 @@ php bin/magento cache:enable
 ```
 Redis will now be used for caching.
 
-## MedusaJS
+### MedusaJS
 MedusaJS offers Redis integration, but this is not enabled by default. Enabling and configuring Redis, must be done via the _terminal_.
 
 We recommend adding a TTL and a custom namespace per shop. This ensures cache data can be differentiated between shops and reduces the chance of completely filling up Redis.
-### Configuration
+#### Configuration
 To start, we need to add the variables to the `.env` file in `~/<project>/<shopname>/`:
 
 ```
@@ -325,7 +325,7 @@ export default defineConfig({
   ],
 })
 ```
-### Make your requests cache
+#### Make your requests cache
 MedusaJS supports Redis, but it does not cache the requests bydefault. To enable caching for specific requests, you need to create a workflow that handles caching and a corresponding route for the API.
 
 To make a workflow, create a file called `cache-products.ts` in `~/<project>/<shopname>/src/workflows/` with the following content:
@@ -385,7 +385,7 @@ Copy the .env file from the server to the .medusa/server folder:
 ```
 cp .env .medusa/server/.env
 ```
-### Restarting PM2
+#### Restarting PM2
 To reload these new changes, restart the PM2 process for the backend:
 ```
 pm2 restart <process_name>
