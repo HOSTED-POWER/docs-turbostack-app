@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.819451929682">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.819452233803">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.819451929682" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.819452233803" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.819451929682" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.819452233803" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.819451929682" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.819451929682" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.819452233803" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.819452233803" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -349,17 +349,17 @@ The second Redis instance on port <strong>6378</strong> is set for <strong>persi
 <p><strong>Benefit:</strong> Optimizes memory usage and prevents Redis from filling up completely.</p>
 <hr>
 <doc-anchor-target id="redis-integration">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#redis-integration">#</doc-anchor-trigger>
         <span>Redis integration</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Here you&#x27;ll find how to enable and integrate Redis for your specific CMS, on our TurboStack environment.</p>
 <doc-anchor-target id="general-implementation-check">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#general-implementation-check">#</doc-anchor-trigger>
         <span>General implementation check</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>After implementing Redis, you can verify if data is being cached by using the following commands:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -371,10 +371,10 @@ The second Redis instance on port <strong>6378</strong> is set for <strong>persi
 Click around on your website, then try the commands again.</p>
 <p>If it remains empty, check if the implementation is correct.</p>
 <doc-anchor-target id="drupal">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#drupal">#</doc-anchor-trigger>
         <span>Drupal</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>To enable the redis module in Drupal, go to <strong>Manage &gt; Extend &gt; Performance &gt; Redis</strong>  and enable it:
 <figure class="content-center">
@@ -400,10 +400,10 @@ $settings['redis.connection']['prefix'] = 'ProjectName:';</code></pre>
 <p><strong>Note:</strong> Don&#x27;t forget to replace &#x27;ProjectName&#x27; with your actual project name. and clear all caches after this change.</p>
 </blockquote>
 <doc-anchor-target id="setting-the-default-ttl">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setting-the-default-ttl">#</doc-anchor-trigger>
         <span>Setting the default TTL</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>In the following file:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -423,10 +423,10 @@ else {
 <p>This means: if <em>perm_ttl_cache_menu</em> is not set, fall back to a TTL of 1 year. This is the general setting for all Redis keys.<br />
 If Redis Insight shows you really use only a couple of namespaces that can have a similar TTL, you can just edit this constant variable to the desired value.</p>
 <doc-anchor-target id="setting-the-ttl-per-namespace">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setting-the-ttl-per-namespace">#</doc-anchor-trigger>
         <span>Setting the TTL per namespace</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>You can also set this per namespace in the settings:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -438,10 +438,10 @@ If Redis Insight shows you really use only a couple of namespaces that can have 
 </doc-codeblock></div>
 <p>Now the &#x27;menu&#x27; cache items will have a TTL of 6 hours.</p>
 <doc-anchor-target id="clearing-the-old-keys-in-the-cache">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#clearing-the-old-keys-in-the-cache">#</doc-anchor-trigger>
         <span>Clearing the old keys in the cache</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>To purge the old keys, you can use the following commands:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -449,10 +449,10 @@ If Redis Insight shows you really use only a couple of namespaces that can have 
 tscli redis clear</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="wordpress">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#wordpress">#</doc-anchor-trigger>
         <span>Wordpress</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>To enable the redis plugin, go to the <em>plugins</em> page and search for <em>Redis Object Cache</em>, click on <em>settings</em>. Here you can enable the plugin by clicking <strong>Enable Object Cache</strong>.</p>
 <p><figure class="content-center">
@@ -461,10 +461,10 @@ tscli redis clear</code></pre>
 </figure>
 </p>
 <doc-anchor-target id="setting-a-ttl-in-object-cachephp">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setting-a-ttl-in-object-cachephp">#</doc-anchor-trigger>
         <span>Setting a TTL in object-cache.php</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>It&#x27;s important to set a TTL for your cache keys. This will prevent your cache from filling up and causing issues with your website. Currently the plugin does not have the functionality to set a TTL via the interface. You can set it in the config file:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -482,10 +482,10 @@ tscli redis clear</code></pre>
 <p><strong>Tip:</strong> you can clear the Redis cache with the &#x27; tscli redis clear &#x27; command.</p>
 </blockquote>
 <doc-anchor-target id="setting-a-ttl-outside-of-object-cachephp">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setting-a-ttl-outside-of-object-cachephp">#</doc-anchor-trigger>
         <span>Setting a TTL outside of object-cache.php</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>In wordpress one of the more common ways to add something to the cache is by using the &#x27;wp_cache_set&#x27; instruction:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -508,17 +508,17 @@ tscli redis clear</code></pre>
 <p><strong>Note:</strong> This needs to be set for all the different namespaces.</p>
 </blockquote>
 <doc-anchor-target id="magento2">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#magento2">#</doc-anchor-trigger>
         <span>Magento2</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>Configuring Magento2 to use Redis, must be done via the <em>terminal</em>.</p>
 <doc-anchor-target id="configuration">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
         <span>Configuration</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>To configure this, we must edit the <code v-pre>app/etc/env.php</code> file.</p>
 <p>Incorporate the following code in the file:</p>
@@ -560,10 +560,10 @@ return [
 <p><strong>Tip:</strong> You can change <em>compress_data</em> to &#x27;1&#x27; to enable compression. This will reduce the size of the cache data, but will increase the processing time slightly.</p>
 </blockquote>
 <doc-anchor-target id="clearing-the-cache">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#clearing-the-cache">#</doc-anchor-trigger>
         <span>Clearing the cache</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>To clear the cache, you can use the following command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -575,18 +575,18 @@ return [
 </doc-codeblock></div>
 <p>Redis will now be used for caching.</p>
 <doc-anchor-target id="medusajs">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#medusajs">#</doc-anchor-trigger>
         <span>MedusaJS</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>MedusaJS offers Redis integration, but this is not enabled by default. Enabling and configuring Redis, must be done via the <em>terminal</em>.</p>
 <p>We recommend adding a TTL and a custom namespace per shop. This ensures cache data can be differentiated between shops and reduces the chance of completely filling up Redis.</p>
 <doc-anchor-target id="configuration-1">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuration-1">#</doc-anchor-trigger>
         <span>Configuration</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>To start, we need to add the variables to the <code v-pre>.env</code> file in <code v-pre>~/&lt;project&gt;/&lt;shopname&gt;/</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -633,10 +633,10 @@ export default defineConfig({
 })</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="make-your-requests-cache">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#make-your-requests-cache">#</doc-anchor-trigger>
         <span>Make your requests cache</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>MedusaJS supports Redis, but it does not cache the requests bydefault. To enable caching for specific requests, you need to create a workflow that handles caching and a corresponding route for the API.</p>
 <p>To make a workflow, create a file called <code v-pre>cache-products.ts</code> in <code v-pre>~/&lt;project&gt;/&lt;shopname&gt;/src/workflows/</code> with the following content:</p>
@@ -694,10 +694,10 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) =&gt; {
 <pre class="language-none"><code v-pre class="language-none">cp .env .medusa/server/.env</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="restarting-pm2">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#restarting-pm2">#</doc-anchor-trigger>
         <span>Restarting PM2</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>To reload these new changes, restart the PM2 process for the backend:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
