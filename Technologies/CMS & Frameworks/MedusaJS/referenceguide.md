@@ -39,7 +39,7 @@ chown -R $USER:$USER ~/<Project>/<Shopname>
 ## Caching
 
 ### Configuring Redis
-You can find our documentation on how to set up Redis [here](../../../Miscellaneous/redis_integration.md)
+You can find our documentation on how to set up Redis [here](../../Caching/redis.md)
 
 ### Varnish
 The MedusaJS dashboard does not need any caching. We do recommend adding varnish to your storefront.
