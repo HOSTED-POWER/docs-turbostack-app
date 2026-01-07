@@ -63,6 +63,9 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### Redis Cache
 [!badge icon="rocket" text="tscli redis clear"] - Clears everything from Redis Cache's memory.
 
+### Solr
+[!badge icon="rocket" text="tscli solr restart"] - Restarts the Solr service.
+
 ### Docker
 
 [!badge icon="rocket" text="tscli docker restart"] - Restarts the docker service. Only use this when docker cli is no longer working or sufficient.
