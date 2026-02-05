@@ -27,17 +27,19 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 [!badge icon="rocket" text="tscli blackfire reload"] - Restarts the Blackfire Profiler service, to apply changes to the configuration.
 
 ### Firewall
-[!badge icon="rocket" text="tscli firewall check"] - Returns info on whether or not the IP parameter is listed in the iptables. Please make sure to only use valid IP addresses.
+[!badge icon="rocket" text="tscli firewall check <ip>"] - Returns info on whether or not the IP parameter is listed in the iptables. Please make sure to only use valid IP addresses.
+
+[!badge icon="rocket" text="tscli firewall block <ip>"] - Adds a firewall rule to block a specific IP address as specified in the IP parameter. Defaults to 24 hours, use `--time` option to specify duration, with -1 for permanent blocks. Use the `--comment` option to add a comment. 
+
+[!badge icon="rocket" text="tscli firewall unblock <ip>"] - Removes the provided IP address from the firewall's deny list.
+
+[!badge icon="rocket" text="tscli firewall display-blocks"] - Lists all active manual firewall blocks. Use `--full` to also get the automated blocks, we recommend piping the output to a file or a command-line text processing tool like grep or less.
+
+[!badge icon="rocket" text="tscli firewall whitelist <ip>"] - Add the provided IP to both allow and ignore lists.
+
+[!badge icon="rocket" text="tscli firewall unlist <ip>"] - Remove the provided IP from both allow and ignore lists.
 
 [!badge icon="rocket" text="tscli firewall flush"] - Flushes all automatic firewall IP blocks from the blocklist.
-
-[!badge icon="rocket" text="tscli firewall block"] - Adds a firewall rule to block a specific IP address as specified in the IP parameter.
-
-[!badge icon="rocket" text="tscli firewall unblock"] - Removes the provided IP address from the firewall's deny list.
-
-[!badge icon="rocket" text="tscli firewall whitelist"] - Add the provided IP to both allow and ignore lists.
-
-[!badge icon="rocket" text="tscli firewall unlist"] - Remove the provided IP from both allow and ignore lists.
 
 ### PHP
 [!badge icon="rocket" text="tscli php kill"] - Kills all the server's php-FPM processes.
