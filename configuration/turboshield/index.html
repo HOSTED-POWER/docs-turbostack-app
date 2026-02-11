@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.823613515493">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.824119640235">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>TurboShield</title>
     <meta name="title" content="TurboShield">
-    <meta name="description" content="TurboShield is our tool to battle high load caused by request floods. It does two things:">
+    <meta name="description" content="TurboShield helps protect your website from traffic spikes and request floods that can slow down or take your site offline. It">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/configuration/turboshield/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/configuration/turboshield/">
     <meta property="og:title" content="TurboShield">
-    <meta property="og:description" content="TurboShield is our tool to battle high load caused by request floods. It does two things:">
+    <meta property="og:description" content="TurboShield helps protect your website from traffic spikes and request floods that can slow down or take your site offline. It">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.turbostack.app/configuration/turboshield/">
     <meta property="twitter:title" content="TurboShield">
-    <meta property="twitter:description" content="TurboShield is our tool to battle high load caused by request floods. It does two things:">
+    <meta property="twitter:description" content="TurboShield helps protect your website from traffic spikes and request floods that can slow down or take your site offline. It">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.823613515493" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.824119640235" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.823613515493" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.824119640235" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.823613515493" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.823613515493" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.824119640235" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.824119640235" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -233,54 +233,159 @@
         <span>TurboShield</span>
     </h1>
 </doc-anchor-target>
-<p>TurboShield is our tool to battle high load caused by request floods. It does two things:</p>
+<p><strong>TurboShield</strong> helps protect your website from traffic spikes and
+request floods that can slow down or take your site offline. It
+automatically detects abusive traffic and limits or blocks it before it
+affects real visitors.</p>
+<p>TurboShield is also especially useful for handling <strong>aggressive scraping
+bots</strong>. Instead of blocking them outright - which may not always be
+desirable - TurboShield can <strong>rate limit bots</strong> so they consume fewer
+resources while still being able to access your site at a controlled
+pace. This keeps your server responsive for real users while avoiding
+unnecessary bot bans.</p>
+<p>TurboShield works by:</p>
 <ul>
-<li>Rate limit for bot <em>User Agents</em> (Nginx).</li>
-<li>Temporarily block IP addresses that are making too many requests (Nginx &amp; Apache).</li>
+<li>Rate limiting requests for bot and automated traffic (via nginx)</li>
+<li>Temporarily blocking IP addresses generating excessive traffic (via
+nginx)</li>
+<li>Automatically banning repeat offenders using <strong>Fail2ban</strong></li>
+<li>Blocking outdated or suspicious user agents at the highest protection level</li>
 </ul>
+<p>The result: your website stays fast and available even during aggressive scraping or an overload of malicious traffic.</p>
 <doc-anchor-target id="configuration">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
         <span>Configuration</span>
     </h2>
 </doc-anchor-target>
-<p>To enable our configuration, add the following line above the <strong>system_users</strong>:</p>
+<p>To enable TurboShield, add the following configuration <strong>above
+<code v-pre>system_users</code></strong>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">turboshield:
   enabled: true
-  level: medium # if not specified, medium is used</code></pre>
+  level: medium # defaults to medium if omitted</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="levels">
+<p>Once enabled, protection is applied automatically.</p>
+<hr>
+<doc-anchor-target id="protection-levels">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#protection-levels">#</doc-anchor-trigger>
+        <span>Protection Levels</span>
+    </h2>
+</doc-anchor-target>
+<p>TurboShield offers multiple protection levels, each with their own rate limits.</p>
+<p>If you&#x27;re unsure, check your server logs first to avoid blocking
+legitimate users.</p>
+<p>Level                  Requests per second per IP   Recommended use</p>
+<hr>
+<p><strong>low</strong>                10 req/sec                   Normal websites with moderate traffic
+<strong>medium</strong> (default)   5 req/sec                    Most production sites
+<strong>high</strong>               1 req/sec                    Sites under attack or frequently scraped</p>
+<doc-anchor-target id="additional-protection-on-high-level">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#levels">#</doc-anchor-trigger>
-        <span>Levels</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-protection-on-high-level">#</doc-anchor-trigger>
+        <span>Additional protection on <strong>High</strong> level</span>
     </h3>
 </doc-anchor-target>
-<p>Depending on your website, and the average amount of requests a visitor makes, you can choose the level. We recommend to look at your server logs to estimate the amount of requests a visitor makes, to avoid accidentally blocking legitimate visitors.</p>
+<p>When using the <strong>high</strong> protection level, TurboShield also:</p>
 <ul>
-<li><strong>low</strong>: 10 requests per second</li>
-<li><strong>medium</strong>: 5 requests per second</li>
-<li><strong>high</strong>: 1 request per second</li>
+<li>Blocks <strong>outdated and suspicious user agents</strong></li>
+<li>Reduces abuse from legacy or automated clients often used in
+scraping and attack tools</li>
 </ul>
-<doc-anchor-target id="allow-and-limit-bots">
+<p>This adds an extra layer of protection when your site is under heavy
+automated traffic.</p>
+<hr>
+<doc-anchor-target id="fail2ban-integration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fail2ban-integration">#</doc-anchor-trigger>
+        <span>Fail2ban Integration</span>
+    </h2>
+</doc-anchor-target>
+<p>TurboShield includes <strong>Fail2ban</strong> integration.</p>
+<p>Fail2ban monitors logs for abusive request patterns and automatically:</p>
+<ul>
+<li>Detects IPs repeatedly exceeding limits</li>
+<li>Temporarily bans them at firewall level</li>
+<li>Extends bans for repeat offenders</li>
+</ul>
+<p>This prevents aggressive bots from continuously retrying after rate
+limiting.</p>
+<hr>
+<doc-anchor-target id="allowing-or-limiting-bots">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#allowing-or-limiting-bots">#</doc-anchor-trigger>
+        <span>Allowing or Limiting Bots</span>
+    </h2>
+</doc-anchor-target>
+<p>Some bots are useful (search engines), while others can overload your
+server. TurboShield allows fine-grained control.</p>
+<p>You can:</p>
+<ul>
+<li><strong>Allow bots</strong> to bypass rate limits</li>
+<li><strong>Limit bots</strong> to enforce rate limiting</li>
+</ul>
+<doc-anchor-target id="example-configuration">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#allow-and-limit-bots">#</doc-anchor-trigger>
-        <span>Allow and limit bots</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-configuration">#</doc-anchor-trigger>
+        <span>Example configuration</span>
     </h3>
 </doc-anchor-target>
-<p>You can allow or limit bots by adding them to the <strong>allow_bots</strong> or <strong>limit_bots</strong> list. All bots in the <strong>allow_bots</strong> list will be exempt from rate limiting, and all bots in the <strong>limit_bots</strong> list will be rate limited, according to the level parameter in the YAML, described above.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">turboshield:
   enabled: true
   level: high
   allow_bots:
-  - bingbot
-  - Mozilla/5.0
+    - bingbot
+    - Mozilla/5.0
   limit_bots:
-  - GoogleBot
-  - bytespider</code></pre>
+    - GoogleBot
+    - bytespider</code></pre>
 </doc-codeblock></div>
-<p>This comes in handy when bots don&#x27;t listen to the crawl-delay in robots.txt.</p>
+<doc-anchor-target id="behaviour">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#behaviour">#</doc-anchor-trigger>
+        <span>Behaviour</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Bots in <code v-pre>allow_bots</code> bypass rate limiting.</li>
+<li>Bots in <code v-pre>limit_bots</code> are rate limited according to the configured
+level.</li>
+<li>All other traffic follows the default protection rules.</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>This is especially helpful when bots ignore <code v-pre>crawl-delay</code> rules in
+<code v-pre>robots.txt</code>.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="recommended-setup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-setup">#</doc-anchor-trigger>
+        <span>Recommended Setup</span>
+    </h2>
+</doc-anchor-target>
+<p>For most websites:</p>
+<ul>
+<li>Start with <strong>medium</strong> (default if unspecified)</li>
+<li>Monitor logs and performance</li>
+<li>Increase to <strong>high</strong> if your site still experiences disruptive scraping or traffic
+floods</li>
+</ul>
+<p>If legitimate users are blocked, lower the level or allow trusted bots.</p>
 
                                 
                                 <!-- Required only on API pages -->
