@@ -1,38 +1,132 @@
 ---
-order: 220
 icon: shield-x
+order: 220
 ---
+
 # TurboShield
 
-TurboShield is our tool to battle high load caused by request floods. It does two things:
-  - Rate limit for bot _User Agents_ (Nginx).
-  - Temporarily block IP addresses that are making too many requests (Nginx & Apache).
+**TurboShield** helps protect your website from traffic spikes and
+request floods that can slow down or take your site offline. It
+automatically detects abusive traffic and limits or blocks it before it
+affects real visitors.
+
+TurboShield is also especially useful for handling **aggressive scraping
+bots**. Instead of blocking them outright - which may not always be
+desirable - TurboShield can **rate limit bots** so they consume fewer
+resources while still being able to access your site at a controlled
+pace. This keeps your server responsive for real users while avoiding
+unnecessary bot bans.
+
+TurboShield works by:
+
+-   Rate limiting requests for bot and automated traffic (via nginx)
+-   Temporarily blocking IP addresses generating excessive traffic (via
+    nginx)
+-   Automatically banning repeat offenders using **Fail2ban**
+-   Blocking outdated or suspicious user agents at the highest protection level
+
+The result: your website stays fast and available even during aggressive scraping or an overload of malicious traffic.
 
 ## Configuration
-To enable our configuration, add the following line above the **system_users**:
-```yaml
+
+To enable TurboShield, add the following configuration **above
+`system_users`**:
+
+``` yaml
 turboshield:
   enabled: true
-  level: medium # if not specified, medium is used
+  level: medium # defaults to medium if omitted
 ```
-### Levels
-Depending on your website, and the average amount of requests a visitor makes, you can choose the level. We recommend to look at your server logs to estimate the amount of requests a visitor makes, to avoid accidentally blocking legitimate visitors.
 
-- **low**: 10 requests per second
-- **medium**: 5 requests per second
-- **high**: 1 request per second
+Once enabled, protection is applied automatically.
 
-### Allow and limit bots
-You can allow or limit bots by adding them to the **allow_bots** or **limit_bots** list. All bots in the **allow_bots** list will be exempt from rate limiting, and all bots in the **limit_bots** list will be rate limited, according to the level parameter in the YAML, described above.
-```yaml
+------------------------------------------------------------------------
+
+## Protection Levels
+
+TurboShield offers multiple protection levels, each with their own rate limits.
+
+If you're unsure, check your server logs first to avoid blocking
+legitimate users.
+
+  Level                  Requests per second per IP   Recommended use
+  ---------------------- ---------------------------- ------------------------------------------
+  **low**                10 req/sec                   Normal websites with moderate traffic
+  **medium** (default)   5 req/sec                    Most production sites
+  **high**               1 req/sec                    Sites under attack or frequently scraped
+
+### Additional protection on **High** level
+
+When using the **high** protection level, TurboShield also:
+
+-   Blocks **outdated and suspicious user agents**
+-   Reduces abuse from legacy or automated clients often used in
+    scraping and attack tools
+
+This adds an extra layer of protection when your site is under heavy
+automated traffic.
+
+------------------------------------------------------------------------
+
+## Fail2ban Integration
+
+TurboShield includes **Fail2ban** integration.
+
+Fail2ban monitors logs for abusive request patterns and automatically:
+
+-   Detects IPs repeatedly exceeding limits
+-   Temporarily bans them at firewall level
+-   Extends bans for repeat offenders
+
+This prevents aggressive bots from continuously retrying after rate
+limiting.
+
+------------------------------------------------------------------------
+
+## Allowing or Limiting Bots
+
+Some bots are useful (search engines), while others can overload your
+server. TurboShield allows fine-grained control.
+
+You can:
+
+-   **Allow bots** to bypass rate limits
+-   **Limit bots** to enforce rate limiting
+
+### Example configuration
+
+``` yaml
 turboshield:
   enabled: true
   level: high
   allow_bots:
-  - bingbot
-  - Mozilla/5.0
+    - bingbot
+    - Mozilla/5.0
   limit_bots:
-  - GoogleBot
-  - bytespider
+    - GoogleBot
+    - bytespider
 ```
-This comes in handy when bots don't listen to the crawl-delay in robots.txt.
+
+### Behaviour
+
+-   Bots in `allow_bots` bypass rate limiting.
+-   Bots in `limit_bots` are rate limited according to the configured
+    level.
+-   All other traffic follows the default protection rules.
+
+!!! info
+This is especially helpful when bots ignore `crawl-delay` rules in
+`robots.txt`.
+!!!
+
+
+## Recommended Setup
+
+For most websites:
+
+-   Start with **medium** (default if unspecified)
+-   Monitor logs and performance
+-   Increase to **high** if your site still experiences disruptive scraping or traffic
+    floods
+
+If legitimate users are blocked, lower the level or allow trusted bots.
