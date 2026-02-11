@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.824119640235">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.824120000546">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.824119640235" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.824120000546" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.824119640235" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.824120000546" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.824119640235" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.824119640235" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.824120000546" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.824120000546" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -266,7 +266,6 @@ nginx)</li>
   level: medium # defaults to medium if omitted</code></pre>
 </doc-codeblock></div>
 <p>Once enabled, protection is applied automatically.</p>
-<hr>
 <doc-anchor-target id="protection-levels">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#protection-levels">#</doc-anchor-trigger>
@@ -276,15 +275,38 @@ nginx)</li>
 <p>TurboShield offers multiple protection levels, each with their own rate limits.</p>
 <p>If you&#x27;re unsure, check your server logs first to avoid blocking
 legitimate users.</p>
-<p>Level                  Requests per second per IP   Recommended use</p>
-<hr>
-<p><strong>low</strong>                10 req/sec                   Normal websites with moderate traffic
-<strong>medium</strong> (default)   5 req/sec                    Most production sites
-<strong>high</strong>               1 req/sec                    Sites under attack or frequently scraped</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Level</th>
+<th>Requests per second per IP</th>
+<th>Recommended use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>low</strong></td>
+<td>10 req/sec</td>
+<td>Normal websites with moderate traffic</td>
+</tr>
+<tr>
+<td><strong>medium</strong> (default)</td>
+<td>5 req/sec</td>
+<td>Most production sites</td>
+</tr>
+<tr>
+<td><strong>high</strong></td>
+<td>1 req/sec</td>
+<td>Sites under attack or frequently scraped</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="additional-protection-on-high-level">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#additional-protection-on-high-level">#</doc-anchor-trigger>
-        <span>Additional protection on <strong>High</strong> level</span>
+        <span>Additional protection on High level</span>
     </h3>
 </doc-anchor-target>
 <p>When using the <strong>high</strong> protection level, TurboShield also:</p>
@@ -295,7 +317,6 @@ scraping and attack tools</li>
 </ul>
 <p>This adds an extra layer of protection when your site is under heavy
 automated traffic.</p>
-<hr>
 <doc-anchor-target id="fail2ban-integration">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#fail2ban-integration">#</doc-anchor-trigger>
@@ -311,7 +332,6 @@ automated traffic.</p>
 </ul>
 <p>This prevents aggressive bots from continuously retrying after rate
 limiting.</p>
-<hr>
 <doc-anchor-target id="allowing-or-limiting-bots">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#allowing-or-limiting-bots">#</doc-anchor-trigger>
@@ -368,7 +388,7 @@ level.</li>
         </div>
         <div class="pr-5 ml-3 w-full">
 <p>This is especially helpful when bots ignore <code v-pre>crawl-delay</code> rules in
-<code v-pre>robots.txt</code>.</p>
+<code v-pre>robots.txt</code>!</p>
         </div>
     </div>
 </div>
