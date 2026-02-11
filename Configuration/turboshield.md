@@ -40,8 +40,6 @@ turboshield:
 
 Once enabled, protection is applied automatically.
 
-------------------------------------------------------------------------
-
 ## Protection Levels
 
 TurboShield offers multiple protection levels, each with their own rate limits.
@@ -49,13 +47,13 @@ TurboShield offers multiple protection levels, each with their own rate limits.
 If you're unsure, check your server logs first to avoid blocking
 legitimate users.
 
-  Level                  Requests per second per IP   Recommended use
-  ---------------------- ---------------------------- ------------------------------------------
-  **low**                10 req/sec                   Normal websites with moderate traffic
-  **medium** (default)   5 req/sec                    Most production sites
-  **high**               1 req/sec                    Sites under attack or frequently scraped
+| Level | Requests per second per IP | Recommended use |
+| --- | --- | --- |
+| **low** | 10 req/sec | Normal websites with moderate traffic |
+| **medium** (default) | 5 req/sec | Most production sites |
+| **high** | 1 req/sec | Sites under attack or frequently scraped |
 
-### Additional protection on **High** level
+### Additional protection on High level
 
 When using the **high** protection level, TurboShield also:
 
@@ -65,8 +63,6 @@ When using the **high** protection level, TurboShield also:
 
 This adds an extra layer of protection when your site is under heavy
 automated traffic.
-
-------------------------------------------------------------------------
 
 ## Fail2ban Integration
 
@@ -80,8 +76,6 @@ Fail2ban monitors logs for abusive request patterns and automatically:
 
 This prevents aggressive bots from continuously retrying after rate
 limiting.
-
-------------------------------------------------------------------------
 
 ## Allowing or Limiting Bots
 
@@ -116,7 +110,7 @@ turboshield:
 
 !!! info
 This is especially helpful when bots ignore `crawl-delay` rules in
-`robots.txt`.
+`robots.txt`!
 !!!
 
 
