@@ -47,22 +47,26 @@ TurboShield offers multiple protection levels, each with their own rate limits.
 If you're unsure, check your server logs first to avoid blocking
 legitimate users.
 
-| Level | Requests per second per IP | Recommended use |
-| --- | --- | --- |
-| **low** | 10 req/sec | Normal websites with moderate traffic |
-| **medium** (default) | 5 req/sec | Most production sites |
-| **high** | 1 req/sec | Sites under attack or frequently scraped |
+| Level | Requests per second per IP | Recommended use                       |
+| --- |----------------------------|---------------------------------------|
+| **low** | 6 req/sec                  | Normal websites with moderate traffic |
+| **medium** (default) | 2 req/sec                  | Most production sites                 |
+| **high** | 1 req/sec                  | aggressively scraped sites            |
 
-### Additional protection on High level
+### Under attack mode
 
-When using the **high** protection level, TurboShield also:
+Aside from the usual levels, you can also activate the **under attack mode**:
 
--   Blocks **outdated and suspicious user agents**
+-   Blocks **outdated and suspicious user agents** 
 -   Reduces abuse from legacy or automated clients often used in
     scraping and attack tools
 
 This adds an extra layer of protection when your site is under heavy
 automated traffic.
+
+!!! attention
+This mode might block some legitimate traffic if the client uses an outdated browser! However, the impact should be limited as modern browsers usually update automatically.
+!!!
 
 ## Fail2ban Integration
 
