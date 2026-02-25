@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.824652466673">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.825337695921">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.824652466673" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.825337695921" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.824652466673" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.825337695921" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.824652466673" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.824652466673" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.825337695921" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.825337695921" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -321,6 +321,53 @@ ns3.hosted-power.com</code></pre>
 </figure>
 </li>
 </ol>
+<doc-anchor-target id="dnssec">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dnssec">#</doc-anchor-trigger>
+        <span>DNSSEC</span>
+    </h2>
+</doc-anchor-target>
+<p>DNSSEC is an optional setting that can be enabled for certain domain/DNS setups where a keypair is generated to provide extra security and validation to a DNS zone.</p>
+<p><strong>How does it work?</strong></p>
+<p>For DNSSEC to work, a public/private keypair must be generated. The public key is then stored on the side of the registry, while the private key is stored on the server managing your DNS zone. With this, anytime a client makes a request for a DNS record, they&#x27;ll know to check the zone for the DNSKEY record to validate the response, or consider it bogus. This makes it a great defense against man-in-the-middle attacks trying to hijack your DNS traffic and redirect your visitors.</p>
+<p><strong>Potential issues</strong></p>
+<p>It&#x27;s important to understand how to verify your DNS setup when enabling this, since a misconfiguration can cause your entire DNS zone, and thus all related services, to become unavailable. A vital tool in checking your DNSSEC setup is <a href="https://dnsviz.net/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://dnsviz.net/</span></a> an online application where you can get a visualization of the delegation of your DNS zone. Below is a sample setup of a domain without DNSSEC enabled.</p>
+<p><figure class="content-center">
+    <img src="../../img/dnsviz_nodnssec.png" alt="a screenshot of a dnsviz.net visualization of dns delegation indicating no issues">
+    <figcaption class="caption">a screenshot of a dnsviz.net visualization of dns delegation indicating no issues</figcaption>
+</figure>
+</p>
+<p>Here you can see the delegation for the hosted-power.com domain, going from the root zone of the internet, to the .com zone, to the actual DNS zone we host for our hosted-power.com domain. If your DNSSEC is misconfigured, you&#x27;ll see the records in the zone for your domain, so the lowest section of the graph, turn red and indicate the issue with an alert. This means there&#x27;s an issue in validating your DNSSEC setup</p>
+<p><strong>Enabling DNSSEC</strong></p>
+<p>If this sounds like something useful for one or more of the DNS zones you manage through us, you can follow the steps below to set this up, depending on your setup.</p>
+<doc-anchor-target id="external-dns">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#external-dns">#</doc-anchor-trigger>
+        <span>External DNS</span>
+    </h3>
+</doc-anchor-target>
+<p>In case your domain uses an external DNS zone, you&#x27;ll need to enable DNSSEC on that external platform. Then, once you have the public key information from there, you need to pass those on to your domain registrar. If that&#x27;s us, great, you can just create a ticket and we&#x27;ll enable DNSSEC on the domain level. Otherwise, contact your 3rd party registrar.</p>
+<doc-anchor-target id="cpanel-dns-zone">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cpanel-dns-zone">#</doc-anchor-trigger>
+        <span>cPanel DNS Zone</span>
+    </h3>
+</doc-anchor-target>
+<p>In case your domain uses a DNS zone managed through one of your cPanel servers, you&#x27;ll need to enable DNSSEC inside cPanel. To do this, you can follow this guide <a href="https://support.cpanel.net/hc/en-us/articles/1500011590261-How-To-Enable-DNSSEC-on-a-Domain" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://support.cpanel.net/hc/en-us/articles/1500011590261-How-To-Enable-DNSSEC-on-a-Domain</span></a>. If you find the DNSSEC option is not available, you may need to enable it in WHM for which you can follow this guide <a href="https://docs.cpanel.net/knowledge-base/dns/dnssec/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://docs.cpanel.net/knowledge-base/dns/dnssec/</span></a>. Then, once DNSSEC is enabled for the DNS zone you&#x27;ll be able to retrieve the key information and pass this along to your domain registrar. If that&#x27;s us, great, you can just create a ticket and we&#x27;ll enable DNSSEC on the domain level. Otherwise, contact your 3rd party registrar.</p>
+<doc-anchor-target id="directadmin-dns-zone">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#directadmin-dns-zone">#</doc-anchor-trigger>
+        <span>DirectAdmin DNS Zone</span>
+    </h3>
+</doc-anchor-target>
+<p>In case your domain uses a DNS zone managed through one of your DirectAdmin servers, you&#x27;ll need to enable DNSSEC inside DirectAdmin. To do this, you can follow the guide <a href="https://docs.directadmin.com/other-hosting-services/dns/maintaining-records.html#how-to-enable-dnssec-on-a-directadmin-server" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>https://docs.directadmin.com/other-hosting-services/dns/maintaining-records.html#how-to-enable-dnssec-on-a-directadmin-server</span></a> to enable this. Once done, you&#x27;ll be able to retrieve the key information and pass this along to your domain registrar. If that&#x27;s us, great, you can just create a ticket and we&#x27;ll enable DNSSEC on the domain level. Otherwise, contact your 3rd party registrar.</p>
+<doc-anchor-target id="customer-panel-dns-zone">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#customer-panel-dns-zone">#</doc-anchor-trigger>
+        <span>Customer panel DNS zone</span>
+    </h3>
+</doc-anchor-target>
+<p>In case your domain uses a DNS zone managed directly through your Hosted Power customer account panel, we&#x27;ll have to manually get this set up for you. In this case, please make a ticket informing us which domain you&#x27;d like to enable DNSSEC for, and we&#x27;ll get that done for you.</p>
 
                                 
                                 <!-- Required only on API pages -->
