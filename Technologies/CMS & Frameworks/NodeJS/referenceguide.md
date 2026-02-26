@@ -19,7 +19,7 @@ Your Node.js application typically resides in the following directories:
 | `~/app/logs`          | Application log files (if configured). |
 | `~/nginx`             | Custom Nginx configuration including reverse proxy configuration. |
 
-> Your application is typically served behind Nginx as a reverse proxy, which handles SSL termination and forwards traffic to your Node.js process.
+> Your application is typically served behind Nginx as a reverse proxy, which handles SSL termination and forwards traffic to your Node.js application.
 
 ---
 
