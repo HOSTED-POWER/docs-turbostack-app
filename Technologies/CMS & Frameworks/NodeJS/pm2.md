@@ -43,7 +43,7 @@ When defining NodeJS in your deployment in my.turbostack.app pm2 will be install
     
   > This will store the **current** process list so the application can be restarted automatically after a reboot of the server or any other disturbance causing the service to stop. **Always do this whenever the running process list changes** ( e.g when deleting/starting a new application, changing the app name, et citera...) 
    
-7.**If this is the first time setup** it could be that you need to run:\
+7.**If this is the first time setup** it could be that you need to run:
 
     `pm2 startup`
     
@@ -51,11 +51,11 @@ When defining NodeJS in your deployment in my.turbostack.app pm2 will be install
 
 ## Monitoring and troubleshooting the application
 
-- List all processes:\
+- List all processes:
 
     `pm2 ls` 
   
--  Opening a live monitoring dashboard:\
+-  Opening a live monitoring dashboard:
 
     `pm2 monit`
    
@@ -65,11 +65,11 @@ When defining NodeJS in your deployment in my.turbostack.app pm2 will be install
      * Restart count
      * Real-time logs
      
--   Display metadata of an application:\
+-   Display metadata of an application:
 
     `pm2 show <appname>`
 
--   Check logs of an application:\
+-   Check logs of an application:
 
     `pm2 logs <appname>`
 
@@ -78,7 +78,9 @@ When defining NodeJS in your deployment in my.turbostack.app pm2 will be install
       * `--err` : show only errors
       * `--out` : show only output
         
--  Restart or reload an applicaiton:\
+-  Restart or reload an applicaiton:
+
     `pm2 restart <appname>`
+    
     `pm2 reload <appname>`
   
