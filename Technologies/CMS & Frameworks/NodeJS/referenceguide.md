@@ -1,8 +1,8 @@
 # Node.js Hosting Reference Guide
 
-We provide optimized server environments for running **Node.js applications**. As the hosting provider, we maintain the server infrastructure, network, and runtime environment. Application code, dependencies, environment variables, and process management within your project are your responsibility.
+We provide optimized server environments for running **Node.js applications**. As the hosting provider, we maintain the server infrastructure, network, and runtime environment. Application code, dependencies, environment variables, and process management within your project areyour responsibility. (but we are always happy to assist when you are encountering issue ofcourse)
 
-This guide outlines the typical file structure, recommended permissions, process management, and caching options for Node.js applications.
+This guide outlines the typical file structure and recommended permissions for your application.
 
 ---
 
