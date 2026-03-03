@@ -50,3 +50,34 @@ system_users:
         proxy_enabled: true
         proxy_upstream_port: 8082
 ```
+### Basic commands
+
+List all running containers:
+```bash
+docker ps
+```
+
+List all containers:
+```bash
+docker ps -a
+```
+
+View the logs for a container:
+```bash
+docker logs <container_name>
+```
+
+stop a container:
+```bash
+docker stop <container_name>
+```
+
+start a container:
+```bash
+docker start <container_name>
+```
+
+remove a container:
+```bash
+docker rm <container_name>
+```
