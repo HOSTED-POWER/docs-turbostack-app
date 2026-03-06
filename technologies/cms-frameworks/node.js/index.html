@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826107978760">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826111308960">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Node.js Hosting Reference Guide</title>
-    <meta name="title" content="Node.js Hosting Reference Guide">
-    <meta name="description" content="We provide optimized server environments for running Node.js applications.">
+    <title>Node.js</title>
+    <meta name="title" content="Node.js">
+    <meta name="description" content="Node.js is an open-source, cross-platform Javascript runtime environment. Traditionally Javascript is used to make websites interactive within the...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.turbostack.app/technologies/cms-frameworks/nodejs/referenceguide/">
+    <link rel="canonical" href="https://docs.turbostack.app/technologies/cms-frameworks/node.js/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.turbostack.app/technologies/cms-frameworks/nodejs/referenceguide/">
-    <meta property="og:title" content="Node.js Hosting Reference Guide">
-    <meta property="og:description" content="We provide optimized server environments for running Node.js applications.">
+    <meta property="og:url" content="https://docs.turbostack.app/technologies/cms-frameworks/node.js/">
+    <meta property="og:title" content="Node.js">
+    <meta property="og:description" content="Node.js is an open-source, cross-platform Javascript runtime environment. Traditionally Javascript is used to make websites interactive within the...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/cms-frameworks/nodejs/referenceguide/">
-    <meta property="twitter:title" content="Node.js Hosting Reference Guide">
-    <meta property="twitter:description" content="We provide optimized server environments for running Node.js applications.">
+    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/cms-frameworks/node.js/">
+    <meta property="twitter:title" content="Node.js">
+    <meta property="twitter:description" content="Node.js is an open-source, cross-platform Javascript runtime environment. Traditionally Javascript is used to make websites interactive within the...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.826107978760" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.826111308960" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.826107978760" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.826107978760" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.826107978760" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.826111308960" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.826111308960" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,10 +49,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../../img/logo-blue.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../../../img/logo-white.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../img/logo-blue.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../img/logo-white.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">TurboStack Docs</span>
                         </a>
@@ -201,7 +200,7 @@
                                 <nav class="breadcrumb" aria-label="Breadcrumb">
                                     <ol role="list">
                                         <li class="pr-4">
-                                            <a href="../../../../" class="pr-4">
+                                            <a href="../../../" class="pr-4">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                                 </svg>
@@ -227,90 +226,41 @@
                                             </svg>
                                         </li>
                                         <li class="pr-4">
-                                            <a href="../../../../technologies/cms-frameworks/nodejs/" class="pr-4">
-                                                Node​JS
-                                            </a>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <a href="../../../../technologies/cms-frameworks/nodejs/referenceguide/" class="pr-4">
-                                                Node.​js Hosting Reference Guide
+                                            <a href="../../../technologies/cms-frameworks/node.js/" class="pr-4">
+                                                Node.​js
                                             </a>
                                         </li>
                                     </ol>
                                 </nav>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="nodejs-hosting-reference-guide" class="break-words">
+<doc-anchor-target id="nodejs" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nodejs-hosting-reference-guide">#</doc-anchor-trigger>
-        <span>Node.js Hosting Reference Guide</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nodejs">#</doc-anchor-trigger>
+        <span>Node.js</span>
     </h1>
 </doc-anchor-target>
-<p>We provide optimized server environments for running <strong>Node.js applications</strong>. As the hosting provider, we maintain the server infrastructure, network, and runtime environment. Application code, dependencies, environment variables, and process management within your project areyour responsibility. (but we are always happy to assist when you are encountering issue ofcourse)</p>
-<p>This guide outlines the typical file structure and recommended permissions for your application.</p>
-<hr>
-<doc-anchor-target id="file-structure">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#file-structure">#</doc-anchor-trigger>
-        <span>File Structure</span>
-    </h2>
+<p><strong>Node.js</strong> is an open-source, cross-platform Javascript runtime environment.
+Traditionally Javascript is used to make websites interactive within the browser.
+Node.js is a way to let you use JavaScript outside of a web browser and instead use it on the server itself.</p>
+<doc-anchor-target id="overview">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview:</span>
+    </h3>
 </doc-anchor-target>
-<p>Your Node.js application typically resides in the following directories:</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Path</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code v-pre>~/app</code></td>
-<td>Main Node.js application root directory.</td>
-</tr>
-<tr>
-<td><code v-pre>~/app/package.json</code></td>
-<td>Project metadata and dependency definitions.</td>
-</tr>
-<tr>
-<td><code v-pre>~/app/node_modules</code></td>
-<td>Installed project dependencies.</td>
-</tr>
-<tr>
-<td><code v-pre>~/app/public</code></td>
-<td>Static assets (if applicable).</td>
-</tr>
-<tr>
-<td><code v-pre>~/app/logs</code></td>
-<td>Application log files (if configured).</td>
-</tr>
-<tr>
-<td><code v-pre>~/nginx</code></td>
-<td>Custom Nginx configuration including reverse proxy configuration.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<blockquote>
-<p>Your application is typically served behind Nginx as a reverse proxy, which handles SSL termination and forwards traffic to your Node.js application.</p>
-</blockquote>
-<hr>
-<doc-anchor-target id="permissions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#permissions">#</doc-anchor-trigger>
-        <span>Permissions</span>
-    </h2>
+<ul>
+<li><a href="referenceguide/">Node.js Reference Guide</a></li>
+</ul>
+<doc-anchor-target id="how-to-guides">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-guides">#</doc-anchor-trigger>
+        <span>How-To Guides</span>
+    </h3>
 </doc-anchor-target>
-<p>Best practice permissions for files and directories are the following:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">find ~/app -type f -exec chmod 644 {} \;
-find ~/app -type d -exec chmod 755 {} \;
-</code></pre>
-</doc-codeblock></div>
+<ul>
+<li><a href="pm2/">PM2 - Process manager for Node.js applications </a></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -318,7 +268,7 @@ find ~/app -type d -exec chmod 755 {} \;
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/CMS & Frameworks/NodeJS/referenceguide.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/CMS & Frameworks/Node.js/readme.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -326,20 +276,20 @@ find ~/app -type d -exec chmod 755 {} \;
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../technologies/cms-frameworks/nodejs/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/cms-frameworks/medusa.js/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Node​JS</span>
+                                                <span class="block mt-1">Medusa.​js</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../../technologies/cms-frameworks/nodejs/pm2/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/web-servers/nginx/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Pm​2</span>
+                                                <span class="block mt-1">NGINX</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -383,6 +333,6 @@ find ~/app -type d -exec chmod 755 {} \;
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Node.js Hosting Reference Guide", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Node.js", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
