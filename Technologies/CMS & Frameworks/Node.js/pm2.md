@@ -24,7 +24,7 @@ When defining Node.js in your deployment in my.turbostack.app pm2 will be instal
 
     `rm -rf node_modules`
 
-    It could be that during migration something is missing/corrupted/incompatible. Removing the directory ensures a flawless reinstall.
+    It could be that during migration something is missing/corrupted/incompatible. Removing the directory ensures a flawless reinstallation.
    
 2. Check the important configuration files are present and changed accordingly if needed ( `next.config.js` and `package.json`)
    
@@ -46,7 +46,7 @@ When defining Node.js in your deployment in my.turbostack.app pm2 will be instal
     
   > This will store the **current** process list so the application can be restarted automatically after a reboot of the server or any other disturbance causing the service to stop. **Always do this whenever the running process list changes** (e.g. when deleting/starting a new application, changing the app name, etcetera...) 
    
-7.**If this is the first time setup** it could be that you need to run:
+7. **If this is the first-time setup** it could be that you need to run:
 
     `pm2 startup`
     
@@ -80,7 +80,7 @@ When defining Node.js in your deployment in my.turbostack.app pm2 will be instal
       * `--lines n` : show only last n liens
       * `--err` : show only errors
       * `--out` : show only output
-        
+
 -  Restart or reload an application:
 
     `pm2 restart <appname>`
