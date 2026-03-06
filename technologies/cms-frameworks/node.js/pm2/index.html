@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826111308960">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826111544369">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.826111308960" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.826111544369" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.826111308960" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.826111544369" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.826111308960" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.826111544369" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -273,7 +273,7 @@ PM2 is a process manager for Node.js applications, it comes with many benefits w
 <ol>
 <li><p>In case you migrated from another environment, and you want to start with a fresh deployment, make sure to clean out the node_modules directory:</p>
 <p><code v-pre>rm -rf node_modules</code></p>
-<p>It could be that during migration something is missing/corrupted/incompatible. Removing the directory ensures a flawless reinstall.</p>
+<p>It could be that during migration something is missing/corrupted/incompatible. Removing the directory ensures a flawless reinstallation.</p>
 </li>
 <li><p>Check the important configuration files are present and changed accordingly if needed ( <code v-pre>next.config.js</code> and <code v-pre>package.json</code>)</p>
 </li>
@@ -293,10 +293,11 @@ PM2 is a process manager for Node.js applications, it comes with many benefits w
 <blockquote>
 <p>This will store the <strong>current</strong> process list so the application can be restarted automatically after a reboot of the server or any other disturbance causing the service to stop. <strong>Always do this whenever the running process list changes</strong> (e.g. when deleting/starting a new application, changing the app name, etcetera...)</p>
 </blockquote>
-<p>7.<strong>If this is the first time setup</strong> it could be that you need to run:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">`pm2 startup`</code></pre>
-</doc-codeblock></div>
+<ol start="7">
+<li><p><strong>If this is the first-time setup</strong> it could be that you need to run:</p>
+<p><code v-pre>pm2 startup</code></p>
+</li>
+</ol>
 <p>This prepares pm2 to launch on system boot, afterwards, <code v-pre>pm2 save</code> will handle all running operations.</p>
 <doc-anchor-target id="monitoring-and-troubleshooting-the-application">
     <h2>
