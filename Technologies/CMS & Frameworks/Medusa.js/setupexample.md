@@ -2,12 +2,12 @@
 hidden: true
 ---
 # Setup example on TurboStack
-In this example, we will set up a MedusaJS instance on TurboStack. This will include the demo frontend and the MedusaJS backend. 
+In this example, we will set up a Medusa.js instance on TurboStack. This will include the demo frontend and the Medusa.js backend. 
 
-If you only want to set up the backend, you can choose this in project creation later. MedusaJS exposes API's for you to _'Plug in'_ your own frontend.
+If you only want to set up the backend, you can choose this in project creation later. MedusaJS exposes APIs for you to _'Plug in'_ your own frontend.
 ## YAML configuration
 MedusaJS requires:
-- NodeJS 20+ (LTS versions only)
+- Node.js 20+ (LTS versions only)
 - PostgreSQL
 
 The dashboard (backend) runs on port 9000/app and the demo frontend runs on port 8000.
@@ -39,7 +39,7 @@ system_users:
 ## Server setup
 
 ### Creating the project
-After the deploy succeeded, we can start setting up the server. We will use generic names, for this example. You can change these to your own.
+After the deployment succeeded, we can start setting up the server. We will use generic names, for this example. You can change these to your own.
 
 Make a new project directory and navigate to it:
 ```bash
@@ -48,11 +48,11 @@ cd project
 ```
 > **Important:** You don't want to place this in the `public_html` directory, as it will expose sensitive files to the public.
 
-To create a MedusaJS project, run the following command:
+To create a Medusa.js project, run the following command:
 ```bash
 npx create-medusa-app@latest <shopname>
 ```
-This will start the interactive install process. Follow the prompts to complete the installation:
+This will start the interactive installation process. Follow the prompts to complete the installation:
 ```
 ? Would you like to install the Next.js Starter Storefront? You can also install it later. Yes
 ? Enter your Postgres username demo_db
@@ -180,8 +180,8 @@ pm2 start "npm start"  --name storefront
 ## Tips
 ### Automating the deployment process
 If you want to automate the deployment process, you can do two things:
-  - Include the database connectionstring in the create-medusa-app command
-  - use the `--with-nextjs-starter` flag to include the storefront, then delete it after the install.
+  - Include the database connection string in the create-medusa-app command
+  - use the `--with-nextjs-starter` flag to include the storefront, then delete it after the installation.
   - Grab the Postgres credentials on the server, instead of the TurboStack GUI.
 
 To get the Postgres credentials, run the following command in the home directory of the user:
@@ -194,5 +194,5 @@ The command should look like this:
 npx create-medusa-app@latest shopname --db-url "postgres://<username>:<password>@localhost:5432/<dbname>" --with-nextjs-starter
 ```
 
-After the install, delete the storefront directory.
+After the installation, delete the storefront directory.
 ---

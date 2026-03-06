@@ -1,8 +1,8 @@
 ---
 hidden: true
 ---
-# MedusaJS Hosting Reference Guide
-Our TurboStack is equiped to handle your optimized MedusaJS application! 
+# Medusa.js Hosting Reference Guide
+Our TurboStack is equipped to handle your optimized MedusaJS application! 
 
 We maintain the server and infrastructure, but MedusaJS configuration, themes, plugins, and customizations are your responsibility.
 
@@ -10,7 +10,7 @@ This guide will inform you about the filestructure, permissions, caching and mor
 
 ## File Structure
 
-The following table shows the directory structure of a MedusaJS application:
+The following table shows the directory structure of a Medusa.js application:
 
 | Path                 | Purpose |
 |----------------------|---------|
@@ -42,7 +42,7 @@ chown -R $USER:$USER ~/<Project>/<Shopname>
 You can find our documentation on how to set up Redis [here](../../Caching/redis.md)
 
 ### Varnish
-The MedusaJS dashboard does not need any caching. We do recommend adding varnish to your storefront.
+The Medusa.js dashboard does not need any caching. We do recommend adding varnish to your storefront.
 
 You can enable Varnish in our TurboStack GUI by adding the following line to the YAML configuration, for the `vhost` where your frontend resides.
 
