@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826111544369">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826386299767">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.826111544369" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.826386299767" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.826111544369" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.826386299767" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.826111544369" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.826111544369" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.826386299767" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.826386299767" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -242,6 +242,13 @@
     </h2>
 </doc-anchor-target>
 <p>We provide the possibility to make a (S)FTP user and choose the <em>home directory</em> for that user. This is mostly used to connect an ERP system to a webshop.</p>
+<p>The home directory of the (S)FTP user should not be the same as the system user&#x27;s home directory. Instead it should only have access to the files and directories needed for your application.</p>
+<p>For example:</p>
+<ul>
+<li>A directory containing report PDF files.</li>
+<li>A directory containing product images.</li>
+<li>A directory containing stock exports.</li>
+</ul>
 <p>(S)FTP users are created within the context of a normal system user.</p>
 <doc-anchor-target id="creating-the-ftp-user">
     <h2>
@@ -305,6 +312,34 @@ Example:</p>
 </doc-codeblock></div>
 <p>Change port 2222 to the port your ERP system requires.</p>
 <hr>
+<doc-anchor-target id="connecting-via-sftp">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#connecting-via-sftp">#</doc-anchor-trigger>
+        <span>Connecting via (S)FTP</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="fetching-the-credentials">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fetching-the-credentials">#</doc-anchor-trigger>
+        <span>Fetching the credentials</span>
+    </h3>
+</doc-anchor-target>
+<p>To connect to the FTP server, you need the username and password. These can be found by clicking the <strong>Credentials</strong> button in the top right corner of the TurboStack GUI.</p>
+<p><figure class="content-center">
+    <img src="../image/ftp/credentials.png" alt="Credentials button">
+    <figcaption class="caption">Credentials button</figcaption>
+</figure>
+</p>
+<p>This will show all available credentials for your TurboStack server.</p>
+<doc-anchor-target id="connecting-via-filezilla">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#connecting-via-filezilla">#</doc-anchor-trigger>
+        <span>Connecting via FileZilla</span>
+    </h3>
+</doc-anchor-target>
+<p>Once you have the credentials of the (S)FTP user, you can connect to the FTP server using FileZilla, or another FTP client.</p>
+<p>Depending whether you use FTP or SFTP, you need to use a different port. FTP uses port <strong>21</strong>, while SFTP uses port <strong>222</strong>, unless you defined another port for SFTP.</p>
+<hr>
 <doc-anchor-target id="what-could-cause-a-login-failed-error-">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-could-cause-a-login-failed-error-">#</doc-anchor-trigger>
@@ -312,14 +347,28 @@ Example:</p>
     </h2>
 </doc-anchor-target>
 <ol>
-<li><strong>Incorrect login details used</strong>:
+<li><p><strong>Incorrect login details used</strong>:
 Login details used by users for FTP access include their username and password. If these credentials are given wrongly in the FTP client, it can result in a 530 login error in FTP.
-&quot;530 Login authentication failed&quot; errors also happen due to wrong password. Even a single additional space at the beginning or the back of a password can cause a login failure.</li>
-<li><strong>Path doesn&#x27;t exist</strong>:
-When the FTP users is created, a path will be assigned on creation. If the path doesn&#x27;t exist on the server, this will cause a login failure.</li>
-<li><strong>No TLS used</strong>:
-TLS is required and enforced for security reasons. It&#x27;s a very bad idea to disable it, since passwords would be sent in plaintext. Make sure to activate &quot;Explicit SSL/TLS&quot; in your FTP client. However, if you need to disable SSL anyway (For example incompatible ERP system that only supports plain text FTP), you can do so here: <img src="../image/ftp/1715871329616.png" alt="Disable SSL resquirement for a single user" title="Disable SSL resquirement for a single user" /></li>
+&quot;530 Login authentication failed&quot; errors also happen due to wrong password. Even a single additional space at the beginning or the back of a password can cause a login failure.</p>
+</li>
+<li><p><strong>Path doesn&#x27;t exist</strong>:
+When the FTP users is created, a path will be assigned on creation. If the path doesn&#x27;t exist on the server, this will cause a login failure.</p>
+</li>
+<li><p><strong>No TLS used</strong>:
+TLS is required and enforced for security reasons. It&#x27;s a very bad idea to disable it, since passwords would be sent in plaintext. Make sure to activate &quot;Explicit SSL/TLS&quot; in your FTP client. However, if you need to disable SSL anyway (For example incompatible ERP system that only supports plain text FTP), you can do so here: <img src="../image/ftp/1715871329616.png" alt="Disable SSL resquirement for a single user" title="Disable SSL resquirement for a single user" /></p>
+</li>
+<li><p><strong>IP is not whitelisted</strong>:
+Sometimes an IP can be (temporarily) blocked by the firewall. The best way to prevent this, is to whitelist the IP address that you use to connect to the FTP server. This can be done in the TurboStack GUI under:</p>
+</li>
 </ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Server &gt; Security &gt; Whitelist IP Addresses</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="../image/ftp/firewall_whitelist.png" alt="Whitelist IP Addresses">
+    <figcaption class="caption">Whitelist IP Addresses</figcaption>
+</figure>
+Whitelisting your mission critical IP adresses is a good practice.</p>
 <hr>
 
                                 
