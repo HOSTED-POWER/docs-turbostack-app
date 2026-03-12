@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826640799317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.826641416221">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.6.0.826640799317" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.6.0.826641416221" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.826640799317" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.6.0.826641416221" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.826640799317" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.826640799317" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.6.0.826641416221" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=3.6.0.826641416221" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -253,24 +253,54 @@ how to manage permissions.</p>
     </h2>
 </doc-anchor-target>
 <p>Your Drupal installation resides in the following directories:</p>
-<hr>
-<p>Path                                  Purpose</p>
-<hr>
-<p><code v-pre>~/public_html</code>                       Drupal project root and document root. Run all CLI
-commands here.</p>
-<p><code v-pre>~/public_html/core</code>                  Drupal core framework files.</p>
-<p><code v-pre>~/public_html/modules</code>               Contributed and custom Drupal modules.</p>
-<p><code v-pre>~/public_html/themes</code>                Installed Drupal themes.</p>
-<p><code v-pre>~/public_html/profiles</code>              Installation profiles used when installing Drupal.</p>
-<p><code v-pre>~/public_html/sites</code>                 Site-specific configuration, files, and settings.</p>
-<p><code v-pre>~/public_html/sites/default/files</code>   Public file uploads and generated assets.</p>
-<p><code v-pre>~/public_html/vendor</code>                Composer-managed PHP dependencies.</p>
-<doc-anchor-target id="nginx-----------------------------custom-nginx-configurations-for-your-site">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nginx-----------------------------custom-nginx-configurations-for-your-site">#</doc-anchor-trigger>
-        <span><code v-pre>~/nginx</code>                             Custom Nginx configurations for your site.</span>
-    </h2>
-</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>~/public_html</code></td>
+<td>Drupal project root and document root. Run all CLI commands here.</td>
+</tr>
+<tr>
+<td><code v-pre>~/public_html/core</code></td>
+<td>Drupal core framework files.</td>
+</tr>
+<tr>
+<td><code v-pre>~/public_html/modules</code></td>
+<td>Contributed and custom Drupal modules.</td>
+</tr>
+<tr>
+<td><code v-pre>~/public_html/themes</code></td>
+<td>Installed Drupal themes.</td>
+</tr>
+<tr>
+<td><code v-pre>~/public_html/profiles</code></td>
+<td>Installation profiles used when installing Drupal.</td>
+</tr>
+<tr>
+<td><code v-pre>~/public_html/sites</code></td>
+<td>Site-specific configuration, files, and settings.</td>
+</tr>
+<tr>
+<td><code v-pre>~/public_html/sites/default/files</code></td>
+<td>Public file uploads and generated assets.</td>
+</tr>
+<tr>
+<td><code v-pre>~/public_html/vendor</code></td>
+<td>Composer-managed PHP dependencies.</td>
+</tr>
+<tr>
+<td><code v-pre>~/nginx</code></td>
+<td>Custom Nginx configurations for your site.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <blockquote>
 <p>Note: In multi-site configurations, additional directories may exist
 under <code v-pre>~/public_html/sites/</code>.</p>
