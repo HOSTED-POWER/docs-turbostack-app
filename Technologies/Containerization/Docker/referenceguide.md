@@ -13,7 +13,7 @@ You can enable Docker in the TurboStack GUI, via:
 
 `Accounts > AccountName > Applications cogwheel > Technologies > Docker`
 
-![TurboStack Enable Docker](../../img/technologies/docker/TurboStack_Docker.png)
+![TurboStack Enable Docker](../../../img/technologies/docker/TurboStack_Docker.png)
 
 ### Via the TurboStack YAML
 You can add the following line to the account that needs docker installed:
@@ -29,7 +29,7 @@ You can do this configuration in the GUI, via:
 
 `Accounts > AccountName > Applications cogwheel > Technologies > Reverse Proxy`
 
-![TurboStack Reverse Proxy](../../img/technologies/docker/TurboStack_revProxy.png)
+![TurboStack Reverse Proxy](../../../img/technologies/docker/TurboStack_revProxy.png)
 
 ### Configuration example
 The following configuration example shows a user that has 2 docker containers running on ports 8081 and 8082.

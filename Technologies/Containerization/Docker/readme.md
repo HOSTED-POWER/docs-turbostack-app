@@ -2,6 +2,6 @@ Docker is an open platform for developing, shipping, and running applications. I
 
 At the core of Docker’s ecosystem are containers, lightweight and isolated environments that share the host operating system’s kernel but run independently from each other. This approach makes containers more efficient, while still providing strong isolation.
 
-### How-To Guides
+### Overview
 
-* [Reference Guide](referenceguide.md)
+* [Docker Reference Guide](referenceguide.md)
