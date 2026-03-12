@@ -15,28 +15,17 @@ how to manage permissions.
 
 Your Drupal installation resides in the following directories:
 
-  -----------------------------------------------------------------------------------------
-  Path                                  Purpose
-  ------------------------------------- ---------------------------------------------------
-  `~/public_html`                       Drupal project root and document root. Run all CLI
-                                        commands here.
-
-  `~/public_html/core`                  Drupal core framework files.
-
-  `~/public_html/modules`               Contributed and custom Drupal modules.
-
-  `~/public_html/themes`                Installed Drupal themes.
-
-  `~/public_html/profiles`              Installation profiles used when installing Drupal.
-
-  `~/public_html/sites`                 Site-specific configuration, files, and settings.
-
-  `~/public_html/sites/default/files`   Public file uploads and generated assets.
-
-  `~/public_html/vendor`                Composer-managed PHP dependencies.
-
-  `~/nginx`                             Custom Nginx configurations for your site.
-  -----------------------------------------------------------------------------------------
+| Path | Purpose |
+|------|---------|
+| `~/public_html` | Drupal project root and document root. Run all CLI commands here. |
+| `~/public_html/core` | Drupal core framework files. |
+| `~/public_html/modules` | Contributed and custom Drupal modules. |
+| `~/public_html/themes` | Installed Drupal themes. |
+| `~/public_html/profiles` | Installation profiles used when installing Drupal. |
+| `~/public_html/sites` | Site-specific configuration, files, and settings. |
+| `~/public_html/sites/default/files` | Public file uploads and generated assets. |
+| `~/public_html/vendor` | Composer-managed PHP dependencies. |
+| `~/nginx` | Custom Nginx configurations for your site. |
 
 > Note: In multi-site configurations, additional directories may exist
 > under `~/public_html/sites/`.
