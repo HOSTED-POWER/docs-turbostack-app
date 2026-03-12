@@ -118,7 +118,6 @@ This is especially helpful when bots ignore `crawl-delay` rules in
 `robots.txt`!
 !!!
 
-
 ## Recommended Setup
 
 For most websites:
