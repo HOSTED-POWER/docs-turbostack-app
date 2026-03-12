@@ -3,7 +3,7 @@ order: 700
 icon: alert
 ---
 
-# Advanced tab
+# Advanced
 
 The **advanced** tab offers some more advanced configuration options for specific services, such as mail, Varnish, RabbitMQ, FTP, etc. This article describes the options currently available.
 

@@ -3,9 +3,7 @@ order: 200
 icon: undo
 ---
 
-
-
-# Backups tab
+# Backups 
 
 The **Backups** tab is where you can restore files, folders and databases. This article will explain how you can use the backup tab. Restores for **files**, **folders**, **MySQL** and **PostgreSQL** are supported.
 
