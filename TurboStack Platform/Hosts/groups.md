@@ -3,7 +3,7 @@ order: 600
 icon: people
 ---
 
-# Groups tab
+# Groups
 
 Groups make it possible to **apply certain settings across multiple TurboStack nodes**, such as time zones or SSH key access. 
 

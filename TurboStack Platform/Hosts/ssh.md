@@ -3,7 +3,7 @@ order: 500
 icon: key
 ---
 
-# SSH tab
+# SSH
 
 This tab allows you to add your **SSH public key** to the server, enabling keypair authentication for SSH.
 

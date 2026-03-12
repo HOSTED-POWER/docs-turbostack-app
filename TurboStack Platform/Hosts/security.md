@@ -2,7 +2,7 @@
 order: 400
 icon: lock
 ---
-# Security tab
+# Security
 
 !!! warning
 This is an advanced feature, please be cautious while changing values here!
