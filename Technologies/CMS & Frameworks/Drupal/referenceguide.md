@@ -30,34 +30,6 @@ Your Drupal installation resides in the following directories:
 > Note: In multi-site configurations, additional directories may exist
 > under `~/public_html/sites/`.
 
-## Drupal CLI (Drush)
-
-Drupal is typically managed using **Drush**, its command-line interface.
-
-Run all Drush commands from the `~/public_html` directory:
-
-``` bash
-cd ~/public_html
-vendor/bin/drush status
-```
-
-Common Drush commands include:
-
-| Command | Purpose |
-|--------|---------|
-| `drush cr` | Rebuild Drupal caches. |
-| `drush updb` | Run database updates after module/core upgrades. |
-| `drush cim` | Import configuration changes from config files. |
-| `drush cex` | Export active configuration to files. |
-| `drush pm:list` | List installed modules. |
-
-If Drush is installed globally on your system, you may run `drush`
-directly. Otherwise use:
-
-``` bash
-vendor/bin/drush
-```
-
 ## Installing Composer Dependencies
 
 Drupal uses Composer to manage PHP dependencies and modules.
@@ -75,8 +47,7 @@ To update dependencies:
 composer update
 ```
 
-Make sure your hosting plan uses a supported PHP version and has all
-required extensions for Drupal.
+Make sure you set a supported PHP version and have installed all required extensions for Drupal.
 
 ## Permissions
 
@@ -107,7 +78,7 @@ required after installing modules or deploying configuration.
 Use Drush:
 
 ``` bash
-vendor/bin/drush cr
+drush cr
 ```
 
 ### Redis and Varnish Caching
@@ -139,7 +110,7 @@ sending emails, and cleaning logs.
 Run cron manually with:
 
 ``` bash
-vendor/bin/drush cron
+drush cron
 ```
 
 You may configure a user cron job if needed:
@@ -151,7 +122,7 @@ crontab -e
 Example:
 
 ``` bash
-*/15 * * * * cd ~/public_html && vendor/bin/drush cron
+*/15 * * * * cd ~/public_html && drush cron
 ```
 
 This example runs Drupal cron every 15 minutes.
