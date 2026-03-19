@@ -26,4 +26,4 @@ Some useful basics:
 
 ### Example
 
-![alt text](image.png)
+<img width="1695" height="493" alt="image" src="https://github.com/user-attachments/assets/18c376c6-ffc6-4226-bff2-07aad7cf1cc9" />
