@@ -39,8 +39,8 @@ To completely whitelist an IP address, you can use the TurboStack Platform. A wh
 
 Additionally, whitelisting an IP grants access to ports that are otherwise blocked by the firewall. This can be useful for enabling remote access to MySQL and other databases or allowing connections to restricted services.
 
-Firewall settings can be managed in the Security tab of your host's management section within the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"). For detailed instructions on modifying firewall settings, please refer to the documentation [here](https://docs.turbostack.app/turbostack-app/overview/#security-tab "Here").
+Firewall settings can be managed in the Security tab of your host's management section within the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform"). For detailed instructions on modifying firewall settings, please refer to the documentation [here](../TurboStack%20Platform/Hosts/security.md "Here").
 
 ## Control Panels with Firewall GUI
 
-If you’re using a control panel like [DirectAdmin](../Technologies/Control%20Panels/directadmin.md) or [cPanel](../Technologies/Control%20Panels/cpanel.md), you can also manage firewall settings directly through their graphical user interface (GUI). For detailed instructions, please refer to their respective knowledge bases.
+If you’re using a control panel like DirectAdmin or cPanel, you can also manage firewall settings directly through their graphical user interface (GUI). For detailed instructions, please refer to their respective knowledge bases.
