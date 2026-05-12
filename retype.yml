@@ -26,7 +26,7 @@ outbound:
 favicon: favicon.ico
 
 branding:
-  title: TurboStack Docs3
+  title: TurboStack Docs
   logo: /img/logo_ts_blue.png
   logoDark: /img/logo-ts-white.png
   logoAlign: left
@@ -179,7 +179,7 @@ scheme:
   mode: system
 
 meta:
-  title: "TurboStack Docs1"
-  siteName: "TurboStack Docs2"
+  title: " | TurboStack Docs"
+  siteName: "TurboStack Docs"
 
 
