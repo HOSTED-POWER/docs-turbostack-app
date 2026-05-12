@@ -23,8 +23,6 @@ outbound:
   iconAlign: left             # Icon alignment, to the left or right
   target: blank               # Custom target
 
-favicon: favicon.ico
-
 branding:
   title: TurboStack Docs
   logo: /img/logo_ts_blue.png
