@@ -1,4 +1,4 @@
-# full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
+# Full config at https://github.com/retypeapp/retype/blob/main/static/retype.yml
 
 start:
   pro: true
@@ -10,18 +10,15 @@ serve:
 poweredByRetype: false
 
 breadcrumb:
-  enabled: true               # Enabled by default on Pro projects
-#  home: Home                  # Custom label for the first item
-  home: ":icon-home:"         # or, use an icon
-#  separator: "|"              # Custom item separator
+  enabled: true
+  home: ":icon-home:"
 
 outbound:
-  enabled: true               # Enabled by default on Pro projects
-  custom: 'rel="noopener noreferrer"' # custom attribute added to links
-  icon: link-external         # A custom icon name, :emoji:, <svg>, or
-                              # a path to a file
-  iconAlign: left             # Icon alignment, to the left or right
-  target: blank               # Custom target
+  enabled: true
+  custom: 'rel="noopener noreferrer"'
+  icon: link-external
+  iconAlign: left
+  target: blank
 
 branding:
   title: Docs
@@ -31,51 +28,52 @@ branding:
 
 theme:
   base:
+    # === BACKGROUNDS ===
     base-bg: "#FFFFFF"                     # White
-    sidebar-left-bg: "#C6E5FF"             # Light Blue
+    sidebar-left-bg: "#C6E5FF"             # Blue tint
     header-bg: "#FFFFFF"                   # White
-    base-item-bg-hover: "#FDFDC5"          # Light Yellow
-    base-item-bg-active: "#C6E5FF"         # Light Blue
-    skeleton-bg: "#FDFDC5"                 # Light Yellow
+    base-item-bg-hover: "#FDFDC5"          # Yellow tint
+    base-item-bg-active: "#C6E5FF"         # Blue tint
+    skeleton-bg: "#FDFDC5"                 # Yellow tint
 
     # === TEXT ===
-    base-color: "#2600E6"                  # Blue
+    base-color: "#2600E6"                  # HP Blue (primary)
     base-text: "#000000"                   # Black
     base-text-strong: "#000000"            # Black
-    base-text-muted: "#777777"             # Grayscale
+    base-text-muted: "#000000"             # Black
     heading-text: "#000000"                # Black
     heading-weight: 700
 
     # === LINKS ===
-    base-link: "#2600E6"                   # Blue
-    base-link-hover: "#2600E6"             # Blue
+    base-link: "#2600E6"                   # HP Blue
+    base-link-hover: "#2600E6"             # HP Blue
     base-link-weight: 600
 
     # === BORDERS ===
-    base-border: "#C6E5FF"                 # Light Blue
-    base-border-hover: "#2600E6"           # Blue
-    base-border-strong: "#2600E6"          # Blue
+    base-border: "#C6E5FF"                 # Blue tint
+    base-border-hover: "#2600E6"           # HP Blue
+    base-border-strong: "#2600E6"          # HP Blue
 
     # === NAVIGATION ===
     nav-item-text: "#000000"               # Black
-    nav-item-text-active: "#2600E6"        # Blue
-    nav-item-border-active: "#2600E6"      # Blue
+    nav-item-text-active: "#2600E6"        # HP Blue
+    nav-item-border-active: "#2600E6"      # HP Blue
     nav-item-text-stack: "#000000"         # Black
 
     # === SIDEBAR ACCENTS ===
-    sidebar-left-border: "#2600E6"         # Blue
-    header-border: "#C6E5FF"               # Light Blue
-    header-text: "#2600E6"                 # Blue
+    sidebar-left-border: "#2600E6"         # HP Blue
+    header-border: "#C6E5FF"               # Blue tint
+    header-text: "#2600E6"                 # HP Blue
 
     # === FOOTER ===
     footer-text: "#000000"                 # Black
-    footer-link: "#2600E6"                 # Blue
-    footer-link-hover: "#2600E6"           # Blue
+    footer-link: "#2600E6"                 # HP Blue
+    footer-link-hover: "#2600E6"           # HP Blue
 
     # === TABLE OF CONTENTS ===
-    toc-text: "#777777"                    # Grayscale
-    toc-text-active: "#2600E6"             # Blue
-    toc-border-active: "#2600E6"           # Blue
+    toc-text: "#000000"                    # Black
+    toc-text-active: "#2600E6"             # HP Blue
+    toc-border-active: "#2600E6"           # HP Blue
 
     # === SEMANTIC ALERTS ===
     success: "#00E400"                     # Green
@@ -84,56 +82,66 @@ theme:
     royal: "#D200FF"                       # Purple
 
     # === SELECTION ===
-    selection-bg: "#C6E5FF"                # Light Blue
+    selection-bg: "#C6E5FF"                # Blue tint
     selection-text: "#000000"              # Black
 
   dark:
-    base-bg: "#0A0A1A"
-    sidebar-left-bg: "#C6E5FF"             # Light Blue
-    header-bg: "#0A0A1A"                   # Functional dark surface
-    base-item-bg-hover: "#1A1A35"          # Functional dark surface
-    base-item-bg-active: "#2600E6"         # Blue
-    skeleton-bg: "#1A1A35"                 # Functional dark surface
+    # === BACKGROUNDS ===
+    base-bg: "#000000"                     # Black
+    sidebar-left-bg: "#2600E6"             # HP Blue (primary)
+    header-bg: "#000000"                   # Black
+    base-item-bg-hover: "#C6E5FF"          # Blue tint
+    base-item-bg-active: "#C6E5FF"         # Blue tint
+    skeleton-bg: "#C6E5FF"                 # Blue tint
 
-    base-color: "#2600E6"                  # Blue
+    # === TEXT ===
+    base-color: "#2600E6"                  # HP Blue
     base-text: "#FFFFFF"                   # White
     base-text-strong: "#FFFFFF"            # White
-    base-text-muted: "#777777"             # Grayscale
+    base-text-muted: "#FFFFFF"             # White
     heading-text: "#FFFFFF"                # White
     heading-weight: 700
 
-    base-link: "#C6E5FF"                   # Light Blue
-    base-link-hover: "#C6E5FF"             # Light Blue
+    # === LINKS ===
+    base-link: "#C6E5FF"                   # Blue tint
+    base-link-hover: "#C6E5FF"             # Blue tint
     base-link-weight: 600
 
-    base-border: "#2600E6"                 # Blue
-    base-border-hover: "#C6E5FF"           # Light Blue
-    base-border-strong: "#C6E5FF"          # Light Blue
+    # === BORDERS ===
+    base-border: "#2600E6"                 # HP Blue
+    base-border-hover: "#C6E5FF"           # Blue tint
+    base-border-strong: "#C6E5FF"          # Blue tint
 
+    # === NAVIGATION ===
     nav-item-text: "#FFFFFF"               # White
-    nav-item-text-active: "#C6E5FF"        # Light Blue
-    nav-item-border-active: "#C6E5FF"      # Light Blue
+    nav-item-text-active: "#C6E5FF"        # Blue tint
+    nav-item-border-active: "#C6E5FF"      # Blue tint
     nav-item-text-stack: "#FFFFFF"         # White
 
-    sidebar-left-border: "#2600E6"         # Blue
-    header-border: "#2600E6"               # Blue
-    header-text: "#C6E5FF"                 # Light Blue
+    # === SIDEBAR ACCENTS ===
+    sidebar-left-border: "#C6E5FF"         # Blue tint
+    header-border: "#2600E6"               # HP Blue
+    header-text: "#C6E5FF"                 # Blue tint
 
-    footer-text: "#777777"                 # Grayscale
-    footer-link: "#C6E5FF"                 # Light Blue
-    footer-link-hover: "#C6E5FF"           # Light Blue
+    # === FOOTER ===
+    footer-text: "#FFFFFF"                 # White
+    footer-link: "#C6E5FF"                 # Blue tint
+    footer-link-hover: "#C6E5FF"           # Blue tint
 
-    toc-text: "#777777"                    # Grayscale
-    toc-text-active: "#C6E5FF"             # Light Blue
-    toc-border-active: "#C6E5FF"           # Light Blue
+    # === TABLE OF CONTENTS ===
+    toc-text: "#FFFFFF"                    # White
+    toc-text-active: "#C6E5FF"             # Blue tint
+    toc-border-active: "#C6E5FF"           # Blue tint
 
+    # === SEMANTIC ALERTS ===
     success: "#00E400"                     # Green
     danger: "#FF0000"                      # Red
     warning: "#FF9200"                     # Orange
     royal: "#D200FF"                       # Purple
 
-    selection-bg: "#C6E5FF"                # Light Blue
-    selection-text: "#000000"              # Black on secondary
+    # === SELECTION ===
+    selection-bg: "#C6E5FF"                # Blue tint
+    selection-text: "#000000"              # Black
 
 url: docs.turbostack.app
 
