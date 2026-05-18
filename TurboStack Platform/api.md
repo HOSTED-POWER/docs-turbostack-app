@@ -565,11 +565,3 @@ curl --request POST \
     }
   }'
 ```
-
-
-## Practical notes
-
-- The API version documented here is `v1`.
-- The `json` fields for hosts and groups are intentionally flexible and reflect TurboStack's internal configuration payloads.
-- Host responses may include live monitoring data through the `monitoring` object.
-- When automating deploys, save the host configuration first and only trigger `POST /api/v1/hosts/{id}/deploy` after the configuration is accepted.
