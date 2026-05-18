@@ -31,109 +31,109 @@ branding:
 
 theme:
   base:
-    colors:
-      base-bg: "#FFFFFF"                     # White
-      sidebar-bg: "#C6E5FF"                  # Light Blue
-      header-bg: "#FFFFFF"                   # White
-      base-item-bg-hover: "#FDFDC5"          # Light Yellow
-      base-item-bg-active: "#C6E5FF"         # Light Blue
-      skeleton-bg: "#FDFDC5"                 # Light Yellow
+    base-bg: "#FFFFFF"                     # White
+    sidebar-left-bg: "#C6E5FF"             # Light Blue
+    header-bg: "#FFFFFF"                   # White
+    base-item-bg-hover: "#FDFDC5"          # Light Yellow
+    base-item-bg-active: "#C6E5FF"         # Light Blue
+    skeleton-bg: "#FDFDC5"                 # Light Yellow
 
-      # === TEXT ===
-      base-color: "#2600E6"                  # Blue
-      base-text: "#000000"                   # Black
-      base-text-strong: "#000000"            # Black
-      base-text-muted: "#777777"             # Grayscale
-      heading-text: "#000000"                # Black
+    # === TEXT ===
+    base-color: "#2600E6"                  # Blue
+    base-text: "#000000"                   # Black
+    base-text-strong: "#000000"            # Black
+    base-text-muted: "#777777"             # Grayscale
+    heading-text: "#000000"                # Black
+    heading-weight: 700
 
-      # === LINKS ===
-      base-link: "#2600E6"                   # Blue
-      base-link-hover: "#2600E6"             # Blue
-      base-link-weight: 600
+    # === LINKS ===
+    base-link: "#2600E6"                   # Blue
+    base-link-hover: "#2600E6"             # Blue
+    base-link-weight: 600
 
-      # === BORDERS ===
-      base-border: "#C6E5FF"                 # Light Blue
-      base-border-hover: "#2600E6"           # Blue
-      base-border-strong: "#2600E6"          # Blue
+    # === BORDERS ===
+    base-border: "#C6E5FF"                 # Light Blue
+    base-border-hover: "#2600E6"           # Blue
+    base-border-strong: "#2600E6"          # Blue
 
-      # === NAVIGATION ===
-      nav-item-text: "#000000"               # Black
-      nav-item-text-active: "#2600E6"        # Blue
-      nav-item-border-active: "#2600E6"      # Blue
-      nav-item-text-stack: "#000000"         # Black
+    # === NAVIGATION ===
+    nav-item-text: "#000000"               # Black
+    nav-item-text-active: "#2600E6"        # Blue
+    nav-item-border-active: "#2600E6"      # Blue
+    nav-item-text-stack: "#000000"         # Black
 
-      # === SIDEBAR ACCENTS ===
-      sidebar-left-border: "#2600E6"         # Blue
-      header-border: "#C6E5FF"               # Light Blue
-      header-text: "#2600E6"                 # Blue
+    # === SIDEBAR ACCENTS ===
+    sidebar-left-border: "#2600E6"         # Blue
+    header-border: "#C6E5FF"               # Light Blue
+    header-text: "#2600E6"                 # Blue
 
-      # === FOOTER ===
-      footer-text: "#000000"                 # Black
-      footer-link: "#2600E6"                 # Blue
-      footer-link-hover: "#2600E6"           # Blue
+    # === FOOTER ===
+    footer-text: "#000000"                 # Black
+    footer-link: "#2600E6"                 # Blue
+    footer-link-hover: "#2600E6"           # Blue
 
-      # === TABLE OF CONTENTS ===
-      toc-text: "#777777"                    # Grayscale
-      toc-text-active: "#2600E6"             # Blue
-      toc-border-active: "#2600E6"           # Blue
+    # === TABLE OF CONTENTS ===
+    toc-text: "#777777"                    # Grayscale
+    toc-text-active: "#2600E6"             # Blue
+    toc-border-active: "#2600E6"           # Blue
 
-      # === SEMANTIC ALERTS ===
-      success: "#00E400"                     # Green
-      danger: "#FF0000"                      # Red
-      warning: "#FF9200"                     # Orange
-      royal: "#D200FF"                       # Purple
+    # === SEMANTIC ALERTS ===
+    success: "#00E400"                     # Green
+    danger: "#FF0000"                      # Red
+    warning: "#FF9200"                     # Orange
+    royal: "#D200FF"                       # Purple
 
-      # === SELECTION ===
-      selection-bg: "#C6E5FF"                # Light Blue
-      selection-text: "#000000"              # Black
+    # === SELECTION ===
+    selection-bg: "#C6E5FF"                # Light Blue
+    selection-text: "#000000"              # Black
 
   dark:
-    colors:
-      base-bg: "#0A0A1A"
-      sidebar-bg: "#C6E5FF"                  # Light Blue
-      header-bg: "#0A0A1A"                   # Functional dark surface
-      base-item-bg-hover: "#1A1A35"          # Functional dark surface
-      base-item-bg-active: "#2600E6"         # Blue
-      skeleton-bg: "#1A1A35"                 # Functional dark surface
+    base-bg: "#0A0A1A"
+    sidebar-left-bg: "#C6E5FF"             # Light Blue
+    header-bg: "#0A0A1A"                   # Functional dark surface
+    base-item-bg-hover: "#1A1A35"          # Functional dark surface
+    base-item-bg-active: "#2600E6"         # Blue
+    skeleton-bg: "#1A1A35"                 # Functional dark surface
 
-      base-color: "#2600E6"                  # Blue
-      base-text: "#FFFFFF"                   # White
-      base-text-strong: "#FFFFFF"            # White
-      base-text-muted: "#777777"             # Grayscale
-      heading-text: "#FFFFFF"                # White
+    base-color: "#2600E6"                  # Blue
+    base-text: "#FFFFFF"                   # White
+    base-text-strong: "#FFFFFF"            # White
+    base-text-muted: "#777777"             # Grayscale
+    heading-text: "#FFFFFF"                # White
+    heading-weight: 700
 
-      base-link: "#C6E5FF"                   # Light Blue
-      base-link-hover: "#C6E5FF"             # Light Blue
-      base-link-weight: 600
+    base-link: "#C6E5FF"                   # Light Blue
+    base-link-hover: "#C6E5FF"             # Light Blue
+    base-link-weight: 600
 
-      base-border: "#2600E6"                 # Blue
-      base-border-hover: "#C6E5FF"           # Light Blue
-      base-border-strong: "#C6E5FF"          # Light Blue
+    base-border: "#2600E6"                 # Blue
+    base-border-hover: "#C6E5FF"           # Light Blue
+    base-border-strong: "#C6E5FF"          # Light Blue
 
-      nav-item-text: "#FFFFFF"               # White
-      nav-item-text-active: "#C6E5FF"        # Light Blue
-      nav-item-border-active: "#C6E5FF"      # Light Blue
-      nav-item-text-stack: "#FFFFFF"         # White
+    nav-item-text: "#FFFFFF"               # White
+    nav-item-text-active: "#C6E5FF"        # Light Blue
+    nav-item-border-active: "#C6E5FF"      # Light Blue
+    nav-item-text-stack: "#FFFFFF"         # White
 
-      sidebar-left-border: "#2600E6"         # Blue
-      header-border: "#2600E6"               # Blue
-      header-text: "#C6E5FF"                 # Light Blue
+    sidebar-left-border: "#2600E6"         # Blue
+    header-border: "#2600E6"               # Blue
+    header-text: "#C6E5FF"                 # Light Blue
 
-      footer-text: "#777777"                 # Grayscale
-      footer-link: "#C6E5FF"                 # Light Blue
-      footer-link-hover: "#C6E5FF"           # Light Blue
+    footer-text: "#777777"                 # Grayscale
+    footer-link: "#C6E5FF"                 # Light Blue
+    footer-link-hover: "#C6E5FF"           # Light Blue
 
-      toc-text: "#777777"                    # Grayscale
-      toc-text-active: "#C6E5FF"             # Light Blue
-      toc-border-active: "#C6E5FF"           # Light Blue
+    toc-text: "#777777"                    # Grayscale
+    toc-text-active: "#C6E5FF"             # Light Blue
+    toc-border-active: "#C6E5FF"           # Light Blue
 
-      success: "#00E400"                     # Green
-      danger: "#FF0000"                      # Red
-      warning: "#FF9200"                     # Orange
-      royal: "#D200FF"                       # Purple
+    success: "#00E400"                     # Green
+    danger: "#FF0000"                      # Red
+    warning: "#FF9200"                     # Orange
+    royal: "#D200FF"                       # Purple
 
-      selection-bg: "#C6E5FF"                # Light Blue
-      selection-text: "#000000"              # Black on secondary
+    selection-bg: "#C6E5FF"                # Light Blue
+    selection-text: "#000000"              # Black on secondary
 
 url: docs.turbostack.app
 
