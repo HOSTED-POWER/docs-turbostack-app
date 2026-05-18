@@ -114,7 +114,8 @@ theme:
 
     # === NAVIGATION ===
     nav-item-text: "#FFFFFF"               # White on HP Blue sidebar
-    nav-item-text-active: "#000000"        # Black on blue tint hover/active
+    nav-item-text-hover: "#000000"         # Black on blue tint hover
+    nav-item-text-active: "#000000"        # Black on blue tint active
     nav-item-border-active: "#C6E5FF"      # Blue tint
     nav-item-text-stack: "#FFFFFF"         # White
 
