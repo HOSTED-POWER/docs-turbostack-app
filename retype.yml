@@ -24,11 +24,10 @@ outbound:
   target: blank               # Custom target
 
 branding:
-  title: TurboStack Docs
+  title: Docs
   logo: /img/logo_ts_blue.png
   logoDark: /img/logo-ts-white.png
   logoAlign: left
-  label: Docs
 
 theme:
   base:
