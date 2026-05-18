@@ -3,255 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.832428065018">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832428177697">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 4.5.3">
 
     <!-- Primary Meta Tags -->
     <title>Redis | TurboStack Docs</title>
     <meta name="title" content="Redis | TurboStack Docs">
-    <meta name="description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
+    <meta name="description" content="Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/technologies/caching/redis/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.turbostack.app/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/technologies/caching/redis/">
     <meta property="og:title" content="Redis | TurboStack Docs">
-    <meta property="og:description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
+    <meta property="og:description" content="Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.">
     <meta property="og:image" content="https://docs.turbostack.app/img/technologies/redis/caching/redis_drupal_enabled.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Redis | TurboStack Docs">
+    <meta property="og:site_name" content="TurboStack Docs">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.turbostack.app/technologies/caching/redis/">
-    <meta property="twitter:title" content="Redis | TurboStack Docs">
-    <meta property="twitter:description" content="Redis is a powerful in-memory database primarily used for caching and session management.">
-    <meta property="twitter:image" content="https://docs.turbostack.app/img/technologies/redis/caching/redis_drupal_enabled.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.turbostack.app/technologies/caching/redis/">
+    <meta name="twitter:title" content="Redis | TurboStack Docs">
+    <meta name="twitter:description" content="Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.">
+    <meta name="twitter:image" content="https://docs.turbostack.app/img/technologies/redis/caching/redis_drupal_enabled.png">
+    <meta name="twitter:image:alt" content="Redis | TurboStack Docs">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.turbostack.app/technologies/caching/redis.md">
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.832428065018" rel="stylesheet">
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.832428065018" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.832428065018" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.6.0.832428065018" defer></script>
+    <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
+    <link href="../../../resources/css/retype.css?v=4.5.3.832428177697" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832428177697" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832428177697" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.832428177697" defer></script>
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://docs.turbostack.app/" class="flex items-center leading-snug text-2xl">
+                        <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../img/logo_ts_blue.png" alt="TurboStack Docs" width="40" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../img/logo-ts-white.png" alt="TurboStack Docs" width="40" height="40">
+                        </span>
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Docs</span>
+                    </a>
+                </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://my.turbostack.app" target="_blank">
+                                <span class="docs-emoji mr-1.5">🚀</span>
+                                <span>TurboStack Platform</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://portal.hosted-power.com" target="_blank">
+                                <span class="docs-emoji mr-1.5">💁</span>
+                                <span>Customer Center</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="mailto:support@hosted-power.com" target="_blank">
+                                <span class="docs-emoji mr-1.5">📨</span>
+                                <span>Submit a Ticket</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.hosted-power.com" target="_blank">
+                                <span class="docs-emoji mr-1.5">🌐</span>
+                                <span>Hosted Power website</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
         
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
-                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../img/logo_ts_blue.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../../img/logo-ts-white.png">
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://my.turbostack.app" target="_blank">
+                                        <span class="docs-emoji mr-1.5">🚀</span>
+                                        <span>TurboStack Platform</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://portal.hosted-power.com" target="_blank">
+                                        <span class="docs-emoji mr-1.5">💁</span>
+                                        <span>Customer Center</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="mailto:support@hosted-power.com" target="_blank">
+                                        <span class="docs-emoji mr-1.5">📨</span>
+                                        <span>Submit a Ticket</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.hosted-power.com" target="_blank">
+                                        <span class="docs-emoji mr-1.5">🌐</span>
+                                        <span>Hosted Power website</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <nav id="retype-breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+                    <ol role="list">
+                        <li class="pr-4">
+                            <a href="../../../" class="pr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                </svg>
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                            </svg>
+                        </li>
+                        <li class="pr-4">
+                            <span class="pr-4">
+                                Technologies
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Docs</span>
-                        </a>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
-                </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://my.turbostack.app" target="_blank">
-                                    <span class="docs-emoji mr-1">🚀</span>
-                                    <span>TurboStack Platform</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://portal.hosted-power.com" target="_blank">
-                                    <span class="docs-emoji mr-1">💁</span>
-                                    <span>Customer Center</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="mailto:support@hosted-power.com" target="_blank">
-                                    <span class="docs-emoji mr-1">📨</span>
-                                    <span>Submit a Ticket</span>
-                                </a>
-                            </li>
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.hosted-power.com" target="_blank">
-                                    <span class="docs-emoji mr-1">🌐</span>
-                                    <span>Hosted Power website</span>
-                                </a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search the docs">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
-                </div>
-            </div>
-        </header>
-    
-        <div class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
-            
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                </div>
-            
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://my.turbostack.app" target="_blank">
-                                            <span class="docs-emoji mr-1">🚀</span>
-                                            <span>TurboStack Platform</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://portal.hosted-power.com" target="_blank">
-                                            <span class="docs-emoji mr-1">💁</span>
-                                            <span>Customer Center</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="mailto:support@hosted-power.com" target="_blank">
-                                            <span class="docs-emoji mr-1">📨</span>
-                                            <span>Submit a Ticket</span>
-                                        </a>
-                                    </li>
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.hosted-power.com" target="_blank">
-                                            <span class="docs-emoji mr-1">🌐</span>
-                                            <span>Hosted Power website</span>
-                                        </a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 dark:bg-dark-850">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
-                                <nav class="breadcrumb" aria-label="Breadcrumb">
-                                    <ol role="list">
-                                        <li class="pr-4">
-                                            <a href="../../../" class="pr-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
-                                                </svg>
-                                            </a>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <span class="pr-4">
-                                                Technologies
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <span class="pr-4">
-                                                Caching
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
-                                            </svg>
-                                        </li>
-                                        <li class="pr-4">
-                                            <a href="../../../technologies/caching/redis/" class="pr-4">
-                                                Redis
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </nav>
-                
-                                <!-- Page content  -->
-<doc-anchor-target id="redis" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#redis">#</doc-anchor-trigger>
-        <span>Redis</span>
-    </h1>
-</doc-anchor-target>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                            </svg>
+                        </li>
+                        <li class="pr-4">
+                            <span class="pr-4">
+                                Caching
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                            </svg>
+                        </li>
+                        <li class="pr-4">
+                            <a href="../../../technologies/caching/redis/" class="pr-4">
+                                Redis
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="redis">Redis</h1>
 <p>Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.</p>
 <p>This page explains how our Redis setup works, why certain choices were made, and how to make the most of Redis.</p>
 <hr>
-<doc-anchor-target id="1-our-redis-setup-two-instances-for-optimal-performance">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-our-redis-setup-two-instances-for-optimal-performance">#</doc-anchor-trigger>
-        <span>1. Our Redis Setup: Two Instances for Optimal Performance</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="1-our-redis-setup-two-instances-for-optimal-performance">1. Our Redis Setup: Two Instances for Optimal Performance</h2>
 <p>By default, at least two Redis instances run on our servers:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -279,118 +258,90 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="why-two-redis-instances">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-two-redis-instances">#</doc-anchor-trigger>
-        <span>Why two Redis instances?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="why-two-redis-instances">Why two Redis instances?</h3>
 <ul>
-<li><p><strong>Faster cache processing:</strong><br />
+<li>
+<p><strong>Faster cache processing:</strong><br />
 The standard Redis instance on port <strong>6379</strong> is used for <strong>temporary cache storage</strong>, improving <strong>load times and reducing database strain</strong>.</p>
 </li>
-<li><p><strong>Reliable session storage:</strong><br />
+<li>
+<p><strong>Reliable session storage:</strong><br />
 The second Redis instance on port <strong>6378</strong> is set for <strong>persistent storage</strong>, ensuring session data is not lost on restart. This instance should never be cleared, as it can influence the stability of the application.</p>
 </li>
 </ul>
 <blockquote>
-<p><strong>Note:</strong> While both instances save an RDB file to disk, only the <code v-pre>redis</code> instance is affected by the <code v-pre>tscli redis clear</code> command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.</p>
+<p><strong>Note:</strong> While both instances save an RDB file to disk, only the <code translate="no" v-pre>redis</code> instance is affected by the <code translate="no" v-pre>tscli redis clear</code> command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.</p>
 </blockquote>
 <hr>
-<doc-anchor-target id="a-use-the-socket-file-for-local-performance">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#a-use-the-socket-file-for-local-performance">#</doc-anchor-trigger>
-        <span>A. Use the Socket File for Local Performance</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="a-use-the-socket-file-for-local-performance">A. Use the Socket File for Local Performance</h3>
 <p>If Redis runs locally, we recommend using <strong>socket files instead of network connections</strong> to reduce overhead and latency.</p>
 <ul>
-<li><p><strong>Cache Redis socket file:</strong><br />
-<code v-pre>/var/run/redis/redis.sock</code></p>
+<li>
+<p><strong>Cache Redis socket file:</strong><br />
+<code translate="no" v-pre>/var/run/redis/redis.sock</code></p>
 </li>
-<li><p><strong>Persistent Redis socket file:</strong><br />
-<code v-pre>/var/run/redis-persistent/redis.sock</code></p>
+<li>
+<p><strong>Persistent Redis socket file:</strong><br />
+<code translate="no" v-pre>/var/run/redis-persistent/redis.sock</code></p>
 </li>
 </ul>
 <p><strong>Benefit:</strong> Socket files improve communication speed and reduce CPU usage.</p>
 <hr>
-<doc-anchor-target id="b-use-separate-databases-for-multiple-websitesapplications">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#b-use-separate-databases-for-multiple-websitesapplications">#</doc-anchor-trigger>
-        <span>B. Use Separate Databases for Multiple Websites/Applications</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="b-use-separate-databases-for-multiple-websitesapplications">B. Use Separate Databases for Multiple Websites/Applications</h3>
 <p>Redis supports <strong>multiple databases (0-15)</strong>. If running <strong>multiple websites or applications</strong> on the same server, use <strong>separate databases</strong>:</p>
 <ul>
-<li>Website A → <code v-pre>db 1</code></li>
-<li>Website B → <code v-pre>db 2</code></li>
+<li>Website A → <code translate="no" v-pre>db 1</code></li>
+<li>Website B → <code translate="no" v-pre>db 2</code></li>
 </ul>
 <p><strong>Benefit:</strong> Prevents applications from overwriting each other’s cache.<br />
 <strong>Note:</strong> If more databases are needed, these can be configured.</p>
 <hr>
-<doc-anchor-target id="c-set-ttl-and-expiry-properly">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#c-set-ttl-and-expiry-properly">#</doc-anchor-trigger>
-        <span>C. Set TTL and Expiry Properly</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="c-set-ttl-and-expiry-properly">C. Set TTL and Expiry Properly</h3>
 <p>By default, Redis <strong>does not</strong> assign a TTL (Time-To-Live) to keys unless explicitly set.</p>
 <ul>
-<li><p><strong>Caching keys:</strong> Set a TTL for <strong>temporary data</strong> (e.g., API responses, HTML fragments):</p>
+<li>
+<p><strong>Caching keys:</strong> Set a TTL for <strong>temporary data</strong> (e.g., API responses, HTML fragments):</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">SET key value EX 3600  # Expires after 1 hour</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">SET key value EX 3600  # Expires after 1 hour</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p><strong>Sessions:</strong> Use a longer TTL, such as <strong>24 hours</strong> for user sessions.</p>
+<li>
+<p><strong>Sessions:</strong> Use a longer TTL, such as <strong>24 hours</strong> for user sessions.</p>
 </li>
-<li><p><strong>Critical data:</strong> Do <strong>not</strong> set TTL for <strong>important data</strong> that must persist.</p>
+<li>
+<p><strong>Critical data:</strong> Do <strong>not</strong> set TTL for <strong>important data</strong> that must persist.</p>
 </li>
 </ul>
 <p><strong>Benefit:</strong> Optimizes memory usage and prevents Redis from filling up completely.</p>
 <hr>
-<doc-anchor-target id="redis-integration">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#redis-integration">#</doc-anchor-trigger>
-        <span>Redis integration</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="redis-integration">Redis integration</h2>
 <p>Here you&#x27;ll find how to enable and integrate Redis for your specific CMS, on our TurboStack environment.</p>
-<doc-anchor-target id="general-implementation-check">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-implementation-check">#</doc-anchor-trigger>
-        <span>General implementation check</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="general-implementation-check">General implementation check</h3>
 <p>After implementing Redis, you can verify if data is being cached by using the following commands:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">redis-cli
+<div id="general-implementation-check-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">redis-cli
 127.0.0.1:6379&gt; keys *
 (empty array)</code></pre>
 </doc-codeblock></div>
 <p>If <strong>empty array</strong> displays, it means that nothing has been cached yet.
 Click around on your website, then try the commands again.</p>
 <p>If it remains empty, check if the implementation is correct.</p>
-<doc-anchor-target id="drupal">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#drupal">#</doc-anchor-trigger>
-        <span>Drupal</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="drupal">Drupal</h3>
 <p>To enable the redis module in Drupal, go to <strong>Manage &gt; Extend &gt; Performance &gt; Redis</strong>  and enable it:
 <figure class="content-center">
-    <img src="../../../img/technologies/redis/caching/redis_drupal_enabled.png" alt="Redis Cache Drupal">
+    <img src="../../../img/technologies/redis/caching/redis_drupal_enabled.png" alt="Redis Cache Drupal" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1361" height="212" />
     <figcaption class="caption">Redis Cache Drupal</figcaption>
 </figure>
 </p>
 <p>You can now verify that the module is acrually connected to the local Redis instance by clicking the <strong>Configure</strong> button. If it shows <em>Memory</em> being used, it&#x27;s configured correctly.</p>
 <p>If you don&#x27;t see <em>Memory</em> being used, you might still need to configure Drupal to actually use Redis:</p>
 <p>In the following file:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">nano public_html/sites/default/settings.php</code></pre>
+<div id="drupal-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">nano public_html/sites/default/settings.php</code></pre>
 </doc-codeblock></div>
 <p>Add the following:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">$settings['redis.connection']['interface'] = 'PhpRedis';
+<div id="drupal-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">$settings['redis.connection']['interface'] = 'PhpRedis';
 $settings['redis.connection']['host'] = '/var/run/redis/redis.sock';
 $settings['redis.connection']['port'] = 6379;
 $settings['redis.connection']['password'] = '';
@@ -399,19 +350,14 @@ $settings['redis.connection']['prefix'] = 'ProjectName:';</code></pre>
 <blockquote>
 <p><strong>Note:</strong> Don&#x27;t forget to replace &#x27;ProjectName&#x27; with your actual project name. and clear all caches after this change.</p>
 </blockquote>
-<doc-anchor-target id="setting-the-default-ttl">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-the-default-ttl">#</doc-anchor-trigger>
-        <span>Setting the default TTL</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="setting-the-default-ttl">Setting the default TTL</h4>
 <p>In the following file:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">nano public_html/modules/contrib/redis/src/Cache/CacheBase.php</code></pre>
+<div id="setting-the-default-ttl-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">nano public_html/modules/contrib/redis/src/Cache/CacheBase.php</code></pre>
 </doc-codeblock></div>
 <p>The following constant and function can be found:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">const LIFETIME_PERM_DEFAULT = 31536000;
+<div id="setting-the-default-ttl-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const LIFETIME_PERM_DEFAULT = 31536000;
 ...
 if (($settings = Settings::get('redis.settings', [])) &amp;&amp; isset($settings['perm_ttl_' . $this-&gt;bin])) {
   $ttl = $settings['perm_ttl_' . $this-&gt;bin];
@@ -422,108 +368,72 @@ else {
 </doc-codeblock></div>
 <p>This means: if <em>perm_ttl_cache_menu</em> is not set, fall back to a TTL of 1 year. This is the general setting for all Redis keys.<br />
 If Redis Insight shows you really use only a couple of namespaces that can have a similar TTL, you can just edit this constant variable to the desired value.</p>
-<doc-anchor-target id="setting-the-ttl-per-namespace">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-the-ttl-per-namespace">#</doc-anchor-trigger>
-        <span>Setting the TTL per namespace</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="setting-the-ttl-per-namespace">Setting the TTL per namespace</h4>
 <p>You can also set this per namespace in the settings:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">nano public_html/sites/default/settings.php</code></pre>
+<div id="setting-the-ttl-per-namespace-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">nano public_html/sites/default/settings.php</code></pre>
 </doc-codeblock></div>
 <p>Add the following:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">$settings['redis.settings']['perm_ttl_cache_menu'] = 21600; // 6 hours</code></pre>
+<div id="setting-the-ttl-per-namespace-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">$settings['redis.settings']['perm_ttl_cache_menu'] = 21600; // 6 hours</code></pre>
 </doc-codeblock></div>
 <p>Now the &#x27;menu&#x27; cache items will have a TTL of 6 hours.</p>
-<doc-anchor-target id="clearing-the-old-keys-in-the-cache">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#clearing-the-old-keys-in-the-cache">#</doc-anchor-trigger>
-        <span>Clearing the old keys in the cache</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="clearing-the-old-keys-in-the-cache">Clearing the old keys in the cache</h4>
 <p>To purge the old keys, you can use the following commands:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">drush cr
+<div id="clearing-the-old-keys-in-the-cache-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">drush cr
 tscli redis clear</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="wordpress">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#wordpress">#</doc-anchor-trigger>
-        <span>Wordpress</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="wordpress">Wordpress</h3>
 <p>To enable the redis plugin, go to the <em>plugins</em> page and search for <em>Redis Object Cache</em>, click on <em>settings</em>. Here you can enable the plugin by clicking <strong>Enable Object Cache</strong>.</p>
-<p><figure class="content-center">
-    <img src="../../../img/technologies/redis/caching/redis_wp_enabled.png" alt="Redis Object Cache WordPress">
+<figure class="content-center">
+    <img src="../../../img/technologies/redis/caching/redis_wp_enabled.png" alt="Redis Object Cache WordPress" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="430" height="502" />
     <figcaption class="caption">Redis Object Cache WordPress</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="setting-a-ttl-in-object-cachephp">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-a-ttl-in-object-cachephp">#</doc-anchor-trigger>
-        <span>Setting a TTL in object-cache.php</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="setting-a-ttl-in-object-cachephp">Setting a TTL in object-cache.php</h4>
 <p>It&#x27;s important to set a TTL for your cache keys. This will prevent your cache from filling up and causing issues with your website. Currently the plugin does not have the functionality to set a TTL via the interface. You can set it in the config file:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/var/www/XXXX/public_html/wp-content/object-cache.php</code></pre>
+<div id="setting-a-ttl-in-object-cachephp-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/var/www/XXXX/public_html/wp-content/object-cache.php</code></pre>
 </doc-codeblock></div>
 <p>In this file we can find the default TTL that&#x27;s set for Redis entries when none was given upon creation of the key:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">if ( ! defined( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS' ) ) {
+<div id="setting-a-ttl-in-object-cachephp-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">if ( ! defined( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS' ) ) {
   define( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS', 0 );
 }</code></pre>
 </doc-codeblock></div>
 <p>A TTL of 0 in Redis means &#x27;Never Expire&#x27;. Change this value to for example 28800 seconds (8 hours).</p>
-<p>To monitor the change, you can use the analysis tool in <a href="https://docs.turbostack.app/miscellaneous/redis_insight/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Redis Insight</span></a> and sort on TTL.</p>
+<p>To monitor the change, you can use the analysis tool in <a href="https://docs.turbostack.app/miscellaneous/redis_insight/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Redis Insight</span></a> and sort on TTL.</p>
 <blockquote>
 <p><strong>Tip:</strong> you can clear the Redis cache with the &#x27; tscli redis clear &#x27; command.</p>
 </blockquote>
-<doc-anchor-target id="setting-a-ttl-outside-of-object-cachephp">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-a-ttl-outside-of-object-cachephp">#</doc-anchor-trigger>
-        <span>Setting a TTL outside of object-cache.php</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="setting-a-ttl-outside-of-object-cachephp">Setting a TTL outside of object-cache.php</h4>
 <p>In wordpress one of the more common ways to add something to the cache is by using the &#x27;wp_cache_set&#x27; instruction:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">wp_cache_set( 'my_key', 'my_value', 'default', 600 );</code></pre>
+<div id="setting-a-ttl-outside-of-object-cachephp-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">wp_cache_set( 'my_key', 'my_value', 'default', 600 );</code></pre>
 </doc-codeblock></div>
 <p>Some plugins set keys to never expire, like the &#x27;posts&#x27; keys. To find where a key is added, use the following command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">grep -Ri &quot;wp_cache_set(&quot; | grep 'posts'</code></pre>
+<div id="setting-a-ttl-outside-of-object-cachephp-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">grep -Ri &quot;wp_cache_set(&quot; | grep 'posts'</code></pre>
 </doc-codeblock></div>
 <p>This will give results like these:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">wp-content/plugins/woocommerce-product-search/lib/core/class-woocommerce-product-search-service.php:     $cached = wp_cache_set( $cache_key, $posts, self::GET_TERMS_POSTS_CACHE_GROUP, self::get_cache_lifetime() );</code></pre>
+<div id="setting-a-ttl-outside-of-object-cachephp-code-3" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">wp-content/plugins/woocommerce-product-search/lib/core/class-woocommerce-product-search-service.php:     $cached = wp_cache_set( $cache_key, $posts, self::GET_TERMS_POSTS_CACHE_GROUP, self::get_cache_lifetime() );</code></pre>
 </doc-codeblock></div>
 <p>In this file, it refers to itself ( <strong>self::get_cache_lifetime()</strong> ) to get the value. The function refers to the constant variable:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">const CACHE_LIFETIME = 0;</code></pre>
+<div id="setting-a-ttl-outside-of-object-cachephp-code-4" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">const CACHE_LIFETIME = 0;</code></pre>
 </doc-codeblock></div>
 <p>This is again, an infinite TTL. Change it to a more reasonable number.</p>
 <blockquote>
 <p><strong>Note:</strong> This needs to be set for all the different namespaces.</p>
 </blockquote>
-<doc-anchor-target id="magento2">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#magento2">#</doc-anchor-trigger>
-        <span>Magento2</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="magento2">Magento2</h3>
 <p>Configuring Magento2 to use Redis, must be done via the <em>terminal</em>.</p>
-<doc-anchor-target id="configuration">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h4>
-</doc-anchor-target>
-<p>To configure this, we must edit the <code v-pre>app/etc/env.php</code> file.</p>
+<h4 id="configuration">Configuration</h4>
+<p>To configure this, we must edit the <code translate="no" v-pre>app/etc/env.php</code> file.</p>
 <p>Incorporate the following code in the file:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-php"><code v-pre class="language-php">&lt;?php
+<div id="configuration-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-php"><code v-pre class="language-php">&lt;?php
 return [
     'cache' =&gt; [
         'frontend' =&gt; [
@@ -559,38 +469,23 @@ return [
 <blockquote>
 <p><strong>Tip:</strong> You can change <em>compress_data</em> to &#x27;1&#x27; to enable compression. This will reduce the size of the cache data, but will increase the processing time slightly.</p>
 </blockquote>
-<doc-anchor-target id="clearing-the-cache">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#clearing-the-cache">#</doc-anchor-trigger>
-        <span>Clearing the cache</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="clearing-the-cache">Clearing the cache</h4>
 <p>To clear the cache, you can use the following command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">php bin/magento cache:flush</code></pre>
+<div id="clearing-the-cache-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">php bin/magento cache:flush</code></pre>
 </doc-codeblock></div>
 <p>If caching was not enabled before, you can enable it with the following command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">php bin/magento cache:enable</code></pre>
+<div id="clearing-the-cache-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">php bin/magento cache:enable</code></pre>
 </doc-codeblock></div>
 <p>Redis will now be used for caching.</p>
-<doc-anchor-target id="medusajs">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#medusajs">#</doc-anchor-trigger>
-        <span>MedusaJS</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="medusajs">MedusaJS</h3>
 <p>MedusaJS offers Redis integration, but this is not enabled by default. Enabling and configuring Redis, must be done via the <em>terminal</em>.</p>
 <p>We recommend adding a TTL and a custom namespace per shop. This ensures cache data can be differentiated between shops and reduces the chance of completely filling up Redis.</p>
-<doc-anchor-target id="configuration-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration-1">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h4>
-</doc-anchor-target>
-<p>To start, we need to add the variables to the <code v-pre>.env</code> file in <code v-pre>~/&lt;project&gt;/&lt;shopname&gt;/</code>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none"># Enable the new caching system
+<h4 id="configuration-1">Configuration</h4>
+<p>To start, we need to add the variables to the <code translate="no" v-pre>.env</code> file in <code translate="no" v-pre>~/&lt;project&gt;/&lt;shopname&gt;/</code>:</p>
+<div id="configuration-1-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none"># Enable the new caching system
 MEDUSA_FF_CACHING=true
 
 # Redis URL
@@ -600,9 +495,9 @@ CACHE_REDIS_URL=redis://127.0.0.1:6379
 CACHE_TTL=28800   # 8 hours in seconds
 CACHE_PREFIX=shopname-cache:</code></pre>
 </doc-codeblock></div>
-<p>Now we must enable the <em>feature flag</em> and the Redis module in <code v-pre>~/&lt;project&gt;/&lt;shopname&gt;/medusa-config.ts</code>. To do this, we need to incorporate the following code:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">import { defineConfig } from &quot;@medusajs/framework/utils&quot;
+<p>Now we must enable the <em>feature flag</em> and the Redis module in <code translate="no" v-pre>~/&lt;project&gt;/&lt;shopname&gt;/medusa-config.ts</code>. To do this, we need to incorporate the following code:</p>
+<div id="configuration-1-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">import { defineConfig } from &quot;@medusajs/framework/utils&quot;
 
 export default defineConfig({
   featureFlags: {
@@ -632,16 +527,11 @@ export default defineConfig({
   ],
 })</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="make-your-requests-cache">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#make-your-requests-cache">#</doc-anchor-trigger>
-        <span>Make your requests cache</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="make-your-requests-cache">Make your requests cache</h4>
 <p>MedusaJS supports Redis, but it does not cache the requests bydefault. To enable caching for specific requests, you need to create a workflow that handles caching and a corresponding route for the API.</p>
-<p>To make a workflow, create a file called <code v-pre>cache-products.ts</code> in <code v-pre>~/&lt;project&gt;/&lt;shopname&gt;/src/workflows/</code> with the following content:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">import {
+<p>To make a workflow, create a file called <code translate="no" v-pre>cache-products.ts</code> in <code translate="no" v-pre>~/&lt;project&gt;/&lt;shopname&gt;/src/workflows/</code> with the following content:</p>
+<div id="make-your-requests-cache-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">import {
   createWorkflow,
   WorkflowResponse,
 } from &quot;@medusajs/framework/workflows-sdk&quot;
@@ -667,9 +557,9 @@ export const cacheProductsWorkflow = createWorkflow(
 </doc-codeblock></div>
 <p>This workflow queries the product entity and caches the response in Redis.</p>
 <hr>
-<p>To make a route, create a file called <code v-pre>route.ts</code> in <code v-pre>~/&lt;project&gt;/&lt;shopname&gt;src/api/cache-product/route.ts</code> with the following content:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">import { MedusaRequest, MedusaResponse } from &quot;@medusajs/framework/http&quot;
+<p>To make a route, create a file called <code translate="no" v-pre>route.ts</code> in <code translate="no" v-pre>~/&lt;project&gt;/&lt;shopname&gt;src/api/cache-product/route.ts</code> with the following content:</p>
+<div id="make-your-requests-cache-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">import { MedusaRequest, MedusaResponse } from &quot;@medusajs/framework/http&quot;
 import { cacheProductsWorkflow } from &quot;../../workflows/cache-products&quot;
 
 export const GET = async (req: MedusaRequest, res: MedusaResponse) =&gt; {
@@ -682,100 +572,140 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) =&gt; {
 <p>This route exposes an endpoint (/cache-product) that calls the caching workflow and returns the cached product data.</p>
 <hr>
 <p>Now the route and workflow are ready to use, stop the backend process:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pm2 stop &lt;process_name&gt;</code></pre>
+<div id="make-your-requests-cache-code-3" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">pm2 stop &lt;process_name&gt;</code></pre>
 </doc-codeblock></div>
 <p>Build medusa again:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">npx medusa build</code></pre>
+<div id="make-your-requests-cache-code-4" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">npx medusa build</code></pre>
 </doc-codeblock></div>
 <p>Copy the .env file from the server to the .medusa/server folder:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">cp .env .medusa/server/.env</code></pre>
+<div id="make-your-requests-cache-code-5" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">cp .env .medusa/server/.env</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="restarting-pm2">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#restarting-pm2">#</doc-anchor-trigger>
-        <span>Restarting PM2</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="restarting-pm2">Restarting PM2</h4>
 <p>To reload these new changes, restart the PM2 process for the backend:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pm2 restart &lt;process_name&gt;</code></pre>
+<div id="restarting-pm2-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">pm2 restart &lt;process_name&gt;</code></pre>
 </doc-codeblock></div>
 <p>The Redis cache should now be used to cache products.</p>
-
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer class="clear-both">
-                                <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/Caching/redis.md" target="_blank" rel="noopener">
-                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        <span>Edit this page</span>
-                                    </a>
-                                </div>
-                            
-                                <nav class="flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/containerization/docker/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Docker</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/caching/varnish/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Varnish</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
-                
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2026 <a href="https://www.hosted-power.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon mr-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Hosted Power</span></a>. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+<div id="retype-backlinks">
+    <h2>See also</h2>
+<div class="card-compact-group">
+<div class="card-compact-container">
+    <a href="/technologies/cms-frameworks/drupal/referenceguide/" class="group card-compact no-link">
+        <div class="card-compact-body">
+            <div class="card-compact-header">
+                <span class="card-compact-title">Drupal Hosting Reference Guide</span>
             </div>
+            <p class="card-compact-description">We provide optimized server environments for running Drupal. As the hosting provider, we maintain the server and infrastructure, but Drupal configuration, upgrades, and customization are your responsibility.</p>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
+    </a>
+</div>
+<div class="card-compact-container">
+    <a href="/technologies/cms-frameworks/magento-2/referenceguide/" class="group card-compact no-link">
+        <div class="card-compact-body">
+            <div class="card-compact-header">
+                <span class="card-compact-title">Magento 2 Hosting Reference Guide</span>
+            </div>
+            <p class="card-compact-description">We provide optimized server environments for running Magento 2. As the hosting provider, we maintain the server and infrastructure, but Magento configuration, upgrades, and customization are your responsibility.</p>
+        </div>
+    </a>
+</div>
+<div class="card-compact-container">
+    <a href="/technologies/cms-frameworks/medusa.js/referenceguide/" class="group card-compact no-link">
+        <div class="card-compact-body">
+            <div class="card-compact-header">
+                <span class="card-compact-title">Medusa.js Hosting Reference Guide</span>
+            </div>
+            <p class="card-compact-description">Our TurboStack is equipped to handle your optimized MedusaJS application!</p>
+        </div>
+    </a>
+</div>
+<div class="card-compact-container">
+    <a href="/technologies/cms-frameworks/wordpress/referenceguide/" class="group card-compact no-link">
+        <div class="card-compact-body">
+            <div class="card-compact-header">
+                <span class="card-compact-title">Wordpress Hosting Reference Guide</span>
+            </div>
+            <p class="card-compact-description">We provide optimized server environments for running WordPress. As the hosting provider, we maintain the server and infrastructure, but WordPress configuration, themes, plugins, and customizations are your responsibility.</p>
+        </div>
+    </a>
+</div>
+</div>
+</div>
+
+                
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+            </div>
+            <footer id="retype-content-footer" class="clear-both">
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-14">
+                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link hover:text-body-link-hover hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/Technologies/Caching/redis.md" target="_blank" rel="noopener">
+                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        <span>Edit this page</span>
+                    </a>
+                </div>
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/containerization/docker/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">Docker</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../technologies/caching/varnish/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">Varnish</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026 <a href="https://www.hosted-power.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Hosted Power</span></a>. All rights reserved.</p></div>
+            </footer>
+        </div>
     </div>
 
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
 
-    <div id="docs-overlay-target"></div>
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Redis", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+    <div id="retype-overlay-target"></div>
+
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Redis", level: 3, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/technologies/caching/redis.md" }</script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+﻿# TurboStack Docs
+
+> Welcome to our TurboStack® knowledge base! Whether you’re gearing up for your first deployment or diving into more advanced configurations, we’ve got you covered.
+
+- [Welcome!](https://docs.turbostack.app/readme.md): Welcome!
+- [Getting Started](https://docs.turbostack.app/quickstart.md): If you’re here to access your Proof-of-Concept (PoC) environment or production TurboStack for the first time, you’re in the right place. Let’s get started!
+- [Miscellaneous](https://docs.turbostack.app/miscellaneous/readme.md): This page contains how-to guides and tutorials on a wide range of subjects.
+
+## Customer Center
+
+- [Contacts & Teams](https://docs.turbostack.app/customer-center/contacts.md): By default, the primary contact is the user who created the account in our Customer Center. If you haven't done so yet, you can sign up here. Please fill in the required information and submit.
+- [Domain names](https://docs.turbostack.app/customer-center/domains.md): Hosted Power is a domain name registrar, meaning domains can be bought, registered and managed within our customer center
+- [DNS](https://docs.turbostack.app/customer-center/dns.md): The Hosted Power customer center has an application to manage DNS domains. It can be used to manage existing domains, or new ones after registering a new
+- [Server upgrade](https://docs.turbostack.app/customer-center/serverupgrade.md): You can easily upgrade your server via our customer center.
+
+## TurboStack Platform
+
+- [Overview](https://docs.turbostack.app/turbostack-platform/overview.md): Welcome to the TurboStack Platform, your go-to place for all server configurations. Follow this guide to set up your application smoothly and get it running in no time.
+
+### Hosts
+
+- [General](https://docs.turbostack.app/turbostack-platform/hosts/general.md): The Hosts section lets you configure and manage your TurboStack server. This section will serve as your reference guide to help you set up your application within minutes!
+- [Server - setting up server-wide services](https://docs.turbostack.app/turbostack-platform/hosts/server.md): The server tab defines some basic middleware configuration, like the type of webserver and several types of supported databases. This page describes all configuration options within the server tab.
+
+#### Accounts - setting up your environment
+
+- [Setup](https://docs.turbostack.app/turbostack-platform/hosts/accounts/setup.md): This article explains how to set up your application environment from scratch. If you want to replicate an existing environment, or want to migrate an application from an external server to TurboStack, please consult the Account Cloning and Migration Hero articles respectively.
+- [Cloning an account](https://docs.turbostack.app/turbostack-platform/hosts/accounts/accountclone.md): To make a clone of an existing application, we provide the Clone Account feature. This function replicates the entire configuration and optionally copies the files and/or database, enabling a quick and efficient setup with minimal effort.
+- [Migrating your application to TurboStack with Migration Hero](https://docs.turbostack.app/turbostack-platform/hosts/accounts/migrationhero.md): To simplify the migration of your external application to TurboStack, the Migration Hero feature is available. It automatically transfers the full configuration, files and database.
+- [Credentials](https://docs.turbostack.app/turbostack-platform/hosts/accounts/credentials.md): Make sure you have already created an existing user with a successful publish.
+- [Extra database users](https://docs.turbostack.app/turbostack-platform/hosts/accounts/databaseusers.md): It is possible to add an additional database user with read-only or admin access to a database. You can also retrieve the credentials for this user. admin: Full access to ALL server databases.
+- [Advanced](https://docs.turbostack.app/turbostack-platform/hosts/advanced.md): The advanced tab offers some more advanced configuration options for specific services, such as mail, Varnish, RabbitMQ, FTP, etc. This article describes the options currently available.
+- [Groups](https://docs.turbostack.app/turbostack-platform/hosts/groups.md): Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.
+- [SSH](https://docs.turbostack.app/turbostack-platform/hosts/ssh.md): This tab allows you to add your SSH public key to the server, enabling keypair authentication for SSH.
+- [Security](https://docs.turbostack.app/turbostack-platform/hosts/security.md): This is an advanced feature, please be cautious while changing values here!
+- [Backups](https://docs.turbostack.app/turbostack-platform/hosts/backups.md): The Backups tab is where you can restore files, folders and databases. This article will explain how you can use the backup tab. Restores for files, folders, MySQL and PostgreSQL are supported.
+- [Monitoring](https://docs.turbostack.app/turbostack-platform/hosts/monitoring.md): Hosted Power proactively monitors your infrastructure to ensure server and service availability while simultaneously tracking resource usage. It alerts you if the load is too high, disk space is running low, or other critical thresholds are met, helping you maintain optimal performance.
+- [YAML editor](https://docs.turbostack.app/turbostack-platform/hosts/yaml.md): The TurboStack Platform offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using YAML (YAML Ain't Markup Language).
+- [Groups](https://docs.turbostack.app/turbostack-platform/groups.md): Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.
+- [Templates](https://docs.turbostack.app/turbostack-platform/templates.md): Our platform has several templates available for you to kickstart your server configuration. These can only be used when your server's configuration is still empty, as this would override any existing settings.
+- [Changelog](https://docs.turbostack.app/turbostack-platform/changelog.md): Welcome to the TurboStack Platform changelog. This page provides a transparent record of all updates, improvements, and fixes made to the platform. You will find details on new features, performance enhancements, security updates, and resolved issues.
+
+## Technologies
+
+### CMS & Frameworks
+
+- [Magento 2](https://docs.turbostack.app/technologies/cms-frameworks/magento-2/readme.md): Magento 2 is an open-source eCommerce platform written in PHP, designed to provide merchants with a flexible and scalable system for managing online stores. It features a modular architecture, robust extension ecosystem, and built-in tools for SEO, catalog management, marketing, and reporting.
+- [Shopware](https://docs.turbostack.app/technologies/cms-frameworks/shopware/readme.md): Shopware is a modern eCommerce platform built for performance, flexibility, and a robust developer experience. It is based on Symfony and Vue.js, and designed with scalability in mind.
+- [Odoo](https://docs.turbostack.app/technologies/cms-frameworks/odoo/readme.md): Odoo is an all-in-one, open-source business management software that integrates CRM, eCommerce, accounting, inventory, point of sale, project management, and more—into one powerful and modular platform.
+- [Wordpress](https://docs.turbostack.app/technologies/cms-frameworks/wordpress/readme.md): WordPress is a popular open-source content management system (CMS) that powers a significant portion of websites on the internet. Known for its ease of use, extensive plugin ecosystem, and broad theme support, WordPress is ideal for users ranging from beginners to experienced developers.
+- [Drupal](https://docs.turbostack.app/technologies/cms-frameworks/drupal/readme.md): Drupal is a powerful open-source content management system (CMS) designed for building flexible, scalable, and secure websites. Known for its robust
+- [Medusa.js](https://docs.turbostack.app/technologies/cms-frameworks/medusa.js/readme.md): Medusa.js is an open-source, headless eCommerce platform built in JavaScript and Node.js, designed to give developers and merchants a highly flexible, API-first foundation for building custom online commerce experiences.
+- [Node.js](https://docs.turbostack.app/technologies/cms-frameworks/node.js/readme.md): Node.js is an open-source, cross-platform Javascript runtime environment. Traditionally Javascript is used to make websites interactive within the browser. Node.js is a way to let you use JavaScript outside of a web browser and instead use it on the server itself.
+
+### Web Servers
+
+- [NGINX](https://docs.turbostack.app/technologies/web-servers/nginx/readme.md): NGINX (pronounced "engine-x") is a high-performance web server and reverse proxy server known for its speed, stability, and low resource usage. It’s commonly used to serve static content, handle load balancing, and manage HTTP requests in high-traffic websites.
+- [Apache](https://docs.turbostack.app/technologies/web-servers/apache/readme.md): Apache HTTP Server, commonly known as Apache, is one of the most widely used and long-standing web servers in the world. It’s known for its flexibility, extensive module system, and strong support for dynamic content through integration with languages like PHP, Python, and Perl.
+
+### Containerization
+
+- [Docker](https://docs.turbostack.app/technologies/containerization/docker/readme.md): Docker is an open platform for developing, shipping, and running applications. It enables you to separate your applications from your infrastructure so you can deliver software quickly.
+
+### Caching
+
+- [Redis](https://docs.turbostack.app/technologies/caching/redis.md): Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.
+- [Varnish](https://docs.turbostack.app/technologies/caching/varnish.md): Varnish is an optional caching service available in your TurboStack control panel. When you activate this option, the service will be installed and a default configuration provided.
+
+### Databases
+
+- [MySQL](https://docs.turbostack.app/technologies/databases/mysql/readme.md): MySQL is a popular open-source relational database management system (RDBMS) known for its reliability, performance, and ease of use. It’s widely used in web applications to store and manage structured data, often paired with PHP and Apache/Nginx in the LAMP/LEMP stack.
+- [PostgreSQL](https://docs.turbostack.app/technologies/databases/postgresql/readme.md): PostgreSQL is a powerful open-source relational database management system (RDBMS) recognized for its advanced features, extensibility, and standards compliance.
+
+## Tools
+
+- [Percona Monitoring and Management (PMM)](https://docs.turbostack.app/tools/pmm.md): PMM is an open source database observability, monitoring, and management tool for use with MySQL, PostgreSQL, MongoDB. It provides real-time visibility into the performance of your database and helps you identify and resolve issues before they impact your users.
+- [Turbostack CLI](https://docs.turbostack.app/tools/turbostackcli.md): The TurboStack Command Line Interface (later referred to as TSCLI) is available on all TurboStack nodes to provide you with an easy-to-use tool to manage the services on your environment, even ones you would normally need root access for.
+- [phpMyAdmin](https://docs.turbostack.app/tools/phpmyadmin.md): phpMyAdmin is a web-based tool designed to manage MySQL and MariaDB databases. It provides a user-friendly graphical interface, allowing users to perform database tasks without needing to write SQL commands manually.
+
+## Configuration
+
+- [How to find and install packages](https://docs.turbostack.app/configuration/install_packages.md): We manage things for you, so you don't need root access on the server. However, this means you don't have the necessary permissions to install apt packages via the command line.
+
+### Mail
+
+- [Email Deliverability](https://docs.turbostack.app/configuration/mail/deliverability.md): Ensuring your emails land in the recipient’s inbox—and not their spam folder—requires careful attention to email delivery practices. Poor email delivery can harm your reputation, reduce engagement, and hinder communication with your audience.
+- [SMTP Errors](https://docs.turbostack.app/configuration/mail/smtp_error_codes.md): Freemail providers such as Gmail and Hotmail provide specific error codes that indicate issues with email delivery. In this article, we will learn what they mean and how we can resolve these issues.
+- [Firewall](https://docs.turbostack.app/configuration/firewall.md): Your access, certain API calls, or your customers may be blocked by our firewall's security mechanisms. The Login Failure Daemon (LFD) component actively monitors failed login attempts across multiple protocols, including SSH, FTP, POP3, IMAP, and HTTP, and may block access after too many failures.
+- [TurboShield](https://docs.turbostack.app/configuration/turboshield.md): TurboShield helps protect your website from traffic spikes and request floods that can slow down or take your site offline. It automatically detects abusive traffic and limits or blocks it before it affects real visitors.
+- [(S)FTP](https://docs.turbostack.app/configuration/ftp.md): We provide the possibility to make a (S)FTP user and choose the home directory for that user. This is mostly used to connect an ERP system to a webshop.
+- [SSL Certificates](https://docs.turbostack.app/configuration/ssl-tls_configuration.md): An SSL certificate is a digital certificate that encrypts data between a website and its visitors, ensuring secure communication. It verifies a website’s identity and enables HTTPS, protecting sensitive information like passwords and credit card details from hackers.
+
+## About TurboStack
+
+- [Pricing](https://docs.turbostack.app/about-turbostack/pricing.md): TurboStack®, the fastest software stack designed to be fully configurable. Take advantage of any technology in the same stack. Easily customize programming language, caching or database.
+- [Security](https://docs.turbostack.app/about-turbostack/security.md): It is essential that companies take the security of their application seriously; as data breaches can have serious and long-lasting consequences. Malicious attacks can cause your website or application to be temporarily or permanently disabled.
+- [Some history](https://docs.turbostack.app/about-turbostack/some_history.md): ⚡ At Hosted Power you will find experts in managed hosting, who are people-oriented and think along with you based on their passion for Cloud technology. ⚡
+
+## Support
+
+- [24/7 Monitoring & Alerting](https://docs.turbostack.app/support/monitoring.md): At Hosted Power, we recognize the paramount importance of application availability and stability to our partners. Our comprehensive approach to ensuring stability encompasses various factors, chief among them being the reliability of the TurboStack platform itself.
+- [Incident Management](https://docs.turbostack.app/support/incident_management.md): Hosted Power analyzes within the SLA response time whether the reported incident can be qualified as critical unavailability based on all the information. The analysis is done remotely (via telephone, e-mail, and or monitoring tools) by our own system engineers.
+- [Standard Support](https://docs.turbostack.app/support/standard_support.md): Normal service is available during office hours (and must be done through the service desk, either by e-mail and/or by telephone:
