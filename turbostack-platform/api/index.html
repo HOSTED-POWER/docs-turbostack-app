@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832430031023">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 4.5.3">
+
+    <!-- Primary Meta Tags -->
+    <title>API | TurboStack Docs</title>
+    <meta name="title" content="API | TurboStack Docs">
+    <meta name="description" content="TurboStack API reference for REST endpoints, authentication, Personal Access Tokens, Swagger, OpenAPI, clients, hosts, groups, credentials, monitoring, and deploy calls.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.turbostack.app/turbostack-platform/api/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.turbostack.app/sitemap.xml">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.turbostack.app/turbostack-platform/api/">
+    <meta property="og:title" content="API | TurboStack Docs">
+    <meta property="og:description" content="TurboStack API reference for REST endpoints, authentication, Personal Access Tokens, Swagger, OpenAPI, clients, hosts, groups, credentials, monitoring, and deploy calls.">
+    <meta property="og:site_name" content="TurboStack Docs">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.turbostack.app/turbostack-platform/api/">
+    <meta name="twitter:title" content="API | TurboStack Docs">
+    <meta name="twitter:description" content="TurboStack API reference for REST endpoints, authentication, Personal Access Tokens, Swagger, OpenAPI, clients, hosts, groups, credentials, monitoring, and deploy calls.">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.turbostack.app/turbostack-platform/api.md">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
+    <link href="../../resources/css/retype.css?v=4.5.3.832430031023" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832430031023" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832430031023" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832430031023" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+    
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://docs.turbostack.app/" class="flex items-center leading-snug text-2xl">
+                        <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../img/logo_ts_blue.png" alt="TurboStack Docs" width="40" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../img/logo-ts-white.png" alt="TurboStack Docs" width="40" height="40">
+                        </span>
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Docs</span>
+                    </a>
+                </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://my.turbostack.app" target="_blank">
+                                <span class="docs-emoji mr-1.5">🚀</span>
+                                <span>TurboStack Platform</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://portal.hosted-power.com" target="_blank">
+                                <span class="docs-emoji mr-1.5">💁</span>
+                                <span>Customer Center</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="mailto:support@hosted-power.com" target="_blank">
+                                <span class="docs-emoji mr-1.5">📨</span>
+                                <span>Submit a Ticket</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.hosted-power.com" target="_blank">
+                                <span class="docs-emoji mr-1.5">🌐</span>
+                                <span>Hosted Power website</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://my.turbostack.app" target="_blank">
+                                        <span class="docs-emoji mr-1.5">🚀</span>
+                                        <span>TurboStack Platform</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://portal.hosted-power.com" target="_blank">
+                                        <span class="docs-emoji mr-1.5">💁</span>
+                                        <span>Customer Center</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="mailto:support@hosted-power.com" target="_blank">
+                                        <span class="docs-emoji mr-1.5">📨</span>
+                                        <span>Submit a Ticket</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.hosted-power.com" target="_blank">
+                                        <span class="docs-emoji mr-1.5">🌐</span>
+                                        <span>Hosted Power website</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <nav id="retype-breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+                    <ol role="list">
+                        <li class="pr-4">
+                            <a href="../../" class="pr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                </svg>
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                            </svg>
+                        </li>
+                        <li class="pr-4">
+                            <span class="pr-4">
+                                Turbo​Stack Platform
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                            </svg>
+                        </li>
+                        <li class="pr-4">
+                            <a href="../../turbostack-platform/api/" class="pr-4">
+                                Turbo​Stack API
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="api">API</h1>
+<p>The TurboStack API gives you direct access to the main platform resources over a straightforward REST API. It is designed for integrations, internal tooling, and deployment workflows that need to read platform data or update configuration in a controlled way.</p>
+<p>This reference covers authentication, Personal Access Tokens, request conventions, and the currently published endpoints for three core resource types:</p>
+<ul>
+<li><code translate="no" v-pre>Clients</code></li>
+<li><code translate="no" v-pre>Hosts</code></li>
+<li><code translate="no" v-pre>Groups</code></li>
+</ul>
+<p>Each endpoint section includes the documented options, a short placeholder for functional explanation, a reusable cURL call, and a separate example request and response.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>info</h5>
+<p>Interactive Swagger UI: <a href="https://my.turbostack.app/swagger" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>my.turbostack.app/swagger</span></a></p>
+<p>Raw OpenAPI document: <a href="https://my.turbostack.app/api-docs/api-docs.json" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>my.turbostack.app/api-docs/api-docs.json</span></a></p>
+        </div>
+    </div>
+</div>
+<h2 id="base-url">Base URL</h2>
+<p>All examples on this page use the production API base URL:</p>
+<div id="base-url-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">https://my.turbostack.app</code></pre>
+</doc-codeblock></div>
+<h2 id="creating-a-personal-access-token">Creating a Personal Access Token</h2>
+<p>Before using the API, create a personal access token in the platform.</p>
+<ol>
+<li>Log in to the <a href="https://my.turbostack.app/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>TurboStack Platform</span></a>.</li>
+<li>Click your profile icon in the top-right corner.</li>
+<li>Open <strong>Profile settings</strong>.</li>
+<li>Go to <strong>Personal Access Token (API)</strong>.</li>
+<li>Click <strong>Create Token</strong>.</li>
+</ol>
+<p>When creating a token, you must define:</p>
+<ul>
+<li>A clear token name</li>
+<li>An expiration date</li>
+</ul>
+<p>The expiration date can also be set to <code translate="no" v-pre>never</code>, but this is not recommended for security reasons. A limited lifetime combined with regular rotation is the safer approach.</p>
+<h2 id="authentication">Authentication</h2>
+<p>All documented endpoints require a bearer token in the <code translate="no" v-pre>Authorization</code> header.</p>
+<div id="authentication-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-http"><code v-pre class="language-http">Authorization: Bearer YOUR_API_TOKEN
+Accept: application/json
+Content-Type: application/json</code></pre>
+</doc-codeblock></div>
+<p>In the OpenAPI definition this is described as an API key in the <code translate="no" v-pre>Authorization</code> header, using the format <code translate="no" v-pre>Bearer {your-token}</code>.</p>
+<h2 id="request-conventions">Request conventions</h2>
+<p>Use the following conventions consistently in scripts and integrations:</p>
+<ul>
+<li>Base URL: <code translate="no" v-pre>https://my.turbostack.app</code></li>
+<li>API prefix: <code translate="no" v-pre>/api/v1</code></li>
+<li>Authentication header: <code translate="no" v-pre>Authorization: Bearer YOUR_API_TOKEN</code></li>
+<li>Accept header: <code translate="no" v-pre>Accept: application/json</code></li>
+<li>Content type for write operations: <code translate="no" v-pre>Content-Type: application/json</code></li>
+</ul>
+<p>In the current published API, write operations use <code translate="no" v-pre>POST</code>, including update actions.</p>
+<h2 id="common-workflow">Common workflow</h2>
+<p>Most API workflows follow the same pattern:</p>
+<ol>
+<li>Create a <code translate="no" v-pre>Personal Access Token</code></li>
+<li>Call a list endpoint such as <code translate="no" v-pre>GET /api/v1/hosts</code></li>
+<li>Fetch the resource you want to modify</li>
+<li>Submit the updated payload with <code translate="no" v-pre>POST</code></li>
+<li>Trigger a deploy when the host configuration was changed</li>
+<li>Check deploy status</li>
+</ol>
+<p>For host configuration changes, the usual sequence is:</p>
+<ol>
+<li><code translate="no" v-pre>GET /api/v1/hosts/{id}</code></li>
+<li><code translate="no" v-pre>POST /api/v1/hosts/{id}</code></li>
+<li><code translate="no" v-pre>POST /api/v1/hosts/{id}/deploy</code></li>
+<li><code translate="no" v-pre>GET /api/v1/hosts/{id}/deploy</code></li>
+</ol>
+<h2 id="pagination">Pagination</h2>
+<p>List endpoints support the following optional query parameters:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>size</code></td>
+<td>integer</td>
+<td><code translate="no" v-pre>15</code></td>
+<td>Number of items returned per page</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>page</code></td>
+<td>integer</td>
+<td><code translate="no" v-pre>1</code></td>
+<td>Page number to return</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="response-model-overview">Response model overview</h2>
+<p>The API returns lightweight JSON objects. The fields below are the recurring properties documented in the published OpenAPI specification.</p>
+<h3 id="client-object">Client object</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>number</td>
+<td>Unique client ID</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>firstname</code></td>
+<td>string</td>
+<td>Client first name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>lastname</code></td>
+<td>string</td>
+<td>Client last name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>email</code></td>
+<td>string</td>
+<td>Client email address</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>created_at</code></td>
+<td>string</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>updated_at</code></td>
+<td>string</td>
+<td>Last update timestamp</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="host-object">Host object</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>number</td>
+<td>Unique host ID</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>client_id</code></td>
+<td>number</td>
+<td>Owning client ID</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>active</code></td>
+<td>number</td>
+<td>Host state indicator</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>name</code></td>
+<td>string</td>
+<td>Host name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>json</code></td>
+<td>string</td>
+<td>Stored host configuration payload</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>created_at</code></td>
+<td>string</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>updated_at</code></td>
+<td>string</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>monitoring</code></td>
+<td>object</td>
+<td>Live server status information</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="host-monitoring-object">Host monitoring object</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>load</code></td>
+<td>object</td>
+<td>Load information from monitoring</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>disk</code></td>
+<td>object</td>
+<td>Disk information from monitoring</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>memory</code></td>
+<td>object</td>
+<td>Memory information from monitoring</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="group-object">Group object</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>number</td>
+<td>Unique group ID</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>client_id</code></td>
+<td>number</td>
+<td>Owning client ID when available</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>name</code></td>
+<td>string</td>
+<td>Group name</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>json</code></td>
+<td>string</td>
+<td>Stored group configuration payload</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>created_at</code></td>
+<td>string</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>updated_at</code></td>
+<td>string</td>
+<td>Last update timestamp</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="clients">Clients</h2>
+<p>The client endpoints are mainly used to discover customer records and the hosts or groups that belong to them.</p>
+<h3 id="get-apiv1clients"><code translate="no" v-pre>GET /api/v1/clients</code></h3>
+<p>Returns a paginated list of clients.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>size</code></td>
+<td>query</td>
+<td>No</td>
+<td>Number of items per page</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>page</code></td>
+<td>query</td>
+<td>No</td>
+<td>Page number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1clients-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/clients?size={SIZE}&amp;page={PAGE}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="get-apiv1clientsid"><code translate="no" v-pre>GET /api/v1/clients/{id}</code></h3>
+<p>Returns a single client by ID.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the client</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1clientsid-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/clients/{CLIENT_ID}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="get-apiv1clientsidhosts"><code translate="no" v-pre>GET /api/v1/clients/{id}/hosts</code></h3>
+<p>Returns the hosts linked to a specific client.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the client</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>size</code></td>
+<td>query</td>
+<td>No</td>
+<td>Number of items per page</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>page</code></td>
+<td>query</td>
+<td>No</td>
+<td>Page number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Response notes</strong></p>
+<ul>
+<li>Host items may include a <code translate="no" v-pre>monitoring</code> object with live <code translate="no" v-pre>load</code>, <code translate="no" v-pre>disk</code>, and <code translate="no" v-pre>memory</code> data.</li>
+</ul>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1clientsidhosts-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/clients/{CLIENT_ID}/hosts?size={SIZE}&amp;page={PAGE}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="get-apiv1clientsidgroups"><code translate="no" v-pre>GET /api/v1/clients/{id}/groups</code></h3>
+<p>Returns the groups linked to a specific client.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the client</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>size</code></td>
+<td>query</td>
+<td>No</td>
+<td>Number of items per page</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>page</code></td>
+<td>query</td>
+<td>No</td>
+<td>Page number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1clientsidgroups-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/clients/{CLIENT_ID}/groups?size={SIZE}&amp;page={PAGE}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h2 id="hosts">Hosts</h2>
+<p>The host endpoints form the operational core of the API. They allow you to inspect hosts, store host configuration, retrieve credentials, and start or monitor deployments.</p>
+<h3 id="get-apiv1hosts"><code translate="no" v-pre>GET /api/v1/hosts</code></h3>
+<p>Returns a paginated list of hosts.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>size</code></td>
+<td>query</td>
+<td>No</td>
+<td>Number of items per page</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>page</code></td>
+<td>query</td>
+<td>No</td>
+<td>Page number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Response notes</strong></p>
+<ul>
+<li>Host items may include a <code translate="no" v-pre>monitoring</code> object with live <code translate="no" v-pre>load</code>, <code translate="no" v-pre>disk</code>, and <code translate="no" v-pre>memory</code> data.</li>
+</ul>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1hosts-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/hosts?size={SIZE}&amp;page={PAGE}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="get-apiv1hostsid"><code translate="no" v-pre>GET /api/v1/hosts/{id}</code></h3>
+<p>Returns one specific host, including its stored configuration payload.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the host</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Response notes</strong></p>
+<ul>
+<li>The host object may include a <code translate="no" v-pre>monitoring</code> object with live <code translate="no" v-pre>load</code>, <code translate="no" v-pre>disk</code>, and <code translate="no" v-pre>memory</code> data.</li>
+</ul>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1hostsid-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/hosts/{HOST_ID}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="post-apiv1hostsid"><code translate="no" v-pre>POST /api/v1/hosts/{id}</code></h3>
+<p>Saves or updates the JSON configuration of a host. Use this endpoint to persist configuration changes before you start a deployment.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the host</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>json</code></td>
+<td>body</td>
+<td>Yes</td>
+<td>Host configuration object to store</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>warning</h5>
+<p>The OpenAPI document only defines this payload as a generic <code translate="no" v-pre>json</code> object. In practice, this should contain the same configuration structure that TurboStack stores for the host in the platform.</p>
+        </div>
+    </div>
+</div>
+<p><strong>Request body shape</strong></p>
+<div id="post-apiv1hostsid-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+  &quot;json&quot;: {
+    &quot;...&quot;: &quot;host configuration object&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>cURL call</strong></p>
+<div id="post-apiv1hostsid-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request POST \
+  --url 'https://my.turbostack.app/api/v1/hosts/{HOST_ID}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    &quot;json&quot;: {
+      &quot;YOUR_CONFIGURATION_KEY&quot;: &quot;YOUR_VALUE&quot;
+    }
+  }'</code></pre>
+</doc-codeblock></div>
+<h3 id="get-apiv1hostsiddeploy"><code translate="no" v-pre>GET /api/v1/hosts/{id}/deploy</code></h3>
+<p>Returns the current deployment status for a host.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the host</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1hostsiddeploy-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/hosts/{HOST_ID}/deploy' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="post-apiv1hostsiddeploy"><code translate="no" v-pre>POST /api/v1/hosts/{id}/deploy</code></h3>
+<p>Starts a deployment for a host after its configuration has been saved.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the host</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>type</code></td>
+<td>body</td>
+<td>Yes</td>
+<td>Deployment type to execute</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Supported deploy types:</p>
+<ul>
+<li><code translate="no" v-pre>deploy</code></li>
+<li><code translate="no" v-pre>fullDeploy</code></li>
+<li><code translate="no" v-pre>fullResetDeploy</code></li>
+</ul>
+<p><strong>Request body shape</strong></p>
+<div id="post-apiv1hostsiddeploy-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+  &quot;type&quot;: &quot;deploy | fullDeploy | fullResetDeploy&quot;
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>cURL call</strong></p>
+<div id="post-apiv1hostsiddeploy-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request POST \
+  --url 'https://my.turbostack.app/api/v1/hosts/{HOST_ID}/deploy' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    &quot;type&quot;: &quot;deploy | fullDeploy | fullResetDeploy&quot;
+  }'</code></pre>
+</doc-codeblock></div>
+<h3 id="get-apiv1hostsidcredentials"><code translate="no" v-pre>GET /api/v1/hosts/{id}/credentials</code></h3>
+<p>Returns host credentials together with related configuration data.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the host</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Documented responses</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>200</code></td>
+<td>Host credentials and configuration</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>401</code></td>
+<td>Unauthorized</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>403</code></td>
+<td>Forbidden</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>404</code></td>
+<td>Host not found</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>500</code></td>
+<td>Internal server error</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1hostsidcredentials-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/hosts/{HOST_ID}/credentials' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h2 id="groups">Groups</h2>
+<p>The group endpoints make it possible to inspect and update shared group configuration stored in the platform.</p>
+<h3 id="get-apiv1groups"><code translate="no" v-pre>GET /api/v1/groups</code></h3>
+<p>Returns a paginated list of groups.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>size</code></td>
+<td>query</td>
+<td>No</td>
+<td>Number of items per page</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>page</code></td>
+<td>query</td>
+<td>No</td>
+<td>Page number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1groups-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/groups?size={SIZE}&amp;page={PAGE}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="get-apiv1groupsid"><code translate="no" v-pre>GET /api/v1/groups/{id}</code></h3>
+<p>Returns a single group by ID.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the group</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="get-apiv1groupsid-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request GET \
+  --url 'https://my.turbostack.app/api/v1/groups/{GROUP_ID}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json'</code></pre>
+</doc-codeblock></div>
+<h3 id="post-apiv1groupsid"><code translate="no" v-pre>POST /api/v1/groups/{id}</code></h3>
+<p>Saves or updates a specific group.</p>
+<p><strong>What this call does</strong></p>
+<p><strong>Options</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>id</code></td>
+<td>path</td>
+<td>Yes</td>
+<td>ID of the group</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>json</code></td>
+<td>body</td>
+<td>Yes</td>
+<td>Group configuration object to store</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The API returns the saved group ID on success.</p>
+<p><strong>Request body shape</strong></p>
+<div id="post-apiv1groupsid-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+  &quot;json&quot;: {
+    &quot;...&quot;: &quot;group configuration object&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Documented responses</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>200</code></td>
+<td>Group ID after saving</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>403</code></td>
+<td>Forbidden</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>404</code></td>
+<td>Group not found</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>cURL call</strong></p>
+<div id="post-apiv1groupsid-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl --request POST \
+  --url 'https://my.turbostack.app/api/v1/groups/{GROUP_ID}' \
+  --header &quot;Authorization: Bearer $TSTOKEN&quot; \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    &quot;json&quot;: {
+      &quot;YOUR_GROUP_CONFIGURATION_KEY&quot;: &quot;YOUR_VALUE&quot;
+    }
+  }'</code></pre>
+</doc-codeblock></div>
+
+                <div id="retype-tags" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mt-6 mb-6 clear-both">
+                    <span>
+                        <a href="../../tags/">
+                            <svg class="inline-block -mb-px mr-1.5 text-body-link hover:text-body-link-hover" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                        </a>
+                        <span class="mr-2"><a href="../../tags/api/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                    <span>api</span>
+                </a></span>
+                        <span class="mr-2"><a href="../../tags/rest/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                    <span>rest</span>
+                </a></span>
+                        <span class="mr-2"><a href="../../tags/swagger/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                    <span>swagger</span>
+                </a></span>
+                        <span class="mr-2"><a href="../../tags/openapi/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                    <span>openapi</span>
+                </a></span>
+                        <span class="mr-2"><a href="../../tags/token/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                    <span>token</span>
+                </a></span>
+                        <span class="mr-2"><a href="../../tags/authentication/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                    <span>authentication</span>
+                </a></span>
+                    </span>
+                
+                </div>
+
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+            </div>
+            <footer id="retype-content-footer" class="clear-both">
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-14">
+                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link hover:text-body-link-hover hover:underline" href="https://github.com/HOSTED-POWER/docs-turbostack-app/blob/master/TurboStack Platform/api.md" target="_blank" rel="noopener">
+                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        <span>Edit this page</span>
+                    </a>
+                </div>
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../turbostack-platform/templates/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">Templates</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../turbostack-platform/changelog/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">Changelog</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026 <a href="https://www.hosted-power.com/" class="outbound" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>Hosted Power</span></a>. All rights reserved.</p></div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+    <div id="retype-overlay-target"></div>
+
+        <script data-cfasync="false">window.__DOCS__ = { "title": "TurboStack API", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/turbostack-platform/api.md" }</script>
+</body>
+</html>
