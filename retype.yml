@@ -22,7 +22,7 @@ outbound:
 
 branding:
   title: Docs
-  logo: /img/logo_ts_white.png
+  logo: /img/logo_ts_blue.png
   logoDark: /img/logo_ts_white.png
   logoAlign: left
 
@@ -31,7 +31,7 @@ theme:
     # === BACKGROUNDS ===
     base-bg: "#C6E5FF"                     # Blue tint
     sidebar-left-bg: "#FFFFFF"             # White
-    header-bg: "#2600E6"                   # HP Blue
+    header-bg: "#FFFFFF"                   # White
     base-item-bg-hover: "#FDFDC5"          # Yellow tint
     base-item-bg-active: "#C6E5FF"         # Blue tint
     skeleton-bg: "#FDFDC5"                 # Yellow tint
@@ -82,7 +82,7 @@ theme:
     royal: "#D200FF"                       # Purple
 
     # === SELECTION ===
-    selection-bg: "#C6E5FF"                # Blue tint
+    selection-bg: "#FDFDC5"                # Yellow tint
     selection-text: "#000000"              # Black
 
   dark:
