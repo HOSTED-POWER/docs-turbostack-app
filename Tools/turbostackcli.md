@@ -17,6 +17,8 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### Apache Webserver
 [!badge icon="rocket" text="tscli apache reload"] - Verifies the Apache configuration and reloads it if it valid. If it isn't valid you'll get an error with the issue reported.
 
+[!badge icon="rocket" text="tscli apache restart"] - Verifies the Apache configuration and restarts it if valid. If it isn't valid you'll get an error with the issue reported.
+
 ### BlackFire php Profiler
 [!badge icon="rocket" text="tscli blackfire enable"] - Installs the Blackfire Profiler and restarts the PHP-FPM service(s).
 
@@ -38,6 +40,8 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 [!badge icon="rocket" text="tscli firewall whitelist <ip>"] - Add the provided IP to both allow and ignore lists.
 
 [!badge icon="rocket" text="tscli firewall unlist <ip>"] - Remove the provided IP from both allow and ignore lists.
+
+[!badge icon="rocket" text="tscli firewall display-whitelists"] - Lists the active local firewall whitelist entries (the allow and ignore lists).
 
 [!badge icon="rocket" text="tscli firewall flush"] - Flushes all automatic firewall IP blocks from the blocklist.
 
@@ -78,9 +82,99 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 [!badge icon="rocket" text="tscli dkim validate"] - Verify if the correct TXT records are active for DKIM to function correctly.
 
 ### RabbitMQ
-[!badge icon="rocket" text="tscli rabbitmq queue list <OPTIONS> <VHOSTNAME>"] - List RabbitMQ queues.
+[!badge icon="rocket" text="tscli rabbitmq queue list <vhost>"] - List the queues (and their sizes) for the given virtual host.
+
+[!badge icon="rocket" text="tscli rabbitmq status"] - Show the message queue status and a live connectivity check.
+
+### Service Status
+[!badge icon="rocket" text="tscli service status"] - Shows a consolidated overview of all installed services on the node (web server, database, cache, message queue, search, container runtime, firewall and PHP-FPM) with their current status and whether they start on boot. This command does not require root access.
+
+```
+  SERVICE            UNIT               STATUS         ENABLED
+──────────────────────────────────────────────────────────────
+● Web server         nginx              active         enabled
+● Cache              redis-server       active         enabled
+● Cache              redis-persistent   active         enabled
+● Database           mysql              active         enabled
+● PHP-FPM            php8.3-fpm         active         enabled
+  (... firewall, mail and other installed services follow)
+```
+
+Every service group above also supports its own **`status`** command for a focused view with per-instance liveness and uptime. A few examples:
+
+[!badge icon="rocket" text="tscli nginx status"] - Web server status, including a configuration validity check.
+
+[!badge icon="rocket" text="tscli redis status"] - Cache status with a live connectivity probe for each instance.
+
+[!badge icon="rocket" text="tscli mysql status"] - Database status and liveness.
+
+[!badge icon="rocket" text="tscli firewall status"] - Firewall status and protection mode.
+
+```
+Cache (redis)
+  UNIT               ACTIVE             ENABLED    SINCE                          RESTARTS
+● redis-server       active (running)   enabled    Mon 2026-05-18 07:37:09 CEST   0
+● redis-persistent   active (running)   enabled    Fri 2026-03-13 16:16:14 CET    0
+liveness:
+  redis-server: ok (PONG)
+  redis-persistent: ok (PONG)
+```
+
+### Application Background Services
+Inspect the background services that run your application (queue workers, schedulers, and similar), across both supported process managers.
+
+[!badge icon="rocket" text="tscli app status"] - Overview of your application's background services, with per-service liveness (active/total).
+
+[!badge icon="rocket" text="tscli app list"] - A flat, scriptable list (user / backend / service / active-of-total), handy for piping into other tools.
+
+[!badge icon="rocket" text="tscli app backends"] - Shows which process manager each application user uses.
+
+```
+▸ App services
+  app1  uid 1002 · systemd
+    ● main          systemd    1/1
+    ● worker        systemd    1/1
+    ● scheduler     systemd    0/1
+```
+
+### Log Search
+[!badge icon="rocket" text="tscli logs <source> <query>"] - Searches your server logs using a plain-language query, entirely on the server.
+
+The available sources are: **web** (nginx / apache), **ssh**, **database** (mysql / postgresql), **mail**, **cache** (redis), **queue** (rabbitmq), **firewall**, **system**, **php** and **cron**. For web logs, add `error` or `access` right after the source to scope the search; omit it to search both.
+
+```
+tscli logs nginx error from last hour
+tscli logs database "show logs from yesterday"
+tscli logs ssh "show last 50 log lines"
+tscli logs web find timeout
+```
+
+Add `--explain` to see exactly how your query was interpreted (the matched source, time window, search terms and line limit). If you run a source without a query, the most recent log lines are shown.
+
+```
+$ tscli logs web find timeout --explain
+▸ Interpreted  source=Web · action=search · terms=[timeout] · limit=30
+```
+
+### Health Check
+[!badge icon="rocket" text="tscli healthcheck"] - Prints a quick server health snapshot. Add `brief` for a single-line summary.
+
+```
+$ tscli healthcheck brief
+● Disk: 31% | Load: 0.30,0.28,0.27 (4) | Mem: 87%
+```
 
 ## Tools
+
+### Image Optimizer
+[!badge icon="rocket" text="tscli tools image-optimizer <path>"] - Reduces the file size of JPG and PNG images found under `<path>`. By default it performs a **dry run** that only reports the potential savings; pass `--apply` to actually optimize, and originals are only replaced when the optimized version is smaller.
+
+Options:
+ - `-a, --apply` - Replace originals when the optimized file is smaller (without this, nothing is changed).
+ - `-q, --quality <1-100>` - JPEG quality target used during compression (default `90`).
+ - `-s, --size <pixels>` - Maximum width or height before the image is resized (default `2000`).
+ - `-n, --new` - Only scan files that are new since the last run.
+ - `--exclude <path>` - Skip a directory tree; may be passed more than once.
 
 ### Botload
 We provide a *botload* tool that grants you more insight in your nginx / apache logs.
