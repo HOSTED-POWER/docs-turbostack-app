@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832579717657">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834239362940">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>WP-CLI Commands | TurboStack Docs</title>
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.5.3.832579717657" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.834239362940" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.5.3.832579717657" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.5.3.832579717657" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.834239362940" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.834239362940" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -223,6 +223,13 @@
 <p>WP-CLI is the command-line interface for managing WordPress installations. Below is a categorized reference guide with the most useful commands and their descriptions.</p>
 <hr>
 <h2 id="core-management">Core Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp core download` | Downloads WordPress core files. |
+| `wp core install` | Runs the WordPress installation. |
+| `wp core update` | Updates WordPress core to the latest version. |
+| `wp core version` | Displays the current WordPress version. |
+| `wp core check-update` | Checks for available core updates. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -255,8 +262,17 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="plugin-management">Plugin Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp plugin install &lt;plugin&gt;` | Installs a plugin by slug or URL. |
+| `wp plugin activate &lt;plugin&gt;` | Activates a plugin. |
+| `wp plugin deactivate &lt;plugin&gt;` | Deactivates a plugin. |
+| `wp plugin delete &lt;plugin&gt;` | Deletes a plugin. |
+| `wp plugin update &lt;plugin&gt;` | Updates a specific plugin. |
+| `wp plugin list` | Lists installed plugins with status. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -293,8 +309,16 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="theme-management">Theme Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp theme install &lt;theme&gt;` | Installs a theme by slug or URL. |
+| `wp theme activate &lt;theme&gt;` | Activates a theme. |
+| `wp theme delete &lt;theme&gt;` | Deletes a theme. |
+| `wp theme update &lt;theme&gt;` | Updates a specific theme. |
+| `wp theme list` | Lists installed themes. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -327,8 +351,16 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="user-management">User Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp user create &lt;username&gt; &lt;email&gt;` | Creates a new user. |
+| `wp user delete &lt;user&gt;` | Deletes a user. |
+| `wp user list` | Lists all users. |
+| `wp user update &lt;user&gt;` | Updates user information. |
+| `wp user get &lt;user&gt;` | Displays user data. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -361,8 +393,16 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="database-management">Database Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp db export` | Exports the database to an SQL file. |
+| `wp db import &lt;file&gt;` | Imports an SQL file into the database. |
+| `wp db reset` | Drops all tables and reinitializes the DB. |
+| `wp db check` | Checks database for errors. |
+| `wp db optimize` | Optimizes the database. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -395,8 +435,13 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="media-management">Media Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp media import &lt;file(s)&gt;` | Imports media files into the Media Library. |
+| `wp media regenerate` | Regenerates image sizes for Media Library. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -417,8 +462,15 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="post--content-management">Post &amp; Content Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp post create` | Creates a new post. |
+| `wp post delete &lt;id&gt;` | Deletes a post. |
+| `wp post list` | Lists posts. |
+| `wp post update &lt;id&gt; --post_title=&quot;New Title&quot;` | Updates post fields. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -447,8 +499,17 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="option--config-management">Option &amp; Config Management</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp option get &lt;name&gt;` | Gets an option value. |
+| `wp option update &lt;name&gt; &lt;value&gt;` | Updates an option value. |
+| `wp option delete &lt;name&gt;` | Deletes an option. |
+| `wp config create` | Creates a `wp-config.php` file. |
+| `wp config set &lt;key&gt; &lt;value&gt;` | Sets a config value. |
+| `wp config get &lt;key&gt;` | Gets a config value. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -485,8 +546,14 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="cron-events">Cron Events</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp cron event list` | Lists scheduled cron events. |
+| `wp cron event run &lt;hook&gt;` | Executes a cron event immediately. |
+| `wp cron event delete &lt;hook&gt;` | Deletes a cron event. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -511,8 +578,15 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="cache--transients">Cache &amp; Transients</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp cache flush` | Clears the object cache. |
+| `wp transient get &lt;name&gt;` | Gets a transient value. |
+| `wp transient set &lt;name&gt; &lt;value&gt; &lt;expiration&gt;` | Sets a transient. |
+| `wp transient delete &lt;name&gt;` | Deletes a transient. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -541,8 +615,13 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="search--replace">Search &amp; Replace</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp search-replace &lt;old&gt; &lt;new&gt;` | Replaces strings in DB. |
+| `--dry-run` | Simulates the operation without changes. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -563,8 +642,16 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <h2 id="miscellaneous">Miscellaneous</h2>
+<retype-table copy-text="| Command | Description |
+|--------|-------------|
+| `wp site url` | Shows the site URL. |
+| `wp rewrite flush` | Flushes rewrite rules. |
+| `wp eval &lt;php&gt;` | Runs PHP code in WP context. |
+| `wp shell` | Opens an interactive PHP shell. |
+| `wp cli update` | Updates WP-CLI itself. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -597,6 +684,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <hr>
 <blockquote>
 <p><strong>Tip</strong>: You can run <code translate="no" v-pre>wp help</code> or <code translate="no" v-pre>wp help &lt;command&gt;</code> to see usage examples and options for any WP-CLI command.</p>

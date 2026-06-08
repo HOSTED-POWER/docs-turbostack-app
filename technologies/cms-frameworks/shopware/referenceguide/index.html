@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832579717657">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834239362940">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Shopware Hosting Reference Guide | TurboStack Docs</title>
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.5.3.832579717657" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.834239362940" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.5.3.832579717657" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.5.3.832579717657" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.5.3.832579717657" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.834239362940" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.834239362940" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.834239362940" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -223,6 +223,15 @@
 <h1 id="shopware-hosting-reference-guide">Shopware Hosting Reference Guide</h1>
 <h2 id="file-structure">File Structure</h2>
 <p>Your Shopware project is expected to use <code translate="no" v-pre>~/public_html</code> as the public web root. This must point to Shopware’s <code translate="no" v-pre>/public</code> directory, either directly or via symlink. The same applies to the main Shopware directory — you may symlink it if you are using a release-based deployment.</p>
+<retype-table copy-text="| Path                 | Purpose                                                             |
+| -------------------- | ------------------------------------------------------------------- |
+| `~/public_html`      | Web document root — must point to the `public/` folder of Shopware. |
+| `~/shopware/`        | Base directory of the Shopware installation. Can also be a symlink. |
+| `~/shopware/public/` | Public assets and front controller (`index.php`).                   |
+| `~/shopware/vendor/` | Composer dependencies.                                              |
+| `~/shopware/custom/` | Custom plugins and themes.                                          |
+| `~/shopware/config/` | Configuration files (`.env`, `packages/`, `services.yaml`, etc.).   |
+| `~/nginx/`           | Optional: Custom Nginx configuration.                               |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -263,6 +272,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <blockquote>
 <p><span class="docs-emoji">&#x2139;&#xFE0F;</span> <strong>Note:</strong> Symbolic links are fully supported — e.g., <code translate="no" v-pre>public_html</code> → <code translate="no" v-pre>current/public</code>, <code translate="no" v-pre>shopware</code> → <code translate="no" v-pre>releases/20250715</code>. Just ensure that the final paths resolve correctly to the intended directories inside the Shopware project.</p>
 </blockquote>

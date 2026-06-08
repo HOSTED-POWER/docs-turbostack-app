@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832579717657">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834239362940">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Node.js Hosting Reference Guide | TurboStack Docs</title>
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.5.3.832579717657" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.834239362940" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.5.3.832579717657" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.5.3.832579717657" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.5.3.832579717657" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.834239362940" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.834239362940" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.834239362940" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -226,6 +226,14 @@
 <hr>
 <h2 id="file-structure">File Structure</h2>
 <p>Your Node.js application typically resides in the following directories:</p>
+<retype-table copy-text="| Path                  | Purpose |
+|-----------------------|----------|
+| `~/app`               | Main Node.js application root directory. |
+| `~/app/package.json`  | Project metadata and dependency definitions. |
+| `~/app/node_modules`  | Installed project dependencies. |
+| `~/app/public`        | Static assets (if applicable). |
+| `~/app/logs`          | Application log files (if configured). |
+| `~/nginx`             | Custom Nginx configuration including reverse proxy configuration. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -262,6 +270,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <blockquote>
 <p>Your application is typically served behind Nginx as a reverse proxy, which handles SSL termination and forwards traffic to your Node.js application.</p>
 </blockquote>
