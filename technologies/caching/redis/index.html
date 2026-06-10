@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834393757930">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834409938835">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -44,12 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.6.0.834393757930" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.834409938835" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.834393757930" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.834409938835" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.834393757930" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.834393757930" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.834409938835" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.834409938835" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -438,42 +438,78 @@ tscli redis clear</code></pre>
 <p>To configure this, we must edit the <code translate="no" v-pre>app/etc/env.php</code> file.</p>
 <p>Incorporate the following code in the file:</p>
 <div id="configuration-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-php"><code v-pre class="language-php">&lt;?php
-return [
-    'cache' =&gt; [
+<pre translate="no" class="language-php"><code v-pre class="language-php">    'session' =&gt; [
+        'save' =&gt; 'redis',
+        'redis' =&gt; [
+            'host' =&gt; '/var/run/redis-persistent/redis.sock',
+            'port' =&gt; '0',
+            'password' =&gt; '',
+            'timeout' =&gt; '3',
+            'persistent_identifier' =&gt; '',
+            'database' =&gt; '1',
+            'compression_threshold' =&gt; '2048', // Set 0 to disable
+            'log_level' =&gt; '2',
+            'max_concurrency' =&gt; '50',
+            'break_after_frontend' =&gt; '5',
+            'break_after_adminhtml' =&gt; '30',
+            'first_lifetime' =&gt; '600',
+            'bot_first_lifetime' =&gt; '60',
+            'bot_lifetime' =&gt; '7200',
+            'disable_locking' =&gt; '0',
+            'min_lifetime' =&gt; '60',
+            'max_lifetime' =&gt; '2592000'
+         ]
+    ],
+    'cache' =&gt;[
         'frontend' =&gt; [
-            'default' =&gt; [
-                'backend' =&gt; 'Cm_Cache_Backend_Redis',
+           'default' =&gt; [
+                'id_prefix' =&gt; '104_',
+                'backend' =&gt; 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' =&gt; [
-                    'server' =&gt; '127.0.0.1',
-                    'port' =&gt; '6379',
-                    'database' =&gt; '0',
-                    'id_prefix' =&gt; 'magento_prod_',
-                    'compress_data' =&gt; '1',
-                    'default_lifetime' =&gt; '600',
-                    'min_lifetime' =&gt; '60',
-                    'max_lifetime' =&gt; '86400'
+                    'server' =&gt; '/var/run/redis/redis.sock',
+                    'port' =&gt; '0',
+                    'persistent' =&gt; 'db2', // Change this if you're having more Magentos share the Redis
+                    'database' =&gt; '2', // Change this if you're having more Magentos share the Redis
+                    'password' =&gt; '',
+                    'force_standalone' =&gt; '0',
+                    'connect_retries' =&gt; '2',
+                    'read_timeout' =&gt; '3',
+                    'automatic_cleaning_factor' =&gt; '0',
+                    'compress_threshold' =&gt; '2048',
+                    // 'compress_data' =&gt; '1', // Let Magento pick best value, default 1
+                    // 'compress_tags' =&gt; '1', // Let Magento pick best value, default 1
+                    // 'compression_lib' =&gt; 'gzip', // Let Magento pick best value , prefer lz4 or snappy
+                    'preload_keys' =&gt; [
+                        '104_EAV_ENTITY_TYPES',
+                        '104_GLOBAL_PLUGIN_LIST',
+                        '104_DB_IS_UP_TO_DATE',
+                        '104_SYSTEM_DEFAULT',
+                    ],
                 ]
             ],
             'page_cache' =&gt; [
-                'backend' =&gt; 'Cm_Cache_Backend_Redis',
+                'id_prefix' =&gt; '104_',
+                'backend' =&gt; 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' =&gt; [
-                    'server' =&gt; '127.0.0.1',
-                    'port' =&gt; '6379',
-                    'database' =&gt; '1',
-                    'id_prefix' =&gt; 'magento_prod_',
-                    'compress_data' =&gt; '0',
-                    'default_lifetime' =&gt; '86400'
+                    'server' =&gt; '/var/run/redis/redis.sock',
+                    'port' =&gt; '0',
+                    'persistent' =&gt; 'db3', // Change this if you're having more Magentos share the Redis
+                    'database' =&gt; '3', // Change this if you're having more Magentos share the Redis
+                    'password' =&gt; '',
+                    'force_standalone' =&gt; '0',
+                    'connect_retries' =&gt; '2',
+                    'read_timeout' =&gt; '3',
+                    'compress_threshold' =&gt; '2048',
+                    // 'compress_data' =&gt; '1', // Let Magento pick best value, default 1
+                    // 'compress_tags' =&gt; '1', // Let Magento pick best value, default 1
+                    // 'compression_lib' =&gt; 'gzip', // Let Magento pick best value , prefer lz4 or snappy
+					
                 ]
             ]
         ]
-    ]
-];</code></pre>
+    ],</code></pre>
 </doc-codeblock></div>
 <p>This tells magento how to connect to Redis, what database to use, the prefix and the default TTL.</p>
-<blockquote>
-<p><strong>Tip:</strong> You can change <em>compress_data</em> to &#x27;1&#x27; to enable compression. This will reduce the size of the cache data, but will increase the processing time slightly.</p>
-</blockquote>
 <h4 id="clearing-the-cache">Clearing the cache</h4>
 <p>To clear the cache, you can use the following command:</p>
 <div id="clearing-the-cache-code-1" class="codeblock-wrapper"><doc-codeblock>
