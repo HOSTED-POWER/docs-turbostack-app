@@ -62,6 +62,11 @@
 
 - [Docker](https://docs.turbostack.app/technologies/containerization/docker/readme.md): Docker is an open platform for developing, shipping, and running applications. It enables you to separate your applications from your infrastructure so you can deliver software quickly.
 
+#### Kubernetes
+
+- [Kubernetes](https://docs.turbostack.app/technologies/containerization/kubernetes/readme.md): Kubernetes is an open source container orchestration platform for deploying, scaling, and managing containerized applications. It helps automate scheduling, service discovery, self-healing, and rollout management across your infrastructure.
+- [Handy tools](https://docs.turbostack.app/technologies/containerization/kubernetes/handytools.md): k9s is a terminal UI for managing Kubernetes clusters. It gives you a faster way to inspect pods, deployments, services, logs, and namespaces without typing kubectl commands all the time.
+
 ### Caching
 
 - [Redis](https://docs.turbostack.app/technologies/caching/redis.md): Redis is a powerful in-memory database primarily used for caching and session management. Due to its speed and flexibility, Redis is widely used in high-performance environments such as web applications, e-commerce platforms, and real-time systems.
