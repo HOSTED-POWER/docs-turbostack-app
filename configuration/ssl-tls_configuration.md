@@ -57,7 +57,7 @@ Instead of using Let's Encrypt to generate an SSL certificate, you can obtain on
 
 To generate the private key and a CSR containing multiple subject alternative names, follow these steps:
 
-###### 1. Create the .san File
+##### 1. Create the .san File
 
 Example configuration file (`server.san`):
 
@@ -88,7 +88,7 @@ DNS.5 = mail.hosted-power.com
 
 **Hint:** The common name (`commonName`) must match your domain, e.g., *www.example.com*. For wildcard certificates, use `*.example.com` as the common name.
 
-#### 2. Generate the CSR
+##### 2. Generate the CSR
 
 Use the following command to generate both the CSR and the private key:
 
