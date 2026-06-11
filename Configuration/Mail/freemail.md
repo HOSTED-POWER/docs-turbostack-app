@@ -1,3 +1,7 @@
+---
+order: 40
+icon: telescope
+---
 # Freemail Reputation Tracking
 Besides regular mail deliverability best practices, which you can read about [here](./deliverability.md "Email Deliverability"), it's also important to acknowledge there are a couple of large mail providers that are used by many of your email recipients. As such, this guide will show you how to follow best practices for these specific providers as well as how to access vital data on how those platforms are receiving your emails.
 ## Large Mail Providers
@@ -22,7 +26,7 @@ Regarding the technical side, if you've already followed our general [email deli
 ### Google
 Google maintains 2 distinct mail platforms. We'll be focussing on the public, personal freemail platform Gmail. This widely used platform is certainly a significant part of your mail traffic's recipients, so it is important to be aware of their best practices as well as set up access to their deliverability tracking tools.
 #### Postmaster Tools
-[Gmail Postmaster Tools](https://postmaster.google.com/managedomains "https://postmaster.google.com/managedomains") is Google's dashboard for managing the reputation of your email sending domains and IPs. Accessing this tool requires your own Google account and validation of domain ownership will happen through adding a verification TXT record to your domain's DNS zone. If your domain uses our name servers, you can find instructions on managing your DNS zone in our [docs](<../../Customer Center/dns.md> "DNS"). Google provides [straightforward instructions]("https://support.google.com/a/topic/7279058" "https://support.google.com/a/topic/7279058") on how to set up this access. If you have any further questions, don't hesitate to contact our [support team]("../../Support/standard_support.md" "Standard Support")
+[Gmail Postmaster Tools](https://postmaster.google.com/managedomains "https://postmaster.google.com/managedomains") is Google's dashboard for managing the reputation of your email sending domains and IPs. Accessing this tool requires your own Google account and validation of domain ownership will happen through adding a verification TXT record to your domain's DNS zone. If your domain uses our name servers, you can find instructions on managing your DNS zone in our [docs](<../../Customer Center/dns.md> "DNS"). Google provides [straightforward instructions](https://support.google.com/a/topic/7279058 "https://support.google.com/a/topic/7279058") on how to set up this access. If you have any further questions, don't hesitate to contact our [support team](../../Support/standard_support.md "Standard Support")
 #### Recommendations
 Google provides [extensive documentation](https://support.google.com/a/topic/7279058 "https://support.google.com/a/topic/7279058") on recommendations for both the content of your mails as well as the technical side of sending them. It is strongly recommended to be aware of these policies, as they are increasingly enforced and can lead to your mail traffic being restricted or blocked entirely.
 
