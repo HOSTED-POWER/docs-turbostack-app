@@ -226,41 +226,78 @@ To configure this, we must edit the `app/etc/env.php` file.
 Incorporate the following code in the file:
 
 ```php
-<?php
-return [
-    'cache' => [
+    'session' => [
+        'save' => 'redis',
+        'redis' => [
+            'host' => '/var/run/redis-persistent/redis.sock',
+            'port' => '0',
+            'password' => '',
+            'timeout' => '3',
+            'persistent_identifier' => '',
+            'database' => '1',
+            'compression_threshold' => '2048', // Set 0 to disable
+            'log_level' => '2',
+            'max_concurrency' => '50',
+            'break_after_frontend' => '5',
+            'break_after_adminhtml' => '30',
+            'first_lifetime' => '600',
+            'bot_first_lifetime' => '60',
+            'bot_lifetime' => '7200',
+            'disable_locking' => '0',
+            'min_lifetime' => '60',
+            'max_lifetime' => '2592000'
+         ]
+    ],
+    'cache' =>[
         'frontend' => [
-            'default' => [
-                'backend' => 'Cm_Cache_Backend_Redis',
+           'default' => [
+                'id_prefix' => '104_',
+                'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
-                    'server' => '127.0.0.1',
-                    'port' => '6379',
-                    'database' => '0',
-                    'id_prefix' => 'magento_prod_',
-                    'compress_data' => '1',
-                    'default_lifetime' => '600',
-                    'min_lifetime' => '60',
-                    'max_lifetime' => '86400'
+                    'server' => '/var/run/redis/redis.sock',
+                    'port' => '0',
+                    'persistent' => 'db2', // Change this if you're having more Magentos share the Redis
+                    'database' => '2', // Change this if you're having more Magentos share the Redis
+                    'password' => '',
+                    'force_standalone' => '0',
+                    'connect_retries' => '2',
+                    'read_timeout' => '3',
+                    'automatic_cleaning_factor' => '0',
+                    'compress_threshold' => '2048',
+                    // 'compress_data' => '1', // Let Magento pick best value, default 1
+                    // 'compress_tags' => '1', // Let Magento pick best value, default 1
+                    // 'compression_lib' => 'gzip', // Let Magento pick best value , prefer lz4 or snappy
+                    'preload_keys' => [
+                        '104_EAV_ENTITY_TYPES',
+                        '104_GLOBAL_PLUGIN_LIST',
+                        '104_DB_IS_UP_TO_DATE',
+                        '104_SYSTEM_DEFAULT',
+                    ],
                 ]
             ],
             'page_cache' => [
-                'backend' => 'Cm_Cache_Backend_Redis',
+                'id_prefix' => '104_',
+                'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
                 'backend_options' => [
-                    'server' => '127.0.0.1',
-                    'port' => '6379',
-                    'database' => '1',
-                    'id_prefix' => 'magento_prod_',
-                    'compress_data' => '0',
-                    'default_lifetime' => '86400'
+                    'server' => '/var/run/redis/redis.sock',
+                    'port' => '0',
+                    'persistent' => 'db3', // Change this if you're having more Magentos share the Redis
+                    'database' => '3', // Change this if you're having more Magentos share the Redis
+                    'password' => '',
+                    'force_standalone' => '0',
+                    'connect_retries' => '2',
+                    'read_timeout' => '3',
+                    'compress_threshold' => '2048',
+                    // 'compress_data' => '1', // Let Magento pick best value, default 1
+                    // 'compress_tags' => '1', // Let Magento pick best value, default 1
+                    // 'compression_lib' => 'gzip', // Let Magento pick best value , prefer lz4 or snappy
+					
                 ]
             ]
         ]
-    ]
-];
+    ],
 ```
 This tells magento how to connect to Redis, what database to use, the prefix and the default TTL.
-
-> **Tip:** You can change _compress_data_ to '1' to enable compression. This will reduce the size of the cache data, but will increase the processing time slightly.
 
 #### Clearing the cache
 To clear the cache, you can use the following command:
