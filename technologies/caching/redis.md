@@ -177,7 +177,7 @@ if ( ! defined( 'WP_REDIS_DEFAULT_EXPIRE_SECONDS' ) ) {
 
 A TTL of 0 in Redis means 'Never Expire'. Change this value to for example 28800 seconds (8 hours).
 
-To monitor the change, you can use the analysis tool in [Redis Insight](https://docs.turbostack.app/miscellaneous/redis_insight/) and sort on TTL.
+To monitor the change, you can use the analysis tool in [Redis Insight](../../Miscellaneous/redis_insight.md) and sort on TTL.
 
 > **Tip:** you can clear the Redis cache with the ' tscli redis clear ' command.
 
