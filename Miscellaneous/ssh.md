@@ -74,8 +74,7 @@ cat ~/.ssh/id_ed25519.pub
 
 ![1743683172047](image/ssh/1743683172047.png)
 
-If you need to add keys to multiple servers, you can use the [groups](https://docs.turbostack.app/turbostack-app/groups/#groups) functionality to streamline this process.
-
+If you need to add keys to multiple servers, you can use the [groups](<../TurboStack Platform/groups.md/>) functionality to streamline this process.
 ### cPanel
 
 1. **Log into cPanel**

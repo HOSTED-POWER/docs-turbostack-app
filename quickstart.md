@@ -32,7 +32,7 @@ Our customer center enables you to:
 ### Add Relevant Contacts
 Once you've created an account, proceed to add all relevant contacts to your account. This step is crucial for effective communication and collaboration between Hosted Power & your team!
 
-A more detailed overview of Contacts and Teams management can be found [Here](https://docs.turbostack.app/customer-center/contacts/ "Here")
+A more detailed overview of Contacts and Teams management can be found [Here](<Customer Center/contacts.md> "Here")
 
 !!! Important
 Adding relevant contacts to your account ensures that the right people receive the right information and communication. They could also be used to contact you in cases of emergency.
