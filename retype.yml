@@ -169,6 +169,10 @@ edit:
   branch: "master"
   label: "Edit this page"
 
+nav:
+  tags:
+    enabled: false
+
 footer:
   copyright: "&copy; Copyright {{ year }} [Hosted Power](https://www.hosted-power.com/). All rights reserved."
 
@@ -187,5 +191,3 @@ scheme:
 meta:
   title: " | TurboStack Docs"
   siteName: "TurboStack Docs"
-
-show_tags: false
