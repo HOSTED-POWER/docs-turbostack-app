@@ -187,3 +187,5 @@ scheme:
 meta:
   title: " | TurboStack Docs"
   siteName: "TurboStack Docs"
+
+show_tags: false
