@@ -37,6 +37,14 @@ Here, you can see the pricing for all (g)TLDs and look up if your preferred doma
 All domains are registered and paid for 1 year at the time.
 Disabling the auto-renewal will make sure the domain is not charged anymore to your account after the expiration date.
 !!!
+## Name Servers
+Setting your domain's name servers is how you make sure the correct DNS records are used. These look like the following, which are our name servers and the default setting when registering a new domain:
+```
+ns1.hosted-power.com
+ns2.hosted-power.com
+ns3.hosted-power.com
+```
+To change the nameservers of a domain registered with us, go to your [Customer Center](https://portal.hosted-power.com 'Customer Center'), find your domain under Services > Domains where you can see the currently configured nameservers. Click the button labelled 'Nameservers' under these to open the widget and change to your desired nameservers. If you want your DNS records to be managed through our platform, you can simply choose the 'Our nameservers' option.
 ## Domain name transfers
 If you already own your desired domain with a different provider, and would like to transfer it to us, the process will be different depending on which (g)TLD the domain uses, like .be, .com or .dev. As such, we can't make a step by step guide but below we've listed the most commonly required actions and explanations to make it clear for you.
 ### Authorization code (EPP)
