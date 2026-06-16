@@ -31,7 +31,7 @@ The TSCLI tool uses levels of arguments to categorize functions. Every command s
 ### Firewall
 [!badge icon="rocket" text="tscli firewall check <ip>"] - Reports whether the IP is blocked, across both the Intrusion Prevention (IPS) layer (behavioral and manual blocks) and the firewall blocklist. Please make sure to only use valid IP addresses.
 
-[!badge icon="rocket" text="tscli firewall block <ip>"] - Adds a firewall rule to block a specific IP address as specified in the IP parameter. Blocks permanently by default; use the `--time <seconds>` option for a temporary block that auto-expires (for example `--time 86400` for 24 hours). Use the `--comment` option to add a comment. 
+[!badge icon="rocket" text="tscli firewall block <ip>"] - Adds a firewall rule to block a specific IP address as specified in the IP parameter. Blocks the IP for 30 days by default; use the `--time <seconds>` option for a different duration, or `--time -1` for a permanent block. Use the `--comment` option to add a comment. 
 
 [!badge icon="rocket" text="tscli firewall unblock <ip>"] - Removes the provided IP address from the firewall's deny list, and also clears any matching Intrusion Prevention (IPS) decision so it is not automatically re-blocked.
 
