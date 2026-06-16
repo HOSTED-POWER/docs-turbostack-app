@@ -1,6 +1,6 @@
 ---
 order: 200
-icon: move-to-end
+icon: loop
 label:  self-restarting services
 ---
 
