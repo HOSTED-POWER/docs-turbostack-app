@@ -17,18 +17,20 @@ By default, at least two Redis instances run on our servers:
 
 | Instance           | Port          | Purpose                   | Data Storage |
 |--------------------|---------------|----------------------------|---------------|
-| Redis              | 6379 (default) | Caching                   | Persistent    |
+| Redis-cache        | 6379 (default) | Caching                   | Persistent    |
 | Redis-persistent   | 6378 (custom)  | Sessions & critical data  | Persistent    |
 
 ### Why two Redis instances?
 
 - **Faster cache processing:**  
-  The standard Redis instance on port **6379** is used for **temporary cache storage**, improving **load times and reducing database strain**.
+  The standard Redis instance on port **6379** is used for **temporary cache storage**, improving **load times and reducing database strain**. It's important to note that the data persistence of the `Redis-Cache` is not fully guaranteed.
 
 - **Reliable session storage:**  
   The second Redis instance on port **6378** is set for **persistent storage**, ensuring session data is not lost on restart. This instance should never be cleared, as it can influence the stability of the application.
 
-> **Note:** While both instances save an RDB file to disk, only the `redis` instance is affected by the `tscli redis clear` command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.
+> **Note:** While both instances save an AOF (Append-Only File) to disk that contains a history of Redis operations, only `Redis Persistent` has a RDB (Redis DataBase) file, which is a snapshot of the data in memory.
+
+Only the `redis-cache` instance is affected by the `tscli redis clear` command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.
 
 ---
 
