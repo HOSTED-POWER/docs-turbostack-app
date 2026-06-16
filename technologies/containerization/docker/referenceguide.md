@@ -78,3 +78,14 @@ remove a container:
 ```bash
 docker rm <container_name>
 ```
+
+### Automatic restarts
+To automaticaly restart your docker container after an unexpected shutdown or server reboot, you can either update the container with a restart policy:
+```bash
+docker update --restart unless-stopped <container_name>
+```
+
+Or you can include the following config in your compose file:
+```yaml
+restart: unless-stopped
+```
