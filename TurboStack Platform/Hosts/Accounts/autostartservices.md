@@ -12,13 +12,14 @@ Depending on the technology your application uses, there are different ways to a
 ### Systemd User Service
 For PHP frameworks like Laravel, Magento and Akeneo, you can use systemd user services to automatically restart your application.
 
-[Systemd User Service](../../../Miscellaneous/systemd.md)
+You can find the docs here: [Systemd User Service](../../../Miscellaneous/systemd.md)
 
 ### PM2
 For Node.js based applications, you can use PM2 to automatically restart your application.
 
-[PM2](../../../Technologies/CMS%20&%20Frameworks/Node.js/pm2.md)
+You can find the docs here: [PM2](../../../Technologies/CMS%20&%20Frameworks/Node.js/pm2.md)
 
 ### Docker
 Docker offers integrated support for automatic restarts.
-[Docker](../../../Technologies/Containerization/Docker/referenceguide.md)
+
+You can find the docs here: [Docker](../../../Technologies/Containerization/Docker/referenceguide.md)
