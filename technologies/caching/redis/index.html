@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834935224924">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835192033234">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -44,12 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.6.0.834935224924" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.835192033234" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.834935224924" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.835192033234" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.834935224924" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.834935224924" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.835192033234" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.6.0.835192033234" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -234,7 +234,7 @@
 <p>By default, at least two Redis instances run on our servers:</p>
 <retype-table copy-text="| Instance           | Port          | Purpose                   | Data Storage |
 |--------------------|---------------|----------------------------|---------------|
-| Redis              | 6379 (default) | Caching                   | Persistent    |
+| Redis-server        | 6379 (default) | Caching                   | Persistent    |
 | Redis-persistent   | 6378 (custom)  | Sessions &amp; critical data  | Persistent    |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -248,7 +248,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Redis</td>
+<td>Redis-server</td>
 <td>6379 (default)</td>
 <td>Caching</td>
 <td>Persistent</td>
@@ -267,7 +267,7 @@
 <ul>
 <li>
 <p><strong>Faster cache processing:</strong><br />
-The standard Redis instance on port <strong>6379</strong> is used for <strong>temporary cache storage</strong>, improving <strong>load times and reducing database strain</strong>.</p>
+The standard Redis instance on port <strong>6379</strong> is used for <strong>temporary cache storage</strong>, improving <strong>load times and reducing database strain</strong>. It&#x27;s important to note that the data persistence of the <code translate="no" v-pre>Redis-server</code> is not fully guaranteed.</p>
 </li>
 <li>
 <p><strong>Reliable session storage:</strong><br />
@@ -275,8 +275,9 @@ The second Redis instance on port <strong>6378</strong> is set for <strong>persi
 </li>
 </ul>
 <blockquote>
-<p><strong>Note:</strong> While both instances save an RDB file to disk, only the <code translate="no" v-pre>redis</code> instance is affected by the <code translate="no" v-pre>tscli redis clear</code> command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.</p>
+<p><strong>Note:</strong> While both instances save an AOF (Append-Only File) to disk that contains a history of Redis operations, only <code translate="no" v-pre>Redis-persistent</code> has a RDB (Redis DataBase) file, which is a snapshot of the data in memory.</p>
 </blockquote>
+<p>Only the <code translate="no" v-pre>redis-server</code> instance is affected by the <code translate="no" v-pre>tscli redis clear</code> command. This ensures persistence after a reboot and helps preserve critical session data even during maintenance or attack scenarios like DDoS.</p>
 <hr>
 <h3 id="a-use-the-socket-file-for-local-performance">A. Use the Socket File for Local Performance</h3>
 <p>If Redis runs locally, we recommend using <strong>socket files instead of network connections</strong> to reduce overhead and latency.</p>
