@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835194160194">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835194866485">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -44,11 +44,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.6.0.835194160194" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.835194866485" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835194160194" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835194866485" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835194160194" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835194866485" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -252,7 +252,22 @@
         </div>
     </div>
 </div>
-<p>Here’s how to do it:</p>
+<h2 id="what-gets-copied">What gets copied?</h2>
+<p>What this function copies:</p>
+<ul>
+<li>User files, symlinks and their permissions.</li>
+<li>Database.</li>
+</ul>
+<p>What this function does not do:</p>
+<ul>
+<li>Update credentials in <code translate="no" v-pre>.env</code> files.</li>
+<li>Update the <strong>base URL</strong> for your application.</li>
+<li>Update <strong>absolute paths</strong> in your code or crons.</li>
+</ul>
+<p>Some manual small adjustments are still needed after cloning the account, such as updating the <strong>database credentials</strong> in the application&#x27;s <code translate="no" v-pre>.env</code> file and the <strong>base URL</strong> for your application.</p>
+<p>In case your application uses Redis, you&#x27;ll need to update the Redis database number and/or key prefix, so the new keys are not saved in the keyspace of the original application.</p>
+<p>If something does not work correctly, we recommend checking your application&#x27;s error logs for clues.</p>
+<h2 id="how-to-clone-an-account">How to clone an account</h2>
 <ol>
 <li>
 <p>Navigate to the <strong>Accounts</strong> tab in the TurboStack Platform under your host.

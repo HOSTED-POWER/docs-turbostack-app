@@ -6,7 +6,24 @@ To make a **clone of an existing application**, we provide the **Clone Account**
 This feature is extremely useful to quickly copy your production environment to a staging environment or vice versa!
 !!!
 
-Here’s how to do it:
+## What gets copied?
+
+What this function copies:
+- User files, symlinks and their permissions.
+- Database.
+
+What this function does not do:
+- Update credentials in `.env` files.
+- Update the **base URL** for your application.
+- Update **absolute paths** in your code or crons.
+
+Some manual small adjustments are still needed after cloning the account, such as updating the **database credentials** in the application's `.env` file and the **base URL** for your application.
+
+In case your application uses Redis, you'll need to update the Redis database number and/or key prefix, so the new keys are not saved in the keyspace of the original application.
+
+If something does not work correctly, we recommend checking your application's error logs for clues.
+
+## How to clone an account
 
 1. Navigate to the **Accounts** tab in the TurboStack Platform under your host.
 ![](../../../img/turbostackapp/newapp/tsa_user6.png)
