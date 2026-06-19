@@ -28,15 +28,15 @@ An example of a `.conf` file:
 
 ```ini
 [program:messenger-consume]
-command=php /data/web/current/bin/console messenger:consume async failed hello_retail --time-limit=3600 --memory-limit=512M
-user=app
+command=php /var/www/<USER>/current/bin/console messenger:consume async failed hello_retail --time-limit=3600 --memory-limit=512M
+user=<USER>
 numprocs=4
 startsecs=0
 autostart=true
 autorestart=true
 process_name=%(program_name)s_%(process_num)02d
-stdout_logfile=/data/web/supervisor/log/messenger-consume.log
-stderr_logfile=/data/web/supervisor/log/messenger-consume.error.log
+stdout_logfile=/var/www/<USER>/.config/supervisor/log/messenger-consume.log
+stderr_logfile=/var/www/<USER>/.config/supervisor/log/messenger-consume.error.log
 ```
 **Note**: A config sample can also be found at `~/.config/supervisor/conf.d/00-sample.conf.sample`.
 
