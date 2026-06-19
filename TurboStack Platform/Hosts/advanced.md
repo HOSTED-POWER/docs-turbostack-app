@@ -34,6 +34,8 @@ TurboStack allows you to use either **Mailpit** or **Mailhog** to test your mail
 We currently recommend Mailpit over Mailhog, as the Mailhog project is no longer receiving updates!
 !!!
 
+For more information on how to use Mailpit and Mailhog, take a look [here](../../Tools/maildevtools.md).
+
 ## Varnish Options
 
 ![Varnish Options](img/advancedtabvarnish.png)
