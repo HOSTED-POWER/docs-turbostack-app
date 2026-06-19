@@ -81,6 +81,7 @@
 ## Tools
 
 - [Percona Monitoring and Management (PMM)](https://docs.turbostack.app/tools/pmm.md): PMM is an open source database observability, monitoring, and management tool for use with MySQL, PostgreSQL, MongoDB. It provides real-time visibility into the performance of your database and helps you identify and resolve issues before they impact your users.
+- [Mailpit and Mailhog](https://docs.turbostack.app/tools/maildevtools.md): Our TurboStack supports two mail dev tools for you to choose from.
 - [Turbostack CLI](https://docs.turbostack.app/tools/turbostackcli.md): The TurboStack Command Line Interface (later referred to as TSCLI) is available on all TurboStack nodes to provide you with an easy-to-use tool to manage the services on your environment, even ones you would normally need root access for.
 - [phpMyAdmin](https://docs.turbostack.app/tools/phpmyadmin.md): phpMyAdmin is a web-based tool designed to manage MySQL and MariaDB databases. It provides a user-friendly graphical interface, allowing users to perform database tasks without needing to write SQL commands manually.
 
