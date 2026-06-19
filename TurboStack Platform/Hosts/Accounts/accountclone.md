@@ -26,7 +26,7 @@ Some manual small adjustments are still needed after cloning the account, such a
 
 In case your application uses Redis, you'll need to update the Redis database number and/or key prefix, so the new keys are not saved in the keyspace of the original application.
 
-If something does not work correctly, we recommend checking the error logs for your application, for clues.
+If something does not work correctly, we recommend checking your application's error logs for clues.
 
 ## How to clone an account
 
