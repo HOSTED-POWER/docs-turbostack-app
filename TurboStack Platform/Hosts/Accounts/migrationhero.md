@@ -14,7 +14,7 @@ If you want to migrate an application from TurboStack to TurboStack, please use 
 
 Before starting, make sure you have already **created an application** and successfully performed a **Save and Publish**.
 
-1. Navigate to the **Accounts** tab in the TurboStack Platform under your host.
+1. Navigate to the **Applications** tab in the TurboStack Platform under your host.
 ![](../../../img/turbostackapp/newapp/tsa_user6.png)
 
 2. Click **Migration Hero**.

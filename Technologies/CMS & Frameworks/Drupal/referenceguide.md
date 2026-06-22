@@ -84,7 +84,7 @@ drush cr
 ### Redis and Varnish Caching
 
 For improved performance, we recommend using Redis and optionally a
-reverse proxy such as Varnish. Both these options can be easily configured in the TurboStack App.
+reverse proxy such as Varnish. Both these options can be easily configured in [TurboStack.app](https://my.turbostack.app/ "TurboStack Platform").
 
 While Varnish works out-of-the-box, Redis needs to be specifically configured in your application. You can find our documentation on how to configure Redis caching
 [here](../../Caching/redis.md)

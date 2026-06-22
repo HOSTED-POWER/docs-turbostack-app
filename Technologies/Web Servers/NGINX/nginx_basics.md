@@ -4,7 +4,7 @@ hidden: true
 
 # Nginx Configuration Basics
 
-Our implementation of NGINX offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place **custom NGINX configs** in a per-account directory under:  
+Our implementation of NGINX offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place **custom NGINX configs** in a per-application directory under:  
 
 ```bash
 /nginx
