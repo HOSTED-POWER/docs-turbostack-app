@@ -16,9 +16,9 @@ For example:
 (S)FTP users are created within the context of a normal system user.
 ## Creating the FTP user
 ### In the GUI
-To create the user in the GUI, go to **Accounts**, click the *settings* **cogwheel** , then **Add FTP user**.
+To create the user in the GUI, go to **Applications**, click the *settings* **cogwheel** , then **Add FTP user**.
 
-![Accounts tab showing FTP users](image/FTP/ftp_accounts_tab.png "Accounts tab showing FTP users")
+![Applications tab showing FTP users](image/FTP/ftp_accounts_tab.png "Applications tab showing FTP users")
 
 A new window will appear, where you can enter the name for the new FTP user and the *home directory*. If your application requires it, you can enable TLS in the same screen.
 

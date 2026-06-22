@@ -11,7 +11,7 @@ Configuration is done on the _application_ level. This means you can enable **Ku
 ### Via the TurboStack GUI
 You can enable Kubernetes in the TurboStack GUI, via:
 
-`Accounts > AccountName > Applications cogwheel > Technologies > K8s`
+`Applications tab > Application to manage > Applications cogwheel > Technologies > K8s`
 
 ### Via the TurboStack YAML
 You can add the following line to the application that needs Kubernetes enabled:

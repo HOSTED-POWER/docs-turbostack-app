@@ -25,7 +25,7 @@ For staging and production instances of an application, best practice is always 
 * Open the [TurboStack Platform](https://my.turbostack.app "TurboStack Platform")
 * Open the server management console in the **Hosts** section
 
-1. Go to the **Accounts** page
+1. Go to the **Applications** page
 ![](../../../img/turbostackapp/newapp/tsa_user1.png)
 2. Click **Add new account**
 ![](../../../img/turbostackapp/newapp/tsa_user2.png)
