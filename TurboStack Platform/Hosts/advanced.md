@@ -28,7 +28,7 @@ DKIM is part of your domain's **mail deliverability** optimisation. For more inf
 
 ### Mail Devtool - Enabling mail capturing and mail testing
 
-TurboStack allows you to use either **Mailpit** or **Mailhog** to test your mailing. Once activated, you can reach the GUI through the URLs `https://<hostname>/mailpit` or `https://<hostname>/mailhog` respectively. Here, a **basic auth prompt** will appear, where you can enter the [system user's credentials](Accounts/credentials.md).
+TurboStack allows you to use either **Mailpit** or **Mailhog** to test your mailing. Once activated, you can reach the GUI through the URLs `https://<hostname>/mailpit` or `https://<hostname>/mailhog` respectively. Here, a **basic auth prompt** will appear, where you can enter the [system user's credentials](Applications/credentials.md).
 
 !!! info
 We currently recommend Mailpit over Mailhog, as the Mailhog project is no longer receiving updates!
