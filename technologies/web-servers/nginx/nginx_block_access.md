@@ -4,7 +4,7 @@ Sometimes, during development or under specific circumstances, you might want to
 
 ## The structure within the /var/www/`<user>`/nginx directory
 
-The way our Turbostack works is it will create an NGINX folder in the home directory of each system user with the following files:
+The way our TurboStack works is it will create an NGINX folder in the home directory of each system user with the following files:
 
 ```bash
 magento@dylano-dev1:~/nginx$ ls -la
@@ -47,7 +47,7 @@ magento@dylano-dev1:/var/www/magento/nginx# cat 10auth.conf
         deny all;
 ```
 
-If for example your Turbostack configuration of your server looks like this:
+If for example your TurboStack configuration of your server looks like this:
 
 ```yaml
 ---

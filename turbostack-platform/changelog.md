@@ -16,7 +16,7 @@ or if you want to contribute, you can start [here](https://github.com/HOSTED-POW
 
 +++ Features :icon-shield-check:
 
-1. [!badge variant="info" text="DB Credentials"](Hosts/Accounts/databaseusers.md) Extra database users can now be created, 2 roles can be defined `read only` and `admin`
+1. [!badge variant="info" text="DB Credentials"](Hosts/Applications/databaseusers.md) Extra database users can now be created, 2 roles can be defined `read only` and `admin`
 2. [!badge variant="info" text="Backup restore"] Daily backups can now be restored on both linux and Windows servers. It can be either to a specified location or directly in place.
 
 +++ Bugfixes :icon-bug:

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835194866485">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835543664341">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.6.0.835194866485" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.835543664341" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835194866485" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835194866485" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.835194866485" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.835543664341" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -223,7 +223,7 @@
 <h1 id="use-nginx-to-block-access-to-your-application">Use NGINX to block access to your application</h1>
 <p>Sometimes, during development or under specific circumstances, you might want to block all unauthorized access to your web page or application. NGINX allows you to do this quite easily and it even provides multiple ways to allow authorization:</p>
 <h2 id="the-structure-within-the-varwwwusernginx-directory">The structure within the /var/www/<code translate="no" v-pre>&lt;user&gt;</code>/nginx directory</h2>
-<p>The way our Turbostack works is it will create an NGINX folder in the home directory of each system user with the following files:</p>
+<p>The way our TurboStack works is it will create an NGINX folder in the home directory of each system user with the following files:</p>
 <div id="the-structure-within-the-varwwwusernginx-directory-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">magento@dylano-dev1:~/nginx$ ls -la
 
@@ -254,7 +254,7 @@ The best way to do this is by creating a file <strong>10auth.conf</strong> in 
         allow 78.22.198.62; # Dylano HP
         deny all;</code></pre>
 </doc-codeblock></div>
-<p>If for example your Turbostack configuration of your server looks like this:</p>
+<p>If for example your TurboStack configuration of your server looks like this:</p>
 <div id="1-using-ip-whitelisting-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">---
 webserver: nginx

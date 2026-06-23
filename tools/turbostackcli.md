@@ -1,4 +1,4 @@
-# Turbostack CLI
+# TurboStack CLI
 The TurboStack Command Line Interface (later referred to as TSCLI) is available on all TurboStack nodes to provide you with an easy-to-use tool to manage the services on your environment, even ones you would normally need root access for. Below is a short description of the various features.
 
 ## TSCLI Commands

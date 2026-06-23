@@ -1,5 +1,5 @@
 # Docker Reference Guide
-In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or account.
+In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or application.
 
 Configuration is done on the _user_ level. This is because all users that have **Docker** enabled, are added to the docker group and have access to the relevant commands. Other users will be able to use the docker commands. 
 
@@ -8,12 +8,12 @@ Configuration is done on the _user_ level. This is because all users that have *
 ### Via the TurboStack GUI
 You can enable Docker in the TurboStack GUI, via:
 
-`Accounts > AccountName > Applications cogwheel > Technologies > Docker`
+`Applications tab > Application to manage > Applications cogwheel > Technologies > Docker`
 
 ![TurboStack Enable Docker](../../../img/technologies/docker/TurboStack_Docker.png)
 
 ### Via the TurboStack YAML
-You can add the following line to the account that needs docker installed:
+You can add the following line to the application that needs docker installed:
 ```yaml
 docker_enabled: true
 ```
@@ -24,7 +24,7 @@ Docker might not have the default ports exposed, so you might need to configure 
 
 You can do this configuration in the GUI, via:
 
-`Accounts > AccountName > Applications cogwheel > Technologies > Reverse Proxy`
+`Applications tab > Application to manage > Applications cogwheel > Technologies > Reverse Proxy`
 
 ![TurboStack Reverse Proxy](../../../img/technologies/docker/TurboStack_revProxy.png)
 

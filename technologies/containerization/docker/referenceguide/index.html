@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835194866485">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835543664341">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Docker Reference Guide | TurboStack Docs</title>
     <meta name="title" content="Docker Reference Guide | TurboStack Docs">
-    <meta name="description" content="In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or account.">
+    <meta name="description" content="In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or application.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.turbostack.app/technologies/containerization/docker/referenceguide/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/technologies/containerization/docker/referenceguide/">
     <meta property="og:title" content="Docker Reference Guide | TurboStack Docs">
-    <meta property="og:description" content="In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or account.">
+    <meta property="og:description" content="In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or application.">
     <meta property="og:image" content="https://docs.turbostack.app/img/technologies/docker/turbostack_docker.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.turbostack.app/technologies/containerization/docker/referenceguide/">
     <meta name="twitter:title" content="Docker Reference Guide | TurboStack Docs">
-    <meta name="twitter:description" content="In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or account.">
+    <meta name="twitter:description" content="In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or application.">
     <meta name="twitter:image" content="https://docs.turbostack.app/img/technologies/docker/turbostack_docker.png">
     <meta name="twitter:image:alt" content="Docker Reference Guide | TurboStack Docs">
 
@@ -44,12 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.6.0.835194866485" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.835543664341" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835194866485" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835194866485" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.835194866485" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.835543664341" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -227,18 +227,18 @@
 
                 <!-- Page content  -->
 <h1 id="docker-reference-guide">Docker Reference Guide</h1>
-<p>In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or account.</p>
+<p>In our TurboStack you have the option to host your docker containers. You can have multiple docker containers running on the same server or application.</p>
 <p>Configuration is done on the <em>user</em> level. This is because all users that have <strong>Docker</strong> enabled, are added to the docker group and have access to the relevant commands. Other users will be able to use the docker commands.</p>
 <h2 id="configuring-the-server-to-use-docker">Configuring the server to use Docker</h2>
 <h3 id="via-the-turbostack-gui">Via the TurboStack GUI</h3>
 <p>You can enable Docker in the TurboStack GUI, via:</p>
-<p><code translate="no" v-pre>Accounts &gt; AccountName &gt; Applications cogwheel &gt; Technologies &gt; Docker</code></p>
+<p><code translate="no" v-pre>Applications tab &gt; Application to manage &gt; Applications cogwheel &gt; Technologies &gt; Docker</code></p>
 <figure class="content-center">
     <img src="../../../../img/technologies/docker/turbostack_docker.png" alt="TurboStack Enable Docker" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1114" height="794" />
     <figcaption class="caption">TurboStack Enable Docker</figcaption>
 </figure>
 <h3 id="via-the-turbostack-yaml">Via the TurboStack YAML</h3>
-<p>You can add the following line to the account that needs docker installed:</p>
+<p>You can add the following line to the application that needs docker installed:</p>
 <div id="via-the-turbostack-yaml-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">docker_enabled: true</code></pre>
 </doc-codeblock></div>
@@ -246,7 +246,7 @@
 <h3 id="configuring-proxy-upstream">Configuring Proxy Upstream</h3>
 <p>Docker might not have the default ports exposed, so you might need to configure the <em>proxy upstream</em> to make your application accessible.</p>
 <p>You can do this configuration in the GUI, via:</p>
-<p><code translate="no" v-pre>Accounts &gt; AccountName &gt; Applications cogwheel &gt; Technologies &gt; Reverse Proxy</code></p>
+<p><code translate="no" v-pre>Applications tab &gt; Application to manage &gt; Applications cogwheel &gt; Technologies &gt; Reverse Proxy</code></p>
 <figure class="content-center">
     <img src="../../../../img/technologies/docker/turbostack_revproxy.png" alt="TurboStack Reverse Proxy" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1113" height="795" />
     <figcaption class="caption">TurboStack Reverse Proxy</figcaption>
@@ -319,7 +319,7 @@
     </a>
 </div>
 <div class="card-compact-container">
-    <a href="/turbostack-platform/hosts/accounts/autostartservices/" class="group card-compact no-link">
+    <a href="/turbostack-platform/hosts/applications/autostartservices/" class="group card-compact no-link">
         <div class="card-compact-body">
             <div class="card-compact-header">
                 <span class="card-compact-icon inline-flex shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><!--icon--><path d="M3.109 5.603a9.001 9.001 0 0 1 12.728 0 .75.75 0 1 1-1.061 1.061 7.5 7.5 0 0 0-10.606 0 7.5 7.5 0 0 0 0 10.606 7.5 7.5 0 0 0 10.606 0l5.821-5.82H17.3a.75.75 0 0 1 0-1.5h4.75a1 1 0 0 1 1 1v4.75a.75.75 0 1 1-1.5 0v-3.083l-5.713 5.714A9 9 0 0 1 3.109 5.603Z"/></svg></span>

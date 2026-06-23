@@ -61,9 +61,9 @@ cat ~/.ssh/id_ed25519.pub
 
 ## Step 2: Adding your SSH key to your server
 
-###  Turbostack server
+###  TurboStack server
 
-1. Go to your **Turbostack** server in the GUI.
+1. Go to your **TurboStack** server in the GUI.
 2. In the ribbon menu, click '**SSH**'.
 3. Paste your **public key** into the textbox.
 4. Click '**Save & Publish**'
