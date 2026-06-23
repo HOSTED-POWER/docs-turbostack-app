@@ -8,7 +8,7 @@ In this documentation we will show you where the logs are, how to access them, a
 
 We rotate the logs daily and compress the older ones to save on storage.
 
-Depending on the service, your access might be limited to the logs of the service running on that account. For example, the PHP logs for the website running under a certain account, but not the PHP version logs that contains information about other environments.
+Depending on the service, your access might be limited to the logs of the service running on that login. For example, the PHP logs for the website running under a certain system user, but not the PHP version logs that contains information about other environments.
 
 | Action               | Default                          | Notes                                             |
 | -------------------- | -------------------------------- | ------------------------------------------------- |
@@ -20,7 +20,7 @@ Depending on the service, your access might be limited to the logs of the servic
 **Note:** Some services deviate from the 30-day policy to conserve diskspace.  
 **Note:** DirectAdmin and cPanel keep today's logs easily accessable. After the day has ended, it is consolidated into the monthly logfile.
 
-## Turbostack
+## TurboStack
 
 The logs for all the services are located in `/var/log/servicename`.
 
@@ -31,7 +31,7 @@ When switching to `/var/log/nginx`, you'll find:
 - An **error.log** file containing extra helpful information.  
 - An **access.log** file containing all the requests not linked to a vhost.  
 
-You can access the logs of all environments via one account.
+You can access the logs of all environments via one login.
 
 ### Apache2
 Depending on the age of your setup, the logs will be located in:
@@ -43,7 +43,7 @@ Just like nginx, you'll find an **error.log** and **access.log** file to provide
 
 **Access.log** will contain all requests that could not be linked to a vhost on the server.
 
-All the logs in this folder are also accessible via any system account.
+All the logs in this folder are also accessible via any system login.
 
 ---
 ## DirectAdmin
@@ -62,7 +62,7 @@ DA provides a handy interface for us to view the logs at the following locations
 
 cPanel provides a **web interface** for accessing logs. Direct access to system log files (like Apache’s `/usr/local/apache/logs/error_log`) is typically restricted to root users, and **not available via SSH** on shared hosting.
 
-The following logs can be consulted via the user account, not via the Admin.
+The following logs can be consulted via the user login, not via the Admin.
 ### Error Logs
 - Accessible via **cPanel > Metrics > Errors**
 - Displays the most recent error log entries for your domain.

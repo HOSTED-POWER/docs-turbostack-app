@@ -11,7 +11,7 @@ Varnish default port: 6081
 
 ## Varnish configuration
 
-Our TurboStack has a default VCL config file, based on  the **app_type** defined in TurboStack App. Using your system user(s), you can read these files in `/etc/varnish/conf.d`, the file called 50main.vcl is our default config, based on a default VCL for your CMS where appropriate, expanded with our own optimizations. The following config is our `default.vcl` file, which will be loaded in and will then load in the contents of the conf.d directory mentioned earlier:
+Our TurboStack has a default VCL config file, based on  the **app_type** defined in [TurboStack.app](https://my.turbostack.app/ "TurboStack Platform"). Using your system user(s), you can read these files in `/etc/varnish/conf.d`, the file called 50main.vcl is our default config, based on a default VCL for your CMS where appropriate, expanded with our own optimizations. The following config is our `default.vcl` file, which will be loaded in and will then load in the contents of the conf.d directory mentioned earlier:
 
 ```
 vcl 4.1;
