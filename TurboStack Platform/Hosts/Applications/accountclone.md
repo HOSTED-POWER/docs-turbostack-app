@@ -11,7 +11,6 @@ To make a **clone of an existing application**, we provide the **Clone Applicati
 This feature is extremely useful to quickly copy your production environment to a staging environment or vice versa!
 !!!
 
-<<<<<<< HEAD
 ## What gets copied?
 
 What this function copies:
@@ -30,9 +29,6 @@ In case your application uses Redis, you'll need to update the Redis database nu
 If something does not work correctly, we recommend checking your application's error logs for clues.
 
 ## How to clone an application
-=======
-Here’s how to do it:
->>>>>>> c927976020434adec16515199ac7acc7366efa4e
 
 1. Navigate to the **Applications** tab in the TurboStack Platform under your host.
 ![](../../../img/turbostackapp/newapp/tsa_user6.png)
@@ -47,9 +43,5 @@ Here’s how to do it:
 6. The server will now clone the application, indicated by the **publishing** indicator in the top left.
 ![](../../../img/turbostackapp/newapp/publishing.png)
 7. If the application clone has succeeded, it will be indicated in the top right with a timestamp.
-<<<<<<< HEAD
 ![](../../../img/turbostackapp/newapp/publishsuccess.png)
 
-=======
-![](../../../img/turbostackapp/newapp/publishsuccess.png)
->>>>>>> c927976020434adec16515199ac7acc7366efa4e
