@@ -1,1 +1,11 @@
 .idea
+
+# AI assistant tooling — kept local, never committed
+# (memory/guidance files, downloaded skills, agent scripts/config)
+CLAUDE.md
+AGENTS.md
+.claude/
+.cursor/
+.cursorrules
+.aider*
+.github/copilot-instructions.md
