@@ -4,8 +4,8 @@ hidden: true
 # Supervisord
 Supervisor(d) is a process control system that allows you to run, monitor, and manage long-running programs on your server. It starts configured processes, keeps them running, restarts them if they fail, and provides command-line tools for checking status, stopping, starting, and restarting services. It is commonly used to manage application workers, background jobs, and other supporting processes in a simple and consistent way.
 
-## Enabling it via the TurboStack GUI
-You can enable this setting by going to your server in the TurboStack GUI, then going to `Advanced` > `Operating System`. Here you'll find the `Supervisord Support` slider.
+## Enabling it via the TurboStack Platform
+You can enable this setting by going to your server in the TurboStack Platform, then going to `Advanced` > `Operating System`. Here you'll find the `Supervisord Support` slider.
 
 After enabling this setting, publish the config to start the installation.
 
