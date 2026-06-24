@@ -7,7 +7,7 @@ hidden: true
 Our implementation of NGINX offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place **custom NGINX configs** in a per-account directory under:  
 
 ```bash
-/var/www/<account>/nginx/
+~/nginx/
 ```
 
 This approach allows you to extend or override server behavior safely without interfering with the main system configs.

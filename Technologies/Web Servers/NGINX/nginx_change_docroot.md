@@ -9,12 +9,14 @@ Some applications may require you to use a different docroot than the typical di
 Note that this is mostly applicable for general applications. Many CMSes and frameworks have a custom docroot path, that we configure by default in nginx if you set up your application with the correct application type. Be sure to check your current settings before making any changes!
 !!!
 
-We recommend using the __application type__ to set the docroot, since setting it manually in `50main.conf` will cause TurboStack internals to not function correctly.
+For common CMSes and frameworks (Magento, shopware, ...etc) we recommend using the __application type__ to set the docroot, since setting it manually in `50main.conf` will cause TurboStack internals to not function correctly.
+
+If your application is not found in the __application types__, please set the docroot manually in the `50main.conf` file.
 
 
 ## 1. Using symlinks
 
-The easiest way to make sure nginx reads application files in the correct directory, is simply by turning the default directory into a symlink, pointing to the desired directory. Consider the following default directory setup in `/var/www/<account>/nginx/`:
+The easiest way to make sure nginx reads application files in the correct directory, is simply by turning the default directory into a symlink, pointing to the desired directory. Consider the following default directory setup in `~/nginx/`:
 
 ```
 sander@web1:~$ ls -l
