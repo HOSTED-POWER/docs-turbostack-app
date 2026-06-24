@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835543664341">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835629388275">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.6.0.835543664341" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.835629388275" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835629388275" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.835543664341" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835629388275" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../resources/js/prism.js?v=4.6.0.835629388275" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -223,10 +223,22 @@
 <h1 id="nginx-configuration-basics">Nginx Configuration Basics</h1>
 <p>Our implementation of NGINX offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place <strong>custom NGINX configs</strong> in a per-application directory under:</p>
 <div id="nginx-configuration-basics-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">/nginx</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">~/nginx/</code></pre>
 </doc-codeblock></div>
 <p>This approach allows you to extend or override server behavior safely without interfering with the main system configs.</p>
+<p>Example directory tree of an nginx folder with <strong>Varnish caching</strong> enabled:</p>
+<div id="nginx-configuration-basics-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">nginx/
+├── 20rewrites.conf
+├── 50main.conf
+└── outside
+    └── main
+        └── 20rewrites.conf</code></pre>
+</doc-codeblock></div>
 <hr>
+<h2 id="application-type">Application Type</h2>
+<p>When you set an app type in our <strong>TurboStack GUI</strong>, our automation will create a default nginx config you can start from. If you ever want to start your config from scratch again, you can always remove the contents of the <code translate="no" v-pre>~/nginx</code> directory and run a Full Publish via the GUI. This will place the default nginx config back in the <code translate="no" v-pre>~/nginx</code> directory for your app type.</p>
+<p><strong>Note:</strong> A full publish will never overwrite your <strong>existing</strong> Nginx config files.</p>
 <h2 id="load-order-of-config-files">Load Order of Config Files</h2>
 <p>NGINX processes config files in <strong>alphabetical order</strong>. This is important when deciding how to name your files.</p>
 <p>By default, you’ll find two core configs in the directory:</p>
@@ -241,11 +253,11 @@
 <p>In case Varnish is enabled on your server, it sits in front of NGINX on our TurboStack. Your config placement determines whether it runs <strong>before</strong> or <strong>after</strong> Varnish:</p>
 <ul>
 <li>
-<p><strong>Inside <code translate="no" v-pre>/nginx</code></strong><br />
+<p><strong>Inside <code translate="no" v-pre>~/nginx</code></strong><br />
 → Files here are loaded <strong>after Varnish</strong>. This is ideal for app-level rewrites, caching rules, or security headers.</p>
 </li>
 <li>
-<p><strong>Inside <code translate="no" v-pre>/nginx/outside/main</code></strong><br />
+<p><strong>Inside <code translate="no" v-pre>~/nginx/outside/main</code></strong><br />
 → Files here are loaded <strong>before Varnish</strong>. Use this if you need to manipulate requests at the edge, before they hit the Varnish layer.</p>
 </li>
 </ul>
@@ -277,7 +289,7 @@ Example: <code translate="no" v-pre>backend.http</code>. These can define backen
 <ol>
 <li>
 <p><strong>Custom Rewrite Rule (after Varnish)</strong><br />
-Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
+Place in <code translate="no" v-pre>~/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">location /blog {
     rewrite ^/blog$ /blog/ permanent;
@@ -286,7 +298,7 @@ Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
 </li>
 <li>
 <p><strong>Redirect Non-WWW to WWW</strong><br />
-Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
+Place in <code translate="no" v-pre>~/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">if ($host ~ ^(?!www\.)(?&lt;domain&gt;.+)$) {
     return 301 $scheme://www.$domain$request_uri;
@@ -295,7 +307,7 @@ Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
 </li>
 <li>
 <p><strong>Redirect WWW to non-WWW redirect</strong><br />
-Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
+Place in <code translate="no" v-pre>~/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash"> if ($host ~* ^www\.(?&lt;domain&gt;.+)$) {
      return 301 $scheme://$domain$request_uri;
@@ -304,7 +316,7 @@ Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
 </li>
 <li>
 <p><strong>Redirect to a Specific Page</strong><br />
-Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
+Place in <code translate="no" v-pre>~/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">if ($http_host ~* &quot;^.*your-domain\.be$&quot;) {
     rewrite ^/$ https://your-domain/page/ redirect;
@@ -313,7 +325,7 @@ Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
 </li>
 <li>
 <p><strong>Redirect Multiple Domains to Main Domain (keep URI)</strong><br />
-Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
+Place in <code translate="no" v-pre>~/nginx/20rewrites.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">if ($http_host ~* &quot;^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$&quot;) {
     rewrite ^(.*)$ https://www.main-site.com$request_uri redirect;
@@ -323,7 +335,7 @@ Place in <code translate="no" v-pre>/nginx/20rewrites.conf</code>:</p>
 </ol>
 <hr>
 <h3 id="pre-varnish-whitelisting-outsidemain10whitelistconf">Pre-Varnish Whitelisting (<code translate="no" v-pre>outside/main/10whitelist.conf</code>)</h3>
-<p>Place in <code translate="no" v-pre>/nginx/outside/main/10whitelist.conf</code>:</p>
+<p>Place in <code translate="no" v-pre>~/nginx/outside/main/10whitelist.conf</code>:</p>
 <div id="pre-varnish-whitelisting-outsidemain10whitelistconf-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">allow 192.168.0.0/24;
 deny all;</code></pre>

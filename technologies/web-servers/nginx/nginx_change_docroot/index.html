@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835543664341">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835629388275">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../../favicon.ico" />
-    <link href="../../../../resources/css/retype.css?v=4.6.0.835543664341" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=4.6.0.835629388275" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=4.6.0.835629388275" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835543664341" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=4.6.0.835629388275" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -238,8 +238,10 @@
         </div>
     </div>
 </div>
+<p>For common CMSes and frameworks (Magento, shopware, ...etc) we recommend using the <strong>application type</strong> to set the docroot, since setting it manually in <code translate="no" v-pre>50main.conf</code> will cause TurboStack internals to not function correctly.</p>
+<p>If your application is not found in the <strong>application types</strong>, please set the docroot manually in the <code translate="no" v-pre>50main.conf</code> file.</p>
 <h2 id="1-using-symlinks">1. Using symlinks</h2>
-<p>The easiest way to make sure nginx reads application files in the correct directory, is simply by turning the default directory into a symlink, pointing to the desired directory. Consider the following default directory setup:</p>
+<p>The easiest way to make sure nginx reads application files in the correct directory, is simply by turning the default directory into a symlink, pointing to the desired directory. Consider the following default directory setup in <code translate="no" v-pre>~/nginx/</code>:</p>
 <div id="1-using-symlinks-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">sander@web1:~$ ls -l
 &lt;...&gt;
