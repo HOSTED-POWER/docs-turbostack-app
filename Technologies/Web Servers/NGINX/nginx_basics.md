@@ -7,12 +7,29 @@ hidden: true
 Our implementation of NGINX offers you the possibility to modify its configuration to your application-specific needs. To do so, you can place **custom NGINX configs** in a per-application directory under:  
 
 ```bash
-/nginx
+~/nginx/
 ```
 
 This approach allows you to extend or override server behavior safely without interfering with the main system configs.
 
+Example directory tree of an nginx folder with __Varnish caching__ enabled:
+
+```bash
+nginx/
+├── 20rewrites.conf
+├── 50main.conf
+└── outside
+    └── main
+        └── 20rewrites.conf
+```
+
 ---
+
+## Application Type
+
+When you set an app type in our **TurboStack GUI**, our automation will create a default nginx config you can start from. If you ever want to start your config from scratch again, you can always remove the contents of the `~/nginx` directory and run a Full Publish via the GUI. This will place the default nginx config back in the `~/nginx` directory for your app type.
+
+**Note:** A full publish will never overwrite your **existing** Nginx config files.
 
 ## Load Order of Config Files
 
@@ -33,10 +50,10 @@ Since files are loaded alphabetically, anything you add with a **higher prefix n
 
 In case Varnish is enabled on your server, it sits in front of NGINX on our TurboStack. Your config placement determines whether it runs **before** or **after** Varnish:
 
-- **Inside `/nginx`**  
+- **Inside `~/nginx`**  
   → Files here are loaded **after Varnish**. This is ideal for app-level rewrites, caching rules, or security headers.  
 
-- **Inside `/nginx/outside/main`**  
+- **Inside `~/nginx/outside/main`**  
   → Files here are loaded **before Varnish**. Use this if you need to manipulate requests at the edge, before they hit the Varnish layer.  
 
 ---
@@ -74,7 +91,7 @@ This ensures your new configuration is active without requiring a full restart.
 ### Rewrites (`20rewrites.conf`)
 
 1. **Custom Rewrite Rule (after Varnish)**  
-   Place in `/nginx/20rewrites.conf`:  
+   Place in `~/nginx/20rewrites.conf`:  
 
    ```bash
    location /blog {
@@ -83,7 +100,7 @@ This ensures your new configuration is active without requiring a full restart.
    ```
 
 2. **Redirect Non-WWW to WWW**  
-   Place in `/nginx/20rewrites.conf`:  
+   Place in `~/nginx/20rewrites.conf`:  
 
    ```bash
    if ($host ~ ^(?!www\.)(?<domain>.+)$) {
@@ -92,7 +109,7 @@ This ensures your new configuration is active without requiring a full restart.
    ```
 
 3. **Redirect WWW to non-WWW redirect**   
-   Place in `/nginx/20rewrites.conf`: 
+   Place in `~/nginx/20rewrites.conf`: 
 
    ```bash
     if ($host ~* ^www\.(?<domain>.+)$) {
@@ -101,7 +118,7 @@ This ensures your new configuration is active without requiring a full restart.
     ```
 
 4. **Redirect to a Specific Page**  
-   Place in `/nginx/20rewrites.conf`:  
+   Place in `~/nginx/20rewrites.conf`:  
 
    ```bash
    if ($http_host ~* "^.*your-domain\.be$") {
@@ -110,7 +127,7 @@ This ensures your new configuration is active without requiring a full restart.
    ```
 
 5. **Redirect Multiple Domains to Main Domain (keep URI)**  
-   Place in `/nginx/20rewrites.conf`:  
+   Place in `~/nginx/20rewrites.conf`:  
 
    ```bash
    if ($http_host ~* "^(.*)(first-site\.be|second-site\.nl|third-site\.eu)$") {
@@ -122,7 +139,7 @@ This ensures your new configuration is active without requiring a full restart.
 
 ### Pre-Varnish Whitelisting (`outside/main/10whitelist.conf`)
 
-Place in `/nginx/outside/main/10whitelist.conf`:  
+Place in `~/nginx/outside/main/10whitelist.conf`:  
 
 ```bash
 allow 192.168.0.0/24;
