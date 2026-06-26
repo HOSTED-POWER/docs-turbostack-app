@@ -23,16 +23,5 @@ This matrix shows how our escalation process works.
 
 ### Escalation of customer contacts
 * Operations engineer (technical) or account manager (commercial)
-* Service manager (if applicable)
-* Operations manager
 * Technical Team Lead (technical problems) or COO (commercial problems)
 
-### Internal technical escalation
-* Operations engineer
-* Technical Team Lead
-* CEO
-
-### Internal commercial escalation
-* Account manager
-* COO
-* CEO
