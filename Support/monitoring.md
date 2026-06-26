@@ -11,6 +11,8 @@ At **Hosted Power**, we recognize the paramount importance of application availa
 
 Should any threat arise, our skilled engineers are on standby to swiftly intervene, safeguarding your operations seamlessly.
 
+You can follow the same checks yourself in the TurboStack platform: the [Monitoring dashboard](../TurboStack%20Platform/monitoring.md) gives a fleet-wide overview of every open alert, while the per-host [Health tab](../TurboStack%20Platform/Hosts/health.md) shows the detailed status of an individual server.
+
 ## Alerting
 
 In critical situations , Hosted Power activates its On Call procedure. Our on call team is on standby 24/7, ensuring swift manual investigation and resolution of issues, regardless of office hours. If the primary On Call colleague doesn’t respond within 30 minutes, an alert automatically triggers escalation to the entire on call team, engaging our Operations engineers on call "pool" until someone acknowledges the issue en starts to research.
