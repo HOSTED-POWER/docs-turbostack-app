@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835777589220">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835789459573">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -44,11 +44,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.6.0.835777589220" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.835789459573" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835777589220" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.835789459573" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835777589220" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.835789459573" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -218,28 +218,28 @@
 
                 <!-- Page content  -->
 <h1 id="monitoring">Monitoring</h1>
-<p>Hosted Power <strong>proactively monitors your infrastructure</strong>, tracking both <strong>server and service availability</strong> and <strong>resource usage</strong> around the clock. As soon as a critical threshold is crossed - high load, low disk space, a failing service or an unreachable website - an alert is raised so the issue can be addressed before it impacts your environment.</p>
-<p>On top of automated monitoring, our engineers are available <strong>24/7 via phone and ticket</strong> to investigate alerts, intervene where needed and assist with any infrastructure or application issue. For more information on how to reach us, or to <strong>open a support ticket</strong> or <strong>call our support line</strong>, see the <a href="../../support/standard_support/">Support</a> page. To learn how our team acts on these alerts around the clock, see our <a href="../../support/monitoring/">24/7 monitoring and alerting</a> overview.</p>
+<p>Hosted Power proactively monitors your infrastructure, tracking both server and service availability and resource usage around the clock. As soon as a critical threshold is crossed - high load, low disk space, a failing service or an unreachable website - an alert is raised so the issue can be addressed before it impacts your environment.</p>
+<p>On top of automated monitoring, our engineers are available 24/7 via phone and ticket to investigate alerts, intervene where needed and assist with any infrastructure or application issue. For more information on how to reach us, or to open a support ticket or call our support line, see the <a href="../../support/standard_support/">Support</a> page. To learn how our team acts on these alerts around the clock, see our <a href="../../support/monitoring/">24/7 monitoring and alerting</a> overview.</p>
 <h2 id="dashboard">Dashboard</h2>
-<p>The <strong>Monitoring</strong> page in the left-hand menu features a dedicated <strong>Dashboard</strong> that provides a <strong>fleet-wide overview</strong> of every <strong>open alert</strong> across all your servers and applications. Only checks in a non-OK state are shown, so the dashboard always reflects the <strong>issues that still need attention</strong>. For a detailed, per-host view of these alerts, resource metrics and reports, open the <a href="../hosts/health/">Health tab</a> of an individual host.</p>
+<p>The <strong>Monitoring</strong> page in the left-hand menu features a dedicated <strong>Dashboard</strong> that provides a fleet-wide overview of every open alert across all your servers and applications. Only checks in a non-OK state are shown, so the dashboard always reflects the issues that still need attention. For a detailed, per-host view of these alerts, resource metrics and reports, open the <a href="../hosts/health/">Health tab</a> of an individual host.</p>
 <figure class="content-center">
-    <img src="../../img/turbostackapp/monitoring/ts_monitoring_dashboard.png" alt="Monitoring dashboard" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <img src="../../img/turbostackapp/monitoring/ts_monitoring_dashboard.png" alt="Monitoring dashboard" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1000" />
     <figcaption class="caption">Monitoring dashboard</figcaption>
 </figure>
-<p>Alerts on the dashboard are grouped into <strong>four categories</strong>, each focused on a specific type of problem:</p>
+<p>Alerts on the dashboard are grouped into four categories, each focused on a specific type of problem:</p>
 <h3 id="alerts">Alerts</h3>
-<p>The <strong>Alerts</strong> panel lists the most important <strong>server and application checks</strong> that are currently in a non-OK state. Entries are <strong>sorted by criticality</strong>, first by <strong>priority</strong> (from <strong>P1</strong> - most critical - to <strong>P4</strong> - least critical), and within each priority by <strong>status</strong>: <code translate="no" v-pre>CRITICAL</code> first, then <code translate="no" v-pre>WARNING</code>, and finally <code translate="no" v-pre>UNKNOWN</code>.</p>
-<p>This ordering ensures that the <strong>most urgent issues</strong> are always at the top of the list, so you know exactly <strong>where to start</strong> when multiple alerts are open at once.</p>
+<p>The <strong>Alerts</strong> panel lists the most important server and application checks that are currently in a non-OK state. Entries are sorted by criticality: first by priority (P1 is the most critical, P4 the least, explained under <doc-anchor-trigger to="#alert-priorities">Alert priorities</doc-anchor-trigger> below), then by status within each priority (<code translate="no" v-pre>CRITICAL</code>, then <code translate="no" v-pre>WARNING</code>, then <code translate="no" v-pre>UNKNOWN</code>).</p>
+<p>This ordering ensures that the most urgent issues are always at the top of the list, so you know exactly where to start when multiple alerts are open at once.</p>
 <figure class="content-center">
-    <img src="../../img/turbostackapp/monitoring/ts_monitoring_alerts.png" alt="Alerts panel" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <img src="../../img/turbostackapp/monitoring/ts_monitoring_alerts.png" alt="Alerts panel" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1000" />
     <figcaption class="caption">Alerts panel</figcaption>
 </figure>
 <h3 id="mail-problems">Mail Problems</h3>
-<p>The <strong>Mail Problems</strong> panel highlights <strong>issues related to mail applications</strong> and their <strong>deliverability</strong>. This includes problems with the local mail queue (<code translate="no" v-pre>mailq</code>), blocked or filtered messages, SPF or DNS-related warnings, and other indicators that mail is not flowing as expected.</p>
+<p>The <strong>Mail Problems</strong> panel highlights issues related to mail applications and their deliverability. This includes problems with the local mail queue (<code translate="no" v-pre>mailq</code>), blocked or filtered messages, SPF or DNS-related warnings, and other indicators that mail is not flowing as expected.</p>
 <h3 id="security-issues">Security Issues</h3>
-<p>The <strong>Security Issues</strong> panel surfaces hosts where <strong>security or system packages have not yet been installed or updated</strong>. A typical example is an <code translate="no" v-pre>apt</code> check reporting available <strong>critical updates</strong> that still need to be applied to keep the server secure.</p>
+<p>The <strong>Security Issues</strong> panel surfaces hosts where security or system packages have not yet been installed or updated. A typical example is an <code translate="no" v-pre>apt</code> check reporting available critical updates that still need to be applied to keep the server secure.</p>
 <h3 id="other">Other</h3>
-<p>The <strong>Other</strong> panel collects <strong>remaining issues</strong> that are still worth reviewing, but are <strong>less critical and less urgent</strong> than the items in the other categories. Use this section to keep an eye on lower-priority signals that should not be ignored, but do not require immediate intervention.</p>
+<p>The <strong>Other</strong> panel collects remaining issues that are still worth reviewing, but are less critical and less urgent than the items in the other categories. Use this section to keep an eye on lower-priority signals that should not be ignored, but do not require immediate intervention.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -254,22 +254,21 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>info</h5>
-<p>Clicking any alert on the dashboard takes you straight to the <strong>detailed view of that alert</strong> on the specific server it belongs to, so you can investigate the root cause without having to navigate through the host configuration manually.</p>
+<p>Clicking any alert on the dashboard takes you straight to the detailed view of that alert on the specific server it belongs to, so you can investigate the root cause without having to navigate through the host configuration manually.</p>
         </div>
     </div>
 </div>
 <h2 id="alert-priorities">Alert priorities</h2>
-<p>Every alert is assigned a <strong>priority</strong> from <strong>P1</strong> to <strong>P4</strong>, indicating how urgently it needs to be addressed. This priority determines both the ordering on the dashboard and how quickly our team intervenes.</p>
+<p>Every alert is assigned a priority from P1 to P4, indicating how urgently it needs to be addressed. This priority determines both the ordering on the dashboard and how quickly our team intervenes.</p>
 <ul>
-<li><strong>P1 - Critical</strong> - something is down or broken that is impacting the server and its applications. This requires <strong>immediate action</strong>.</li>
-<li><strong>P2 - Very urgent</strong> - something is down, broken or degraded that will <strong>potentially cause a P1</strong> if no action is taken within <strong>2 hours</strong>.</li>
-<li><strong>P3 - Urgent</strong> - something is wrong that will <strong>potentially affect a P2 or escalate to a P1</strong> if no action is taken within <strong>8 hours</strong>.</li>
-<li><strong>P4 - Not urgent</strong> - an issue that is best reviewed to keep the server <strong>stable over the long term</strong>, but does not require immediate intervention.</li>
+<li><strong>P1 - Critical</strong> - something is down or broken that is impacting the server and its applications. This requires immediate action.</li>
+<li><strong>P2 - Very urgent</strong> - something is down, broken or degraded that will potentially cause a P1 if no action is taken within 2 hours.</li>
+<li><strong>P3 - Urgent</strong> - something is wrong that will potentially affect a P2 or escalate to a P1 if no action is taken within 8 hours.</li>
+<li><strong>P4 - Not urgent</strong> - an issue that is best reviewed to keep the server stable over the long term, but does not require immediate intervention.</li>
 </ul>
 <h2 id="website-monitoring-url">Website monitoring URL</h2>
-<p>The <a href="https://my.turbostack.app/" class="outbound" title="TurboStack Platform" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>TurboStack Platform</span></a> is also able to <strong>monitor a website URL</strong> per application. In this case, the website URL will be added to our monitoring system
-and Hosted Power will <strong>monitor the availability</strong> of the website based on the URL, and <strong>intervene 24/7</strong> if an issue arises.</p>
-<p>Please follow the instructions below to activate the monitoring url on your server</p>
+<p>Per application, the <a href="https://my.turbostack.app/" class="outbound" title="TurboStack Platform" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon mr-1" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg><span>TurboStack Platform</span></a> can also monitor a website URL. Once added, Hosted Power monitors the availability of that URL and intervenes 24/7 if an issue arises.</p>
+<p>The video below shows how to activate website monitoring for your application.</p>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -285,7 +284,7 @@ and Hosted Power will <strong>monitor the availability</strong> of the website b
         <div class="card-compact-body">
             <div class="card-compact-header">
                 <span class="card-compact-icon inline-flex shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><!--icon--><path d="M9.002 2.5a.75.75 0 0 1 .691.464l6.302 15.305 2.56-6.301a.75.75 0 0 1 .695-.468h4a.75.75 0 0 1 0 1.5h-3.495l-3.06 7.532a.75.75 0 0 1-1.389.004L8.997 5.21l-3.054 7.329A.75.75 0 0 1 5.25 13H.75a.75.75 0 0 1 0-1.5h4l3.558-8.538a.75.75 0 0 1 .694-.462Z"/></svg></span>
-                <span class="card-compact-title">Health - server health and monitoring overview</span>
+                <span class="card-compact-title">Health - server monitoring and status overview</span>
             </div>
             <p class="card-compact-description">The Health tab is your first stop when opening a host. It provides a real-time overview of the server's condition, surfaces the most important alerts, and gives you direct access to detailed monitoring reports and services.</p>
         </div>

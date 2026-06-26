@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835777589220">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.835789459573">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Health - server health and monitoring overview | TurboStack Docs</title>
-    <meta name="title" content="Health - server health and monitoring overview | TurboStack Docs">
+    <title>Health - server monitoring and status overview | TurboStack Docs</title>
+    <meta name="title" content="Health - server monitoring and status overview | TurboStack Docs">
     <meta name="description" content="The Health tab is your first stop when opening a host. It provides a real-time overview of the server's condition, surfaces the most important alerts, and gives you direct access to detailed monitoring reports and services.">
 
     <!-- Canonical -->
@@ -21,7 +21,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.turbostack.app/turbostack-platform/hosts/health/">
-    <meta property="og:title" content="Health - server health and monitoring overview | TurboStack Docs">
+    <meta property="og:title" content="Health - server monitoring and status overview | TurboStack Docs">
     <meta property="og:description" content="The Health tab is your first stop when opening a host. It provides a real-time overview of the server's condition, surfaces the most important alerts, and gives you direct access to detailed monitoring reports and services.">
     <meta property="og:site_name" content="TurboStack Docs">
     <meta property="og:locale" content="en_US">
@@ -29,7 +29,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://docs.turbostack.app/turbostack-platform/hosts/health/">
-    <meta name="twitter:title" content="Health - server health and monitoring overview | TurboStack Docs">
+    <meta name="twitter:title" content="Health - server monitoring and status overview | TurboStack Docs">
     <meta name="twitter:description" content="The Health tab is your first stop when opening a host. It provides a real-time overview of the server's condition, surfaces the most important alerts, and gives you direct access to detailed monitoring reports and services.">
 
     <!-- Alternate Markdown -->
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.6.0.835777589220" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.835789459573" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.835777589220" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.835789459573" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.835777589220" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.835789459573" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -210,7 +210,7 @@
                         </li>
                         <li class="pr-4">
                             <a href="../../../turbostack-platform/hosts/health/" class="pr-4">
-                                Health - server health and monitoring overview
+                                Health - server monitoring and status overview
                             </a>
                         </li>
                     </ol>
@@ -219,29 +219,35 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="health---server-health-and-monitoring-overview">Health - server health and monitoring overview</h1>
-<p>The <strong>Health</strong> tab is your <strong>first stop</strong> when opening a host. It provides a <strong>real-time overview</strong> of the server&#x27;s condition, surfaces the most important <strong>alerts</strong>, and gives you direct access to detailed monitoring <strong>reports</strong> and <strong>services</strong>.</p>
+<h1 id="health---server-monitoring-and-status-overview">Health - server monitoring and status overview</h1>
+<p>The <strong>Health</strong> tab is your first stop when opening a host. It provides a real-time overview of the server&#x27;s condition, surfaces the most important alerts, and gives you direct access to detailed monitoring reports and services.</p>
 <figure class="content-center">
-    <img src="../img/ts_health_overview.png" alt="Health overview" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <img src="../img/ts_health_overview.png" alt="Health overview" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1000" />
     <figcaption class="caption">Health overview</figcaption>
 </figure>
-<p>Unlike the fleet-wide <a href="../../monitoring/">Monitoring dashboard</a>, the Health tab is fully <strong>scoped to a single host</strong>, giving you <strong>deep insight</strong> into how this specific server and its applications are behaving right now and over time.</p>
-<p>What makes the Health tab particularly powerful is that it does not just <strong>show the status</strong> of your server - it actively helps you <strong>resolve issues</strong>. For every entry in <strong>Top Issues</strong> and every report under <strong>Latest Reports</strong>, the TurboStack platform provides a <strong>detailed analysis</strong> of the underlying problem, together with <strong>concrete, context-aware recommendations</strong> on how to fix it. This turns the Health tab from a passive status page into an <strong>actionable troubleshooting tool</strong>, helping you move from <em>&quot;something is wrong&quot;</em> to <em>&quot;here is exactly what to do about it&quot;</em> in a single click.</p>
-<p>This page describes every section of the Health tab and how to use it to keep your infrastructure running smoothly.</p>
+<p>Unlike the fleet-wide <a href="../../monitoring/">Monitoring dashboard</a>, the Health tab is scoped to a single host, showing how this specific server and its applications are behaving right now and over time.</p>
+<p>The Health tab does more than show status: for every entry under <strong>Top Issues</strong> and every report under <strong>Latest Reports</strong>, the TurboStack platform adds an analysis of the underlying problem together with recommendations on how to fix it.</p>
+<p>The tab is divided into four areas, each described below:</p>
+<ul>
+<li><strong><doc-anchor-trigger to="#host-monitoring">Host Monitoring</doc-anchor-trigger></strong> (top right) - live CPU, RAM and disk usage.</li>
+<li><strong><doc-anchor-trigger to="#top-issues">Top Issues</doc-anchor-trigger></strong> (top left) - the most important active alerts on the server.</li>
+<li><strong><doc-anchor-trigger to="#latest-reports">Latest Reports</doc-anchor-trigger></strong> - a chronological list of health reports for the server and its applications.</li>
+<li><strong><doc-anchor-trigger to="#services">Services</doc-anchor-trigger></strong> (bottom) - the full list of monitored services and their current status.</li>
+</ul>
 <h2 id="host-monitoring">Host Monitoring</h2>
-<p>The <strong>Host Monitoring</strong> panel, located on the top right, displays the most important <strong>resource metrics</strong> of your server at a glance:</p>
+<p>The <strong>Host Monitoring</strong> panel displays the most important resource metrics of your server at a glance:</p>
 <ul>
 <li><strong>CPU Usage</strong> - the current CPU load, accompanied by a graph showing the <code translate="no" v-pre>load1</code> average over time.</li>
 <li><strong>RAM Usage</strong> - the current memory consumption, with a detailed breakdown of used, free, cached, warning and critical thresholds.</li>
 <li><strong>Disk Usage</strong> - the current disk consumption on the root filesystem, plotted against warning and critical thresholds.</li>
 </ul>
-<p>Each metric is shown as a percentage, combined with a colour-coded <strong>status indicator</strong> (OK, Warning, Critical) so you can immediately spot any resource that needs attention.</p>
 <figure class="content-center">
-    <img src="../img/ts_health_metrics.png" alt="Health metrics" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <img src="../img/ts_health_metrics.png" alt="Health metrics" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1000" />
     <figcaption class="caption">Health metrics</figcaption>
 </figure>
+<p>Each metric is shown as a percentage, combined with a colour-coded status indicator (OK, Warning, Critical) so you can immediately spot any resource that needs attention.</p>
 <h3 id="timeframe-selector">Timeframe selector</h3>
-<p>In the top right corner of the Host Monitoring panel, you can switch the timeframe of the graphs between <strong>1H</strong>, <strong>8H</strong>, <strong>1D</strong> and <strong>7D</strong>. This allows you to quickly <strong>zoom in</strong> on a recent spike or <strong>zoom out</strong> to identify longer-term trends in resource usage.</p>
+<p>In the top right corner of the panel, you can switch the timeframe of the graphs between <strong>1H</strong>, <strong>8H</strong>, <strong>1D</strong> and <strong>7D</strong>. This lets you zoom in on a recent spike or zoom out to spot longer-term trends in resource usage.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -256,44 +262,42 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>info</h5>
-<p>The Host Monitoring graphs are based on the same data used by our 24/7 monitoring system. If a metric crosses a critical threshold, our team will be alerted automatically.</p>
+<p>The Host Monitoring graphs are based on the same data used by our 24/7 monitoring system. If a metric crosses a critical threshold, our team is alerted automatically.</p>
         </div>
     </div>
 </div>
 <h2 id="top-issues">Top Issues</h2>
-<p>The <strong>Top Issues</strong> panel, on the top left, lists the <strong>most important active alerts</strong> on your server right now. Each issue is tagged with a <strong>category</strong> (e.g. <code translate="no" v-pre>AVAILABILITY</code>, <code translate="no" v-pre>STABILITY</code>, <code translate="no" v-pre>PERFORMANCE</code>) and a <strong>status</strong> (e.g. <code translate="no" v-pre>Open</code>).</p>
+<p>The <strong>Top Issues</strong> panel lists the most important active alerts on your server right now. Each issue is tagged with a category (e.g. <code translate="no" v-pre>AVAILABILITY</code>, <code translate="no" v-pre>STABILITY</code>, <code translate="no" v-pre>PERFORMANCE</code>) and a status (e.g. <code translate="no" v-pre>Open</code>).</p>
 <figure class="content-center">
-    <img src="../img/ts_health_topissues.png" alt="Health top issues" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <img src="../img/ts_health_topissues.png" alt="Health top issues" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1000" />
     <figcaption class="caption">Health top issues</figcaption>
 </figure>
-<p>Clicking an issue <strong>expands</strong> it, revealing:</p>
+<p>Clicking an issue expands it to reveal:</p>
 <ol>
-<li>A <strong>detailed description</strong> of the problem, including the affected service and the impact on your environment.</li>
-<li>A <strong>proposed solution</strong> suggested by the TurboStack platform, based on the type of issue and the server&#x27;s configuration.</li>
+<li>A detailed description of the problem, including the affected service and the impact on your environment.</li>
+<li>A proposed solution suggested by the TurboStack platform, based on the type of issue and the server&#x27;s configuration.</li>
 </ol>
-<p>This makes it easy to understand <strong>what is wrong</strong>, <strong>why it matters</strong>, and <strong>what to do next</strong>, without having to dig through logs or external dashboards.</p>
+<p>This makes it easy to understand what is wrong, why it matters, and what to do next, without having to dig through logs or external dashboards.</p>
 <h2 id="latest-reports">Latest Reports</h2>
-<p>Below the Top Issues panel, the <strong>Latest Reports</strong> section provides a chronological list of <strong>detailed health reports</strong> generated for the server and its applications.</p>
+<p>The <strong>Latest Reports</strong> section, below Top Issues, provides a chronological list of detailed health reports generated for the server and its applications.</p>
 <figure class="content-center">
-    <img src="../img/ts_health_reports.png" alt="Health reports" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <img src="../img/ts_health_reports.png" alt="Health reports" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1000" />
     <figcaption class="caption">Health reports</figcaption>
 </figure>
-<p>Each report is linked to a specific check (e.g. <code translate="no" v-pre>rabbitmq-online</code>, <code translate="no" v-pre>postgres-online</code>, <code translate="no" v-pre>website</code>) and includes the <strong>severity level</strong> (e.g. <code translate="no" v-pre>P1 CRITICAL</code>), the <strong>affected host or URL</strong> and the <strong>time the report was generated</strong>.</p>
-<p>Click <strong>Open report</strong> on any entry to view the full report, including timestamps, related metrics and historical context. This is particularly useful when investigating <strong>incidents</strong> or preparing a <strong>post-mortem</strong>.</p>
+<p>Each report is linked to a specific check (e.g. <code translate="no" v-pre>rabbitmq-online</code>, <code translate="no" v-pre>postgres-online</code>, <code translate="no" v-pre>website</code>) and includes the severity level (e.g. <code translate="no" v-pre>P1 CRITICAL</code>), the affected host or URL and the time the report was generated. Click <strong>Open report</strong> on any entry to view the full report, including timestamps, related metrics and historical context. This is particularly useful when investigating incidents or preparing a post-mortem.</p>
 <h2 id="services">Services</h2>
-<p>At the bottom of the Health tab, the <strong>Services</strong> panel shows a complete list of every <strong>monitored service</strong> on the server, together with its current <strong>status</strong> and the <strong>latest check output</strong>.</p>
-<figure class="content-center">
-    <img src="../img/ts_health_services.png" alt="Health services" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" />
-    <figcaption class="caption">Health services</figcaption>
-</figure>
-<p>For each service you will see:</p>
+<p>The <strong>Services</strong> panel, at the bottom of the tab, shows a complete list of every monitored service on the server, together with its current status and the latest check output. For each service you will see:</p>
 <ul>
 <li>The <strong>service name</strong> (e.g. <code translate="no" v-pre>postgres-online</code>, <code translate="no" v-pre>ping4</code>, <code translate="no" v-pre>disk /</code>, <code translate="no" v-pre>smtp</code>, <code translate="no" v-pre>mysql-uptime</code>).</li>
 <li>The <strong>status</strong> (<code translate="no" v-pre>OK</code>, <code translate="no" v-pre>WARNING</code>, <code translate="no" v-pre>CRITICAL</code>, <code translate="no" v-pre>UNKNOWN</code>).</li>
 <li>The <strong>plugin output</strong>, which contains the raw result of the check (e.g. response times, free disk space, error messages).</li>
 <li>The <strong>timestamp</strong> of the most recent check.</li>
 </ul>
-<p>This view gives you an exhaustive overview of <strong>everything we monitor</strong> on your server, making it easy to confirm that all services are healthy or to drill down into a specific check that is failing.</p>
+<figure class="content-center">
+    <img src="../img/ts_health_services.png" alt="Health services" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1000" />
+    <figcaption class="caption">Health services</figcaption>
+</figure>
+<p>This view gives you a complete overview of everything we monitor on your server, making it easy to confirm that all services are healthy or to drill down into a specific check that is failing.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -400,6 +404,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Health - server health and monitoring overview", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/turbostack-platform/hosts/health.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Health - server monitoring and status overview", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/turbostack-platform/hosts/health.md" }</script>
 </body>
 </html>

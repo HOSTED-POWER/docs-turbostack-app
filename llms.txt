@@ -36,7 +36,7 @@
 - [Security](https://docs.turbostack.app/turbostack-platform/hosts/security.md): This is an advanced feature, please be cautious while changing values here!
 - [Backups](https://docs.turbostack.app/turbostack-platform/hosts/backups.md): The Backups tab is where you can restore files, folders and databases. This article will explain how you can use the backup tab. Restores for files, folders, MySQL and PostgreSQL are supported.
 - [YAML editor](https://docs.turbostack.app/turbostack-platform/hosts/yaml.md): The TurboStack Platform offers a user-friendly web interface for server configuration. However, at its core, all server configurations are stored and managed using YAML (YAML Ain't Markup Language).
-- [Health - server health and monitoring overview](https://docs.turbostack.app/turbostack-platform/hosts/health.md): The Health tab is your first stop when opening a host. It provides a real-time overview of the server's condition, surfaces the most important alerts, and gives you direct access to detailed monitoring reports and services.
+- [Health - server monitoring and status overview](https://docs.turbostack.app/turbostack-platform/hosts/health.md): The Health tab is your first stop when opening a host. It provides a real-time overview of the server's condition, surfaces the most important alerts, and gives you direct access to detailed monitoring reports and services.
 - [Groups](https://docs.turbostack.app/turbostack-platform/groups.md): Groups make it possible to apply certain settings across multiple TurboStack nodes, such as time zones or SSH key access.
 - [Templates](https://docs.turbostack.app/turbostack-platform/templates.md): Our platform has several templates available for you to kickstart your server configuration. These can only be used when your server's configuration is still empty, as this would override any existing settings.
 - [Monitoring](https://docs.turbostack.app/turbostack-platform/monitoring.md): Hosted Power proactively monitors your infrastructure, tracking both server and service availability and resource usage around the clock. As soon as a
@@ -108,6 +108,6 @@
 
 ## Support
 
-- [24/7 Monitoring & Alerting](https://docs.turbostack.app/support/monitoring.md): At Hosted Power, we recognize the paramount importance of application availability and stability to our partners. Our comprehensive approach to ensuring stability encompasses various factors, chief among them being the reliability of the TurboStack platform itself.
+- [24/7 Monitoring & Alerting](https://docs.turbostack.app/support/monitoring.md): At Hosted Power, application availability and stability are a top priority for our partners. Our team monitors your environments around the clock, 7 days a week, so issues are caught early.
 - [Incident Management](https://docs.turbostack.app/support/incident_management.md): Hosted Power analyzes within the SLA response time whether the reported incident can be qualified as critical unavailability based on all the information. The analysis is done remotely (via telephone, e-mail, and or monitoring tools) by our own system engineers.
 - [Standard Support](https://docs.turbostack.app/support/standard_support.md): Normal service is available during office hours (and must be done through the service desk, either by e-mail and/or by telephone:
