@@ -1,10 +1,10 @@
 ---
 order: 200
 icon: loop
-label:  self-restarting services
+label:  Self-restarting Services
 ---
 
-## Self-restarting services
+## Self-restarting Services
 It's critical to make sure your services always restart without intervention. This ensures that your application will be available again after a reboot or unexpected shutdown.
 
 !!!
