@@ -405,13 +405,14 @@ Supported deploy types:
 
 - `deploy`
 - `fullDeploy`
-- `fullResetDeploy`
+- `fullDeleteDeploy` (the API equivalent of **Save, Delete & Full Publish**; use it when removed configuration and
+  its managed data must be deleted)
 
 **Request body shape**
 
 ```json
 {
-  "type": "deploy | fullDeploy | fullResetDeploy"
+  "type": "fullDeleteDeploy"
 }
 ```
 
@@ -424,9 +425,12 @@ curl --request POST \
   --header 'Accept: application/json' \
   --header 'Content-Type: application/json' \
   --data '{
-    "type": "deploy | fullDeploy | fullResetDeploy"
+    "type": "fullDeleteDeploy"
   }'
 ```
+
+The success response contains `{"message":"Deploy started"}`. Check the response body as well as the HTTP status,
+then poll `GET /api/v1/hosts/{id}/deploy` until publication has finished.
 
 
 ### `GET /api/v1/hosts/{id}/credentials`

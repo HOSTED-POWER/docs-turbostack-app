@@ -86,7 +86,8 @@ The **app type** should match the CMS or framework that will be installed on thi
 Please note that two more publishing options are available:
 
 - **Save & Full Publish**: Redeploy the **whole server configuration** as opposed to only the changes
-- **Save, Delete & Full Publish**: Same as **Save & Full Publish**, but is required when **explicitly deleting** certain configs. You will be prompted to verify this option by typing 'DELETE' as a failsafe.
+- **Save, Delete & Full Publish**: Redeploy the whole configuration and remove the managed data that belongs to
+  entries you explicitly deleted. You will be prompted to verify this option by typing `DELETE` as a failsafe.
 
 ![](../../../img/turbostackapp/newapp/tsa_app10.png)
 
@@ -95,6 +96,22 @@ Depending on the volume and impact of changes, publishing can take some time! Wh
 !!!
 
 ![Successful publication](../../../img/turbostackapp/newapp/publishsuccess.png)
+
+## Deleting an application or account
+
+Use the delete workflow whenever an application or account and its managed data must be removed:
+
+1. Review the account first and take a backup of anything you may need later. Deleting an account affects every
+   application and data set owned by that account.
+2. Delete the intended application or account in the **Applications** page. In Source mode, remove only the matching
+   vhost or system-user entry from the YAML.
+3. Choose **Save, Delete & Full Publish** and type `DELETE` when prompted. A normal publish, including **Save & Full
+   Publish**, does not authorize TurboStack to delete the removed entry's data.
+4. Wait for the successful publication message, then verify that the application no longer answers and that the
+   intended data or account has been removed.
+
+If you remove one application but keep its account, the account's home directory and its other applications are
+retained. Do not delete the whole account merely to remove one application.
 
 ### Creating a new application in source code mode (YAML) [!badge icon="alert" text="Advanced"]
 
@@ -114,5 +131,4 @@ system_users:
 ![](../../../img/turbostackapp/newapp/tsa_app11.png)
 
 More info on using the **YAML editor** can be found [here](../yaml.md).
-
 
